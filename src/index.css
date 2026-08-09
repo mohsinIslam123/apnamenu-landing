@@ -20,6 +20,8 @@ button{font-family:inherit;cursor:pointer}
 /* HEADER */
 .site-header{position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:16px 24px;background:rgba(10,11,18,0.82);backdrop-filter:blur(14px);border-bottom:1px solid var(--border)}
 .brand{display:flex;align-items:center;gap:10px}
+.brand-logo{height:38px;width:auto;display:block}
+@media(max-width:760px){.brand-logo{height:32px}}
 .brand-mark{width:34px;height:34px;border-radius:9px;background:var(--amber);display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .brand-name{font-family:var(--display);font-weight:800;font-size:18px;letter-spacing:-0.3px}
 .brand-name em{font-style:normal;color:var(--amber)}

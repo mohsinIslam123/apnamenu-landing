@@ -8,7 +8,7 @@ export default function Hero() {
           <h1>Apne Restaurant ko<br />Digital Banao.</h1>
           <p className="sub">Billing, kitchen orders aur GST invoice — sab ek jagah, phone ya counter se. Kaagaz KOT aur calculator ki zaroorat khatam.</p>
           <div className="hero-ctas">
-            <a className="btn-cta" href={waLink('Hi, ApnaMenu ka 14 din free demo chahiye')} target="_blank" rel="noopener noreferrer">14 Din Free Demo Lo</a>
+            <a className="btn-cta" href={waLink('Hi, Zipla POS ka 14 din free demo chahiye')} target="_blank" rel="noopener noreferrer">14 Din Free Demo Lo</a>
             <a className="btn-ghost" href="#pricing">Pricing Dekho</a>
           </div>
           <p className="hero-note">Koi card nahi. Setup same din.</p>
@@ -16,7 +16,7 @@ export default function Hero() {
         <div className="ticket-stage">
           <div className="kds-chip"><span className="dot" />Kitchen Notified</div>
           <div className="ticket">
-            <div className="ticket-head">APNAMENU</div>
+            <div className="ticket-head">ZIPLA POS</div>
             <div className="ticket-sub">Order #482 · Table 6</div>
             <div className="ticket-rule" />
             <div className="ticket-line"><span>Paneer Tikka x2</span><span>340</span></div>

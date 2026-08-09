@@ -1,7 +1,7 @@
 const ITEMS = [
   { q: 'Kya mera data safe hai?', a: 'Haan — data secure cloud servers pe rehta hai, sirf aap access kar sakte ho apne login se.' },
   { q: 'Staff ko training chahiye hogi?', a: 'Interface simple rakha gaya hai — touch-friendly, kam se kam clicks. Zyada training ki zaroorat nahi padti.' },
-  { q: 'Internet band ho jaaye to?', a: 'ApnaMenu cloud-based hai, isliye stable internet chahiye hota hai — jaise UPI payment ke liye hota hai.' },
+  { q: 'Internet band ho jaaye to?', a: 'Zipla POS cloud-based hai, isliye stable internet chahiye hota hai — jaise UPI payment ke liye hota hai.' },
   { q: 'Purana menu kaise add karu?', a: 'Khud add karo, ya apne purane menu ki photo se AI-scan karke bana lo — Starter mein 20 scans/saal free.' },
   { q: 'Support kaise milega?', a: 'Seedha WhatsApp pe founder se baat hoti hai — koi bot ya call-center queue nahi.' },
 ]
