@@ -9,7 +9,7 @@ import FAQ from './components/FAQ.jsx'
 import FinalCTA from './components/FinalCTA.jsx'
 import Footer from './components/Footer.jsx'
 
-// Jab real customer video mile, yahan add karo:
+// Add customer videos here once available:
 // { id: 'uid', youtubeId: 'YT_ID', thumbnail: '/testimonials/name.jpg', name: 'Owner', business: 'Restaurant' }
 const CUSTOMER_VIDEOS = []
 

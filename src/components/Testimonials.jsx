@@ -24,16 +24,16 @@ export default function Testimonials({ videos = [] }) {
     <section className="testimonials" id="stories">
       <div className="section-head">
         <span className="eyebrow">Customer Stories</span>
-        <h2>Real Restaurant Videos Jaldi Aayenge</h2>
-        <p>Zipla POS use kar rahe ho aur experience share karna chahte ho? WhatsApp pe video bhejo — yahan feature karenge.</p>
+        <h2>Real Restaurant Videos Coming Soon</h2>
+        <p>Using Zipla POS and want to share your experience? Send us a video on WhatsApp — we'll feature it here.</p>
       </div>
       {videos.length === 0 ? (
         <div className="testimonial-empty">
           <div className="video-card video-card--empty">
             <span className="video-play-icon"><PlayIcon /></span>
-            <p>Video slot khaali hai</p>
+            <p>Video slot empty</p>
           </div>
-          <a className="btn-ghost" href={waLink('Hi, main apna Zipla POS experience video share karna chahta hoon')} target="_blank" rel="noopener noreferrer">Apna Video Bhejo</a>
+          <a className="btn-ghost" href={waLink('Hi, I would like to share my Zipla POS experience video')} target="_blank" rel="noopener noreferrer">Share Your Video</a>
         </div>
       ) : (
         <div className="testimonial-grid">{videos.map(v => <VideoCard key={v.id} {...v} />)}</div>

@@ -10,8 +10,8 @@ export default function Header() {
         <a href="#pricing">Pricing</a>
         <a href="#faq">FAQ</a>
       </nav>
-      <a className="btn-cta" href={waLink('Hi, Zipla POS ka 14 din free demo chahiye')} target="_blank" rel="noopener noreferrer">
-        WhatsApp Karo
+      <a className="btn-cta" href={waLink('Hi, I would like a 14-day free demo of Zipla POS')} target="_blank" rel="noopener noreferrer">
+        WhatsApp Us
       </a>
     </header>
   )
