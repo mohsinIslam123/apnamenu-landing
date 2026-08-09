@@ -1,0 +1,87 @@
+---
+interface Props {
+  title?: string;
+  description?: string;
+  canonical?: string;
+  ogImage?: string;
+  jsonLd?: object;
+}
+
+const {
+  title = 'Zipla POS — Restaurant POS Billing Software for India',
+  description = 'Restaurant POS billing software for Indian businesses — counter billing, auto GST invoice, kitchen display, QR ordering. 14-day free trial, no card required.',
+  canonical = 'https://zipla.in',
+  ogImage = 'https://zipla.in/og-image.jpg',
+  jsonLd,
+} = Astro.props;
+
+const defaultJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Zipla POS",
+  "url": "https://zipla.in",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Web, Android",
+  "description": "Restaurant POS billing software for Indian small businesses — counter billing, auto GST invoice, kitchen display, and QR table ordering.",
+  "offers": [
+    { "@type": "Offer", "price": "2999", "priceCurrency": "INR", "name": "Starter" },
+    { "@type": "Offer", "price": "4999", "priceCurrency": "INR", "name": "Pro" }
+  ]
+};
+
+const structuredData = jsonLd ?? defaultJsonLd;
+
+// ⚠️  Replace with your GA4 Measurement ID from analytics.google.com
+const GA_ID = 'G-XXXXXXXXXX';
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>{title}</title>
+  <meta name="description" content={description} />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content={canonical} />
+  <meta property="og:site_name" content="Zipla POS" />
+  <meta property="og:locale" content="en_IN" />
+  <meta property="og:image" content={ogImage} />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={ogImage} />
+
+  <link rel="canonical" href={canonical} />
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+
+  <!-- Google Analytics 4 — replace G-XXXXXXXXXX with your Measurement ID -->
+  <script is:inline async src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}></script>
+  <script is:inline define:vars={{ GA_ID }}>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', GA_ID);
+  </script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <slot />
+</body>
+</html>

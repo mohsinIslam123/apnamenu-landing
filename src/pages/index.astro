@@ -1,0 +1,37 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.jsx';
+import Hero from '../components/Hero.jsx';
+import TrustBar from '../components/TrustBar.jsx';
+import Workflow from '../components/Workflow.jsx';
+import Features from '../components/Features.jsx';
+import Testimonials from '../components/Testimonials.jsx';
+import Pricing from '../components/Pricing.jsx';
+import FAQ from '../components/FAQ.jsx';
+import FinalCTA from '../components/FinalCTA.jsx';
+import Footer from '../components/Footer.jsx';
+import '../index.css';
+
+// Add customer videos here once available:
+// { id: 'uid', youtubeId: 'YT_ID', thumbnail: '/testimonials/name.jpg', name: 'Owner', business: 'Restaurant Name' }
+const CUSTOMER_VIDEOS = [];
+---
+
+<Layout
+  title="Zipla POS — Restaurant POS Billing Software for India"
+  description="Restaurant POS billing software for Indian businesses — counter billing, auto GST invoice, kitchen display, QR ordering. 14-day free trial, no card required."
+  canonical="https://zipla.in"
+>
+  <Header client:load />
+  <main>
+    <Hero />
+    <TrustBar />
+    <Workflow />
+    <Features />
+    <Testimonials videos={CUSTOMER_VIDEOS} client:visible />
+    <Pricing />
+    <FAQ />
+    <FinalCTA />
+  </main>
+  <Footer />
+</Layout>

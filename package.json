@@ -1,19 +1,20 @@
 {
-  "name": "apnamenu-landing",
+  "name": "zipla-landing",
   "private": true,
-  "version": "1.0.0",
+  "version": "2.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
   },
   "dependencies": {
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },
   "devDependencies": {
-    "@vitejs/plugin-react": "^4.3.1",
-    "vite": "^5.4.0"
+    "astro": "^7.2.0",
+    "@astrojs/react": "^6.0.2",
+    "@astrojs/sitemap": "^3.7.3"
   }
 }
