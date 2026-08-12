@@ -1,0 +1,206 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.jsx';
+import Footer from '../components/Footer.jsx';
+import '../index.css';
+
+const title = "Bakery Billing Software India — Weight-Based Billing & Inventory | Zipla POS";
+const description = "Zipla POS bakery billing software: weight-based pricing, piece billing, daily sales reports for Indian bakeries. No hardware required. From ₹2,999/yr.";
+const canonical = "https://zipla.in/bakery-billing-software";
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://zipla.in/bakery-billing-software",
+      "url": "https://zipla.in/bakery-billing-software",
+      "name": "Bakery Billing Software India — Zipla POS",
+      "description": "Weight-based bakery billing software for India. Handles weight items, piece items, and daily reports. Starts at ₹2,999/yr.",
+      "isPartOf": { "@id": "https://zipla.in/#website" },
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://zipla.in" },
+          { "@type": "ListItem", "position": 2, "name": "Bakery Billing Software", "item": "https://zipla.in/bakery-billing-software" }
+        ]
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is the best billing software for bakeries in India?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Zipla POS supports weight-based billing, piece billing, and combo pricing on the same counter — designed for Indian bakeries where products are sold by gram, piece, or box. Pricing starts at ₹2,999/year with no per-transaction fees." }
+        },
+        {
+          "@type": "Question",
+          "name": "Does bakery billing software support selling items by weight?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. In Zipla POS you can set any item to weight-based pricing (price per kg or per 100g). When billing, enter the weight in grams and the price calculates automatically — no manual calculation needed." }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I mix weight items and piece items on the same bakery bill?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. A single bill can include 250g of plum cake (weight-based), 6 dinner rolls (piece-based), and a full cake at a fixed price — all in one invoice. Zipla POS handles all billing types in the same transaction." }
+        },
+        {
+          "@type": "Question",
+          "name": "Does Zipla POS work offline for bakery counters?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. Zipla POS works in offline mode. If your internet is unavailable, billing continues normally. Data syncs when the connection is restored — no sales are ever lost." }
+        },
+        {
+          "@type": "Question",
+          "name": "Can Zipla POS handle festival season billing rush for bakeries?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. During Diwali, Eid, Christmas, and other festivals when bakery volume spikes, Zipla POS keeps billing fast. You can set up festival offers and discounts in advance, and billing speed does not degrade under high transaction volume." }
+        }
+      ]
+    }
+  ]
+};
+---
+
+<Layout title={title} description={description} canonical={canonical} jsonLd={jsonLd}>
+  <Header client:load />
+
+  <main class="vp-main">
+
+    <section class="vp-hero">
+      <div class="vp-container">
+        <p class="vp-eyebrow">For Bakeries</p>
+        <h1 class="vp-h1">Bakery Billing Software India — Weight Billing, Inventory & Daily Reports</h1>
+        <p class="vp-lead">Indian bakeries sell by weight, by piece, and by combo — often all three at the same counter. Zipla POS handles every billing type and keeps your daily sales in sync without a dedicated POS machine.</p>
+        <div class="vp-cta-group">
+          <a href="https://app.zipla.in/register" class="vp-btn-primary">Start Free Trial</a>
+          <a href="/" class="vp-btn-secondary">← Back to Zipla POS</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="vp-section">
+      <div class="vp-container">
+
+        <h2>The Challenge of Bakery Billing in India</h2>
+        <p>Bakery billing is not straightforward. A customer buys 250 grams of plum cake, 6 pieces of bread, and a birthday cake at a fixed box price — all in one visit. Most billing software treats every item as a fixed unit. For a bakery, that simply does not work.</p>
+        <p>Zipla POS supports weight-based billing, piece-based billing, and fixed-price items on the same bill — so your counter staff handles any combination without confusion, manual math errors, or queues that back up during rush hour.</p>
+
+        <h2>Key Features — Bakery Billing Software</h2>
+        <ul class="vp-feature-list">
+          <li><strong>Weight-Based Billing:</strong> Enter quantity in grams or kilograms. Price calculates automatically based on per-kg rate — no calculator, no math errors at the counter.</li>
+          <li><strong>Piece & Unit Billing:</strong> Mix weight items and piece items on the same bill. Bread rolls (per piece) + plum cake (per 100g) + pastry box (fixed price) — all on one clean invoice.</li>
+          <li><strong>Fast Counter Billing:</strong> Search items by name or scroll by category — no hunting through long unorganized lists during rush hour. A complete bill takes under 30 seconds.</li>
+          <li><strong>Festival Offer Management:</strong> Apply item-level or bill-level discounts. Set up seasonal offers for festivals without touching your master price list.</li>
+          <li><strong>Day Close Report:</strong> End of day shows total sales, item-wise quantity sold, payment mode split (cash vs UPI), and net cash in hand — all in one screen.</li>
+          <li><strong>Multiple Payment Modes:</strong> Cash, UPI, card — tracked separately. Daily reports show exact reconciliation so your accounts are always clean.</li>
+          <li><strong>Bluetooth Thermal Printing:</strong> Print detailed bills on any Bluetooth thermal printer. Each bill shows item name, weight or quantity, unit price, and total clearly.</li>
+          <li><strong>Staff Access Levels:</strong> Counter staff can only bill. Managers can view reports, edit the menu, and apply large discounts — permissions are controlled per staff login.</li>
+        </ul>
+
+        <h2>How Zipla POS Works for Bakery Billing</h2>
+        <ol class="vp-steps">
+          <li>Customer places items at counter — staff opens a new bill in Zipla POS</li>
+          <li>Add weight items: search item name → enter weight in grams → price auto-calculates</li>
+          <li>Add piece items: select item → enter quantity → price updates instantly</li>
+          <li>Add fixed-price box items if any — all on the same bill</li>
+          <li>Apply discount at item level or on bill total if applicable</li>
+          <li>Generate bill → print or share on WhatsApp in one tap</li>
+          <li>Accept cash or UPI → mark payment mode for accurate reporting</li>
+          <li>Day close report: view total sales, item-wise quantities sold, cash vs UPI split</li>
+        </ol>
+
+        <h2>Bakery Types Zipla POS Works For</h2>
+        <p>Whether you run a neighbourhood bakery or a city-wide bakery chain with multiple outlets, Zipla POS handles your billing cleanly without dedicated hardware or complex setup:</p>
+        <ul>
+          <li>Standalone bakeries and confectioneries with daily walk-in customers</li>
+          <li>Artisan and premium bakeries with custom orders and fixed-price products</li>
+          <li>Bakery-cafe combos with both eat-in and takeaway counters</li>
+          <li>Home-based and delivery-focused bakeries managing orders on the go</li>
+          <li>Multi-outlet bakery chains managed remotely by one owner</li>
+        </ul>
+
+        <h2>Pricing — No Per-Item or Per-Transaction Fees</h2>
+        <p>Zipla POS charges a flat annual fee. No per-transaction commission that eats into your margin, no per-device license, no AMC. Pay once, use all year.</p>
+        <ul>
+          <li><strong>Starter:</strong> ₹2,999/year &nbsp;|&nbsp; ₹5,999/3 years</li>
+          <li><strong>Pro:</strong> ₹4,999/year &nbsp;|&nbsp; ₹9,899/3 years</li>
+        </ul>
+
+        <h2>Frequently Asked Questions</h2>
+        <div class="vp-faq">
+
+          <div class="vp-faq-item">
+            <h3>What is the best billing software for bakeries in India?</h3>
+            <p>Zipla POS supports weight-based billing, piece billing, and combo pricing on the same counter. It is built for Indian bakeries where products are sold by gram, piece, or box — not just fixed-unit items. Pricing starts at ₹2,999/year with no per-transaction fees.</p>
+          </div>
+
+          <div class="vp-faq-item">
+            <h3>Does bakery billing software support selling items by weight?</h3>
+            <p>Yes. In Zipla POS, set any item to weight-based pricing (price per kg or per 100g). When billing, enter the weight and the price calculates automatically — zero manual calculation, zero counter errors.</p>
+          </div>
+
+          <div class="vp-faq-item">
+            <h3>Can I mix weight items and piece items on the same bakery bill?</h3>
+            <p>Yes. A single bill can include 250g of plum cake (weight-based), 6 dinner rolls (piece-based), and a full cake at fixed box price — all in one invoice. Zipla POS handles any combination in the same transaction.</p>
+          </div>
+
+          <div class="vp-faq-item">
+            <h3>How does Zipla POS help with bakery inventory tracking?</h3>
+            <p>The day close report shows item-wise quantities sold every day. This tells you how much of each product moved and helps you plan next-day production quantities to reduce wastage and avoid stockouts.</p>
+          </div>
+
+          <div class="vp-faq-item">
+            <h3>Does Zipla POS work offline for bakery counters?</h3>
+            <p>Yes. Zipla POS works in offline mode. If your internet is unavailable, billing continues normally. Data syncs automatically when the connection is restored — no sales are ever lost during outages.</p>
+          </div>
+
+          <div class="vp-faq-item">
+            <h3>Can Zipla POS handle festival season billing rush for bakeries?</h3>
+            <p>Yes. During Diwali, Eid, Christmas, and other festivals when bakery volume spikes, Zipla POS keeps billing fast. Set up festival discounts and combo offers in advance — billing speed does not degrade under high transaction volume.</p>
+          </div>
+
+        </div>
+
+        <div class="vp-final-cta">
+          <h2>Simplify Your Bakery Billing Today</h2>
+          <p>Weight billing, piece billing, daily reports — all in one app. No hardware. No monthly fees. Start in 30 minutes.</p>
+          <a href="https://app.zipla.in/register" class="vp-btn-primary">Start Free — No Credit Card</a>
+          <a href="/" class="vp-btn-secondary">Learn More About Zipla POS</a>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <Footer />
+</Layout>
+
+<style>
+  .vp-main { background: #0D0D0D; }
+  .vp-hero { padding: 5rem 1.5rem 3.5rem; text-align: center; border-bottom: 1px solid #1a1a1a; }
+  .vp-container { max-width: 820px; margin: 0 auto; padding: 0 1rem; }
+  .vp-eyebrow { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #C9A94B; margin-bottom: 1rem; }
+  .vp-h1 { font-size: clamp(1.8rem, 4.5vw, 2.75rem); font-weight: 700; color: #ffffff; line-height: 1.22; margin: 0 auto 1.25rem; max-width: 760px; }
+  .vp-lead { font-size: 1.1rem; color: #aaaaaa; line-height: 1.75; max-width: 600px; margin: 0 auto 2rem; }
+  .vp-cta-group { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+  .vp-btn-primary { display: inline-block; background: #C9A94B; color: #0D0D0D; font-weight: 700; padding: 0.875rem 2rem; border-radius: 6px; text-decoration: none; font-size: 1rem; transition: opacity 0.18s; }
+  .vp-btn-primary:hover { opacity: 0.85; }
+  .vp-btn-secondary { display: inline-block; color: #C9A94B; font-weight: 600; padding: 0.875rem 1.5rem; border-radius: 6px; text-decoration: none; font-size: 0.95rem; border: 1px solid #2a2a2a; background: transparent; transition: border-color 0.18s; }
+  .vp-btn-secondary:hover { border-color: #C9A94B; }
+  .vp-section { padding: 3rem 1.5rem 5rem; color: #cccccc; }
+  .vp-section h2 { font-size: 1.45rem; color: #C9A94B; margin: 2.75rem 0 0.875rem; font-weight: 600; }
+  .vp-section h3 { font-size: 1.05rem; color: #ffffff; margin: 0 0 0.5rem; font-weight: 600; }
+  .vp-section p { line-height: 1.8; margin-bottom: 1rem; color: #cccccc; font-size: 0.98rem; }
+  .vp-feature-list { padding-left: 1.25rem; margin-bottom: 1rem; }
+  .vp-feature-list li { line-height: 1.8; margin-bottom: 0.625rem; color: #cccccc; font-size: 0.98rem; }
+  .vp-section ul:not(.vp-feature-list):not(.vp-faq *) { padding-left: 1.25rem; margin-bottom: 1rem; }
+  .vp-section ul:not(.vp-feature-list):not(.vp-faq *) li { line-height: 1.8; margin-bottom: 0.5rem; color: #cccccc; font-size: 0.98rem; }
+  .vp-steps { padding-left: 1.25rem; margin-bottom: 1rem; }
+  .vp-steps li { line-height: 1.8; margin-bottom: 0.625rem; color: #cccccc; font-size: 0.98rem; }
+  .vp-faq { margin-top: 0.75rem; }
+  .vp-faq-item { background: #111111; border: 1px solid #1e1e1e; border-radius: 8px; padding: 1.25rem 1.5rem; margin-bottom: 0.875rem; }
+  .vp-final-cta { text-align: center; padding: 3rem 1.5rem; margin-top: 3rem; background: #111111; border: 1px solid #1e1e1e; border-radius: 12px; }
+  .vp-final-cta h2 { color: #ffffff !important; margin-top: 0 !important; }
+  .vp-final-cta .vp-btn-primary, .vp-final-cta .vp-btn-secondary { margin: 0.5rem; }
+  @media (max-width: 600px) { .vp-cta-group { flex-direction: column; align-items: center; } .vp-hero { padding: 3.5rem 1.25rem 2.5rem; } }
+</style>
