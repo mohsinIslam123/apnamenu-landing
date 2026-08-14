@@ -1,7 +1,7 @@
 const ITEMS = [
   { q: 'Is my data safe?', a: 'Yes — your data is stored on secure cloud servers, accessible only through your login.' },
   { q: 'Will my staff need training?', a: 'The interface is kept simple — touch-friendly, minimal clicks. Most staff are up and running within minutes.' },
-  { q: 'What if the internet goes down?', a: 'Zipla POS is cloud-based, so a stable internet connection is required — just like UPI payments.' },
+  { q: 'What if the internet goes down?', a: 'Zipla POS works after the menu is loaded — you can create bills without internet. UPI and online payments require a connection. Full offline sync is on our roadmap.' },
   { q: 'How do I add my existing menu?', a: 'Add it manually, or use AI scan to build it from a photo of your existing menu — 20 scans/year free in Starter.' },
   { q: 'How do I get support?', a: 'You talk directly to the founder on WhatsApp — no bots, no call-center queues.' },
 ]
