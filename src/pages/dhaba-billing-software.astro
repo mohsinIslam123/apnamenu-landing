@@ -1,0 +1,212 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.jsx';
+import Footer from '../components/Footer.jsx';
+import '../index.css';
+
+const title = "Dhaba Billing Software India — Counter Billing & GST Invoice | Zipla POS";
+const description = "Best billing software for Indian dhabas. Counter billing, GST invoice, cash & UPI tracking, day close report. Works on any Android phone. Starts at ₹2,999/yr.";
+const canonical = "https://zipla.in/dhaba-billing-software/";
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://zipla.in/dhaba-billing-software/",
+      "url": "https://zipla.in/dhaba-billing-software/",
+      "name": "Dhaba Billing Software India — Zipla POS",
+      "description": "Best billing software for Indian dhabas. Counter billing, GST invoice, cash and UPI tracking, day close report. Starts at ₹2,999/yr.",
+      "isPartOf": { "@id": "https://zipla.in/#website" },
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://zipla.in" },
+          { "@type": "ListItem", "position": 2, "name": "Dhaba Billing Software", "item": "https://zipla.in/dhaba-billing-software/" }
+        ]
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is the best billing software for dhabas in India?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Zipla POS is designed for Indian food businesses including dhabas. It handles counter billing, GST invoices for commercial customers, cash and UPI tracking, and daily sales reports — all from a standard Android phone without any dedicated hardware. Pricing starts at ₹2,999/year." }
+        },
+        {
+          "@type": "Question",
+          "name": "Does dhaba billing software work on a basic Android phone?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. Zipla POS runs on any Android smartphone. No dedicated POS terminal or tablet required. Most dhaba owners use a budget Android phone at the counter. For printing, pair any Bluetooth thermal printer available in India for ₹1,500–₹4,000." }
+        },
+        {
+          "@type": "Question",
+          "name": "Can Zipla POS generate GST bills for truck drivers and commercial customers at a dhaba?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. Zipla POS generates compliant GST invoices with GSTIN, HSN/SAC codes, and itemized CGST + SGST breakup. Commercial customers — truck drivers, businesses, travelers — can request a proper tax invoice at the dhaba counter." }
+        },
+        {
+          "@type": "Question",
+          "name": "Does Zipla POS work without internet at a highway dhaba?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Zipla POS works after the menu is loaded — you can create bills without internet. UPI and online payments require a connection. Full offline sync is on our roadmap. This makes it suitable for highway locations with inconsistent connectivity." }
+        },
+        {
+          "@type": "Question",
+          "name": "How does Zipla POS help a dhaba owner track daily cash?",
+          "acceptedAnswer": { "@type": "Answer", "text": "The day close report shows total revenue, cash vs UPI split, item-wise quantity sold, and net cash in hand — all in one screen at end of each day. This eliminates manual register tallying and gives the owner a clear picture of each day's business without being physically present." }
+        }
+      ]
+    }
+  ]
+};
+---
+
+<Layout title={title} description={description} canonical={canonical} jsonLd={jsonLd}>
+  <Header client:load />
+
+  <main class="vp-main">
+
+    <section class="vp-hero">
+      <div class="vp-container">
+        <p class="vp-eyebrow">For Dhabas</p>
+        <h1 class="vp-h1">Dhaba Billing Software India — Modern Counter Billing for Indian Dhabas</h1>
+        <p class="vp-lead">Most dhabas still rely on handwritten bills and a manual register. Zipla POS replaces both — fast counter billing, GST invoices for commercial customers, and a daily cash report. All from a basic Android phone.</p>
+        <div class="vp-cta-group">
+          <a href="https://app.zipla.in/register" class="vp-btn-primary">Start Free Trial</a>
+          <a href="/" class="vp-btn-secondary">← Back to Zipla POS</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="vp-section">
+      <div class="vp-container">
+
+        <h2>The Billing Problem Every Dhaba Owner Knows</h2>
+        <p>A busy dhaba counter has no time for complicated systems. Customers are waiting, rotis are coming off the tawa, the register is full of loose papers, and at day end the cash never quite matches what you thought you made. Sound familiar?</p>
+        <p>Zipla POS solves each of these problems. Counter billing in under 20 seconds, proper GST invoices for truck drivers and commercial customers who need them, cash and UPI tracked separately with no confusion, and a day close report that shows your exact revenue in one tap — without a dedicated POS machine or expensive setup.</p>
+
+        <h2>Key Features — Dhaba Billing Software</h2>
+        <ul class="vp-feature-list">
+          <li><strong>Fast Counter Billing:</strong> Add items, apply discount if any, collect payment — done in under 20 seconds. No more handwritten slips or calculator errors at the counter.</li>
+          <li><strong>GST Invoice for Commercial Customers:</strong> Truck drivers, businessmen, and highway travelers often need a proper tax invoice. Zipla POS generates compliant GST bills with GSTIN, HSN codes, and CGST + SGST breakup in one tap.</li>
+          <li><strong>Cash & UPI Tracking:</strong> Mark each bill as cash or UPI. The day close report separates both automatically — you know exactly how much physical cash to count and what hit your UPI account.</li>
+          <li><strong>Day Close Report:</strong> Total sales, item-wise quantity sold, payment split — one screen at end of every day. Share it via WhatsApp to yourself or a family member managing accounts.</li>
+          <li><strong>Works on Basic Android Phone:</strong> No expensive hardware. Any Android smartphone works as a full billing system. If you already have a phone, you can start billing today.</li>
+          <li><strong>Bluetooth Thermal Printing:</strong> Print proper receipts on any Bluetooth thermal printer. Customers get a bill, you get a record — without wires or complicated setup.</li>
+          <li><strong>WhatsApp Bill Sharing:</strong> No printer at the counter? Send the bill to the customer's WhatsApp in one tap — digital receipt, no paper needed.</li>
+          <li><strong>Staff Logins:</strong> Counter staff can only bill. You as the owner access reports and edit the menu from a separate login with full access.</li>
+        </ul>
+
+        <h2>Why Highway and City Dhabas Both Need Proper Billing Software</h2>
+        <p>Highway dhabas serve truck drivers, bus passengers, and commercial travelers who increasingly ask for a GST bill for their expense records. Without billing software, every such request requires manual calculation and handwriting. With Zipla POS, a compliant tax invoice is generated in one tap — no extra effort, no chance of error.</p>
+        <p>City dhabas face a different problem — UPI payments now make up 40-60% of transactions at most counters, but tracking UPI separately from cash is near impossible without a system. Zipla POS tracks every payment mode in real time and shows the split clearly at day end.</p>
+
+        <h2>Dhaba Billing Workflow — Counter to Close</h2>
+        <ol class="vp-steps">
+          <li>Customer finishes meal and requests bill</li>
+          <li>Staff opens new bill in Zipla POS — adds items from the day's menu</li>
+          <li>Apply discount if applicable — system calculates total instantly</li>
+          <li>Customer pays cash or UPI — staff marks payment mode in one tap</li>
+          <li>If GST bill needed: GSTIN entered, compliant invoice generated</li>
+          <li>Print on Bluetooth thermal printer or share on WhatsApp</li>
+          <li>Day close: one report shows total sales, cash vs UPI split, top items sold</li>
+        </ol>
+
+        <h2>Types of Dhabas Zipla POS Works For</h2>
+        <ul>
+          <li>Highway dhabas serving truck drivers and long-distance travelers</li>
+          <li>City dhabas and neighbourhood eateries with daily regulars</li>
+          <li>Punjabi and North Indian dhabas with fixed menu and daily specials</li>
+          <li>Industrial area dhabas serving factory and office workers at lunch</li>
+          <li>Roadside dhabas that operate from early morning to late night</li>
+          <li>Family-run dhabas where the owner manages accounts remotely</li>
+        </ul>
+
+        <h2>Pricing — Affordable for Every Dhaba</h2>
+        <p>Zipla POS Starter plan costs ₹2,999/year — less than ₹8 per day. No per-bill fee, no commission on your revenue, no AMC. One annual payment, full access all year.</p>
+        <ul>
+          <li><strong>Starter:</strong> ₹2,999/year &nbsp;|&nbsp; ₹5,999/3 years</li>
+          <li><strong>Pro:</strong> ₹4,999/year &nbsp;|&nbsp; ₹9,899/3 years</li>
+        </ul>
+
+        <h2>Frequently Asked Questions</h2>
+        <div class="vp-faq">
+
+          <div class="vp-faq-item">
+            <h3>What is the best billing software for dhabas in India?</h3>
+            <p>Zipla POS handles counter billing, GST invoices, cash and UPI tracking, and daily reports — all from a standard Android phone. No dedicated hardware required. Pricing starts at ₹2,999/year with no per-transaction fee or AMC charges.</p>
+          </div>
+
+          <div class="vp-faq-item">
+            <h3>Does dhaba billing software work on a basic Android phone?</h3>
+            <p>Yes. Zipla POS runs on any Android smartphone. No POS terminal, no Windows machine, no complicated setup. For printing, pair any Bluetooth thermal printer. If you have a phone, you can start billing today.</p>
+          </div>
+
+          <div class="vp-faq-item">
+            <h3>Can Zipla POS generate GST bills for truck drivers and commercial customers?</h3>
+            <p>Yes. Zipla POS generates compliant GST invoices with GSTIN, HSN/SAC codes, and itemized CGST + SGST breakup. Commercial customers who need a proper tax invoice get one in one tap — no manual writing, no calculation errors.</p>
+          </div>
+
+          <div class="vp-faq-item">
+            <h3>Does Zipla POS work without internet at a highway dhaba?</h3>
+            <p>Zipla POS works after the menu is loaded — you can create bills without internet. UPI and online payments require a connection. Full offline sync is on our roadmap. This makes it practical for highway locations where connectivity can be inconsistent.</p>
+          </div>
+
+          <div class="vp-faq-item">
+            <h3>How does Zipla POS help a dhaba owner track daily cash?</h3>
+            <p>The day close report shows total revenue, cash vs UPI breakdown, and item-wise quantities sold — all in one screen. Share it on WhatsApp to yourself at day end. No manual register tallying, no guesswork about how much UPI came in versus cash.</p>
+          </div>
+
+        </div>
+
+        <div class="vp-related">
+          <h2>Other Businesses Zipla POS Serves</h2>
+          <p>Zipla POS works across Indian food businesses — <a href="/restaurant-pos-software/">restaurant POS software</a>, <a href="/cafe-pos-software/">cafe billing software</a>, <a href="/bakery-billing-software/">bakery billing software</a>, and <a href="/sweet-shop-billing/">sweet shop billing software</a>.</p>
+        </div>
+
+        <div class="vp-final-cta">
+          <h2>Modernize Your Dhaba Billing Today</h2>
+          <p>Proper bills, accurate cash tracking, daily reports — everything your dhaba needs in one app. No hardware. No monthly fees. Start in 30 minutes.</p>
+          <a href="https://app.zipla.in/register" class="vp-btn-primary">Start Free — No Credit Card</a>
+          <a href="/" class="vp-btn-secondary">Learn More About Zipla POS</a>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <Footer />
+</Layout>
+
+<style>
+  .vp-main { background: #0D0D0D; }
+  .vp-hero { padding: 5rem 1.5rem 3.5rem; text-align: center; border-bottom: 1px solid #1a1a1a; }
+  .vp-container { max-width: 820px; margin: 0 auto; padding: 0 1rem; }
+  .vp-eyebrow { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #C9A94B; margin-bottom: 1rem; }
+  .vp-h1 { font-size: clamp(1.8rem, 4.5vw, 2.75rem); font-weight: 700; color: #ffffff; line-height: 1.22; margin: 0 auto 1.25rem; max-width: 760px; }
+  .vp-lead { font-size: 1.1rem; color: #aaaaaa; line-height: 1.75; max-width: 600px; margin: 0 auto 2rem; }
+  .vp-cta-group { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+  .vp-btn-primary { display: inline-block; background: #C9A94B; color: #0D0D0D; font-weight: 700; padding: 0.875rem 2rem; border-radius: 6px; text-decoration: none; font-size: 1rem; transition: opacity 0.18s; }
+  .vp-btn-primary:hover { opacity: 0.85; }
+  .vp-btn-secondary { display: inline-block; color: #C9A94B; font-weight: 600; padding: 0.875rem 1.5rem; border-radius: 6px; text-decoration: none; font-size: 0.95rem; border: 1px solid #2a2a2a; background: transparent; transition: border-color 0.18s; }
+  .vp-btn-secondary:hover { border-color: #C9A94B; }
+  .vp-section { padding: 3rem 1.5rem 5rem; color: #cccccc; }
+  .vp-section h2 { font-size: 1.45rem; color: #C9A94B; margin: 2.75rem 0 0.875rem; font-weight: 600; }
+  .vp-section h3 { font-size: 1.05rem; color: #ffffff; margin: 0 0 0.5rem; font-weight: 600; }
+  .vp-section p { line-height: 1.8; margin-bottom: 1rem; color: #cccccc; font-size: 0.98rem; }
+  .vp-feature-list { padding-left: 1.25rem; margin-bottom: 1rem; }
+  .vp-feature-list li { line-height: 1.8; margin-bottom: 0.625rem; color: #cccccc; font-size: 0.98rem; }
+  .vp-section ul:not(.vp-feature-list):not(.vp-faq *) { padding-left: 1.25rem; margin-bottom: 1rem; }
+  .vp-section ul:not(.vp-feature-list):not(.vp-faq *) li { line-height: 1.8; margin-bottom: 0.5rem; color: #cccccc; font-size: 0.98rem; }
+  .vp-steps { padding-left: 1.25rem; margin-bottom: 1rem; }
+  .vp-steps li { line-height: 1.8; margin-bottom: 0.625rem; color: #cccccc; font-size: 0.98rem; }
+  .vp-faq { margin-top: 0.75rem; }
+  .vp-faq-item { background: #111111; border: 1px solid #1e1e1e; border-radius: 8px; padding: 1.25rem 1.5rem; margin-bottom: 0.875rem; }
+  .vp-related { margin: 2.5rem 0 0; padding: 1.25rem 1.5rem; background: #111111; border: 1px solid #1e1e1e; border-radius: 8px; }
+  .vp-related h2 { margin-top: 0 !important; }
+  .vp-related a { color: #C9A94B; text-decoration: underline; text-underline-offset: 3px; }
+  .vp-final-cta { text-align: center; padding: 3rem 1.5rem; margin-top: 3rem; background: #111111; border: 1px solid #1e1e1e; border-radius: 12px; }
+  .vp-final-cta h2 { color: #ffffff !important; margin-top: 0 !important; }
+  .vp-final-cta .vp-btn-primary, .vp-final-cta .vp-btn-secondary { margin: 0.5rem; }
+  @media (max-width: 600px) { .vp-cta-group { flex-direction: column; align-items: center; } .vp-hero { padding: 3.5rem 1.25rem 2.5rem; } }
+</style>
