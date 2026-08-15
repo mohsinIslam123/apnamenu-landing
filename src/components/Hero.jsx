@@ -5,7 +5,7 @@ export default function Hero() {
       <div className="hero-inner">
         <div>
           <span className="eyebrow">Restaurant POS Billing Software</span>
-          <h1>Take Your Restaurant<br />Fully Digital.</h1>
+          <h1>Restaurant Billing Software India — Counter Billing, GST Invoice &amp; KDS</h1>
           <p className="sub">Billing, kitchen orders, and GST invoices — all in one place, from any phone or counter. No more paper KOTs or manual calculations.</p>
           <div className="hero-ctas">
             <a className="btn-cta" href={waLink('Hi, I would like a 14-day free demo of Zipla POS')} target="_blank" rel="noopener noreferrer">Start 14-Day Free Trial</a>
