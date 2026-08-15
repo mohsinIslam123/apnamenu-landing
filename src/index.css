@@ -147,3 +147,24 @@ footer{border-top:1px solid var(--border);padding:36px 24px}
 .footer-inner{max-width:1120px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
 .footer-note{font-size:12.5px;color:var(--text-3)}
 .footer-links{display:flex;gap:20px;font-size:12.5px;color:var(--text-3)}
+
+/* DEMO FORM */
+.demo-form{padding:0 24px 110px}
+.demo-form-card{max-width:720px;margin:0 auto;background:var(--surface);border:1px solid var(--border-hi);border-radius:var(--r-xl);padding:40px 36px}
+.demo-form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
+.df-field{display:flex;flex-direction:column;gap:6px}
+.df-field--full{margin-bottom:20px}
+.df-field label{font-size:13px;font-weight:600;color:var(--text-2);letter-spacing:0.2px}
+.df-field input,.df-field select{background:var(--surface-2);border:1px solid var(--border);border-radius:var(--r-sm);padding:12px 14px;font-size:14px;color:var(--text);font-family:var(--sans);outline:none;transition:border-color .15s;-webkit-appearance:none;appearance:none;width:100%;box-sizing:border-box}
+.df-field input:focus,.df-field select:focus{border-color:var(--amber)}
+.df-field input::placeholder{color:var(--text-3)}
+.df-field select{cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23666' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:36px}
+.df-err{font-size:12px;color:#f87171;margin-top:2px}
+.df-submit{width:100%;justify-content:center;padding:14px;font-size:15px;border:none;cursor:pointer;margin-bottom:12px;margin-top:4px}
+.df-note{font-size:12.5px;color:var(--text-3);text-align:center}
+.demo-form-thanks{text-align:center;padding:48px 36px}
+.df-thanks-icon{width:52px;height:52px;border-radius:50%;background:var(--green-dim);border:1px solid rgba(34,197,94,.25);color:var(--green);font-size:22px;display:flex;align-items:center;justify-content:center;margin:0 auto 16px}
+.demo-form-thanks h3{font-family:var(--display);font-weight:700;font-size:20px;margin-bottom:10px}
+.demo-form-thanks p{font-size:14px;color:var(--text-2)}
+.demo-form-thanks a{color:var(--amber)}
+@media(max-width:600px){.demo-form-grid{grid-template-columns:1fr}.demo-form-card{padding:28px 20px}}
