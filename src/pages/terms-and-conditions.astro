@@ -10,19 +10,23 @@ const canonical = "https://zipla.in/terms-and-conditions/";
 
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "WebPage",
-  "@id": "https://zipla.in/terms-and-conditions/",
-  "url": "https://zipla.in/terms-and-conditions/",
-  "name": "Terms and Conditions — Zipla POS",
-  "description": "Terms and Conditions for Zipla POS billing software.",
-  "isPartOf": { "@id": "https://zipla.in/#website" },
-  "breadcrumb": {
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://zipla.in" },
-      { "@type": "ListItem", "position": 2, "name": "Terms and Conditions", "item": "https://zipla.in/terms-and-conditions/" }
-    ]
-  }
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://zipla.in/terms-and-conditions/",
+      "url": "https://zipla.in/terms-and-conditions/",
+      "name": "Terms and Conditions — Zipla POS",
+      "description": "Terms and Conditions for Zipla POS billing software.",
+      "isPartOf": { "@id": "https://zipla.in/#website" },
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://zipla.in" },
+          { "@type": "ListItem", "position": 2, "name": "Terms and Conditions", "item": "https://zipla.in/terms-and-conditions/" }
+        ]
+      }
+    }
+  ]
 };
 ---
 

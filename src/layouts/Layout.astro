@@ -17,15 +17,36 @@ const {
 
 const defaultJsonLd = {
   "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
-  "name": "Zipla POS",
-  "url": "https://zipla.in",
-  "applicationCategory": "BusinessApplication",
-  "operatingSystem": "Web Browser",
-  "description": "Restaurant POS billing software for Indian small businesses — counter billing, auto GST invoice, kitchen display, and QR table ordering.",
-  "offers": [
-    { "@type": "Offer", "price": "2999", "priceCurrency": "INR", "name": "Starter" },
-    { "@type": "Offer", "price": "4999", "priceCurrency": "INR", "name": "Pro" }
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://zipla.in/#website",
+      "name": "Zipla POS",
+      "url": "https://zipla.in",
+      "publisher": { "@id": "https://zipla.in/#organization" }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://zipla.in/#organization",
+      "name": "Zipla POS",
+      "url": "https://zipla.in",
+      "logo": { "@type": "ImageObject", "url": "https://zipla.in/zipla-logo.webp" },
+      "email": "support@zipla.in"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://zipla.in/#software",
+      "name": "Zipla POS",
+      "url": "https://zipla.in",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web Browser",
+      "description": "Restaurant POS billing software for Indian small businesses — counter billing, auto GST invoice, kitchen display, and QR table ordering.",
+      "author": { "@id": "https://zipla.in/#organization" },
+      "offers": [
+        { "@type": "Offer", "price": "2999", "priceCurrency": "INR", "name": "Starter" },
+        { "@type": "Offer", "price": "4999", "priceCurrency": "INR", "name": "Pro" }
+      ]
+    }
   ]
 };
 
