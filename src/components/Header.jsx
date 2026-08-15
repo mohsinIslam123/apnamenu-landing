@@ -3,7 +3,7 @@ export default function Header() {
   return (
     <header className="site-header">
       <div className="brand">
-        <img src="/zipla-logo.webp" alt="Zipla POS" className="brand-logo" />
+        <a href="/"><img src="/zipla-logo.webp" alt="Zipla POS" className="brand-logo" /></a>
       </div>
       <nav className="nav-links">
         <a href="/#features">Features</a>
