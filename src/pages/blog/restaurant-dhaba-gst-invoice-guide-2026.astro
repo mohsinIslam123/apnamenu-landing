@@ -1,0 +1,244 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.jsx';
+import Footer from '../../components/Footer.jsx';
+import '../../index.css';
+
+const title = "GST Invoice for Restaurant and Dhaba in India — Step by Step Guide 2026 | Zipla POS";
+const description = "Learn how to issue a valid GST invoice for your restaurant or dhaba in India — required fields, GST rates, common mistakes, and how billing software handles it automatically.";
+const canonical = "https://zipla.in/blog/restaurant-dhaba-gst-invoice-guide-2026/";
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://zipla.in/blog/restaurant-dhaba-gst-invoice-guide-2026/",
+      "url": "https://zipla.in/blog/restaurant-dhaba-gst-invoice-guide-2026/",
+      "name": "GST Invoice for Restaurant and Dhaba in India — Step by Step Guide 2026 | Zipla POS",
+      "description": "Learn how to issue a valid GST invoice for your restaurant or dhaba in India — required fields, GST rates, common mistakes, and how billing software handles it automatically.",
+      "isPartOf": { "@id": "https://zipla.in/#website" },
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://zipla.in" },
+          { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://zipla.in/blog/" },
+          { "@type": "ListItem", "position": 3, "name": "GST Invoice Guide for Restaurants 2026", "item": "https://zipla.in/blog/restaurant-dhaba-gst-invoice-guide-2026/" }
+        ]
+      }
+    },
+    {
+      "@type": "Article",
+      "@id": "https://zipla.in/blog/restaurant-dhaba-gst-invoice-guide-2026/#article",
+      "headline": "GST Invoice for Restaurant and Dhaba in India — Step by Step Guide 2026",
+      "description": "Learn how to issue a valid GST invoice for your restaurant or dhaba in India — required fields, GST rates, common mistakes, and how billing software handles it automatically.",
+      "url": "https://zipla.in/blog/restaurant-dhaba-gst-invoice-guide-2026/",
+      "datePublished": "2026-08-20",
+      "dateModified": "2026-08-20",
+      "author": { "@id": "https://zipla.in/#organization" },
+      "publisher": { "@id": "https://zipla.in/#organization" },
+      "inLanguage": "en-IN",
+      "isPartOf": { "@id": "https://zipla.in/blog/restaurant-dhaba-gst-invoice-guide-2026/" }
+    }
+  ]
+};
+---
+
+<Layout title={title} description={description} canonical={canonical} jsonLd={jsonLd}>
+  <Header client:load />
+
+  <main class="post-main">
+
+    <section class="post-hero">
+      <div class="post-container">
+        <nav class="post-breadcrumb" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span aria-hidden="true">›</span>
+          <a href="/blog/">Blog</a>
+          <span aria-hidden="true">›</span>
+          <span>GST Invoice Guide 2026</span>
+        </nav>
+        <div class="post-meta-top">
+          <span class="post-tag">GST Billing</span>
+          <span class="post-date">August 20, 2026</span>
+        </div>
+        <h1 class="post-h1">GST Invoice for Restaurant and Dhaba in India — Step by Step Guide 2026</h1>
+        <p class="post-lead">Every GST-registered restaurant must issue compliant tax invoices — but getting the format, rate split, or required fields wrong creates audit risk. This guide covers everything you need.</p>
+      </div>
+    </section>
+
+    <section class="post-content-section">
+      <div class="post-container">
+        <div class="post-body">
+
+          <p>If your restaurant, dhaba, or food counter is registered under GST, issuing proper tax invoices is a legal requirement — not optional. Getting it wrong doesn't just inconvenience your business customers who need to claim input tax credit. It creates mismatches in your GSTR-1 filing and flags your account for scrutiny during audits.</p>
+          <p>This guide explains what a valid restaurant GST invoice must contain, which rate applies to food service businesses, and how billing software eliminates the manual errors that create these problems.</p>
+
+          <h2>Does Your Restaurant Need to Issue GST Invoices?</h2>
+          <p>You are required to issue GST-compliant tax invoices if your restaurant is registered under the regular GST scheme. Registration becomes mandatory when annual turnover exceeds ₹20 lakh (for most states) or ₹10 lakh (for special category states).</p>
+          <p>If you are under the <strong>Composition Scheme</strong> — available for restaurants with turnover up to ₹1.5 crore — you cannot issue a tax invoice. You must issue a <strong>Bill of Supply</strong> instead and cannot collect GST from customers. You pay the tax yourself at 5% of turnover.</p>
+          <p>If you are not GST-registered at all (turnover below the threshold), no GST invoice is required.</p>
+
+          <h2>GST Rate for Restaurants and Dhabas in India</h2>
+          <p>Most standalone restaurants in India — regardless of whether they have air conditioning — pay <strong>5% GST</strong> on food and beverage revenue. This breaks down as <strong>2.5% CGST + 2.5% SGST</strong> for intra-state supplies. Input Tax Credit (ITC) is not available at this rate.</p>
+          <p>A higher rate of <strong>18% GST</strong> (9% CGST + 9% SGST) applies only to restaurants inside hotels where the declared room tariff exceeds ₹7,500 per night. These establishments can claim ITC.</p>
+          <p>For dhabas: the 5% rate applies. Highway dhabas, city dhabas, and roadside eateries all fall under this category.</p>
+          <p>The <strong>SAC code for restaurant services is 9963</strong> — this must appear on every tax invoice you issue.</p>
+          <p class="post-note">⚠️ GST Council revises rates periodically. Verify current rates with your chartered accountant or the GST portal before filing returns.</p>
+
+          <h2>Mandatory Fields in a Restaurant GST Invoice</h2>
+          <p>A valid tax invoice for a restaurant must contain all of the following:</p>
+          <ol class="post-ol">
+            <li><strong>"TAX INVOICE" heading</strong> — Must appear clearly at the top of the document</li>
+            <li><strong>Supplier details</strong> — Your restaurant's legal name, registered address, and GSTIN</li>
+            <li><strong>Invoice number</strong> — Unique and sequential; restart the sequence each financial year (April 1)</li>
+            <li><strong>Invoice date</strong></li>
+            <li><strong>Customer details</strong> — Name and address. For GST-registered business customers: their GSTIN is required so they can claim input tax credit</li>
+            <li><strong>SAC code: 9963</strong> — Service Accounting Code for restaurant services</li>
+            <li><strong>Description of supply</strong> — Item names and quantities ordered</li>
+            <li><strong>Taxable value</strong> — Total amount before GST is applied</li>
+            <li><strong>CGST amount</strong> — 2.5% of taxable value (at 5% rate)</li>
+            <li><strong>SGST amount</strong> — 2.5% of taxable value (at 5% rate). If the customer is in a different state, replace CGST + SGST with IGST at 5%</li>
+            <li><strong>Total invoice amount</strong> — Taxable value plus GST</li>
+            <li><strong>Reverse charge declaration</strong> — "Whether tax is payable on reverse charge: No" for standard restaurant transactions</li>
+          </ol>
+
+          <h2>Common GST Billing Mistakes Restaurants Make</h2>
+          <p>These errors are common in manual billing setups and create problems during GSTR-1 filing or GST audits:</p>
+
+          <div class="post-mistake">
+            <h3>1. Duplicate invoice numbers</h3>
+            <p>Issuing the same invoice number twice creates mismatches in GSTR-1. The portal reconciles your returns against your customers' GSTR-2B — duplicates trigger errors and notices. Software that auto-increments invoice numbers eliminates this entirely.</p>
+          </div>
+
+          <div class="post-mistake">
+            <h3>2. Writing "5% GST" without the CGST/SGST breakup</h3>
+            <p>The split — 2.5% CGST and 2.5% SGST — must appear separately on the invoice. A single line saying "GST: 5%" is technically non-compliant for a formal tax invoice, even if the total amount is correct.</p>
+          </div>
+
+          <div class="post-mistake">
+            <h3>3. Missing customer GSTIN for business buyers</h3>
+            <p>When a corporate client, hotel, or catering company buys from your restaurant and wants to claim ITC, they need their GSTIN to appear on your invoice. Without it, their credit claim fails — and you lose a business customer.</p>
+          </div>
+
+          <div class="post-mistake">
+            <h3>4. SAC code missing from the invoice</h3>
+            <p>Many restaurants skip the SAC code field on handwritten or basic printed bills. It is legally required on tax invoices for service providers.</p>
+          </div>
+
+          <div class="post-mistake">
+            <h3>5. Manual arithmetic errors</h3>
+            <p>Calculating 2.5% of ₹847 by hand, across dozens of bills per day, inevitably produces rounding and multiplication mistakes. These accumulate into discrepancies in your returns.</p>
+          </div>
+
+          <h2>Composition Scheme Restaurants — What's Different</h2>
+          <p>If your restaurant operates under the Composition Scheme:</p>
+          <ul class="post-ul">
+            <li>Issue a <strong>Bill of Supply</strong>, not a Tax Invoice</li>
+            <li>The bill must contain the mandatory text: <em>"Composition taxable person, not eligible to collect tax on supplies"</em></li>
+            <li>You cannot charge GST separately from the customer — your 5% composition tax is paid out of your own revenue</li>
+            <li>Your billing software should support a Composition mode that generates the correct bill format</li>
+          </ul>
+
+          <h2>How Billing Software Handles GST Invoices</h2>
+          <p>Manual GST invoicing has too many moving parts for a busy restaurant counter — maintaining sequential numbers, calculating CGST/SGST correctly for every bill, getting the right fields into the right format. One systemic error repeated across 50 bills a day becomes a filing problem.</p>
+          <p>POS billing software automates the entire process:</p>
+          <ul class="post-ul">
+            <li>Your GSTIN and business details are entered once and appear on every invoice automatically</li>
+            <li>CGST + SGST are calculated at the correct rate — no manual arithmetic</li>
+            <li>Invoice numbers auto-increment — duplicate numbers become impossible</li>
+            <li>The "TAX INVOICE" header appears automatically for the correct transaction type</li>
+            <li>Business customers can have their GSTIN entered at billing time — it appears on the invoice immediately</li>
+            <li>Bills can be printed on Bluetooth thermal paper or shared on WhatsApp in one tap</li>
+          </ul>
+          <p><a href="/restaurant-pos-software/" class="post-link">Zipla POS</a> handles GST invoice generation for <a href="/dhaba-billing-software/" class="post-link">dhabas</a>, restaurants, <a href="/cafe-pos-software/" class="post-link">cafes</a>, and <a href="/qsr-billing-software/" class="post-link">QSR counters</a>. The TAX INVOICE header, GSTIN field, and CGST/SGST breakup are built into the billing flow. When a commercial customer needs a proper tax invoice, you add their GSTIN at the counter and the invoice generates correctly in one step — no separate module, no manual formatting.</p>
+
+          <h2>Frequently Asked Questions</h2>
+          <div class="post-faq">
+
+            <div class="post-faq-item">
+              <h3>Does a customer have to ask for a GST invoice, or does the restaurant have to issue it automatically?</h3>
+              <p>For registered business customers purchasing above ₹200, issuing a tax invoice is mandatory regardless of whether they ask. For walk-in retail customers, a simplified invoice is acceptable unless the customer specifically requests a full tax invoice.</p>
+            </div>
+
+            <div class="post-faq-item">
+              <h3>What if the customer doesn't have a GSTIN?</h3>
+              <p>Leave the GSTIN field blank or mark "Unregistered." The customer's name and address are sufficient for retail transactions. Individual consumers cannot claim ITC, so GSTIN is not relevant for them.</p>
+            </div>
+
+            <div class="post-faq-item">
+              <h3>Can a highway dhaba issue GST invoices to truck drivers or transport companies?</h3>
+              <p>Yes — if the dhaba is GST-registered and the truck driver's employer is also a registered business, they can provide their GSTIN and receive a full tax invoice. This allows the business to claim ITC on their travel expenses.</p>
+            </div>
+
+            <div class="post-faq-item">
+              <h3>How long do restaurants need to keep GST invoice records?</h3>
+              <p>GST law requires records to be maintained for 72 months (6 years) from the due date of the relevant annual return. Digital records stored in billing software count.</p>
+            </div>
+
+            <div class="post-faq-item">
+              <h3>We don't always have internet at our dhaba. Can we still generate GST bills?</h3>
+              <p>Zipla POS works in partial offline mode — bills can be created after the app menu loads, even without an active connection. UPI payments require internet. GST invoices are generated locally and can be printed on a paired Bluetooth thermal printer without internet.</p>
+            </div>
+
+          </div>
+
+          <div class="post-related">
+            <h2>Related Guides</h2>
+            <p>Zipla POS billing guides for Indian food businesses: <a href="/restaurant-pos-software/">Restaurant POS Software</a>, <a href="/dhaba-billing-software/">Dhaba Billing Software</a>, <a href="/cafe-pos-software/">Cafe POS Software</a>, <a href="/qsr-billing-software/">QSR Billing Software</a>, <a href="/bakery-billing-software/">Bakery Billing Software</a>.</p>
+          </div>
+
+          <div class="post-cta">
+            <h2>GST-Compliant Billing for Your Restaurant — Starting ₹2,999/Year</h2>
+            <p>Zipla POS generates proper TAX INVOICE format with GSTIN, CGST/SGST breakup, and auto-sequential invoice numbers — from any Android phone. 14-day free trial, no credit card required.</p>
+            <a href="https://app.zipla.in/register" class="post-btn-primary">Start Free Trial</a>
+            <a href="/#pricing" class="post-btn-secondary">See Pricing</a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <Footer />
+</Layout>
+
+<style>
+  .post-main { background: #0D0D0D; }
+  .post-hero { padding: 4rem 1.5rem 3rem; border-bottom: 1px solid #1a1a1a; }
+  .post-container { max-width: 760px; margin: 0 auto; padding: 0 1rem; }
+  .post-breadcrumb { font-size: 0.8rem; color: #666666; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.4rem; flex-wrap: wrap; }
+  .post-breadcrumb a { color: #888888; text-decoration: none; }
+  .post-breadcrumb a:hover { color: #C9A94B; }
+  .post-breadcrumb span[aria-hidden] { color: #444444; }
+  .post-meta-top { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.25rem; }
+  .post-tag { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #C9A94B; background: rgba(201,169,75,0.1); padding: 0.2rem 0.6rem; border-radius: 4px; }
+  .post-date { font-size: 0.82rem; color: #666666; }
+  .post-h1 { font-size: clamp(1.7rem, 4vw, 2.4rem); font-weight: 700; color: #ffffff; line-height: 1.22; margin: 0 0 1.25rem; }
+  .post-lead { font-size: 1.08rem; color: #aaaaaa; line-height: 1.78; margin: 0; }
+  .post-content-section { padding: 3rem 1.5rem 5rem; }
+  .post-body { color: #cccccc; font-size: 0.98rem; line-height: 1.82; }
+  .post-body p { margin-bottom: 1.1rem; }
+  .post-body h2 { font-size: 1.35rem; color: #C9A94B; font-weight: 600; margin: 2.75rem 0 0.875rem; }
+  .post-body h3 { font-size: 1rem; color: #ffffff; font-weight: 600; margin: 0 0 0.5rem; }
+  .post-note { background: rgba(201,169,75,0.08); border-left: 3px solid #C9A94B; padding: 0.75rem 1rem; border-radius: 0 6px 6px 0; color: #bbbbbb; font-size: 0.92rem; }
+  .post-ol { padding-left: 1.5rem; margin-bottom: 1rem; }
+  .post-ol li { margin-bottom: 0.625rem; line-height: 1.75; }
+  .post-ul { padding-left: 1.25rem; margin-bottom: 1rem; }
+  .post-ul li { margin-bottom: 0.625rem; line-height: 1.75; }
+  .post-mistake { background: #111111; border: 1px solid #1e1e1e; border-radius: 8px; padding: 1.25rem 1.5rem; margin-bottom: 0.875rem; }
+  .post-faq { margin-top: 0.75rem; }
+  .post-faq-item { background: #111111; border: 1px solid #1e1e1e; border-radius: 8px; padding: 1.25rem 1.5rem; margin-bottom: 0.875rem; }
+  .post-link { color: #C9A94B; text-decoration: underline; text-underline-offset: 3px; }
+  .post-related { margin: 2.5rem 0 0; padding: 1.25rem 1.5rem; background: #111111; border: 1px solid #1e1e1e; border-radius: 8px; }
+  .post-related h2 { margin-top: 0 !important; }
+  .post-related a { color: #C9A94B; text-decoration: underline; text-underline-offset: 3px; }
+  .post-cta { text-align: center; padding: 3rem 1.5rem; margin-top: 3rem; background: #111111; border: 1px solid #1e1e1e; border-radius: 12px; }
+  .post-cta h2 { color: #ffffff !important; margin-top: 0 !important; font-size: 1.35rem; }
+  .post-btn-primary { display: inline-block; background: #C9A94B; color: #0D0D0D; font-weight: 700; padding: 0.875rem 2rem; border-radius: 6px; text-decoration: none; font-size: 1rem; margin: 0.5rem; transition: opacity 0.18s; }
+  .post-btn-primary:hover { opacity: 0.85; }
+  .post-btn-secondary { display: inline-block; color: #C9A94B; font-weight: 600; padding: 0.875rem 1.5rem; border-radius: 6px; text-decoration: none; font-size: 0.95rem; border: 1px solid #2a2a2a; background: transparent; margin: 0.5rem; transition: border-color 0.18s; }
+  .post-btn-secondary:hover { border-color: #C9A94B; }
+  @media (max-width: 600px) { .post-hero { padding: 3rem 1.25rem 2rem; } .post-h1 { font-size: 1.7rem; } }
+</style>
