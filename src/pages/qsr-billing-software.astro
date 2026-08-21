@@ -77,6 +77,22 @@ const jsonLd = {
       </div>
     </section>
 
+    <section class="vp-screenshots">
+      <div class="vp-container">
+        <h2 class="vp-ss-heading">See Zipla POS in Action</h2>
+        <div class="vp-ss-grid">
+          <figure class="vp-ss-item">
+            <img src="/screenshots/ss-new-order.webp" alt="Zipla POS billing counter for QSR fast food" loading="lazy" width="1232" height="860" />
+            <figcaption>Counter Billing — fast checkout for QSR and fast food counters</figcaption>
+          </figure>
+          <figure class="vp-ss-item">
+            <img src="/screenshots/ss-kds.webp" alt="Kitchen Display System for QSR on Zipla POS" loading="lazy" width="1232" height="860" />
+            <figcaption>Kitchen Display System — confirmed, preparing, ready — all on one screen</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
     <section class="vp-section">
       <div class="vp-container">
 
@@ -191,6 +207,13 @@ const jsonLd = {
   .vp-btn-primary:hover { opacity: 0.85; }
   .vp-btn-secondary { display: inline-block; color: #C9A94B; font-weight: 600; padding: 0.875rem 1.5rem; border-radius: 6px; text-decoration: none; font-size: 0.95rem; border: 1px solid #2a2a2a; background: transparent; transition: border-color 0.18s; }
   .vp-btn-secondary:hover { border-color: #C9A94B; }
+  .vp-screenshots { padding: 0 1.5rem 3rem; }
+  .vp-ss-heading { font-size: 1.4rem; font-weight: 700; color: #C9A94B; text-align: center; margin: 0 0 2rem; }
+  .vp-ss-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; max-width: 1000px; margin: 0 auto; }
+  .vp-ss-item { margin: 0; }
+  .vp-ss-item img { width: 100%; height: auto; border-radius: 10px; display: block; border: 1px solid #1e1e1e; }
+  .vp-ss-item figcaption { font-size: 0.82rem; color: #888888; text-align: center; margin-top: 0.625rem; }
+  @media (max-width: 640px) { .vp-ss-grid { grid-template-columns: 1fr; } }
   .vp-section { padding: 3rem 1.5rem 5rem; color: #cccccc; }
   .vp-section h2 { font-size: 1.45rem; color: #C9A94B; margin: 2.75rem 0 0.875rem; font-weight: 600; }
   .vp-section h3 { font-size: 1.05rem; color: #ffffff; margin: 0 0 0.5rem; font-weight: 600; }

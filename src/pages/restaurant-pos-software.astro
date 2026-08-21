@@ -77,6 +77,22 @@ const jsonLd = {
       </div>
     </section>
 
+    <section class="vp-screenshots">
+      <div class="vp-container">
+        <h2 class="vp-ss-heading">See Zipla POS in Action</h2>
+        <div class="vp-ss-grid">
+          <figure class="vp-ss-item">
+            <img src="/screenshots/ss-new-order.webp" alt="Counter billing screen — add items and generate GST bill instantly" loading="lazy" width="1232" height="860" />
+            <figcaption>Counter Billing — add items, apply GST, generate bill in seconds</figcaption>
+          </figure>
+          <figure class="vp-ss-item">
+            <img src="/screenshots/ss-kds.webp" alt="Live Kitchen Display System — monitor orders by confirmed, preparing and ready status" loading="lazy" width="1232" height="860" />
+            <figcaption>Kitchen Display System — live order tracking for your kitchen staff</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
     <section class="vp-section">
       <div class="vp-container">
 
@@ -181,6 +197,13 @@ const jsonLd = {
 
 <style>
   .vp-main { background: #0D0D0D; }
+  .vp-screenshots { padding: 0 1.5rem 3rem; }
+  .vp-ss-heading { font-size: 1.4rem; font-weight: 700; color: #C9A94B; text-align: center; margin: 0 0 2rem; }
+  .vp-ss-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; max-width: 1000px; margin: 0 auto; }
+  .vp-ss-item { margin: 0; }
+  .vp-ss-item img { width: 100%; height: auto; border-radius: 10px; display: block; border: 1px solid #1e1e1e; }
+  .vp-ss-item figcaption { font-size: 0.82rem; color: #888888; text-align: center; margin-top: 0.625rem; }
+  @media (max-width: 640px) { .vp-ss-grid { grid-template-columns: 1fr; } }
   .vp-hero {
     padding: 5rem 1.5rem 3.5rem;
     text-align: center;
