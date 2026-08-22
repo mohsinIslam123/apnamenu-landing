@@ -11,7 +11,7 @@ const canonical = "https://zipla.in/faq/";
 const faqs = [
   {
     q: "What is the best POS billing software for small restaurants in India?",
-    a: "Zipla POS is built specifically for Indian small restaurants, dhabas, and QSRs. It handles counter billing, GST invoices, kitchen display (KDS), and QR table ordering — all on a standard Android phone. Pricing starts at ₹2,999/year with no per-bill commission or AMC charges."
+    a: `Zipla POS is built specifically for Indian small <a href="/restaurant-pos-software/">restaurants</a>, <a href="/dhaba-billing-software/">dhabas</a>, and <a href="/qsr-billing-software/">QSRs</a>. It handles counter billing, GST invoices, kitchen display (KDS), and QR table ordering — all on a standard Android phone. Pricing starts at ₹2,999/year with no per-bill commission or AMC charges.`
   },
   {
     q: "How much does a POS system cost in India for a small business?",
@@ -39,7 +39,7 @@ const faqs = [
   },
   {
     q: "Does Zipla POS support weight-based billing for sweet shops?",
-    a: "Yes. Each menu item can be set with a per-kg price. When billing, enter the weight in grams or kilograms — the total price calculates instantly. You can mix weight-based items and fixed-price items on the same bill. This is one of the core features built for mithai shops and namkeen counters."
+    a: `Yes. Each menu item can be set with a per-kg price. When billing, enter the weight in grams or kilograms — the total price calculates instantly. You can mix weight-based items and fixed-price items on the same bill. This is one of the core features built for <a href="/sweet-shop-billing/">mithai shops</a> and namkeen counters.`
   },
   {
     q: "How do I print bills with Zipla POS?",
@@ -71,7 +71,7 @@ const faqs = [
   },
   {
     q: "Is Zipla POS suitable for a cafe or bakery?",
-    a: "Yes. Zipla POS works for cafes, bakeries, sweet shops, restaurants, dhabas, and QSRs. Cafes use it for table billing and KDS. Bakeries use it for counter sales and daily stock tracking. The menu system supports any item type — food, beverages, packaged goods, or weight-based items."
+    a: `Yes. Zipla POS works for <a href="/cafe-pos-software/">cafes</a>, <a href="/bakery-billing-software/">bakeries</a>, <a href="/sweet-shop-billing/">sweet shops</a>, <a href="/restaurant-pos-software/">restaurants</a>, <a href="/dhaba-billing-software/">dhabas</a>, and <a href="/qsr-billing-software/">QSRs</a>. Cafes use it for table billing and KDS. Bakeries use it for counter sales and daily stock tracking. The menu system supports any item type — food, beverages, packaged goods, or weight-based items.`
   },
   {
     q: "How do I get started with Zipla POS?",
@@ -137,7 +137,7 @@ const jsonLd = {
         {faqs.map((item, i) => (
           <div class="faq-item">
             <h2>{item.q}</h2>
-            <p>{item.a}</p>
+            <p set:html={item.a} />
           </div>
         ))}
       </div>
@@ -169,6 +169,8 @@ const jsonLd = {
   .faq-item:first-child { border-top: 1px solid #1a1a1a; }
   .faq-item h2 { font-size: 1.02rem; font-weight: 600; color: #ffffff; margin: 0 0 0.625rem; line-height: 1.45; }
   .faq-item p { font-size: 0.96rem; color: #aaaaaa; line-height: 1.8; margin: 0; }
+  .faq-item p a { color: #C9A94B; text-decoration: underline; text-underline-offset: 3px; }
+  .faq-item p a:hover { opacity: 0.8; }
   .faq-cta { text-align: center; margin-top: 4rem; padding: 3rem 2rem; background: #111111; border: 1px solid #1e1e1e; border-radius: 12px; }
   .faq-cta h2 { font-size: 1.4rem; font-weight: 700; color: #ffffff; margin: 0 0 0.75rem; }
   .faq-cta p { color: #aaaaaa; margin-bottom: 1.75rem; font-size: 0.97rem; }
