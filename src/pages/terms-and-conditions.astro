@@ -4,9 +4,18 @@ import Header from '../components/Header.jsx';
 import Footer from '../components/Footer.jsx';
 import '../index.css';
 
-const title = "Terms and Conditions — Zipla POS";
-const description = "Terms and Conditions for Zipla POS. Read our service terms, subscription policy, refund policy, and acceptable use guidelines.";
+const title = "Zipla POS Terms and Conditions for Users in India";
+const description = "Read the Zipla POS Terms and Conditions for users in India, including eligibility, trials, pricing, refunds, acceptable use, privacy and account termination.";
 const canonical = "https://zipla.in/terms-and-conditions/";
+
+const termsFaqs = [
+  { question: "Who can use Zipla POS?", answer: "These Terms say that users must be at least 18, act for a business, provide accurate registration information and comply with applicable laws." },
+  { question: "Does Zipla POS offer a free trial?", answer: "Yes. These Terms state that Zipla POS offers a 14-day free trial with no credit card or payment required to begin." },
+  { question: "What are the current Zipla POS plan prices?", answer: "Starter is ₹2,999 per year or ₹5,999 for three years. Pro is ₹4,999 per year or ₹9,899 for three years." },
+  { question: "What does the Terms refund policy say?", answer: "These Terms state a 7-day refund window for annual subscriptions, subject to the conditions listed in the Refund Policy section." },
+  { question: "How can I stop using Zipla POS or request account deletion?", answer: "You may stop using Zipla POS at any time. To request account and data deletion, email support@zipla.in as stated in these Terms." },
+  { question: "Where can I read Zipla POS privacy practices?", answer: "Read the Zipla POS Privacy Policy, which these Terms incorporate by reference for the collection and use of personal data." },
+];
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -15,8 +24,8 @@ const jsonLd = {
       "@type": "WebPage",
       "@id": "https://zipla.in/terms-and-conditions/",
       "url": "https://zipla.in/terms-and-conditions/",
-      "name": "Terms and Conditions — Zipla POS",
-      "description": "Terms and Conditions for Zipla POS billing software.",
+      "name": title,
+      "description": description,
       "isPartOf": { "@id": "https://zipla.in/#website" },
       "breadcrumb": {
         "@type": "BreadcrumbList",
@@ -25,6 +34,15 @@ const jsonLd = {
           { "@type": "ListItem", "position": 2, "name": "Terms and Conditions", "item": "https://zipla.in/terms-and-conditions/" }
         ]
       }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://zipla.in/terms-and-conditions/#faq",
+      "mainEntity": termsFaqs.map((faq) => ({
+        "@type": "Question",
+        "name": faq.question,
+        "acceptedAnswer": { "@type": "Answer", "text": faq.answer }
+      }))
     }
   ]
 };
@@ -34,12 +52,14 @@ const jsonLd = {
   <Header client:load />
 
   <main class="legal-main">
-    <div class="legal-container">
+    <article class="legal-container">
 
       <div class="legal-header">
         <p class="legal-eyebrow">Zipla POS</p>
-        <h1>Terms and Conditions</h1>
+        <h1>Zipla POS Terms and Conditions</h1>
         <p class="legal-meta">Last updated: August 13, 2026 &nbsp;|&nbsp; Effective: August 13, 2026</p>
+        <p class="legal-summary"><strong>Key takeaway:</strong> These Terms and Conditions explain the service, trial, subscription, refund, acceptable-use, account and contact terms stated for Zipla POS.</p>
+        <p class="legal-audience"><strong>Who this is for:</strong> people who visit, register for or use Zipla POS on behalf of a business. <strong>Use these Terms when:</strong> you want to understand the conditions that apply before starting a trial, subscribing, managing an account or contacting Zipla.</p>
       </div>
 
       <div class="legal-body">
@@ -48,7 +68,8 @@ const jsonLd = {
 
         <p>By creating an account or using Zipla POS in any capacity, you confirm that you have read, understood, and agreed to these Terms. If you do not agree, do not use our services.</p>
 
-        <h2>1. Eligibility</h2>
+        <h2>1. Who is eligible to use Zipla POS?</h2>
+        <p class="legal-direct-answer"><strong>Short answer:</strong> These Terms say that users must be at least 18, act for a business, provide accurate registration information and comply with applicable laws.</p>
         <p>To use Zipla POS, you must:</p>
         <ul>
           <li>Be at least 18 years of age</li>
@@ -57,7 +78,8 @@ const jsonLd = {
           <li>Comply with all applicable laws in India and your local jurisdiction</li>
         </ul>
 
-        <h2>2. Account Registration</h2>
+        <h2>2. What are your account registration responsibilities?</h2>
+        <p class="legal-direct-answer"><strong>Short answer:</strong> You are responsible for keeping account access secure, activity under the account and reporting suspected unauthorized access.</p>
         <p>You must create an account to use Zipla POS. You are responsible for:</p>
         <ul>
           <li>Keeping your password secure and confidential</li>
@@ -66,25 +88,28 @@ const jsonLd = {
         </ul>
         <p>We reserve the right to suspend or terminate accounts that provide false information, violate these Terms, or are used for fraudulent purposes.</p>
 
-        <h2>3. Free Trial</h2>
-        <p>Zipla POS offers a <strong>14-day free trial</strong> upon registration. No credit card or payment is required to start the trial. After the trial period ends, you must subscribe to a paid plan to continue using the service. Trial accounts that are not converted to paid plans will be automatically deactivated. Trial data may be retained for 30 days after deactivation, after which it will be permanently deleted.</p>
+        <h2>3. Does Zipla POS offer a free trial?</h2>
+        <p><strong>Short answer:</strong> These Terms state that Zipla POS offers a <strong>14-day free trial</strong> with no credit card or payment required to start.</p>
+        <p>After the trial period ends, you must subscribe to a paid plan to continue using the service. Trial accounts that are not converted to paid plans will be automatically deactivated. Trial data may be retained for 30 days after deactivation, after which it will be permanently deleted.</p>
 
-        <h2>4. Subscription and Payments</h2>
+        <h2>4. How do Zipla POS subscriptions and payments work?</h2>
+        <p><strong>Short answer:</strong> These Terms list annual and three-year Starter and Pro options, payment processing details and manual renewal terms below.</p>
 
-        <h3>a) Plans and Pricing</h3>
+        <h3>a) What are the Zipla POS plan prices?</h3>
         <ul>
           <li><strong>Starter:</strong> ₹2,999 per year &nbsp;|&nbsp; ₹5,999 for 3 years</li>
           <li><strong>Pro:</strong> ₹4,999 per year &nbsp;|&nbsp; ₹9,899 for 3 years</li>
         </ul>
         <p>All prices are in Indian Rupees (INR) and are inclusive of applicable taxes. Pricing is subject to change with at least 30 days advance notice to existing subscribers.</p>
 
-        <h3>b) Payment Processing</h3>
+        <h3>b) How are subscription payments processed?</h3>
         <p>All payments are processed through <strong>Razorpay</strong>, a licensed payment aggregator in India. We do not store your payment card or UPI credentials. By making a payment, you also agree to Razorpay's <a href="https://razorpay.com/terms/" target="_blank" rel="noopener">Terms of Service</a>.</p>
 
-        <h3>c) Renewal</h3>
+        <h3>c) Do subscriptions renew automatically?</h3>
         <p>Subscriptions do not auto-renew. You will receive an email reminder before your subscription expires. You must manually renew to continue using the service after your subscription period ends.</p>
 
-        <h2>5. Refund Policy</h2>
+        <h2>5. What does the Zipla POS refund policy say?</h2>
+        <p><strong>Short answer:</strong> These Terms state a 7-day refund window for annual subscriptions, subject to the conditions listed below.</p>
         <p>We offer a <strong>7-day refund window</strong> from the date of payment for annual subscriptions, subject to the following conditions:</p>
         <ul>
           <li>Refund request must be submitted within 7 days of payment via email to <a href="mailto:support@zipla.in">support@zipla.in</a></li>
@@ -95,7 +120,8 @@ const jsonLd = {
         </ul>
         <p>We reserve the right to decline refund requests that show clear signs of abuse of this policy.</p>
 
-        <h2>6. Acceptable Use</h2>
+        <h2>6. What is acceptable use of Zipla POS?</h2>
+        <p><strong>Short answer:</strong> Zipla POS may be used only for lawful business purposes. These Terms list actions that users must not take.</p>
         <p>You agree to use Zipla POS only for lawful business purposes. You must not:</p>
         <ul>
           <li>Use the platform to process fraudulent transactions or fake billing</li>
@@ -107,18 +133,22 @@ const jsonLd = {
         </ul>
         <p>Violation of this section may result in immediate account termination without refund.</p>
 
-        <h2>7. Intellectual Property</h2>
+        <h2>7. Who owns Zipla POS and business data?</h2>
+        <p><strong>Short answer:</strong> These Terms state that Zipla owns its software, code, design, content, trademarks and branding, while business data created in the platform belongs to the user.</p>
         <p>All software, code, design, content, trademarks, and branding related to Zipla POS — including the name "Zipla", the Zipla logo, and all product features — are the exclusive intellectual property of Zipla. You may not copy, modify, distribute, or create derivative works from any part of our software or branding.</p>
         <p>Your business data (menu items, bills, customer records) belongs to you. We claim no ownership over data you create within the platform.</p>
 
-        <h2>8. Service Availability</h2>
+        <h2>8. Is Zipla POS service availability guaranteed?</h2>
+        <p><strong>Short answer:</strong> No. These Terms say that uninterrupted service is not guaranteed and describe planned-maintenance communication where possible.</p>
         <p>We aim to keep Zipla POS available 24/7, but we do not guarantee uninterrupted service. Downtime may occur due to maintenance, infrastructure issues, or circumstances beyond our control. We will not be liable for losses arising from service unavailability.</p>
         <p>Planned maintenance will be communicated at least 24 hours in advance where possible.</p>
 
-        <h2>9. Data and Privacy</h2>
+        <h2>9. How do these Terms handle data and privacy?</h2>
+        <p><strong>Short answer:</strong> The collection and use of personal data are governed by the <a href="/privacy-policy/">Zipla POS Privacy Policy</a>, which these Terms incorporate by reference.</p>
         <p>Our collection and use of your personal data is governed by our <a href="/privacy-policy/">Privacy Policy</a>, which is incorporated into these Terms by reference. By using Zipla POS, you consent to data practices described in the Privacy Policy.</p>
 
-        <h2>10. Limitation of Liability</h2>
+        <h2>10. What limits apply to Zipla POS liability?</h2>
+        <p><strong>Short answer:</strong> These Terms list the categories of loss for which Zipla is not liable and state an aggregate-liability limit.</p>
         <p>To the maximum extent permitted by applicable law, Zipla shall not be liable for:</p>
         <ul>
           <li>Any indirect, incidental, or consequential losses arising from use of our service</li>
@@ -128,12 +158,13 @@ const jsonLd = {
         </ul>
         <p>Our total aggregate liability to you shall not exceed the total subscription amount paid by you in the 12 months immediately preceding the claim.</p>
 
-        <h2>11. Termination</h2>
+        <h2>11. How can a Zipla POS account be terminated?</h2>
+        <p><strong>Short answer:</strong> You may stop using Zipla POS at any time and request account deletion by email. These Terms also list the situations in which Zipla may suspend or terminate an account.</p>
 
-        <h3>By You</h3>
+        <h3>How can you end your account?</h3>
         <p>You may stop using Zipla POS at any time. To delete your account and data, email us at <a href="mailto:support@zipla.in">support@zipla.in</a>. Subscription fees already paid are non-refundable beyond the 7-day refund window.</p>
 
-        <h3>By Us</h3>
+        <h3>When can Zipla terminate an account?</h3>
         <p>We may terminate or suspend your account without prior notice if you:</p>
         <ul>
           <li>Violate these Terms</li>
@@ -142,14 +173,17 @@ const jsonLd = {
         </ul>
         <p>Upon termination, your access to the service will end immediately. Your data will be retained for 30 days before permanent deletion, during which you may request an export.</p>
 
-        <h2>12. Changes to These Terms</h2>
+        <h2>12. How will Zipla update these Terms and Conditions?</h2>
+        <p><strong>Short answer:</strong> These Terms state that material changes will be communicated by email to registered users at least 15 days before they take effect.</p>
         <p>We reserve the right to update these Terms at any time. Material changes will be communicated via email to registered users at least 15 days before they take effect. Continued use of Zipla POS after the effective date of changes means you accept the updated Terms.</p>
 
-        <h2>13. Governing Law and Disputes</h2>
+        <h2>13. Which law governs these Terms and Conditions?</h2>
+        <p><strong>Short answer:</strong> These Terms state that Indian law governs and that disputes are subject to the jurisdiction described below.</p>
         <p>These Terms are governed by the laws of India. Any disputes arising out of or relating to these Terms or your use of Zipla POS shall be subject to the exclusive jurisdiction of the courts in Uttar Pradesh, India.</p>
         <p>Before initiating legal action, we encourage you to contact us at <a href="mailto:support@zipla.in">support@zipla.in</a> to resolve the issue informally. Most concerns are resolved within 5–7 working days.</p>
 
-        <h2>14. Contact</h2>
+        <h2>14. How can you contact Zipla about these Terms?</h2>
+        <p><strong>Short answer:</strong> For questions about these Terms, email support@zipla.in.</p>
         <p>For any questions about these Terms:</p>
         <div class="legal-contact">
           <p><strong>Zipla POS</strong><br />
@@ -159,13 +193,31 @@ const jsonLd = {
 
       </div>
 
+      <section class="legal-faq" aria-labelledby="terms-faq-title">
+        <h2 id="terms-faq-title">Terms and Conditions FAQs</h2>
+        <p>Short answers drawn from the visible Terms above for people considering, starting or managing a Zipla POS account.</p>
+        <div class="legal-faq-list">
+          {termsFaqs.map((faq) => (
+            <section class="legal-faq-item">
+              <h3>{faq.question}</h3>
+              <p>{faq.answer}</p>
+            </section>
+          ))}
+        </div>
+      </section>
+
+      <nav class="legal-related" aria-labelledby="terms-related-title">
+        <h2 id="terms-related-title">Where can you find related Zipla information?</h2>
+        <p><strong>Short answer:</strong> Read the <a href="/privacy-policy/">Zipla POS Privacy Policy</a> for data practices, use the <a href="/faq/">Zipla POS FAQ</a> for product and account answers, or return to the <a href="/">Zipla POS homepage</a>.</p>
+      </nav>
+
       <div class="legal-back">
         <a href="/" class="legal-back-link">← Back to Zipla POS</a>
         &nbsp;&nbsp;
         <a href="/privacy-policy/" class="legal-back-link">Privacy Policy →</a>
       </div>
 
-    </div>
+    </article>
   </main>
 
   <Footer />
@@ -192,4 +244,15 @@ const jsonLd = {
   .legal-back { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid #1e1e1e; display: flex; gap: 2rem; flex-wrap: wrap; }
   .legal-back-link { color: #C9A94B; text-decoration: none; font-size: 0.9rem; font-weight: 600; }
   .legal-back-link:hover { opacity: 0.8; }
+  .legal-summary, .legal-audience { max-width: 690px; margin: 14px 0 0; color: #aaaaaa; font-size: .94rem; line-height: 1.72; }
+  .legal-summary { color: #cccccc; }
+  .legal-direct-answer { padding: 12px 14px; border-left: 3px solid #C9A94B; border-radius: 0 8px 8px 0; background: rgba(201,169,75,.08); color: #cccccc; }
+  .legal-template, .legal-faq, .legal-related { margin-top: 2.75rem; padding: 1.5rem; border: 1px solid #1e1e1e; border-radius: 12px; background: #111111; }
+  .legal-faq h2, .legal-related h2 { margin-top: 0; }
+  .legal-faq > p, .legal-related p { margin: 0; color: #cccccc; line-height: 1.8; }
+  .legal-faq-list { display: grid; gap: 12px; margin-top: 18px; }
+  .legal-faq-item { padding: 16px; border: 1px solid #242424; border-radius: 8px; background: #0D0D0D; }
+  .legal-faq-item h3 { margin: 0 0 7px; }
+  .legal-faq-item p { margin: 0; color: #aaaaaa; font-size: .94rem; line-height: 1.75; }
+  .legal-related a { color: #C9A94B; text-decoration: underline; text-underline-offset: 3px; }
 </style>
