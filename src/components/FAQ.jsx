@@ -16,6 +16,7 @@ export default function FAQ() {
       <div className="faq-list">
         {ITEMS.map(i => <details className="faq-item" key={i.q}><summary className="faq-q">{i.q}<Plus /></summary><div className="faq-a">{i.a}</div></details>)}
       </div>
+      <p className="faq-more"><a href="/faq/">View all Zipla POS FAQs <span aria-hidden="true">→</span></a></p>
     </section>
   )
 }
