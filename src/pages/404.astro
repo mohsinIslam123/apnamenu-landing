@@ -1,0 +1,40 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.jsx';
+import Footer from '../components/Footer.jsx';
+import '../index.css';
+---
+
+<Layout
+  title="Page Not Found | Zipla POS"
+  description="The page you requested is not available."
+  canonical={null}
+  robots="noindex"
+>
+  <Header client:load />
+
+  <main class="not-found-main">
+    <section class="not-found-card" aria-labelledby="not-found-title">
+      <span class="not-found-code">404</span>
+      <h1 id="not-found-title">That page is not available.</h1>
+      <p>The link may be old or the page may have moved. Use the homepage to explore Zipla POS or book a product demo.</p>
+      <div class="not-found-actions">
+        <a class="btn-cta" href="/">Go to Zipla POS Home</a>
+        <a class="btn-ghost" href="/#demo">Book Free WhatsApp Demo</a>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
+
+<style>
+  .not-found-main { display: grid; min-height: calc(100vh - 152px); place-items: center; padding: 72px 24px 96px; }
+  .not-found-card { width: min(100%, 680px); padding: clamp(36px, 7vw, 72px) clamp(24px, 6vw, 56px); border: 1px solid var(--border-hi); border-radius: var(--r-xl); background: radial-gradient(ellipse at 50% 0%, rgba(202,160,76,.14), transparent 62%), var(--surface); text-align: center; }
+  .not-found-code { display: block; margin-bottom: 14px; color: var(--amber-2); font-family: var(--display); font-size: clamp(64px, 12vw, 112px); font-weight: 800; letter-spacing: -5px; line-height: .9; }
+  .not-found-card h1 { margin: 0 0 14px; color: var(--text); font-family: var(--display); font-size: clamp(28px, 4.5vw, 44px); letter-spacing: -.8px; line-height: 1.1; }
+  .not-found-card p { max-width: 500px; margin: 0 auto 30px; color: var(--text-2); font-size: 15px; line-height: 1.7; }
+  .not-found-actions { display: flex; justify-content: center; flex-wrap: wrap; gap: 12px; }
+  .not-found-actions .btn-cta, .not-found-actions .btn-ghost { padding: 13px 20px; }
+  @media (max-width: 540px) { .not-found-main { min-height: calc(100vh - 132px); padding: 48px 18px 72px; } .not-found-card { border-radius: 18px; } .not-found-actions { display: grid; } .not-found-actions a { justify-content: center; width: 100%; } }
+</style>
