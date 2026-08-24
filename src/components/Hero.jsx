@@ -64,7 +64,7 @@ export default function Hero() {
             <span className="hero-callout-icon"><KitchenIcon /></span>
             <span><strong>Kitchen orders</strong><small>Live KDS order queue</small></span>
           </div>
-          <figcaption id="hero-product-caption">Actual Zipla POS interface shown across desktop, tablet, and Android.</figcaption>
+          <figcaption id="hero-product-caption">Actual Zipla POS product screenshot shown across desktop, tablet, and Android.</figcaption>
         </figure>
       </div>
     </section>
