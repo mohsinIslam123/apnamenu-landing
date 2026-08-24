@@ -4,84 +4,113 @@ import Header from '../../components/Header.jsx';
 import Footer from '../../components/Footer.jsx';
 import '../../index.css';
 
-const title = "Zipla POS Blog — Restaurant Billing & POS Guides for India";
-const description = "Guides for Indian restaurant, dhaba, cafe, and QSR owners on GST billing, POS software, stock management, and running a food business smarter.";
-const canonical = "https://zipla.in/blog/";
+const title = 'Restaurant Billing & POS Guides for India | Zipla POS Blog';
+const description = 'Restaurant billing and POS guides for India for restaurant, dhaba, cafe, QSR, bakery and sweet-shop owners evaluating billing workflows.';
+const canonical = 'https://zipla.in/blog/';
+
+const faqs = [
+  { question: 'Who are these restaurant billing and POS guides for?', answer: 'They are for Indian restaurant, dhaba, cafe, QSR, bakery and sweet-shop owners who want to understand billing workflows before choosing a plan or setting up a counter.' },
+  { question: 'Which guide should a dhaba owner read first?', answer: 'Start with the restaurant and dhaba GST invoice guide, then compare the dedicated dhaba billing software workflow with the way your counter and kitchen operate.' },
+  { question: 'Do these guides replace professional GST advice?', answer: 'No. Use them to understand product and billing-workflow questions. For current tax obligations, filing and legal decisions, verify the applicable requirement with the GST Portal and a qualified tax professional.' },
+  { question: 'What should an owner test before choosing Zipla POS?', answer: 'Use a small version of your real menu, create a bill, mark a payment mode, test printing or WhatsApp bill sharing, and test the kitchen handoff only when it is relevant to your plan.' },
+];
 
 const jsonLd = {
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "WebPage",
-      "@id": "https://zipla.in/blog/",
-      "url": "https://zipla.in/blog/",
-      "name": "Zipla POS Blog — Restaurant Billing & POS Guides for India",
-      "description": "Guides for Indian restaurant, dhaba, cafe, and QSR owners on GST billing, POS software, and running a food business smarter.",
-      "isPartOf": { "@id": "https://zipla.in/#website" },
-      "breadcrumb": {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://zipla.in" },
-          { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://zipla.in/blog/" }
-        ]
-      }
-    }
-  ]
+  '@context': 'https://schema.org',
+  '@graph': [
+    { '@type': 'WebPage', '@id': canonical, url: canonical, name: title, description, isPartOf: { '@id': 'https://zipla.in/#website' }, about: { '@id': 'https://zipla.in/#software' }, inLanguage: 'en-IN', breadcrumb: { '@id': `${canonical}#breadcrumb` } },
+    { '@type': 'BreadcrumbList', '@id': `${canonical}#breadcrumb`, itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: 'https://zipla.in/' }, { '@type': 'ListItem', position: 2, name: 'Blog', item: canonical }] },
+    { '@type': 'FAQPage', '@id': `${canonical}#faq`, mainEntity: faqs.map((faq) => ({ '@type': 'Question', name: faq.question, acceptedAnswer: { '@type': 'Answer', text: faq.answer } })) },
+  ],
 };
 ---
 
 <Layout title={title} description={description} canonical={canonical} jsonLd={jsonLd}>
   <Header client:load />
-
   <main class="blog-main">
+    <article class="blog-article">
+      <section class="blog-hero" aria-labelledby="blog-title">
+        <div class="blog-container">
+          <p class="blog-eyebrow">Zipla POS Blog</p>
+          <h1 id="blog-title">Restaurant Billing & POS Guides for India</h1>
+          <p class="blog-summary"><strong>Key takeaway:</strong> Restaurant Billing & POS Guides for India help food-business owners understand billing, GST-invoice, counter, kitchen and plan-selection questions before they test a workflow.</p>
+          <p class="blog-lead"><strong>Quick answer:</strong> This Zipla POS blog is for Indian restaurant, dhaba, cafe, QSR, bakery and sweet-shop owners who want practical, product-specific guidance without unsupported claims or generic software comparisons.</p>
+        </div>
+      </section>
 
-    <section class="blog-hero">
-      <div class="blog-container">
-        <p class="blog-eyebrow">Zipla POS Blog</p>
-        <h1 class="blog-h1">Restaurant Billing & POS Guides for India</h1>
-        <p class="blog-lead">Practical guides for restaurant, dhaba, cafe, bakery, and QSR owners — GST billing, POS software, stock management, and more.</p>
-      </div>
-    </section>
+      <section class="blog-section" aria-labelledby="blog-definition-title">
+        <div class="blog-container">
+          <header class="blog-section-head">
+            <span>Guide purpose</span>
+            <h2 id="blog-definition-title">What are restaurant billing and POS guides for India?</h2>
+            <p>Restaurant billing and POS guides explain the operating steps behind a food-business counter: setting up menu items, creating a bill, marking a payment mode, handing an order to a kitchen when relevant and reviewing the day. Use them when you need to decide whether your actual workflow fits a billing system.</p>
+          </header>
+          <div class="blog-card-grid">
+            <div class="blog-info-card"><span>Restaurant and dhaba</span><h3>GST invoice questions</h3><p>Read the current guide when you need a plain-language starting point for restaurant or dhaba GST invoice fields and billing workflow questions.</p><a href="/blog/restaurant-dhaba-gst-invoice-guide-2026/">Read the restaurant and dhaba GST invoice guide</a></div>
+            <div class="blog-info-card"><span>Counter-led outlet</span><h3>QSR workflow</h3><p>Compare counter billing, payment marking and the optional kitchen handoff for a quick-service outlet.</p><a href="/qsr-billing-software/">Explore QSR billing software</a></div>
+            <div class="blog-info-card"><span>Owner-led eatery</span><h3>Dhaba workflow</h3><p>Check the billing and day-review questions that matter to highway and neighbourhood dhaba operations.</p><a href="/dhaba-billing-software/">Explore dhaba billing software</a></div>
+          </div>
+        </div>
+      </section>
 
-    <section class="blog-list-section">
-      <div class="blog-container">
+      <section class="blog-section blog-section--muted" aria-labelledby="blog-audience-title">
+        <div class="blog-container">
+          <header class="blog-section-head">
+            <span>Audience and decision context</span>
+            <h2 id="blog-audience-title">Which food-business guide should you read first?</h2>
+            <p>Choose the guide around your service model, not a broad label. The useful starting point is how orders move from the customer to billing and, if you use it, the kitchen.</p>
+          </header>
+          <div class="blog-table-wrap">
+            <table>
+              <thead><tr><th scope="col">Your service model</th><th scope="col">Start with</th><th scope="col">What to evaluate</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">Restaurant with tables or kitchen handoff</th><td><a href="/restaurant-pos-software/">Restaurant POS software</a></td><td>Counter bills, table ordering, KDS and day-close workflow.</td></tr>
+                <tr><th scope="row">Cafe with counter and seated diners</th><td><a href="/cafe-pos-software/">Cafe POS software</a></td><td>Counter orders, table QR ordering and kitchen visibility.</td></tr>
+                <tr><th scope="row">Bakery or sweet counter</th><td><a href="/bakery-billing-software/">Bakery billing software</a> or <a href="/sweet-shop-billing/">sweet shop billing software</a></td><td>Weight, piece or fixed-price billing and inventory visibility.</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
 
-        <article class="blog-card">
-          <a href="/blog/restaurant-dhaba-gst-invoice-guide-2026/" class="blog-card-link">
-            <div class="blog-card-meta">
-              <span class="blog-tag">GST Billing</span>
-              <span class="blog-date">August 20, 2026</span>
-            </div>
-            <h2 class="blog-card-title">GST Invoice for Restaurant and Dhaba in India — Step by Step Guide 2026</h2>
-            <p class="blog-card-excerpt">Every GST-registered restaurant must issue compliant tax invoices — but many owners get the format, rate split, or required fields wrong. This guide covers mandatory invoice fields, GST rates for food service, common mistakes, and how billing software handles it automatically.</p>
-            <span class="blog-read-more">Read Guide →</span>
-          </a>
-        </article>
+      <section class="blog-section" aria-labelledby="blog-proof-title">
+        <div class="blog-container blog-proof-layout">
+          <div>
+            <span class="blog-kicker">Product reference</span>
+            <h2 id="blog-proof-title">What can an owner verify in a Zipla POS workflow?</h2>
+            <p><strong>Short answer:</strong> Use the guides with an actual Zipla POS screen and your own menu. That is more useful than relying on a generic feature list.</p>
+            <p>For a real counter test, add familiar menu items, create one customer bill, mark cash, UPI or card, and then check whether the owner-review information fits your plan. If your business needs a kitchen handoff, test the Pro KDS workflow separately.</p>
+            <p>Need product-specific answers before a test? Read the <a href="/faq/">Zipla POS FAQ</a> for confirmed features, device use, printing, trial and plan information.</p>
+          </div>
+          <figure><img src="/screenshots/ss-gst-invoice.webp" alt="Actual Zipla POS GST invoice screen used as product reference in billing guides" loading="lazy" width="1232" height="860" /><figcaption>Actual Zipla POS GST invoice screen. It is product reference material, not a customer testimonial or performance claim.</figcaption></figure>
+        </div>
+      </section>
 
-      </div>
-    </section>
+      <section class="blog-section blog-section--muted" aria-labelledby="blog-source-title">
+        <div class="blog-container">
+          <header class="blog-section-head">
+            <span>Source and verification</span>
+            <h2 id="blog-source-title">Where should a food-business owner verify current GST requirements?</h2>
+            <p>Use the official <a href="https://tutorial.gst.gov.in/userguide/taxpayersdashboard/manual_accountingsoftware.htm" target="_blank" rel="noopener noreferrer">GST Portal accounting and billing software guidance</a> and a qualified tax professional for current tax, filing or legal decisions. Zipla POS guides explain the product workflow; they do not replace professional advice.</p>
+          </header>
+        </div>
+      </section>
 
+      <section class="blog-section" aria-labelledby="blog-faq-title">
+        <div class="blog-container">
+          <header class="blog-section-head"><span>Reader questions</span><h2 id="blog-faq-title">Frequently asked questions about these billing guides</h2><p>Concise answers for owners choosing the next guide or planning a product test.</p></header>
+          <div class="blog-faq-list">{faqs.map((faq) => (<section class="blog-faq-item"><h3>{faq.question}</h3><p>{faq.answer}</p></section>))}</div>
+        </div>
+      </section>
+
+      <section class="blog-section blog-section--compact">
+        <div class="blog-container"><div class="blog-cta"><h2>Use the right guide with your real food-business workflow.</h2><p>Start with the guide that matches your service model, then use the 14-day Zipla POS trial with a small version of your own menu.</p><div><a class="btn-cta" href="https://app.zipla.in/register">Start 14-Day Free Trial</a><a class="btn-ghost" href="/#demo">Book Free WhatsApp Demo</a></div></div></div>
+      </section>
+    </article>
   </main>
-
   <Footer />
 </Layout>
 
 <style>
-  .blog-main { background: #0D0D0D; min-height: 100vh; }
-  .blog-hero { padding: 5rem 1.5rem 3rem; text-align: center; border-bottom: 1px solid #1a1a1a; }
-  .blog-container { max-width: 820px; margin: 0 auto; padding: 0 1rem; }
-  .blog-eyebrow { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #C9A94B; margin-bottom: 1rem; }
-  .blog-h1 { font-size: clamp(1.8rem, 4vw, 2.5rem); font-weight: 700; color: #ffffff; line-height: 1.22; margin: 0 auto 1.25rem; }
-  .blog-lead { font-size: 1.05rem; color: #aaaaaa; line-height: 1.75; max-width: 580px; margin: 0 auto; }
-  .blog-list-section { padding: 3rem 1.5rem 5rem; }
-  .blog-card { background: #111111; border: 1px solid #1e1e1e; border-radius: 10px; margin-bottom: 1.5rem; transition: border-color 0.18s; }
-  .blog-card:hover { border-color: #C9A94B; }
-  .blog-card-link { display: block; padding: 1.75rem 2rem; text-decoration: none; color: inherit; }
-  .blog-card-meta { display: flex; align-items: center; gap: 1rem; margin-bottom: 0.875rem; }
-  .blog-tag { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #C9A94B; background: rgba(201,169,75,0.1); padding: 0.2rem 0.6rem; border-radius: 4px; }
-  .blog-date { font-size: 0.82rem; color: #666666; }
-  .blog-card-title { font-size: 1.3rem; font-weight: 700; color: #ffffff; line-height: 1.35; margin: 0 0 0.875rem; }
-  .blog-card-excerpt { font-size: 0.95rem; color: #aaaaaa; line-height: 1.75; margin: 0 0 1.25rem; }
-  .blog-read-more { font-size: 0.88rem; font-weight: 600; color: #C9A94B; }
-  @media (max-width: 600px) { .blog-card-link { padding: 1.25rem; } .blog-hero { padding: 3.5rem 1.25rem 2rem; } }
+  .blog-main{background:var(--bg);min-height:100vh}.blog-hero{padding:74px 24px 58px;background:radial-gradient(ellipse 70% 70% at 50% 0,rgba(202,160,76,.14),transparent 72%);border-bottom:1px solid var(--border)}.blog-container{width:min(100% - 48px,960px);margin:0 auto}.blog-eyebrow,.blog-section-head>span,.blog-kicker{display:block;margin-bottom:12px;color:var(--amber-2);font-size:11px;font-weight:800;letter-spacing:1.15px;text-transform:uppercase}.blog-h1,.blog-hero h1{max-width:760px;margin:0 auto 16px;font-family:var(--display);font-size:clamp(34px,4vw,52px);line-height:1.08;text-align:center}.blog-summary{max-width:730px;margin:0 auto 12px;color:var(--text);font-size:16px;font-weight:650;line-height:1.7;text-align:center}.blog-lead{max-width:710px;margin:0 auto;color:var(--text-2);font-size:16px;line-height:1.75;text-align:center}.blog-section{padding:92px 0}.blog-section--muted{background:linear-gradient(180deg,rgba(202,160,76,.05),transparent 78%)}.blog-section--compact{padding-top:0}.blog-section-head{max-width:760px;margin:0 auto 36px;text-align:center}.blog-section-head h2,.blog-proof-layout h2,.blog-cta h2{margin:0 0 14px;font-family:var(--display);font-size:clamp(27px,3vw,39px);line-height:1.13}.blog-section-head p,.blog-proof-layout p{color:var(--text-2);font-size:15px;line-height:1.75}.blog-section-head a,.blog-proof-layout a,.blog-info-card a,.blog-table-wrap a{color:var(--amber-2);font-weight:700;text-decoration:underline;text-decoration-color:rgba(232,201,131,.4);text-underline-offset:3px}.blog-card-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.blog-info-card{padding:25px;border:1px solid var(--border);border-radius:16px;background:var(--surface)}.blog-info-card>span{display:block;margin-bottom:15px;color:var(--amber-2);font-size:10px;font-weight:800;letter-spacing:1px;text-transform:uppercase}.blog-info-card h3{margin:0 0 10px;font-family:var(--display);font-size:18px}.blog-info-card p{margin:0 0 18px;color:var(--text-2);font-size:13.5px;line-height:1.65}.blog-info-card a{font-size:13px}.blog-table-wrap{overflow-x:auto;border:1px solid var(--border);border-radius:14px}.blog-table-wrap table{width:100%;min-width:640px;border-collapse:collapse;text-align:left}.blog-table-wrap th,.blog-table-wrap td{padding:15px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-2);font-size:13.5px;line-height:1.6}.blog-table-wrap thead th{background:rgba(202,160,76,.09);color:var(--amber-2);font-size:10.5px;font-weight:800;letter-spacing:.7px;text-transform:uppercase}.blog-table-wrap tbody th{color:var(--text);font-weight:700}.blog-table-wrap tbody tr:last-child>*{border-bottom:0}.blog-proof-layout{display:grid;grid-template-columns:minmax(0,.9fr) minmax(360px,1.1fr);gap:64px;align-items:center}.blog-proof-layout figure{margin:0}.blog-proof-layout img{width:100%;height:auto;border:1px solid var(--border-hi);border-radius:16px;box-shadow:0 20px 55px rgba(0,0,0,.28)}.blog-proof-layout figcaption{margin-top:10px;color:var(--text-3);font-size:11.5px;line-height:1.55;text-align:center}.blog-faq-list{display:grid;gap:12px}.blog-faq-item{padding:20px;border:1px solid var(--border);border-radius:12px;background:var(--surface)}.blog-faq-item h3{margin:0 0 8px;font-family:var(--display);font-size:17px}.blog-faq-item p{margin:0;color:var(--text-2);font-size:14px;line-height:1.7}.blog-cta{padding:58px 28px;border:1px solid var(--border-hi);border-radius:22px;background:linear-gradient(145deg,rgba(202,160,76,.15),var(--surface-2) 56%);text-align:center}.blog-cta h2{max-width:650px;margin-left:auto;margin-right:auto}.blog-cta p{max-width:600px;margin:0 auto 25px;color:var(--text-2);font-size:15px;line-height:1.7}.blog-cta>div{display:flex;justify-content:center;flex-wrap:wrap;gap:12px}@media(max-width:800px){.blog-card-grid,.blog-proof-layout{grid-template-columns:1fr;gap:18px}.blog-section{padding:72px 0}}@media(max-width:620px){.blog-container{width:min(100% - 36px,960px)}.blog-hero{padding:56px 18px 44px}.blog-section{padding:62px 0}.blog-cta{padding:42px 18px}.blog-cta>div{display:grid}.blog-cta a{justify-content:center;width:100%}}
 </style>
