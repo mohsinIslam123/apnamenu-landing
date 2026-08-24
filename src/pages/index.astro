@@ -3,6 +3,8 @@ import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.jsx';
 import Hero from '../components/Hero.jsx';
 import TrustBar from '../components/TrustBar.jsx';
+import ProductShowcase from '../components/ProductShowcase.jsx';
+import BusinessTypes from '../components/BusinessTypes.jsx';
 import Workflow from '../components/Workflow.jsx';
 import Features from '../components/Features.jsx';
 import Testimonials from '../components/Testimonials.jsx';
@@ -76,6 +78,8 @@ const jsonLd = {
   <main>
     <Hero />
     <TrustBar />
+    <ProductShowcase />
+    <BusinessTypes />
     <Workflow />
     <Features />
     <Testimonials videos={CUSTOMER_VIDEOS} client:visible />
