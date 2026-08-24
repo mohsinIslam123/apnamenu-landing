@@ -33,7 +33,7 @@ export default function Hero() {
           <p className="sub">From counter bills to kitchen orders and GST invoices, Zipla gives your team one simple system to run daily service.</p>
           <div className="hero-ctas">
             <a className="btn-cta" href="https://app.zipla.in/register">Start 14-Day Free Trial</a>
-            <a className="btn-ghost" href="#demo">Book Free WhatsApp Demo</a>
+            <a className="btn-ghost" href="/#demo">Book Free WhatsApp Demo</a>
           </div>
           <ul className="hero-assurances" aria-label="Trial details">
             <li><CheckIcon />14-day free trial</li>
