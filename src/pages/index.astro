@@ -22,39 +22,18 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "WebSite",
-      "@id": "https://zipla.in/#website",
-      "name": "Zipla POS",
+      "@type": "WebPage",
+      "@id": "https://zipla.in/#webpage",
       "url": "https://zipla.in",
-      "publisher": { "@id": "https://zipla.in/#organization" }
-    },
-    {
-      "@type": "Organization",
-      "@id": "https://zipla.in/#organization",
-      "name": "Zipla POS",
-      "url": "https://zipla.in",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://zipla.in/zipla-logo.webp"
-      },
-      "email": "support@zipla.in"
-    },
-    {
-      "@type": "SoftwareApplication",
-      "@id": "https://zipla.in/#software",
-      "name": "Zipla POS",
-      "url": "https://zipla.in",
-      "applicationCategory": "BusinessApplication",
-      "operatingSystem": "Web Browser",
-      "description": "Restaurant POS billing software for Indian small businesses — counter billing, auto GST invoice, kitchen display, and QR table ordering.",
-      "author": { "@id": "https://zipla.in/#organization" },
-      "offers": [
-        { "@type": "Offer", "price": "2999", "priceCurrency": "INR", "name": "Starter" },
-        { "@type": "Offer", "price": "4999", "priceCurrency": "INR", "name": "Pro" }
-      ]
+      "name": "Zipla POS — Restaurant POS Billing Software for India",
+      "description": "Restaurant POS billing software for Indian businesses — counter billing, auto GST invoice, kitchen display, QR ordering. 14-day free trial, no card required.",
+      "isPartOf": { "@id": "https://zipla.in/#website" },
+      "about": { "@id": "https://zipla.in/#software" },
+      "inLanguage": "en-IN"
     },
     {
       "@type": "FAQPage",
+      "@id": "https://zipla.in/#faq",
       "mainEntity": [
         { "@type": "Question", "name": "How do I access my business data?", "acceptedAnswer": { "@type": "Answer", "text": "Use your Zipla login to access your business workspace." } },
         { "@type": "Question", "name": "Will my staff need training?", "acceptedAnswer": { "@type": "Answer", "text": "Zipla uses a touch-friendly interface with minimal clicks. Book a demo and we’ll walk your team through the relevant workflow." } },
