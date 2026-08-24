@@ -49,9 +49,10 @@ export default function BusinessTypes() {
       <div className="business-types-head">
         <div>
           <span className="eyebrow">Built for your service model</span>
-          <h2 id="business-types-title">A better fit than a generic billing app.</h2>
+          <h2 id="business-types-title">Who is Zipla POS for?</h2>
+          <p className="business-types-answer">Zipla POS is for Indian restaurants, cafés, bakeries, sweet shops, QSRs, and dhabas that need billing and operations to fit their actual service model.</p>
         </div>
-        <p>Every food business runs a little differently. Choose your business type to see the Zipla POS workflow that fits it.</p>
+        <p>Choose your business type to see the relevant counter, table-service, or weight-based workflow.</p>
       </div>
       <div className="business-types-grid">
         {BUSINESSES.map(function(business) {
