@@ -3,301 +3,275 @@ import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.jsx';
 import Footer from '../components/Footer.jsx';
 import '../index.css';
+import '../vertical-page.css';
 
-const title = "Restaurant POS Software India — Fast Billing & KDS | Zipla POS";
-const description = "Best restaurant billing software for India. Fast table billing, Kitchen Display System, QR ordering & day-close reports. Works on Android. Starts at ₹2,999/yr.";
-const canonical = "https://zipla.in/restaurant-pos-software/";
+const title = 'Restaurant POS Billing Software for India | KDS & QR | Zipla POS';
+const description = 'Restaurant POS billing software for India for table-service and counter restaurants: GST invoices, KDS, QR ordering, payment tracking and day-close reports.';
+const canonical = 'https://zipla.in/restaurant-pos-software/';
+
+const faqs = [
+  {
+    question: 'What is restaurant POS billing software?',
+    answer: 'Restaurant POS billing software brings order taking, GST billing, kitchen handoff, payment tracking and daily review into one workflow. Zipla POS is built for Indian restaurant teams that need counter or table-service operations in one system.',
+  },
+  {
+    question: 'Who is Zipla POS for?',
+    answer: 'Zipla POS is for Indian restaurant owners and teams running counter service, table service, takeaway, QSR, dhaba or small multi-table operations. Choose the workflow around how orders move from customer to kitchen and bill.',
+  },
+  {
+    question: 'Which Zipla POS plan fits a restaurant?',
+    answer: 'Starter is for counter billing, GST invoices, inventory with low-stock alerts, payment-mode tracking and staff roles. Pro includes everything in Starter plus Kitchen Display System, table QR ordering, Bluetooth KOT auto-print, sales analytics and day-close reports.',
+  },
+  {
+    question: 'Can Zipla POS support table orders and kitchen handoff?',
+    answer: 'Yes. For a Pro workflow, table QR ordering and the Kitchen Display System help move a table order into the kitchen queue. The kitchen team can use the KDS instead of relying on paper KOT slips.',
+  },
+  {
+    question: 'Can a restaurant use Zipla POS on an Android phone or tablet?',
+    answer: 'Yes. Zipla POS can be used on an Android phone or tablet. Bluetooth printing is supported when you need a printed bill; no dedicated POS hardware is required to begin.',
+  },
+  {
+    question: 'What happens if the restaurant internet connection drops?',
+    answer: 'After the menu has loaded, you can create bills without an internet connection. UPI and online payments require connectivity. Full offline sync is on the roadmap.',
+  },
+];
 
 const jsonLd = {
-  "@context": "https://schema.org",
-  "@graph": [
+  '@context': 'https://schema.org',
+  '@graph': [
     {
-      "@type": "WebPage",
-      "@id": "https://zipla.in/restaurant-pos-software/",
-      "url": "https://zipla.in/restaurant-pos-software/",
-      "name": "Restaurant POS Software India — Zipla POS",
-      "description": "Best restaurant billing software for India. Fast table billing, KDS, QR ordering. Starts at ₹2,999/yr.",
-      "isPartOf": { "@id": "https://zipla.in/#website" },
-      "breadcrumb": {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://zipla.in" },
-          { "@type": "ListItem", "position": 2, "name": "Restaurant POS Software", "item": "https://zipla.in/restaurant-pos-software/" }
-        ]
-      }
+      '@type': 'WebPage',
+      '@id': canonical,
+      url: canonical,
+      name: title,
+      description,
+      isPartOf: { '@id': 'https://zipla.in/#website' },
+      about: { '@id': 'https://zipla.in/#software' },
+      inLanguage: 'en-IN',
+      breadcrumb: { '@id': `${canonical}#breadcrumb` },
     },
     {
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "What is the best restaurant POS software in India?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Zipla POS is built specifically for Indian restaurants. It handles table billing, kitchen display, QR ordering, and daily reports — all from a regular Android phone. No dedicated POS hardware required. Pricing starts at ₹2,999/year." }
-        },
-        {
-          "@type": "Question",
-          "name": "Can Zipla POS work without internet?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Zipla POS works after the menu is loaded — you can create bills without internet. UPI and online payments require a connection. Full offline sync is on our roadmap." }
-        },
-        {
-          "@type": "Question",
-          "name": "Do I need to buy a POS machine or terminal for my restaurant?",
-          "acceptedAnswer": { "@type": "Answer", "text": "No. Zipla POS runs on any Android smartphone or tablet. For printing, pair any standard Bluetooth thermal printer. No dedicated POS hardware purchase needed." }
-        },
-        {
-          "@type": "Question",
-          "name": "Can Zipla POS handle multiple tables simultaneously?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Yes. Set up any number of tables, manage multiple active orders at the same time, and track which waiter is handling which table. Bills can be split or merged as needed." }
-        },
-        {
-          "@type": "Question",
-          "name": "Is Zipla POS suitable for a small dhaba or street food stall?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Absolutely. Zipla POS Starter plan at ₹2,999/year is affordable for one-person dhabas or counter-service stalls. No monthly subscription, no surprise charges." }
-        }
-      ]
-    }
-  ]
+      '@type': 'BreadcrumbList',
+      '@id': `${canonical}#breadcrumb`,
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://zipla.in/' },
+        { '@type': 'ListItem', position: 2, name: 'Restaurant POS Software', item: canonical },
+      ],
+    },
+    {
+      '@type': 'FAQPage',
+      '@id': `${canonical}#faq`,
+      mainEntity: faqs.map((faq) => ({
+        '@type': 'Question',
+        name: faq.question,
+        acceptedAnswer: { '@type': 'Answer', text: faq.answer },
+      })),
+    },
+  ],
 };
 ---
 
 <Layout title={title} description={description} canonical={canonical} jsonLd={jsonLd}>
   <Header client:load />
 
-  <main class="vp-main">
+  <main class="vertical-page">
+    <div class="vertical-container vertical-breadcrumbs" aria-label="Breadcrumb">
+      <a href="/">Home</a><span aria-hidden="true">/</span><span>Restaurant POS Software</span>
+    </div>
 
-    <section class="vp-hero">
-      <div class="vp-container">
-        <p class="vp-eyebrow">For Restaurants</p>
-        <h1 class="vp-h1">Restaurant POS Software for India — Bill Fast, Manage Smart</h1>
-        <p class="vp-lead">Zipla POS is built for how Indian restaurants actually work — table billing, kitchen orders, UPI payments, and daily reports. Runs on any Android phone. No expensive hardware.</p>
-        <div class="vp-cta-group">
-          <a href="https://app.zipla.in/register" class="vp-btn-primary">Start Free Trial</a>
-          <a href="/" class="vp-btn-secondary">← Back to Zipla POS</a>
+    <section class="vertical-hero" aria-labelledby="restaurant-hero-title">
+      <div class="vertical-container vertical-hero-grid">
+        <div>
+          <span class="vertical-eyebrow">Restaurant POS billing software for India</span>
+          <h1 id="restaurant-hero-title">Restaurant POS Billing Software for India</h1>
+          <p class="vertical-lead"><strong>Quick answer:</strong> Zipla POS is restaurant POS billing software for India, built for restaurant owners and teams handling counter billing, table service, kitchen orders, GST invoices and daily review.</p>
+          <div class="vertical-actions">
+            <a class="btn-cta" href="https://app.zipla.in/register">Start 14-Day Free Trial</a>
+            <a class="btn-ghost" href="/#demo">Book Free WhatsApp Demo</a>
+          </div>
+          <ul class="vertical-trial-note" aria-label="Trial details">
+            <li>No card required</li>
+            <li>Android phone or tablet</li>
+            <li>Bluetooth printing supported</li>
+          </ul>
+        </div>
+
+        <figure class="vertical-hero-visual">
+          <div class="vertical-hero-frame">
+            <img src="/screenshots/ss-multi-device.webp" alt="Actual Zipla POS product screenshot shown on desktop, tablet, and Android phone for restaurant billing" width="1232" height="860" />
+            <figcaption class="vertical-hero-caption"><strong>zipla POS</strong><span>Actual product screenshot for restaurant operations</span></figcaption>
+          </div>
+          <div class="vertical-callout vertical-callout--left">
+            <span class="vertical-callout-mark">₹</span><span><strong>Counter billing</strong><small>GST invoices and payment modes</small></span>
+          </div>
+          <div class="vertical-callout vertical-callout--right">
+            <span class="vertical-callout-mark">KDS</span><span><strong>Kitchen workflow</strong><small>For Pro restaurant workflows</small></span>
+          </div>
+        </figure>
+      </div>
+    </section>
+
+    <section class="vertical-proof-strip" aria-label="Restaurant POS capabilities">
+      <div class="vertical-container vertical-proof-grid">
+        <div class="vertical-proof"><strong>Counter and table service</strong><span>Use one workflow for billing and orders.</span></div>
+        <div class="vertical-proof"><strong>GST invoices</strong><span>Use configured CGST and SGST at billing.</span></div>
+        <div class="vertical-proof"><strong>Kitchen Display</strong><span>Keep Pro kitchen orders in one KDS queue.</span></div>
+        <div class="vertical-proof"><strong>Day-close review</strong><span>Review sales and payment-mode split in Pro.</span></div>
+      </div>
+    </section>
+
+    <section class="vertical-section" aria-labelledby="restaurant-definition-title">
+      <div class="vertical-container">
+        <header class="vertical-section-head">
+          <span class="vertical-kicker">Definition and decision</span>
+          <h2 id="restaurant-definition-title">What is restaurant POS billing software?</h2>
+          <p>Restaurant POS billing software is a system for taking orders, creating GST invoices, handing orders to the kitchen and reviewing daily operations. Use it when your team needs one connected workflow instead of separate paper KOTs, manual bills and payment notes.</p>
+        </header>
+
+        <div class="restaurant-decision">
+          <h3>Which restaurant workflow should you choose?</h3>
+          <p>Choose based on the way orders move through your restaurant today—not on a generic feature checklist.</p>
+          <div class="restaurant-decision-table-wrap">
+            <table class="restaurant-decision-table">
+              <thead>
+                <tr>
+                  <th scope="col">If your restaurant needs</th>
+                  <th scope="col">Relevant Zipla POS workflow</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">Counter bills, GST invoices and stock alerts</th>
+                  <td><strong>Starter:</strong> Counter POS Billing, Auto GST Bill, inventory with low-stock alerts, cash/UPI/card payment tracking and staff roles.</td>
+                </tr>
+                <tr>
+                  <th scope="row">Table orders, a kitchen queue and KOT printing</th>
+                  <td><strong>Pro:</strong> Everything in Starter plus Kitchen Display System, table QR ordering, Bluetooth KOT auto-print, sales analytics and day-close reports.</td>
+                </tr>
+                <tr>
+                  <th scope="row">A real purchase decision before committing</th>
+                  <td>Start the 14-day free trial with your own menu and one actual service flow; test counter billing first, then table and kitchen handoff if relevant.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="vp-screenshots">
-      <div class="vp-container">
-        <h2 class="vp-ss-heading">See Zipla POS in Action</h2>
-        <div class="vp-ss-grid">
-          <figure class="vp-ss-item">
-            <img src="/screenshots/ss-new-order.webp" alt="Counter billing screen — add items and generate GST bill instantly" loading="lazy" width="1232" height="860" />
-            <figcaption>Counter Billing — add items, apply GST, generate bill in seconds</figcaption>
-          </figure>
-          <figure class="vp-ss-item">
-            <img src="/screenshots/ss-kds.webp" alt="Live Kitchen Display System — monitor orders by confirmed, preparing and ready status" loading="lazy" width="1232" height="860" />
-            <figcaption>Kitchen Display System — live order tracking for your kitchen staff</figcaption>
-          </figure>
+    <section class="vertical-section vertical-section--muted" aria-labelledby="restaurant-workflow-title">
+      <div class="vertical-container">
+        <header class="vertical-section-head">
+          <span class="vertical-kicker">From order to daily review</span>
+          <h2 id="restaurant-workflow-title">How does Zipla POS support a restaurant service workflow?</h2>
+          <p>It connects the handoffs that affect a live restaurant shift: order capture, kitchen visibility, customer billing and the owner’s review of the day.</p>
+        </header>
+        <div class="vertical-workflow">
+          <article class="vertical-step"><span class="vertical-step-number">01</span><h3>Take the order</h3><p>Create a counter bill, or use table QR ordering when your Pro restaurant workflow needs guests to order from their phone.</p></article>
+          <article class="vertical-step"><span class="vertical-step-number">02</span><h3>Hand off to kitchen</h3><p>Use the Pro Kitchen Display System to keep active kitchen orders in a visible queue rather than on paper KOT slips.</p></article>
+          <article class="vertical-step"><span class="vertical-step-number">03</span><h3>Close the customer bill</h3><p>Create the GST invoice, mark cash, UPI or card payment, then use Bluetooth printing or WhatsApp bill sharing when needed.</p></article>
+          <article class="vertical-step"><span class="vertical-step-number">04</span><h3>Review the day</h3><p>For Pro, use sales analytics and day-close reports to review sales and payment-mode split after service.</p></article>
         </div>
       </div>
     </section>
 
-    <section class="vp-section">
-      <div class="vp-container">
-
-        <h2>The Real Problem with Restaurant Billing in India</h2>
-        <p>Most restaurant owners manage billing through handwritten KOT slips, WhatsApp notes to the kitchen, or desktop billing software that crashes when you need it most. The result is slow billing, wrong orders going to the kitchen, staff confusion, and end-of-day cash that never matches.</p>
-        <p>A proper restaurant POS software connects your front desk, kitchen, and accounts in one place. Zipla POS does this from a single mobile app — so your team can focus on food, not paperwork.</p>
-
-        <h2>Key Features — Restaurant Billing Software</h2>
-        <ul class="vp-feature-list">
-          <li><strong>Fast Table Billing:</strong> Open a table, add items by name or category, apply discount, generate bill — all in under 30 seconds.</li>
-          <li><strong>Kitchen Display System (KDS):</strong> Orders appear live on your kitchen screen the moment the waiter confirms them. No paper slips, no miscommunication between front and kitchen.</li>
-          <li><strong>QR Table Ordering:</strong> Print a QR code for each table. Customers scan, browse your menu, and order directly — flows straight to KDS, no waiter needed.</li>
-          <li><strong>Multiple Payment Modes:</strong> Cash, UPI, card — all tracked separately. Day close report shows exact split without manual reconciliation.</li>
-          <li><strong>Day Close Report:</strong> One tap every night — total sales, item-wise sales, payment breakdown, and net cash in hand. Takes 10 seconds, not 30 minutes.</li>
-          <li><strong>Staff Management:</strong> Assign roles (manager, waiter, cashier), control what each person can access, track waiter-wise orders across a shift.</li>
-          <li><strong>Bluetooth Thermal Printing:</strong> Print bills directly from any Android phone to any Bluetooth thermal printer. No wires, no printer drivers, no setup headache.</li>
-          <li><strong>Offline Billing:</strong> Create bills without internet once the menu is loaded. UPI and online payments require a connection.</li>
-        </ul>
-
-        <h2>How Zipla POS Works for Your Restaurant</h2>
-        <p>Setup takes under 30 minutes. No IT team needed, no training sessions. Here is the full billing flow:</p>
-        <ol class="vp-steps">
-          <li>Add your menu items with prices and categories once during setup</li>
-          <li>Waiter opens a table → adds items → sends order to KDS</li>
-          <li>Kitchen sees live orders on the KDS screen — marks them ready when done</li>
-          <li>Cashier generates bill → customer pays via cash or UPI</li>
-          <li>Bill printed on Bluetooth thermal printer or shared on WhatsApp</li>
-          <li>Day close report auto-generates at end of shift with full breakdown</li>
-        </ol>
-
-        <h2>Works for Every Type of Restaurant in India</h2>
-        <p>Whether you run a small dhaba in a gali or a multi-table restaurant in a commercial complex, Zipla POS adapts to your operation without any additional configuration. It works for:</p>
-        <ul>
-          <li>Dhabas, dosa stalls, and local eateries with counter billing</li>
-          <li>Fast food counters and QSR outlets with high transaction volume</li>
-          <li>Multi-cuisine restaurants with 10–40 tables and multiple waiters</li>
-          <li>Cloud kitchens and takeaway counters managing delivery orders</li>
-          <li>Catering setups and event food stalls needing mobile billing</li>
-        </ul>
-
-        <h2>Pricing — No Hidden Charges, No AMC</h2>
-        <p>Zipla POS Starter plan is <strong>₹2,999/year</strong> — less than ₹8 per day. One payment, full access, no per-device fees, no annual maintenance contract surprises.</p>
-        <ul>
-          <li><strong>Starter:</strong> ₹2,999/year &nbsp;|&nbsp; ₹5,999/3 years</li>
-          <li><strong>Pro:</strong> ₹4,999/year &nbsp;|&nbsp; ₹9,899/3 years</li>
-        </ul>
-
-        <h2>Frequently Asked Questions</h2>
-        <div class="vp-faq">
-
-          <div class="vp-faq-item">
-            <h3>What is the best restaurant POS software in India?</h3>
-            <p>Zipla POS is built specifically for Indian restaurants. It handles table billing, kitchen display, QR ordering, and daily reports — all from a regular Android phone. No dedicated POS hardware required. Pricing starts at ₹2,999/year with no AMC or hidden charges.</p>
-          </div>
-
-          <div class="vp-faq-item">
-            <h3>Can Zipla POS work without internet?</h3>
-            <p>Zipla POS works after the menu is loaded — you can create bills without internet. UPI and online payments require a connection. Full offline sync is on our roadmap.</p>
-          </div>
-
-          <div class="vp-faq-item">
-            <h3>Do I need to buy a POS machine or terminal?</h3>
-            <p>No. Zipla POS runs on any Android smartphone or tablet you already own. For bill printing, pair any standard Bluetooth thermal printer. No dedicated POS hardware purchase needed.</p>
-          </div>
-
-          <div class="vp-faq-item">
-            <h3>How does the Kitchen Display System work?</h3>
-            <p>When a waiter adds items in the app, those orders appear instantly on a second Android device in the kitchen. The kitchen team sees item name, quantity, and table number — no paper KOTs. When ready, they mark the order done and the waiter gets notified.</p>
-          </div>
-
-          <div class="vp-faq-item">
-            <h3>Can Zipla POS handle multiple tables at the same time?</h3>
-            <p>Yes. Set up any number of tables, manage multiple active orders simultaneously, and track which waiter is handling which table. Bills can be split or merged as needed without starting over.</p>
-          </div>
-
-          <div class="vp-faq-item">
-            <h3>Is Zipla POS suitable for a small dhaba or street food stall?</h3>
-            <p>Absolutely. The Starter plan at ₹2,999/year is affordable for one-person dhabas or counter-service stalls. No monthly subscription, no per-device charges, no renewal surprises.</p>
-          </div>
-
+    <section class="vertical-section" aria-labelledby="restaurant-kitchen-title">
+      <div class="vertical-container vertical-feature-layout">
+        <div class="vertical-feature-copy">
+          <header class="vertical-section-head vertical-section-head--left">
+            <span class="vertical-kicker">For table-service restaurants</span>
+            <h2 id="restaurant-kitchen-title">When do KDS and QR ordering make sense for a restaurant?</h2>
+          </header>
+          <p>Use KDS and table QR ordering when the restaurant needs a clear handoff from diners or waiters to the kitchen. These Pro features are most relevant where table service and kitchen coordination create avoidable delays or confusion.</p>
+          <ul class="vertical-check-list">
+            <li><strong>Counter-first service:</strong> use Counter POS Billing, GST invoices and payment-mode tracking for walk-in or takeaway bills.</li>
+            <li><strong>Table-service handoff:</strong> allow table QR ordering when guests should browse and place their own orders.</li>
+            <li><strong>Kitchen-side visibility:</strong> use KDS to keep kitchen orders in one queue.</li>
+            <li><strong>Owner decision:</strong> use sales analytics and day-close reports in Pro after an actual service test.</li>
+          </ul>
         </div>
-
-        <div class="vp-related">
-          <h2>Other Businesses Zipla POS Serves</h2>
-          <p>Zipla POS works across Indian food businesses — <a href="/cafe-pos-software/">cafe billing software</a>, <a href="/bakery-billing-software/">bakery billing software</a>, and <a href="/sweet-shop-billing/">sweet shop billing software</a>.</p>
-        </div>
-
-        <div class="vp-final-cta">
-          <h2>Modernize Your Restaurant Billing Today</h2>
-          <p>Join Indian restaurant owners who have moved from manual chaos to smart billing with Zipla POS. Setup in 30 minutes, results from day one.</p>
-          <a href="https://app.zipla.in/register" class="vp-btn-primary">Start Free — No Credit Card</a>
-          <a href="/" class="vp-btn-secondary">Learn More About Zipla POS</a>
-        </div>
-
+        <figure class="vertical-image-stack">
+          <img src="/screenshots/ss-kds.webp" alt="Actual Zipla POS Kitchen Display System screenshot for a restaurant kitchen order queue" loading="lazy" width="1232" height="860" />
+          <figcaption>Actual Zipla POS Kitchen Display System screenshot for a restaurant workflow.</figcaption>
+        </figure>
       </div>
     </section>
 
+    <section class="vertical-section vertical-section--muted" aria-labelledby="restaurant-trial-title">
+      <div class="vertical-container">
+        <header class="vertical-section-head">
+          <span class="vertical-kicker">Use the trial with your real service</span>
+          <h2 id="restaurant-trial-title">What should a restaurant test before choosing a POS plan?</h2>
+          <p>Test one real service flow with your own menu. A useful decision comes from seeing whether staff can complete the actual counter, kitchen and billing handoffs your restaurant uses.</p>
+        </header>
+        <div class="vertical-workflow">
+          <article class="vertical-step"><span class="vertical-step-number">01</span><h3>Set up familiar menu items</h3><p>Add a few real starters, mains, beverages or takeaway items so your team can search for familiar products during the test.</p></article>
+          <article class="vertical-step"><span class="vertical-step-number">02</span><h3>Run a live-style counter bill</h3><p>Create a GST invoice, apply the relevant payment mode, then test Bluetooth printing or WhatsApp bill sharing.</p></article>
+          <article class="vertical-step"><span class="vertical-step-number">03</span><h3>Test the kitchen handoff</h3><p>For a Pro workflow, create one table QR or waiter order and confirm how it appears in the Kitchen Display System.</p></article>
+          <article class="vertical-step"><span class="vertical-step-number">04</span><h3>Check the owner view</h3><p>For Pro, review sales analytics and day-close reports after the test service. For Starter, review billing, inventory and low-stock alerts.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="vertical-section" aria-labelledby="restaurant-faq-title">
+      <div class="vertical-container vertical-faq-layout">
+        <header class="vertical-section-head">
+          <span class="vertical-kicker">Buyer questions</span>
+          <h2 id="restaurant-faq-title">Restaurant POS software FAQs</h2>
+          <p>Clear answers on restaurant use cases, plan fit, Android devices, table service and connectivity before you start a trial.</p>
+        </header>
+        <div class="vertical-faq-list">
+          {faqs.map((faq) => (
+            <details>
+              <summary>{faq.question}</summary>
+              <p>{faq.answer}</p>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="vertical-section vertical-section--compact" aria-labelledby="restaurant-related-title">
+      <div class="vertical-container">
+        <div class="vertical-related">
+          <h2 id="restaurant-related-title">Explore related Zipla POS workflows</h2>
+          <p>Need a different food-business flow? See <a class="vertical-inline-link" href="/cafe-pos-software/">cafe POS software</a>, <a class="vertical-inline-link" href="/bakery-billing-software/">bakery billing software</a>, <a class="vertical-inline-link" href="/qsr-billing-software/">QSR billing software</a>, <a class="vertical-inline-link" href="/dhaba-billing-software/">dhaba billing software</a>, or the complete <a class="vertical-inline-link" href="/faq/">Zipla POS FAQ</a>.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="vertical-section vertical-section--compact">
+      <div class="vertical-container">
+        <div class="vertical-final-cta">
+          <h2>Test Zipla POS with the way your restaurant actually serves.</h2>
+          <p>Start a 14-day free trial online, or book a WhatsApp demo to see counter billing, kitchen workflow and plan fit in context.</p>
+          <div class="vertical-final-actions">
+            <a class="btn-cta" href="https://app.zipla.in/register">Start 14-Day Free Trial</a>
+            <a class="btn-ghost" href="/#demo">Book Free WhatsApp Demo</a>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
   <Footer />
 </Layout>
 
 <style>
-  .vp-main { background: #0D0D0D; }
-  .vp-screenshots { padding: 0 1.5rem 3rem; }
-  .vp-ss-heading { font-size: 1.4rem; font-weight: 700; color: #C9A94B; text-align: center; margin: 0 0 2rem; }
-  .vp-ss-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; max-width: 1000px; margin: 0 auto; }
-  .vp-ss-item { margin: 0; }
-  .vp-ss-item img { width: 100%; height: auto; border-radius: 10px; display: block; border: 1px solid #1e1e1e; }
-  .vp-ss-item figcaption { font-size: 0.82rem; color: #888888; text-align: center; margin-top: 0.625rem; }
-  @media (max-width: 640px) { .vp-ss-grid { grid-template-columns: 1fr; } }
-  .vp-hero {
-    padding: 5rem 1.5rem 3.5rem;
-    text-align: center;
-    border-bottom: 1px solid #1a1a1a;
-  }
-  .vp-container { max-width: 820px; margin: 0 auto; padding: 0 1rem; }
-  .vp-eyebrow {
-    font-size: 0.75rem;
-    font-weight: 700;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: #C9A94B;
-    margin-bottom: 1rem;
-  }
-  .vp-h1 {
-    font-size: clamp(1.8rem, 4.5vw, 2.75rem);
-    font-weight: 700;
-    color: #ffffff;
-    line-height: 1.22;
-    margin: 0 auto 1.25rem;
-    max-width: 760px;
-  }
-  .vp-lead {
-    font-size: 1.1rem;
-    color: #aaaaaa;
-    line-height: 1.75;
-    max-width: 600px;
-    margin: 0 auto 2rem;
-  }
-  .vp-cta-group { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
-  .vp-btn-primary {
-    display: inline-block;
-    background: #C9A94B;
-    color: #0D0D0D;
-    font-weight: 700;
-    padding: 0.875rem 2rem;
-    border-radius: 6px;
-    text-decoration: none;
-    font-size: 1rem;
-    transition: opacity 0.18s;
-  }
-  .vp-btn-primary:hover { opacity: 0.85; }
-  .vp-btn-secondary {
-    display: inline-block;
-    color: #C9A94B;
-    font-weight: 600;
-    padding: 0.875rem 1.5rem;
-    border-radius: 6px;
-    text-decoration: none;
-    font-size: 0.95rem;
-    border: 1px solid #2a2a2a;
-    background: transparent;
-    transition: border-color 0.18s;
-  }
-  .vp-btn-secondary:hover { border-color: #C9A94B; }
-  .vp-section { padding: 3rem 1.5rem 5rem; color: #cccccc; }
-  .vp-section h2 {
-    font-size: 1.45rem;
-    color: #C9A94B;
-    margin: 2.75rem 0 0.875rem;
-    font-weight: 600;
-  }
-  .vp-section h3 { font-size: 1.05rem; color: #ffffff; margin: 0 0 0.5rem; font-weight: 600; }
-  .vp-section p { line-height: 1.8; margin-bottom: 1rem; color: #cccccc; font-size: 0.98rem; }
-  .vp-feature-list { padding-left: 1.25rem; margin-bottom: 1rem; }
-  .vp-feature-list li { line-height: 1.8; margin-bottom: 0.625rem; color: #cccccc; font-size: 0.98rem; }
-  .vp-section ul:not(.vp-feature-list):not(.vp-faq *) { padding-left: 1.25rem; margin-bottom: 1rem; }
-  .vp-section ul:not(.vp-feature-list):not(.vp-faq *) li { line-height: 1.8; margin-bottom: 0.5rem; color: #cccccc; font-size: 0.98rem; }
-  .vp-steps { padding-left: 1.25rem; margin-bottom: 1rem; }
-  .vp-steps li { line-height: 1.8; margin-bottom: 0.625rem; color: #cccccc; font-size: 0.98rem; }
-  .vp-faq { margin-top: 0.75rem; }
-  .vp-faq-item {
-    background: #111111;
-    border: 1px solid #1e1e1e;
-    border-radius: 8px;
-    padding: 1.25rem 1.5rem;
-    margin-bottom: 0.875rem;
-  }
-  .vp-final-cta {
-    text-align: center;
-    padding: 3rem 1.5rem;
-    margin-top: 3rem;
-    background: #111111;
-    border: 1px solid #1e1e1e;
-    border-radius: 12px;
-  }
-  .vp-final-cta h2 { color: #ffffff !important; margin-top: 0 !important; }
-  .vp-final-cta .vp-btn-primary,
-  .vp-final-cta .vp-btn-secondary { margin: 0.5rem; }
-  .vp-related { margin: 2.5rem 0 0; padding: 1.25rem 1.5rem; background: #111111; border: 1px solid #1e1e1e; border-radius: 8px; }
-  .vp-related h2 { margin-top: 0 !important; }
-  .vp-related a { color: #C9A94B; text-decoration: underline; text-underline-offset: 3px; }
-  @media (max-width: 600px) {
-    .vp-cta-group { flex-direction: column; align-items: center; }
-    .vp-hero { padding: 3.5rem 1.25rem 2.5rem; }
+  .vertical-lead strong { color: var(--text); }
+  .restaurant-decision { max-width: 960px; margin: 0 auto; padding: 28px; border: 1px solid var(--border-hi); border-radius: 18px; background: linear-gradient(145deg, rgba(26,29,43,.8), var(--surface)); }
+  .restaurant-decision h3 { margin: 0 0 8px; font-family: var(--display); font-size: 21px; letter-spacing: -.35px; }
+  .restaurant-decision > p { margin: 0 0 20px; color: var(--text-2); font-size: 14px; line-height: 1.65; }
+  .restaurant-decision-table-wrap { overflow-x: auto; border: 1px solid var(--border); border-radius: 11px; }
+  .restaurant-decision-table { width: 100%; min-width: 620px; border-collapse: collapse; text-align: left; }
+  .restaurant-decision-table th, .restaurant-decision-table td { padding: 14px; border-bottom: 1px solid var(--border); font-size: 13px; line-height: 1.6; vertical-align: top; }
+  .restaurant-decision-table thead th { background: rgba(202,160,76,.09); color: var(--amber-2); font-size: 10.5px; font-weight: 800; letter-spacing: .7px; text-transform: uppercase; }
+  .restaurant-decision-table tbody th { width: 34%; color: var(--text); font-weight: 700; }
+  .restaurant-decision-table td { color: var(--text-2); }
+  .restaurant-decision-table td strong { color: var(--text); }
+  .restaurant-decision-table tbody tr:last-child th, .restaurant-decision-table tbody tr:last-child td { border-bottom: 0; }
+  @media (max-width: 620px) {
+    .restaurant-decision { padding: 20px 16px 6px; }
+    .restaurant-decision-table { min-width: 540px; }
   }
 </style>
