@@ -1,4 +1,3 @@
-import { waLink } from '../constants.js'
 export default function Hero() {
   return (
     <section className="hero">
@@ -8,8 +7,8 @@ export default function Hero() {
           <h1>Restaurant Billing Software India — Counter Billing, GST Invoice &amp; KDS</h1>
           <p className="sub">Billing, kitchen orders, and GST invoices — all in one place, from any phone or counter. No more paper KOTs or manual calculations.</p>
           <div className="hero-ctas">
-            <a className="btn-cta" href={waLink('Hi, I would like a 14-day free demo of Zipla POS')} target="_blank" rel="noopener noreferrer">Start 14-Day Free Trial</a>
-            <a className="btn-ghost" href="#pricing">View Pricing</a>
+            <a className="btn-cta" href="https://app.zipla.in/register">Start 14-Day Free Trial</a>
+            <a className="btn-ghost" href="#demo">Book Free WhatsApp Demo</a>
           </div>
           <p className="hero-note">No card required. Same-day setup.</p>
         </div>
