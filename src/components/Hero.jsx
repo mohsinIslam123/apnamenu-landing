@@ -30,7 +30,7 @@ export default function Hero() {
         <div className="hero-copy">
           <span className="eyebrow">Zipla POS for Indian food businesses</span>
           <h1 id="hero-title">Restaurant POS Billing Software for India</h1>
-          <p className="sub">Zipla is restaurant POS billing software for Indian food businesses: it connects counter billing, GST invoices, kitchen orders, and daily operations in one system.</p>
+          <p className="sub">Zipla is restaurant POS billing software for India—built for restaurants, cafés, bakeries, sweet shops, QSRs, and dhabas. Use it for counter billing, GST invoices, and kitchen-order workflows.</p>
           <div className="hero-ctas">
             <a className="btn-cta" href="https://app.zipla.in/register">Start 14-Day Free Trial</a>
             <a className="btn-ghost" href="/#demo">Book Free WhatsApp Demo</a>
