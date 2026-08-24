@@ -4,9 +4,17 @@ import Header from '../components/Header.jsx';
 import Footer from '../components/Footer.jsx';
 import '../index.css';
 
-const title = "Privacy Policy — Zipla POS";
-const description = "Privacy Policy for Zipla POS. Learn how we collect, use, and protect your data. Zipla is committed to your privacy.";
+const title = "Privacy Policy for Zipla POS Users in India";
+const description = "Read the Zipla POS Privacy Policy for users of our website and restaurant billing software in India, including data collection, use, rights and contact details.";
 const canonical = "https://zipla.in/privacy-policy/";
+
+const privacyFaqs = [
+  { question: "What information does this Privacy Policy cover?", answer: "This policy describes account, business, payment, usage and website-analytics information listed on this page." },
+  { question: "How can I make a privacy request to Zipla POS?", answer: "Email support@zipla.in for an access, correction, deletion or portability request. This policy states that Zipla will respond within 15 working days." },
+  { question: "Does this policy name third-party services?", answer: "Yes. It names Supabase, Razorpay, Google Analytics 4 and Cloudflare, and links to the privacy policy of each service." },
+  { question: "Where can I read related Zipla service terms?", answer: "Read the Zipla Terms and Conditions for service, subscription, acceptable-use and related legal terms." },
+  { question: "How will changes to this Privacy Policy be communicated?", answer: "This policy says that the Last updated date will change when the policy is updated, and that significant changes will be emailed to registered users." },
+];
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -15,8 +23,8 @@ const jsonLd = {
       "@type": "WebPage",
       "@id": "https://zipla.in/privacy-policy/",
       "url": "https://zipla.in/privacy-policy/",
-      "name": "Privacy Policy — Zipla POS",
-      "description": "Privacy Policy for Zipla POS billing software.",
+      "name": title,
+      "description": description,
       "isPartOf": { "@id": "https://zipla.in/#website" },
       "breadcrumb": {
         "@type": "BreadcrumbList",
@@ -25,6 +33,15 @@ const jsonLd = {
           { "@type": "ListItem", "position": 2, "name": "Privacy Policy", "item": "https://zipla.in/privacy-policy/" }
         ]
       }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://zipla.in/privacy-policy/#faq",
+      "mainEntity": privacyFaqs.map((faq) => ({
+        "@type": "Question",
+        "name": faq.question,
+        "acceptedAnswer": { "@type": "Answer", "text": faq.answer }
+      }))
     }
   ]
 };
@@ -34,12 +51,14 @@ const jsonLd = {
   <Header client:load />
 
   <main class="legal-main">
-    <div class="legal-container">
+    <article class="legal-container">
 
       <div class="legal-header">
         <p class="legal-eyebrow">Zipla POS</p>
-        <h1>Privacy Policy</h1>
+        <h1>Zipla POS Privacy Policy</h1>
         <p class="legal-meta">Last updated: August 13, 2026 &nbsp;|&nbsp; Effective: August 13, 2026</p>
+        <p class="legal-summary"><strong>Key takeaway:</strong> This Privacy Policy explains the data collection, use, storage, rights and contact practices described for Zipla POS.</p>
+        <p class="legal-audience"><strong>Who this is for:</strong> people who visit zipla.in, register for or use Zipla POS, or contact Zipla about an account. <strong>Use this policy when:</strong> you want to understand the data practices and privacy-request process described for the service.</p>
       </div>
 
       <div class="legal-body">
@@ -48,7 +67,8 @@ const jsonLd = {
 
         <p>By using Zipla POS, you agree to the practices described in this policy. If you do not agree, please discontinue use of our services.</p>
 
-        <h2>1. Information We Collect</h2>
+        <h2>What information does Zipla POS collect?</h2>
+        <p class="legal-direct-answer"><strong>Short answer:</strong> This policy describes account, business, payment, usage and website-analytics information used to operate and support the service.</p>
 
         <h3>a) Account Information</h3>
         <p>When you register for Zipla POS, we collect:</p>
@@ -89,7 +109,8 @@ const jsonLd = {
         <h3>e) Analytics</h3>
         <p>Our landing page (zipla.in) uses <strong>Google Analytics 4 (GA4)</strong> to understand visitor traffic, page views, and referral sources. GA4 uses cookies and may collect anonymized identifiers. You can opt out via <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener">Google's opt-out tool</a>.</p>
 
-        <h2>2. How We Use Your Information</h2>
+        <h2>How does Zipla POS use your information?</h2>
+        <p class="legal-direct-answer"><strong>Short answer:</strong> This policy says information is used for service delivery, account communications, payment processing, product improvement and support.</p>
         <ul>
           <li><strong>To provide the service:</strong> All business data you enter is used solely to operate your POS account — billing, reports, KDS, and related features.</li>
           <li><strong>To send important communications:</strong> Account setup confirmation, subscription renewal reminders, and critical service updates via email.</li>
@@ -99,8 +120,8 @@ const jsonLd = {
         </ul>
         <p>We do <strong>not</strong> sell your data to any third party. We do not use your business data for advertising. We do not share your customer data with any other business.</p>
 
-        <h2>3. Data Storage and Security</h2>
-        <p>Your data is stored on <strong>Supabase</strong> infrastructure (PostgreSQL database hosted on AWS), with servers located in India or Singapore depending on availability. Supabase is SOC 2 Type II compliant.</p>
+        <h2>How does Zipla POS store and protect data?</h2>
+        <p><strong>Short answer:</strong> According to this policy, data is stored on <strong>Supabase</strong> infrastructure (PostgreSQL database hosted on AWS), with servers located in India or Singapore depending on availability. Supabase is SOC 2 Type II compliant.</p>
         <p>We apply the following security measures:</p>
         <ul>
           <li>Passwords are hashed using bcrypt — never stored in plain text</li>
@@ -110,11 +131,12 @@ const jsonLd = {
         </ul>
         <p>No security system is 100% foolproof. If we become aware of a data breach that affects your account, we will notify you via email within 72 hours.</p>
 
-        <h2>4. Data Retention</h2>
+        <h2>How long does Zipla POS retain data?</h2>
+        <p><strong>Short answer:</strong> This policy says account and business data is retained while an account is active, with deletion and record-retention details described below.</p>
         <p>We retain your account and business data for as long as your account is active. If you request account deletion, we will permanently delete all your data within 30 days, except where required by law to retain records (e.g., payment receipts for tax compliance — retained for 7 years as per Indian financial regulations).</p>
 
-        <h2>5. Third-Party Services</h2>
-        <p>Zipla POS uses the following third-party services. Each has its own privacy policy:</p>
+        <h2>Which third-party services process or host data?</h2>
+        <p><strong>Short answer:</strong> This policy names the third-party services below and links to each provider's own privacy policy.</p>
         <ul>
           <li><strong>Supabase</strong> — Database and authentication infrastructure. <a href="https://supabase.com/privacy" target="_blank" rel="noopener">Privacy Policy</a></li>
           <li><strong>Razorpay</strong> — Payment processing. <a href="https://razorpay.com/privacy/" target="_blank" rel="noopener">Privacy Policy</a></li>
@@ -122,14 +144,15 @@ const jsonLd = {
           <li><strong>Cloudflare</strong> — Hosting and CDN. <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener">Privacy Policy</a></li>
         </ul>
 
-        <h2>6. Cookies</h2>
-        <p>Zipla POS app uses session tokens stored in your browser's local storage to keep you logged in. We do not use tracking cookies inside the app. Our landing page (zipla.in) uses Google Analytics cookies for traffic analysis only.</p>
+        <h2>How does Zipla POS use cookies and session storage?</h2>
+        <p><strong>Short answer:</strong> This policy says the app uses browser local-storage session tokens and the landing page uses Google Analytics cookies for traffic analysis.</p>
 
-        <h2>7. Children's Privacy</h2>
+        <h2>Does Zipla POS collect data from children?</h2>
+        <p><strong>Short answer:</strong> This policy states that Zipla POS is intended for adults and that personal data from people under 18 is not knowingly collected.</p>
         <p>Zipla POS is a business software tool intended for adults (18 years or older). We do not knowingly collect personal data from anyone under the age of 18. If we discover that a child's data has been submitted, we will delete it immediately.</p>
 
-        <h2>8. Your Rights</h2>
-        <p>As a user of Zipla POS, you have the right to:</p>
+        <h2>What privacy rights can you request?</h2>
+        <p><strong>Short answer:</strong> This policy describes access, correction, deletion, portability and withdrawal-of-consent requests.</p>
         <ul>
           <li><strong>Access:</strong> Request a copy of the personal data we hold about you</li>
           <li><strong>Correction:</strong> Request correction of any incorrect data</li>
@@ -138,15 +161,21 @@ const jsonLd = {
           <li><strong>Withdraw consent:</strong> Stop using the service at any time</li>
         </ul>
         <p>To exercise any of these rights, email us at <a href="mailto:support@zipla.in">support@zipla.in</a>. We will respond within 15 working days.</p>
+        <div class="legal-template">
+          <h3>Privacy-request email template</h3>
+          <p><strong>Example:</strong> email <a href="mailto:support@zipla.in">support@zipla.in</a> with the subject “Privacy request for my Zipla POS account”, your registered account details and whether you need access, correction, deletion or portability. This is a practical template based on the request process stated in this policy.</p>
+        </div>
 
-        <h2>9. Changes to This Policy</h2>
+        <h2>How will Zipla update this Privacy Policy?</h2>
+        <p><strong>Short answer:</strong> This policy says the Last updated date will change when the policy changes and significant changes will be emailed to registered users.</p>
         <p>We may update this Privacy Policy from time to time. When we do, we will update the "Last updated" date at the top of this page. For significant changes, we will send an email notification to all registered users. Continued use of Zipla POS after changes means you accept the updated policy.</p>
 
-        <h2>10. Governing Law</h2>
+        <h2>Which law governs this Privacy Policy?</h2>
+        <p><strong>Short answer:</strong> This policy states that it is governed by the laws of India and specifies the jurisdiction described below.</p>
         <p>This Privacy Policy is governed by the laws of India. Any disputes shall be subject to the exclusive jurisdiction of the courts in Uttar Pradesh, India.</p>
 
-        <h2>11. Contact Us</h2>
-        <p>For any privacy-related questions, data requests, or concerns:</p>
+        <h2>How can you contact Zipla about privacy?</h2>
+        <p><strong>Short answer:</strong> For privacy questions, data requests or concerns, email support@zipla.in.</p>
         <div class="legal-contact">
           <p><strong>Zipla POS</strong><br />
           Uttar Pradesh, India<br />
@@ -155,11 +184,29 @@ const jsonLd = {
 
       </div>
 
+      <section class="legal-faq" aria-labelledby="privacy-faq-title">
+        <h2 id="privacy-faq-title">Privacy Policy FAQs</h2>
+        <p>Short answers drawn from the visible policy above for website visitors and Zipla POS account holders.</p>
+        <div class="legal-faq-list">
+          {privacyFaqs.map((faq) => (
+            <section class="legal-faq-item">
+              <h3>{faq.question}</h3>
+              <p>{faq.answer}</p>
+            </section>
+          ))}
+        </div>
+      </section>
+
+      <nav class="legal-related" aria-labelledby="legal-related-title">
+        <h2 id="legal-related-title">Where can you find related Zipla information?</h2>
+        <p><strong>Short answer:</strong> Read the <a href="/terms-and-conditions/">Zipla Terms and Conditions</a> for service terms, use the <a href="/faq/">Zipla POS FAQ</a> for product and account answers, or return to the <a href="/">Zipla POS homepage</a>.</p>
+      </nav>
+
       <div class="legal-back">
         <a href="/" class="legal-back-link">← Back to Zipla POS</a>
       </div>
 
-    </div>
+    </article>
   </main>
 
   <Footer />
@@ -186,4 +233,5 @@ const jsonLd = {
   .legal-back { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid #1e1e1e; }
   .legal-back-link { color: #C9A94B; text-decoration: none; font-size: 0.9rem; font-weight: 600; }
   .legal-back-link:hover { opacity: 0.8; }
+  .legal-summary,.legal-audience{max-width:690px;margin:14px 0 0;color:#aaaaaa;font-size:.94rem;line-height:1.72}.legal-summary{color:#cccccc}.legal-direct-answer{padding:12px 14px;border-left:3px solid #C9A94B;border-radius:0 8px 8px 0;background:rgba(201,169,75,.08);color:#cccccc}.legal-template,.legal-faq,.legal-related{margin-top:2.75rem;padding:1.5rem;border:1px solid #1e1e1e;border-radius:12px;background:#111111}.legal-template h3,.legal-faq h2,.legal-related h2{margin-top:0}.legal-template p,.legal-faq>p,.legal-related p{margin:0;color:#cccccc;line-height:1.8}.legal-faq-list{display:grid;gap:12px;margin-top:18px}.legal-faq-item{padding:16px;border:1px solid #242424;border-radius:8px;background:#0D0D0D}.legal-faq-item h3{margin:0 0 7px}.legal-faq-item p{margin:0;color:#aaaaaa;font-size:.94rem;line-height:1.75}.legal-related a{color:#C9A94B;text-decoration:underline;text-underline-offset:3px}
 </style>
