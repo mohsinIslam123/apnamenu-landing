@@ -3,227 +3,208 @@ import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.jsx';
 import Footer from '../components/Footer.jsx';
 import '../index.css';
+import '../vertical-page.css';
 
-const title = "Cafe POS Software India — Fast Counter Billing & QR Ordering | Zipla POS";
-const description = "Zipla POS cafe billing software: fast counter billing, QR menu ordering, staff management & daily sales reports for Indian cafes. No hardware needed. Starts ₹2,999/yr.";
-const canonical = "https://zipla.in/cafe-pos-software/";
+const title = 'Cafe POS Software India | Counter Billing, QR Ordering & KDS | Zipla POS';
+const description = 'Cafe POS software for Indian cafés: counter billing, GST invoices, QR table ordering, Kitchen Display System, payment-mode tracking and day-close reports. 14-day free trial.';
+const canonical = 'https://zipla.in/cafe-pos-software/';
+
+const faqs = [
+  {
+    question: 'Can Zipla POS handle both walk-in counter bills and table QR orders?',
+    answer: 'Yes. Staff can create counter bills for walk-in customers while diners can use table QR ordering. Both are part of the same Zipla POS workflow and can be reviewed in day-close reporting.',
+  },
+  {
+    question: 'Does Zipla POS work on an Android phone or tablet at a café counter?',
+    answer: 'Yes. Zipla POS can be used on Android phones and tablets. You can also pair a supported Bluetooth thermal printer when you want printed bills.',
+  },
+  {
+    question: 'What does Starter versus Pro include for a café?',
+    answer: 'Starter covers counter billing, GST invoices, Bluetooth printing, day-close reporting and staff logins. Pro adds QR table ordering, Kitchen Display System, inventory and advanced reporting.',
+  },
+  {
+    question: 'What happens if the internet connection drops during café service?',
+    answer: 'After the menu has loaded, you can create bills without an internet connection. UPI and online payments require connectivity. Full offline sync is on the roadmap.',
+  },
+  {
+    question: 'How is Zipla POS priced for a café?',
+    answer: 'Starter is ₹2,999 per year or ₹5,999 for three years. Pro is ₹4,999 per year or ₹9,899 for three years. Zipla uses a flat annual fee with no per-transaction, per-item, per-device or AMC charges.',
+  },
+];
 
 const jsonLd = {
-  "@context": "https://schema.org",
-  "@graph": [
+  '@context': 'https://schema.org',
+  '@graph': [
     {
-      "@type": "WebPage",
-      "@id": "https://zipla.in/cafe-pos-software/",
-      "url": "https://zipla.in/cafe-pos-software/",
-      "name": "Cafe POS Software India — Zipla POS",
-      "description": "Fast cafe billing software for India. Counter billing, QR ordering, UPI tracking & daily reports. Starts at ₹2,999/yr.",
-      "isPartOf": { "@id": "https://zipla.in/#website" },
-      "breadcrumb": {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://zipla.in" },
-          { "@type": "ListItem", "position": 2, "name": "Cafe POS Software", "item": "https://zipla.in/cafe-pos-software/" }
-        ]
-      }
+      '@type': 'WebPage',
+      '@id': canonical,
+      url: canonical,
+      name: 'Cafe POS Software India | Zipla POS',
+      description,
+      isPartOf: { '@id': 'https://zipla.in/#website' },
+      breadcrumb: { '@id': `${canonical}#breadcrumb` },
     },
     {
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "What is the best POS software for cafes in India?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Zipla POS is designed for the fast-paced billing needs of Indian cafes. It supports counter billing, QR table ordering, UPI payment tracking, and end-of-day reports — all from a standard Android device. Pricing starts at ₹2,999/year." }
-        },
-        {
-          "@type": "Question",
-          "name": "Can Zipla POS handle both counter and table ordering in a cafe?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Yes. Counter staff bill walk-in customers directly while seated customers scan QR codes and order from their tables. Both flows consolidate in the same dashboard and day close report." }
-        },
-        {
-          "@type": "Question",
-          "name": "Does Zipla POS work on a tablet for a cafe counter?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Yes. Zipla POS works on any Android tablet or smartphone. Many cafes use a 10-inch tablet mounted at the counter for better visibility and easier item selection during rush hours." }
-        },
-        {
-          "@type": "Question",
-          "name": "Can I track which cafe items are selling the most?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Yes. The day close report shows item-wise sales for every day. See how many cappuccinos, cold coffees, or sandwiches were sold — helping you manage stock and refine your menu based on real data." }
-        },
-        {
-          "@type": "Question",
-          "name": "Is Zipla POS suitable for a new cafe just starting out?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Absolutely. Many Zipla POS users start with the Starter plan (₹2,999/year) even before their cafe opens, to set up their menu and test billing before launch. Setup is simple enough that no IT support is needed." }
-        }
-      ]
-    }
-  ]
+      '@type': 'BreadcrumbList',
+      '@id': `${canonical}#breadcrumb`,
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://zipla.in/' },
+        { '@type': 'ListItem', position: 2, name: 'Cafe POS Software', item: canonical },
+      ],
+    },
+    {
+      '@type': 'FAQPage',
+      mainEntity: faqs.map((faq) => ({
+        '@type': 'Question',
+        name: faq.question,
+        acceptedAnswer: { '@type': 'Answer', text: faq.answer },
+      })),
+    },
+  ],
 };
 ---
 
 <Layout title={title} description={description} canonical={canonical} jsonLd={jsonLd}>
   <Header client:load />
 
-  <main class="vp-main">
+  <main class="vertical-page">
+    <div class="vertical-container vertical-breadcrumbs" aria-label="Breadcrumb">
+      <a href="/">Home</a><span aria-hidden="true">/</span><span> Cafe POS Software</span>
+    </div>
 
-    <section class="vp-hero">
-      <div class="vp-container">
-        <p class="vp-eyebrow">For Cafes</p>
-        <h1 class="vp-h1">Cafe POS Software India — Faster Counter, Happier Customers</h1>
-        <p class="vp-lead">Indian cafes run on speed. Zipla POS helps your counter team bill faster, manage QR orders from tables, and close the day in seconds — all from a single Android phone or tablet.</p>
-        <div class="vp-cta-group">
-          <a href="https://app.zipla.in/register" class="vp-btn-primary">Start Free Trial</a>
-          <a href="/" class="vp-btn-secondary">← Back to Zipla POS</a>
+    <section class="vertical-hero" aria-labelledby="cafe-hero-title">
+      <div class="vertical-container vertical-hero-grid">
+        <div>
+          <span class="vertical-eyebrow">Cafe POS software for India</span>
+          <h1 id="cafe-hero-title">Run your café counter, tables, and kitchen from one POS.</h1>
+          <p class="vertical-lead">Zipla POS connects counter billing, GST invoices, QR table ordering, kitchen orders, payment-mode tracking, and day-close reporting for cafés that need a faster service workflow.</p>
+          <div class="vertical-actions">
+            <a class="btn-cta" href="https://app.zipla.in/register">Start 14-Day Free Trial</a>
+            <a class="btn-ghost" href="/#demo">Book Free WhatsApp Demo</a>
+          </div>
+          <ul class="vertical-trial-note" aria-label="Trial details">
+            <li>No card required</li>
+            <li>Android phone or tablet</li>
+            <li>Bluetooth printing supported</li>
+          </ul>
+        </div>
+
+        <figure class="vertical-hero-visual">
+          <div class="vertical-hero-frame">
+            <img src="/screenshots/ss-multi-device.webp" alt="Zipla POS shown on desktop, tablet, and Android phone for café operations" width="1232" height="860" />
+            <figcaption class="vertical-hero-caption"><strong>zipla POS</strong><span>One workspace for service</span></figcaption>
+          </div>
+          <div class="vertical-callout vertical-callout--left">
+            <span class="vertical-callout-mark">₹</span><span><strong>Counter billing</strong><small>GST invoices and payment modes</small></span>
+          </div>
+          <div class="vertical-callout vertical-callout--right">
+            <span class="vertical-callout-mark">QR</span><span><strong>Table orders</strong><small>For Pro café workflows</small></span>
+          </div>
+        </figure>
+      </div>
+    </section>
+
+    <section class="vertical-proof-strip" aria-label="Cafe POS capabilities">
+      <div class="vertical-container vertical-proof-grid">
+        <div class="vertical-proof"><strong>Counter bills</strong><span>Create GST invoices at service time.</span></div>
+        <div class="vertical-proof"><strong>Table QR orders</strong><span>Let diners place orders from their phone.</span></div>
+        <div class="vertical-proof"><strong>Kitchen Display</strong><span>Keep kitchen orders in one KDS queue.</span></div>
+        <div class="vertical-proof"><strong>Day close</strong><span>Review sales and payment-mode split.</span></div>
+      </div>
+    </section>
+
+    <section class="vertical-section" aria-labelledby="cafe-workflow-title">
+      <div class="vertical-container">
+        <header class="vertical-section-head">
+          <span class="vertical-kicker">Built around café service</span>
+          <h2 id="cafe-workflow-title">One workflow from the first order to day close.</h2>
+          <p>A café usually has walk-in orders, seated diners, a counter team and a kitchen working at the same time. Zipla keeps those moments connected instead of making staff juggle separate tools.</p>
+        </header>
+        <div class="vertical-workflow">
+          <article class="vertical-step"><span class="vertical-step-number">01</span><h3>Take the order</h3><p>Create a counter bill or let a diner use the table QR ordering flow.</p></article>
+          <article class="vertical-step"><span class="vertical-step-number">02</span><h3>Send it to the kitchen</h3><p>Use the Kitchen Display System to keep orders visible to the kitchen team.</p></article>
+          <article class="vertical-step"><span class="vertical-step-number">03</span><h3>Close the bill</h3><p>Generate a GST invoice, mark cash or UPI payment, then print or share the bill.</p></article>
+          <article class="vertical-step"><span class="vertical-step-number">04</span><h3>Review the day</h3><p>Use day-close reporting to review sales, item movement and payment-mode split.</p></article>
         </div>
       </div>
     </section>
 
-    <section class="vp-screenshots">
-      <div class="vp-container">
-        <h2 class="vp-ss-heading">See Zipla POS in Action</h2>
-        <div class="vp-ss-grid">
-          <figure class="vp-ss-item">
-            <img src="/screenshots/ss-dashboard.webp" alt="Zipla POS dashboard for cafe billing" loading="lazy" width="1232" height="860" />
-            <figcaption>Dashboard — Revenue Analytics, POS Billing, KDS, Customer Menu</figcaption>
-          </figure>
-          <figure class="vp-ss-item">
-            <img src="/screenshots/ss-customer-menu.webp" alt="QR digital menu for cafe ordering on Zipla POS" loading="lazy" width="1232" height="860" />
-            <figcaption>Digital Menu — customers scan QR and order from their phone</figcaption>
-          </figure>
+    <section class="vertical-section vertical-section--muted" aria-labelledby="cafe-service-title">
+      <div class="vertical-container vertical-feature-layout">
+        <div class="vertical-feature-copy">
+          <header class="vertical-section-head vertical-section-head--left">
+            <span class="vertical-kicker">For a busy counter</span>
+            <h2 id="cafe-service-title">Give guests a simple ordering experience without losing control of service.</h2>
+          </header>
+          <p>For a counter-only café, speed matters. For a table-service café, the order must reach the right kitchen workflow. Zipla POS brings both needs into the same system.</p>
+          <ul class="vertical-check-list">
+            <li><strong>Counter service:</strong> find menu items, apply discounts when needed, create a bill and choose its payment mode.</li>
+            <li><strong>Table service:</strong> use QR ordering when the café needs guests to browse and place their own orders.</li>
+            <li><strong>Kitchen visibility:</strong> use KDS for the kitchen-side order queue instead of paper KOTs.</li>
+            <li><strong>Menu decisions:</strong> use item-wise reporting when you need to review what sold during the day.</li>
+          </ul>
+        </div>
+        <figure class="vertical-image-stack">
+          <img src="/screenshots/ss-customer-menu.webp" alt="Zipla POS customer menu for café QR ordering" loading="lazy" width="1232" height="860" />
+          <figcaption>Customer menu for QR ordering in a café workflow.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="vertical-section" aria-labelledby="cafe-fit-title">
+      <div class="vertical-container">
+        <header class="vertical-section-head">
+          <span class="vertical-kicker">Choose the relevant workflow</span>
+          <h2 id="cafe-fit-title">A café can start simple and add the service tools it needs.</h2>
+        </header>
+        <div class="vertical-card-grid">
+          <article class="vertical-card"><span class="vertical-card-label">Counter-first café</span><h3>Fast walk-in billing</h3><p>Use counter billing, GST invoices, payment-mode tracking, Bluetooth printing and day-close reporting from an Android device.</p></article>
+          <article class="vertical-card"><span class="vertical-card-label">Table-service café</span><h3>QR orders + KDS</h3><p>Use the Pro workflow when table QR ordering and a Kitchen Display System match your service model.</p></article>
+          <article class="vertical-card"><span class="vertical-card-label">Café + bakery counter</span><h3>One mixed menu</h3><p>Use item categories, discounts, inventory visibility and reporting across beverages, snacks, bakery items and combos.</p></article>
         </div>
       </div>
     </section>
 
-    <section class="vp-section">
-      <div class="vp-container">
-
-        <h2>Why Cafes in India Need a Dedicated POS System</h2>
-        <p>Cafes deal with high-frequency small orders — cappuccinos, sandwiches, cold coffees — often handled by one or two people at a busy counter. Manual billing slows you down, creates errors in change calculation, and makes it impossible to track what is selling and what is sitting unsold.</p>
-        <p>Zipla POS is built for the speed a cafe counter demands. Fast item search, instant bill generation, UPI QR tracking, and real-time sales data — your team serves more customers in less time, with fewer errors.</p>
-
-        <h2>Key Features — Cafe Billing Software</h2>
-        <ul class="vp-feature-list">
-          <li><strong>Counter Billing:</strong> Add items, apply discount, generate bill — done in under 20 seconds. No slow loading screens, no crashes during rush hour.</li>
-          <li><strong>QR Table Ordering:</strong> Place QR codes on each table. Customers browse your menu and order themselves. Orders appear on your billing screen or KDS instantly — no verbal relay needed.</li>
-          <li><strong>Custom Menu by Category:</strong> Organize items under Hot Beverages, Cold Coffee, Snacks, Combos. Staff find items instantly without scrolling through an unorganized list.</li>
-          <li><strong>Multiple Billing Devices:</strong> Two counters? Both staff can bill independently on separate devices. All transactions consolidate in a single day close report.</li>
-          <li><strong>UPI & Cash Tracking:</strong> Accept any payment mode. Reports clearly show cash vs UPI split — daily reconciliation takes 2 minutes, not 20.</li>
-          <li><strong>Day Close Report:</strong> Best-selling items, total revenue, payment breakdown — visible in one screen at end of every shift.</li>
-          <li><strong>WhatsApp Bill Sharing:</strong> No printer at the counter? Share a digital bill directly to the customer's WhatsApp in one tap. Zero paper, zero printer maintenance.</li>
-          <li><strong>Staff Access Control:</strong> Counter staff can only create bills. Managers can view reports, edit menu, and apply large discounts — access is controlled per staff login.</li>
-        </ul>
-
-        <h2>Cafe POS Workflow — Counter to Close</h2>
-        <ol class="vp-steps">
-          <li>Customer orders at counter or via table QR code</li>
-          <li>Staff adds items — searchable by name or scrollable by category</li>
-          <li>Bill generated with total, discount if applicable, GST if required</li>
-          <li>Customer pays cash or UPI — staff marks payment mode in one tap</li>
-          <li>Bill printed on Bluetooth thermal printer or shared on WhatsApp</li>
-          <li>End of day: one-tap report shows total sales, top items, net cash in hand</li>
-        </ol>
-
-        <h2>Designed for Indian Cafe Realities</h2>
-        <p>Power fluctuations, patchy internet, seasonal rush, and students sitting for 3 hours — Zipla POS handles the Indian cafe environment without drama. Bills can still be created once the menu loads, even if your connection drops briefly. The lightweight app runs smoothly on mid-range Android devices without dedicated POS hardware.</p>
-        <p>Works equally well for standalone cafes, bakery-cafe combos, co-working cafe formats, and multi-outlet cafe chains where the owner needs to monitor data remotely.</p>
-
-        <h2>Pricing — No Monthly Subscription</h2>
-        <p>Pay once a year. No monthly billing cycle, no per-transaction fees, no sudden price hike after a trial period ends.</p>
-        <ul>
-          <li><strong>Starter:</strong> ₹2,999/year &nbsp;|&nbsp; ₹5,999/3 years</li>
-          <li><strong>Pro:</strong> ₹4,999/year &nbsp;|&nbsp; ₹9,899/3 years</li>
-        </ul>
-
-        <h2>Frequently Asked Questions</h2>
-        <div class="vp-faq">
-
-          <div class="vp-faq-item">
-            <h3>What is the best POS software for cafes in India?</h3>
-            <p>Zipla POS is designed for the fast-paced billing needs of Indian cafes. It supports counter billing, QR table ordering, UPI payment tracking, and end-of-day reports — all from a standard Android device. Pricing starts at ₹2,999/year with no monthly subscription.</p>
-          </div>
-
-          <div class="vp-faq-item">
-            <h3>Can Zipla POS handle both counter and table ordering for a cafe?</h3>
-            <p>Yes. Counter staff bill walk-in customers directly from the app while seated customers scan QR codes and order from their tables. Both order flows consolidate in the same dashboard and day close report.</p>
-          </div>
-
-          <div class="vp-faq-item">
-            <h3>Does Zipla POS work on a tablet mounted at the cafe counter?</h3>
-            <p>Yes. Zipla POS works on any Android tablet or smartphone. Many cafes use a 10-inch tablet at the counter for better visibility, paired with a Bluetooth thermal printer for receipts.</p>
-          </div>
-
-          <div class="vp-faq-item">
-            <h3>Can I track which cafe items are selling most?</h3>
-            <p>Yes. The day close report shows item-wise sales for every day. You can see how many cappuccinos, cold coffees, or sandwiches were sold — helping you plan stock and menu changes based on actual data.</p>
-          </div>
-
-          <div class="vp-faq-item">
-            <h3>Does Zipla POS support GST billing for a cafe?</h3>
-            <p>Yes. You can configure GST rates per item and generate GST-compliant bills with HSN codes and tax breakdowns — required for cafes registered under GST.</p>
-          </div>
-
-          <div class="vp-faq-item">
-            <h3>Is Zipla POS suitable for a new cafe just starting out?</h3>
-            <p>Absolutely. Many Zipla POS users start with the Starter plan at ₹2,999/year even before their cafe opens, to set up the menu and test billing before launch. No technical knowledge required to get started.</p>
-          </div>
-
+    <section class="vertical-section vertical-section--muted" aria-labelledby="cafe-faq-title">
+      <div class="vertical-container vertical-faq-layout">
+        <header class="vertical-section-head">
+          <span class="vertical-kicker">Buyer questions</span>
+          <h2 id="cafe-faq-title">Cafe POS software FAQs</h2>
+          <p>Clear answers to the questions a café owner should check before starting a trial.</p>
+        </header>
+        <div class="vertical-faq-list">
+          {faqs.map((faq) => (
+            <details>
+              <summary>{faq.question}</summary>
+              <p>{faq.answer}</p>
+            </details>
+          ))}
         </div>
-
-        <div class="vp-related">
-          <h2>Other Businesses Zipla POS Serves</h2>
-          <p>Zipla POS works across Indian food businesses — <a href="/restaurant-pos-software/">restaurant POS software</a>, <a href="/bakery-billing-software/">bakery billing software</a>, and <a href="/sweet-shop-billing/">sweet shop billing software</a>.</p>
-        </div>
-
-        <div class="vp-final-cta">
-          <h2>Speed Up Your Cafe Counter with Zipla POS</h2>
-          <p>Setup in 30 minutes. No hardware purchase. No monthly fees. Start today and see the difference on your busiest afternoon.</p>
-          <a href="https://app.zipla.in/register" class="vp-btn-primary">Start Free — No Credit Card</a>
-          <a href="/" class="vp-btn-secondary">Learn More About Zipla POS</a>
-        </div>
-
       </div>
     </section>
 
+    <section class="vertical-section vertical-section--compact" aria-labelledby="cafe-related-title">
+      <div class="vertical-container">
+        <div class="vertical-related">
+          <h2 id="cafe-related-title">Explore related Zipla POS workflows</h2>
+          <p>Need a different food-business workflow? See <a class="vertical-inline-link" href="/restaurant-pos-software/">restaurant POS software</a>, <a class="vertical-inline-link" href="/bakery-billing-software/">bakery billing software</a>, <a class="vertical-inline-link" href="/qsr-billing-software/">QSR billing software</a>, or the complete <a class="vertical-inline-link" href="/faq/">Zipla POS FAQ</a>.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="vertical-section vertical-section--compact">
+      <div class="vertical-container">
+        <div class="vertical-final-cta">
+          <h2>See the Zipla café workflow with your own menu.</h2>
+          <p>Start a 14-day free trial online, or book a WhatsApp demo to see counter billing, QR ordering and KDS in context.</p>
+          <div class="vertical-final-actions">
+            <a class="btn-cta" href="https://app.zipla.in/register">Start 14-Day Free Trial</a>
+            <a class="btn-ghost" href="/#demo">Book Free WhatsApp Demo</a>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
   <Footer />
 </Layout>
-
-<style>
-  .vp-main { background: #0D0D0D; }
-  .vp-hero { padding: 5rem 1.5rem 3.5rem; text-align: center; border-bottom: 1px solid #1a1a1a; }
-  .vp-container { max-width: 820px; margin: 0 auto; padding: 0 1rem; }
-  .vp-eyebrow { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #C9A94B; margin-bottom: 1rem; }
-  .vp-h1 { font-size: clamp(1.8rem, 4.5vw, 2.75rem); font-weight: 700; color: #ffffff; line-height: 1.22; margin: 0 auto 1.25rem; max-width: 760px; }
-  .vp-lead { font-size: 1.1rem; color: #aaaaaa; line-height: 1.75; max-width: 600px; margin: 0 auto 2rem; }
-  .vp-cta-group { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
-  .vp-btn-primary { display: inline-block; background: #C9A94B; color: #0D0D0D; font-weight: 700; padding: 0.875rem 2rem; border-radius: 6px; text-decoration: none; font-size: 1rem; transition: opacity 0.18s; }
-  .vp-btn-primary:hover { opacity: 0.85; }
-  .vp-btn-secondary { display: inline-block; color: #C9A94B; font-weight: 600; padding: 0.875rem 1.5rem; border-radius: 6px; text-decoration: none; font-size: 0.95rem; border: 1px solid #2a2a2a; background: transparent; transition: border-color 0.18s; }
-  .vp-btn-secondary:hover { border-color: #C9A94B; }
-  .vp-screenshots { padding: 0 1.5rem 3rem; }
-  .vp-ss-heading { font-size: 1.4rem; font-weight: 700; color: #C9A94B; text-align: center; margin: 0 0 2rem; }
-  .vp-ss-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; max-width: 1000px; margin: 0 auto; }
-  .vp-ss-item { margin: 0; }
-  .vp-ss-item img { width: 100%; height: auto; border-radius: 10px; display: block; border: 1px solid #1e1e1e; }
-  .vp-ss-item figcaption { font-size: 0.82rem; color: #888888; text-align: center; margin-top: 0.625rem; }
-  @media (max-width: 640px) { .vp-ss-grid { grid-template-columns: 1fr; } }
-  .vp-section { padding: 3rem 1.5rem 5rem; color: #cccccc; }
-  .vp-section h2 { font-size: 1.45rem; color: #C9A94B; margin: 2.75rem 0 0.875rem; font-weight: 600; }
-  .vp-section h3 { font-size: 1.05rem; color: #ffffff; margin: 0 0 0.5rem; font-weight: 600; }
-  .vp-section p { line-height: 1.8; margin-bottom: 1rem; color: #cccccc; font-size: 0.98rem; }
-  .vp-feature-list { padding-left: 1.25rem; margin-bottom: 1rem; }
-  .vp-feature-list li { line-height: 1.8; margin-bottom: 0.625rem; color: #cccccc; font-size: 0.98rem; }
-  .vp-section ul:not(.vp-feature-list):not(.vp-faq *) { padding-left: 1.25rem; margin-bottom: 1rem; }
-  .vp-section ul:not(.vp-feature-list):not(.vp-faq *) li { line-height: 1.8; margin-bottom: 0.5rem; color: #cccccc; font-size: 0.98rem; }
-  .vp-steps { padding-left: 1.25rem; margin-bottom: 1rem; }
-  .vp-steps li { line-height: 1.8; margin-bottom: 0.625rem; color: #cccccc; font-size: 0.98rem; }
-  .vp-faq { margin-top: 0.75rem; }
-  .vp-faq-item { background: #111111; border: 1px solid #1e1e1e; border-radius: 8px; padding: 1.25rem 1.5rem; margin-bottom: 0.875rem; }
-  .vp-final-cta { text-align: center; padding: 3rem 1.5rem; margin-top: 3rem; background: #111111; border: 1px solid #1e1e1e; border-radius: 12px; }
-  .vp-final-cta h2 { color: #ffffff !important; margin-top: 0 !important; }
-  .vp-final-cta .vp-btn-primary, .vp-final-cta .vp-btn-secondary { margin: 0.5rem; }
-  .vp-related { margin: 2.5rem 0 0; padding: 1.25rem 1.5rem; background: #111111; border: 1px solid #1e1e1e; border-radius: 8px; }
-  .vp-related h2 { margin-top: 0 !important; }
-  .vp-related a { color: #C9A94B; text-decoration: underline; text-underline-offset: 3px; }
-  @media (max-width: 600px) { .vp-cta-group { flex-direction: column; align-items: center; } .vp-hero { padding: 3.5rem 1.25rem 2.5rem; } }
-</style>
