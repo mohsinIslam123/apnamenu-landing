@@ -3,234 +3,91 @@ import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.jsx';
 import Footer from '../components/Footer.jsx';
 import '../index.css';
+import '../vertical-page.css';
 
-const title = "QSR Billing Software India — Fast Counter Billing & KDS | Zipla POS";
-const description = "Best QSR billing software for India. Fast counter billing, Kitchen Display System, GST invoices & shift reports. Works on Android. Starts at ₹2,999/yr.";
-const canonical = "https://zipla.in/qsr-billing-software/";
+const title = 'QSR Billing Software for India | Counter Billing & KDS | Zipla POS';
+const description = 'QSR Billing Software for India for counter-led food outlets: create GST invoices, track payment modes, use KDS for kitchen handoff and review sales with Zipla POS.';
+const canonical = 'https://zipla.in/qsr-billing-software/';
+
+const faqs = [
+  { question: 'What is QSR billing software?', answer: 'QSR billing software is a POS workflow for quick-service counters that need to create customer bills, mark payment modes, hand active orders to the kitchen and review the operating day. Zipla POS brings these steps into one system.' },
+  { question: 'Who should use Zipla POS for a QSR?', answer: 'Zipla POS is suitable for Indian counter-led QSRs, takeaway counters, food-court stalls and small fast-food outlets. Choose the workflow based on whether you only need counter billing or also need a kitchen order queue.' },
+  { question: 'What does Starter versus Pro include for a QSR?', answer: 'Starter includes Counter POS Billing, Auto GST Bill, inventory with low-stock alerts, cash/UPI/card payment tracking and staff roles. Pro includes everything in Starter plus Kitchen Display System, table QR ordering, Bluetooth KOT auto-print, sales analytics and day-close reports.' },
+  { question: 'Can QSR staff use Zipla POS on Android devices?', answer: 'Yes. Zipla POS can be used on Android phones and tablets. Bluetooth thermal printing is supported when you need a printed customer bill.' },
+  { question: 'Can a QSR create bills if the internet connection drops?', answer: 'After the menu has loaded, bills can be created without an internet connection. UPI and online payments require connectivity. Full offline sync is on the roadmap.' },
+  { question: 'Can a QSR print or share a Zipla POS bill?', answer: 'Yes. Use Bluetooth thermal printing for a paper bill or WhatsApp bill sharing for a digital copy.' },
+];
 
 const jsonLd = {
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "WebPage",
-      "@id": "https://zipla.in/qsr-billing-software/",
-      "url": "https://zipla.in/qsr-billing-software/",
-      "name": "QSR Billing Software India — Zipla POS",
-      "description": "Fast QSR billing software for India. Counter billing, KDS, GST invoices & shift close reports. Starts at ₹2,999/yr.",
-      "isPartOf": { "@id": "https://zipla.in/#website" },
-      "breadcrumb": {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://zipla.in" },
-          { "@type": "ListItem", "position": 2, "name": "QSR Billing Software", "item": "https://zipla.in/qsr-billing-software/" }
-        ]
-      }
-    },
-    {
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "What is the best billing software for QSR in India?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Zipla POS is built for high-speed QSR counter billing — fast item search, one-tap payment mode selection, and instant KDS updates for the kitchen. No dedicated hardware required. Pricing starts at ₹2,999/year with no per-transaction fee." }
-        },
-        {
-          "@type": "Question",
-          "name": "Can Zipla POS handle high transaction volumes at a QSR counter?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Yes. Zipla POS is designed for speed — a complete bill with 3-4 items takes under 20 seconds. The app does not slow down during peak hours. Multiple counters can bill independently with all transactions consolidating in the day close report." }
-        },
-        {
-          "@type": "Question",
-          "name": "Does QSR billing software need a dedicated POS machine?",
-          "acceptedAnswer": { "@type": "Answer", "text": "No. Zipla POS runs on any Android smartphone or tablet. For bill printing, pair any Bluetooth thermal printer. No dedicated POS terminal or Windows machine required — this significantly reduces setup cost for QSR operators." }
-        },
-        {
-          "@type": "Question",
-          "name": "Can Zipla POS work without internet at a QSR counter?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Zipla POS works after the menu is loaded — you can create bills without internet. UPI and online payments require a connection. Full offline sync is on our roadmap." }
-        },
-        {
-          "@type": "Question",
-          "name": "Does Zipla POS generate GST invoices for QSR businesses?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Yes. Zipla POS auto-calculates GST on every bill based on the rate you configure per item. Bills include GSTIN, HSN/SAC codes, and itemized CGST + SGST breakup — compliant for all GST-registered QSR businesses." }
-        }
-      ]
-    }
-  ]
+  '@context': 'https://schema.org',
+  '@graph': [
+    { '@type': 'WebPage', '@id': canonical, url: canonical, name: title, description, isPartOf: { '@id': 'https://zipla.in/#website' }, about: { '@id': 'https://zipla.in/#software' }, inLanguage: 'en-IN', breadcrumb: { '@id': `${canonical}#breadcrumb` } },
+    { '@type': 'BreadcrumbList', '@id': `${canonical}#breadcrumb`, itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: 'https://zipla.in/' }, { '@type': 'ListItem', position: 2, name: 'QSR Billing Software', item: canonical }] },
+    { '@type': 'FAQPage', '@id': `${canonical}#faq`, mainEntity: faqs.map((faq) => ({ '@type': 'Question', name: faq.question, acceptedAnswer: { '@type': 'Answer', text: faq.answer } })) },
+  ],
 };
 ---
 
 <Layout title={title} description={description} canonical={canonical} jsonLd={jsonLd}>
   <Header client:load />
-
-  <main class="vp-main">
-
-    <section class="vp-hero">
-      <div class="vp-container">
-        <p class="vp-eyebrow">For QSR & Fast Food</p>
-        <h1 class="vp-h1">QSR Billing Software India — Speed Up Every Counter Transaction</h1>
-        <p class="vp-lead">Quick service restaurants run on speed. Zipla POS cuts billing time to under 20 seconds per order — fast item search, instant KDS updates, and one-tap payment. Runs on any Android phone.</p>
-        <div class="vp-cta-group">
-          <a href="https://app.zipla.in/register" class="vp-btn-primary">Start Free Trial</a>
-          <a href="/" class="vp-btn-secondary">← Back to Zipla POS</a>
-        </div>
-      </div>
-    </section>
-
-    <section class="vp-screenshots">
-      <div class="vp-container">
-        <h2 class="vp-ss-heading">See Zipla POS in Action</h2>
-        <div class="vp-ss-grid">
-          <figure class="vp-ss-item">
-            <img src="/screenshots/ss-new-order.webp" alt="Zipla POS billing counter for QSR fast food" loading="lazy" width="1232" height="860" />
-            <figcaption>Counter Billing — fast checkout for QSR and fast food counters</figcaption>
-          </figure>
-          <figure class="vp-ss-item">
-            <img src="/screenshots/ss-kds.webp" alt="Kitchen Display System for QSR on Zipla POS" loading="lazy" width="1232" height="860" />
-            <figcaption>Kitchen Display System — confirmed, preparing, ready — all on one screen</figcaption>
+  <main class="vertical-page">
+    <div class="vertical-container vertical-breadcrumbs" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span><span>QSR Billing Software</span></div>
+    <article class="qsr-page-article">
+      <section class="vertical-hero" aria-labelledby="qsr-hero-title">
+        <div class="vertical-container vertical-hero-grid">
+          <div>
+            <span class="vertical-eyebrow">QSR billing software for India</span>
+            <h1 id="qsr-hero-title">QSR Billing Software for India</h1>
+            <p class="qsr-top-summary"><strong>Key takeaway:</strong> QSR Billing Software for India gives counter-led food outlets one workflow for customer billing, payment-mode tracking, kitchen handoff and day-close review.</p>
+            <p class="vertical-lead"><strong>Quick answer:</strong> Zipla POS is QSR billing software for Indian quick-service counters that need GST invoices, cash/UPI/card payment marking and, with Pro, a Kitchen Display System for active orders.</p>
+            <div class="vertical-actions"><a class="btn-cta" href="https://app.zipla.in/register">Start 14-Day Free Trial</a><a class="btn-ghost" href="/#demo">Book Free WhatsApp Demo</a></div>
+            <ul class="vertical-trial-note" aria-label="Trial details"><li>No card required</li><li>Android phone or tablet</li><li>Bluetooth printing supported</li></ul>
+          </div>
+          <figure class="vertical-hero-visual">
+            <div class="vertical-hero-frame"><img src="/screenshots/ss-new-order.webp" alt="Actual Zipla POS new-order screen for a QSR counter billing workflow" width="1232" height="860" /><figcaption class="vertical-hero-caption"><strong>zipla POS</strong><span>Actual new-order screen for counter billing</span></figcaption></div>
+            <div class="vertical-callout vertical-callout--left"><span class="vertical-callout-mark">₹</span><span><strong>Counter billing</strong><small>GST invoices and payment modes</small></span></div>
+            <div class="vertical-callout vertical-callout--right"><span class="vertical-callout-mark">KDS</span><span><strong>Kitchen queue</strong><small>For Pro QSR workflows</small></span></div>
           </figure>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section class="vp-section">
-      <div class="vp-container">
+      <section class="vertical-proof-strip" aria-label="QSR billing capabilities"><div class="vertical-container vertical-proof-grid"><div class="vertical-proof"><strong>Counter bills</strong><span>Create GST invoices for customer orders.</span></div><div class="vertical-proof"><strong>Payment marking</strong><span>Mark cash, UPI or card payments.</span></div><div class="vertical-proof"><strong>Kitchen Display</strong><span>Use a Pro KDS order queue.</span></div><div class="vertical-proof"><strong>Day-close review</strong><span>Use Pro sales analytics and reports.</span></div></div></section>
 
-        <h2>Why QSR Counters Need Dedicated Billing Software</h2>
-        <p>A QSR counter handles more transactions per hour than almost any other food format. Manual billing slows the queue, creates cash reconciliation errors, and makes it impossible to know which items are selling fastest during peak hours.</p>
-        <p>Zipla POS is built for the speed a QSR counter demands — fast item access, quick payment confirmation, and real-time kitchen updates. Your team bills faster, your kitchen gets orders instantly, and your end-of-shift report takes 10 seconds to generate.</p>
+      <section class="vertical-section" aria-labelledby="qsr-definition-title"><div class="vertical-container"><header class="vertical-section-head"><span class="vertical-kicker">Definition and use case</span><h2 id="qsr-definition-title">What is QSR billing software for a counter-led outlet?</h2><p>QSR billing software is a point-of-sale workflow for outlets where the order starts at a counter and may need a clear handoff to a kitchen. It connects menu selection, GST billing, payment marking and daily review instead of keeping these steps in separate registers.</p><p class="qsr-content-links">If your business has table service, compare <a href="/restaurant-pos-software/">restaurant POS software</a> or <a href="/cafe-pos-software/">cafe POS software</a>. For a highway or neighbourhood eatery, see <a href="/dhaba-billing-software/">dhaba billing software</a>.</p></header><div class="vertical-card-grid"><div class="vertical-card"><span class="vertical-card-label">Counter team</span><h3>Close a customer bill</h3><p>Choose menu items, create a GST invoice and mark the customer payment mode from the counter workflow.</p></div><div class="vertical-card"><span class="vertical-card-label">Kitchen handoff</span><h3>Keep active orders visible</h3><p>Use the Pro Kitchen Display System when the counter needs a visible kitchen order queue.</p></div><div class="vertical-card"><span class="vertical-card-label">Owner review</span><h3>Check the operating day</h3><p>Use Starter inventory and low-stock alerts, or Pro sales analytics and day-close reports, based on the plan you choose.</p></div></div></div></section>
 
-        <h2>Key Features — QSR Billing Software</h2>
-        <ul class="vp-feature-list">
-          <li><strong>Fast Counter Billing:</strong> Add items by name or category, select payment mode, confirm — done in under 20 seconds. No loading delays during lunch rush or dinner peak.</li>
-          <li><strong>Kitchen Display System (KDS):</strong> Orders appear on the kitchen screen the moment billing confirms them. No paper chits, no shouting across the counter, no missed orders during rush hour.</li>
-          <li><strong>Multiple Payment Modes:</strong> Cash, UPI, card — all tracked separately in every transaction. Shift close report shows exact split without manual counting.</li>
-          <li><strong>Auto GST Invoice:</strong> CGST + SGST calculated automatically per item. Compliant bills with GSTIN and HSN codes — required for commercial customers and dine-in GST billing.</li>
-          <li><strong>Staff Roles — Cashier & Manager:</strong> Counter staff can only bill. Managers control discounts, access reports, and edit the menu. Each login tracked separately.</li>
-          <li><strong>Day Close / Shift Report:</strong> Total sales, item-wise quantity sold, payment mode breakdown, and net cash in hand — one tap at end of every shift. No manual calculation.</li>
-          <li><strong>Bluetooth Thermal Printing:</strong> Print bills on any Bluetooth thermal printer. No cables, no drivers, no setup headache — compatible with standard 58mm and 80mm printers.</li>
-          <li><strong>WhatsApp Bill Sharing:</strong> Customers who prefer digital receipts get their bill on WhatsApp in one tap — no printer needed at takeaway counters.</li>
-        </ul>
+      <section class="vertical-section vertical-section--muted" aria-labelledby="qsr-workflow-title"><div class="vertical-container"><header class="vertical-section-head"><span class="vertical-kicker">Counter to kitchen to review</span><h2 id="qsr-workflow-title">How does a QSR workflow move through Zipla POS?</h2><p>The workflow follows the handoffs that a counter-led outlet needs: select the order, pass it to the kitchen when relevant, close the customer bill and review the day.</p></header><div class="vertical-workflow"><div class="vertical-step"><span class="vertical-step-number">01</span><h3>Build the order</h3><p>Select the customer’s menu items and create the counter bill.</p></div><div class="vertical-step"><span class="vertical-step-number">02</span><h3>Hand off to kitchen</h3><p>For Pro, use KDS to keep kitchen orders in a visible queue; Bluetooth KOT auto-print is also a Pro feature.</p></div><div class="vertical-step"><span class="vertical-step-number">03</span><h3>Close the bill</h3><p>Create the GST invoice, mark cash, UPI or card, then print on Bluetooth or share the bill on WhatsApp.</p></div><div class="vertical-step"><span class="vertical-step-number">04</span><h3>Review the day</h3><p>For Pro, review sales analytics and the day-close report after service.</p></div></div></div></section>
 
-        <h2>QSR Billing Workflow — Counter to Kitchen to Close</h2>
-        <ol class="vp-steps">
-          <li>Customer orders at counter — staff opens new bill in Zipla POS</li>
-          <li>Add items by name search or category scroll — takes 5 seconds for a 3-item order</li>
-          <li>Order appears on KDS screen in kitchen — kitchen starts prep immediately</li>
-          <li>Customer pays cash or UPI — staff marks payment in one tap</li>
-          <li>Bill printed on Bluetooth thermal printer or shared on WhatsApp</li>
-          <li>Kitchen marks order ready — counter staff collects and serves</li>
-          <li>Shift end: one-tap report shows total revenue, top items, cash vs UPI split</li>
-        </ol>
+      <section class="vertical-section" aria-labelledby="qsr-kds-title"><div class="vertical-container vertical-feature-layout"><div class="vertical-feature-copy"><header class="vertical-section-head vertical-section-head--left"><span class="vertical-kicker">Choose around the handoff</span><h2 id="qsr-kds-title">When should a QSR use KDS instead of only counter billing?</h2><p class="qsr-heading-answer"><strong>Short answer:</strong> Use a Pro KDS workflow when orders need to move from the counter into a dedicated kitchen queue. A counter-only outlet can start with the billing workflow that fits its service model.</p></header><p>QSRs are distinct from table-service restaurants because the counter is usually the starting point. The decision is whether the outlet also needs kitchen-side order visibility.</p><ul class="vertical-check-list"><li><strong>Counter-only outlet:</strong> use Starter for Counter POS Billing, Auto GST Bill, inventory with low-stock alerts, payment tracking and staff roles.</li><li><strong>Counter plus kitchen queue:</strong> use Pro for KDS, Bluetooth KOT auto-print, sales analytics and day-close reports.</li><li><strong>Customer bill:</strong> use supported Bluetooth thermal printing or WhatsApp bill sharing.</li><li><strong>Connectivity:</strong> after the menu has loaded, bills can be created without internet; UPI and online payments need connectivity.</li></ul></div><figure class="vertical-image-stack"><img src="/screenshots/ss-kds.webp" alt="Actual Zipla POS Kitchen Display System screenshot for a QSR kitchen order queue" loading="lazy" width="1232" height="860" /><figcaption>Actual Zipla POS Kitchen Display System screenshot for a Pro QSR workflow.</figcaption></figure></div></section>
 
-        <h2>Built for Indian QSR Realities</h2>
-        <p>Indian QSRs face unique challenges — lunch rush from 12 to 2 PM when 40 customers show up in 30 minutes, staff with limited technical skills, UPI payments that sometimes take 10 seconds to confirm, and power fluctuations that interrupt operations. Zipla POS is designed around these realities.</p>
-        <p>Bills can still be created once the menu is loaded even if the connection drops briefly. The app runs smoothly on mid-range Android phones without requiring a dedicated POS terminal. Counter staff with zero tech background get comfortable with the system within one shift.</p>
+      <section class="vertical-section vertical-section--muted" aria-labelledby="qsr-plan-title"><div class="vertical-container"><header class="vertical-section-head"><span class="vertical-kicker">Plan decision</span><h2 id="qsr-plan-title">Which Zipla POS plan fits a QSR billing workflow?</h2><p class="qsr-heading-answer"><strong>Short answer:</strong> Starter fits a QSR that needs counter billing and low-stock alerts. Pro fits a QSR that also needs a kitchen queue, Bluetooth KOT auto-print, sales analytics and day-close reports.</p></header><div class="qsr-decision"><h3>QSR plan decision: Starter or Pro?</h3><p>Choose the plan around the actual service workflow your outlet needs.</p><div class="qsr-decision-table-wrap"><table class="qsr-decision-table"><thead><tr><th scope="col">QSR situation</th><th scope="col">Relevant Zipla POS workflow</th><th scope="col">Plan to consider</th></tr></thead><tbody><tr><th scope="row">Counter-led takeaway or food-court outlet</th><td>Counter billing, GST invoices, inventory with low-stock alerts, cash/UPI/card payment tracking and staff roles.</td><td><strong>Starter</strong><br />₹2,999/year or ₹5,999 for 3 years</td></tr><tr><th scope="row">Counter with a kitchen order queue</th><td>Everything in Starter plus Kitchen Display System, Bluetooth KOT auto-print, sales analytics and day-close reports. Table QR ordering is also included in Pro.</td><td><strong>Pro</strong><br />₹4,999/year or ₹9,899 for 3 years</td></tr><tr><th scope="row">Before committing</th><td>Test your own menu, one counter bill and, if relevant, one KDS order during the 14-day trial.</td><td><strong>14-day trial</strong><br />No card required</td></tr></tbody></table></div></div></div></section>
 
-        <h2>Works for All QSR and Fast Food Formats in India</h2>
-        <ul>
-          <li>Burger, sandwich, and fast food counters with high transaction volume</li>
-          <li>Pizza and takeaway outlets with counter and delivery orders</li>
-          <li>Biryani and rice counters with fixed-menu high-volume billing</li>
-          <li>South Indian fast food counters — idli, dosa, vada formats</li>
-          <li>Chai and snack counters at bus stands, malls, and commercial areas</li>
-          <li>Food court stalls with shared seating and individual billing</li>
-          <li>Multi-outlet QSR chains where the owner monitors reports remotely</li>
-        </ul>
+      <section class="vertical-section" aria-labelledby="qsr-trial-title"><div class="vertical-container"><header class="vertical-section-head"><span class="vertical-kicker">Use the trial with your real outlet flow</span><h2 id="qsr-trial-title">What should a QSR test before choosing billing software?</h2><p class="qsr-heading-answer"><strong>Short answer:</strong> Test the actual counter order, payment marking, kitchen handoff and owner review that your team will use every day.</p></header><div class="vertical-workflow"><div class="vertical-step"><span class="vertical-step-number">01</span><h3>Add familiar items</h3><p>Set up a small version of your real menu so staff can test familiar products.</p></div><div class="vertical-step"><span class="vertical-step-number">02</span><h3>Run a counter bill</h3><p>Create a GST invoice, mark a cash, UPI or card payment, then test printing or WhatsApp sharing.</p></div><div class="vertical-step"><span class="vertical-step-number">03</span><h3>Test KDS if relevant</h3><p>On Pro, send one real-style counter order into the Kitchen Display System and check the kitchen queue.</p></div><div class="vertical-step"><span class="vertical-step-number">04</span><h3>Check the owner view</h3><p>Review Starter inventory and low-stock alerts; on Pro, also review sales analytics and day-close reporting.</p></div></div></div></section>
 
-        <h2>Pricing — One Annual Fee, Zero Per-Transaction Charges</h2>
-        <p>Zipla POS charges a flat annual fee. No per-bill commission that cuts into your thin QSR margins, no per-device license, no AMC charges. Pay once, use all year.</p>
-        <ul>
-          <li><strong>Starter:</strong> ₹2,999/year &nbsp;|&nbsp; ₹5,999/3 years</li>
-          <li><strong>Pro:</strong> ₹4,999/year &nbsp;|&nbsp; ₹9,899/3 years</li>
-        </ul>
+      <section class="vertical-section vertical-section--muted" aria-labelledby="qsr-faq-title"><div class="vertical-container vertical-faq-layout"><header class="vertical-section-head"><span class="vertical-kicker">Buyer questions</span><h2 id="qsr-faq-title">What do QSR owners ask before starting a trial?</h2><p class="qsr-heading-answer"><strong>Short answer:</strong> These answers cover counter use, KDS, plan fit, Android devices, bill delivery and connectivity.</p></header><div class="vertical-faq-list">{faqs.map((faq) => (<details><summary>{faq.question}</summary><p>{faq.answer}</p></details>))}</div></div></section>
 
-        <h2>Frequently Asked Questions</h2>
-        <div class="vp-faq">
-
-          <div class="vp-faq-item">
-            <h3>What is the best billing software for QSR in India?</h3>
-            <p>Zipla POS is built for high-speed QSR counter billing — fast item search, one-tap payment, and instant KDS updates. No dedicated hardware required. Pricing starts at ₹2,999/year with no per-transaction fee or AMC charges.</p>
-          </div>
-
-          <div class="vp-faq-item">
-            <h3>Can Zipla POS handle high transaction volumes at a QSR counter?</h3>
-            <p>Yes. A complete bill with 3-4 items takes under 20 seconds. The app does not slow down during peak hours. Multiple staff can bill on separate devices and all transactions consolidate in one shift close report.</p>
-          </div>
-
-          <div class="vp-faq-item">
-            <h3>Does QSR billing software need a dedicated POS machine?</h3>
-            <p>No. Zipla POS runs on any Android smartphone or tablet you already own. For bill printing, pair any Bluetooth thermal printer (₹1,500–₹4,000 one-time). No expensive POS terminal, no Windows machine needed.</p>
-          </div>
-
-          <div class="vp-faq-item">
-            <h3>How does the Kitchen Display System help a QSR kitchen?</h3>
-            <p>Orders appear on a second Android device placed in the kitchen the moment billing confirms them. Kitchen staff sees item name and quantity — no paper chits, no miscommunication during rush. When the order is ready, kitchen marks it done and the counter gets notified.</p>
-          </div>
-
-          <div class="vp-faq-item">
-            <h3>Can Zipla POS work without internet at a QSR counter?</h3>
-            <p>Zipla POS works after the menu is loaded — you can create bills without internet. UPI and online payments require a connection. Full offline sync is on our roadmap.</p>
-          </div>
-
-        </div>
-
-        <div class="vp-related">
-          <h2>Other Businesses Zipla POS Serves</h2>
-          <p>Zipla POS works across Indian food businesses — <a href="/restaurant-pos-software/">restaurant POS software</a>, <a href="/cafe-pos-software/">cafe billing software</a>, <a href="/bakery-billing-software/">bakery billing software</a>, and <a href="/sweet-shop-billing/">sweet shop billing software</a>.</p>
-        </div>
-
-        <div class="vp-final-cta">
-          <h2>Speed Up Your QSR Counter with Zipla POS</h2>
-          <p>Fast billing, live kitchen updates, accurate shift reports — everything your QSR needs in one app. No hardware. No monthly fees. Setup in 30 minutes.</p>
-          <a href="https://app.zipla.in/register" class="vp-btn-primary">Start Free — No Credit Card</a>
-          <a href="/" class="vp-btn-secondary">Learn More About Zipla POS</a>
-        </div>
-
-      </div>
-    </section>
-
+      <section class="vertical-section vertical-section--compact" aria-labelledby="qsr-related-title"><div class="vertical-container"><div class="vertical-related"><h2 id="qsr-related-title">Which Zipla POS workflows are useful to compare?</h2><p>Explore <a class="vertical-inline-link" href="/restaurant-pos-software/">restaurant POS software</a> for table-service operations, <a class="vertical-inline-link" href="/cafe-pos-software/">cafe POS software</a> for counter and table service, <a class="vertical-inline-link" href="/dhaba-billing-software/">dhaba billing software</a> for eatery billing, or the <a class="vertical-inline-link" href="/faq/">Zipla POS FAQ</a>.</p></div></div></section>
+      <section class="vertical-section vertical-section--compact"><div class="vertical-container"><div class="vertical-final-cta"><h2>Test Zipla POS with the way your QSR counter actually runs.</h2><p>Start a 14-day free trial online, or book a WhatsApp demo to see counter billing, kitchen handoff and plan fit in context.</p><div class="vertical-final-actions"><a class="btn-cta" href="https://app.zipla.in/register">Start 14-Day Free Trial</a><a class="btn-ghost" href="/#demo">Book Free WhatsApp Demo</a></div></div></div></section>
+    </article>
   </main>
-
   <Footer />
 </Layout>
 
 <style>
-  .vp-main { background: #0D0D0D; }
-  .vp-hero { padding: 5rem 1.5rem 3.5rem; text-align: center; border-bottom: 1px solid #1a1a1a; }
-  .vp-container { max-width: 820px; margin: 0 auto; padding: 0 1rem; }
-  .vp-eyebrow { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #C9A94B; margin-bottom: 1rem; }
-  .vp-h1 { font-size: clamp(1.8rem, 4.5vw, 2.75rem); font-weight: 700; color: #ffffff; line-height: 1.22; margin: 0 auto 1.25rem; max-width: 760px; }
-  .vp-lead { font-size: 1.1rem; color: #aaaaaa; line-height: 1.75; max-width: 600px; margin: 0 auto 2rem; }
-  .vp-cta-group { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
-  .vp-btn-primary { display: inline-block; background: #C9A94B; color: #0D0D0D; font-weight: 700; padding: 0.875rem 2rem; border-radius: 6px; text-decoration: none; font-size: 1rem; transition: opacity 0.18s; }
-  .vp-btn-primary:hover { opacity: 0.85; }
-  .vp-btn-secondary { display: inline-block; color: #C9A94B; font-weight: 600; padding: 0.875rem 1.5rem; border-radius: 6px; text-decoration: none; font-size: 0.95rem; border: 1px solid #2a2a2a; background: transparent; transition: border-color 0.18s; }
-  .vp-btn-secondary:hover { border-color: #C9A94B; }
-  .vp-screenshots { padding: 0 1.5rem 3rem; }
-  .vp-ss-heading { font-size: 1.4rem; font-weight: 700; color: #C9A94B; text-align: center; margin: 0 0 2rem; }
-  .vp-ss-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; max-width: 1000px; margin: 0 auto; }
-  .vp-ss-item { margin: 0; }
-  .vp-ss-item img { width: 100%; height: auto; border-radius: 10px; display: block; border: 1px solid #1e1e1e; }
-  .vp-ss-item figcaption { font-size: 0.82rem; color: #888888; text-align: center; margin-top: 0.625rem; }
-  @media (max-width: 640px) { .vp-ss-grid { grid-template-columns: 1fr; } }
-  .vp-section { padding: 3rem 1.5rem 5rem; color: #cccccc; }
-  .vp-section h2 { font-size: 1.45rem; color: #C9A94B; margin: 2.75rem 0 0.875rem; font-weight: 600; }
-  .vp-section h3 { font-size: 1.05rem; color: #ffffff; margin: 0 0 0.5rem; font-weight: 600; }
-  .vp-section p { line-height: 1.8; margin-bottom: 1rem; color: #cccccc; font-size: 0.98rem; }
-  .vp-feature-list { padding-left: 1.25rem; margin-bottom: 1rem; }
-  .vp-feature-list li { line-height: 1.8; margin-bottom: 0.625rem; color: #cccccc; font-size: 0.98rem; }
-  .vp-section ul:not(.vp-feature-list):not(.vp-faq *) { padding-left: 1.25rem; margin-bottom: 1rem; }
-  .vp-section ul:not(.vp-feature-list):not(.vp-faq *) li { line-height: 1.8; margin-bottom: 0.5rem; color: #cccccc; font-size: 0.98rem; }
-  .vp-steps { padding-left: 1.25rem; margin-bottom: 1rem; }
-  .vp-steps li { line-height: 1.8; margin-bottom: 0.625rem; color: #cccccc; font-size: 0.98rem; }
-  .vp-faq { margin-top: 0.75rem; }
-  .vp-faq-item { background: #111111; border: 1px solid #1e1e1e; border-radius: 8px; padding: 1.25rem 1.5rem; margin-bottom: 0.875rem; }
-  .vp-related { margin: 2.5rem 0 0; padding: 1.25rem 1.5rem; background: #111111; border: 1px solid #1e1e1e; border-radius: 8px; }
-  .vp-related h2 { margin-top: 0 !important; }
-  .vp-related a { color: #C9A94B; text-decoration: underline; text-underline-offset: 3px; }
-  .vp-final-cta { text-align: center; padding: 3rem 1.5rem; margin-top: 3rem; background: #111111; border: 1px solid #1e1e1e; border-radius: 12px; }
-  .vp-final-cta h2 { color: #ffffff !important; margin-top: 0 !important; }
-  .vp-final-cta .vp-btn-primary, .vp-final-cta .vp-btn-secondary { margin: 0.5rem; }
-  @media (max-width: 600px) { .vp-cta-group { flex-direction: column; align-items: center; } .vp-hero { padding: 3.5rem 1.25rem 2.5rem; } }
+  .vertical-lead strong, .qsr-top-summary strong, .qsr-heading-answer strong { color: var(--text); }
+  .qsr-top-summary { max-width: 570px; margin: 0 0 12px; color: var(--text-2); font-size: 15px; font-weight: 650; line-height: 1.68; }
+  .qsr-heading-answer { margin: 0; color: var(--text-2); }
+  .qsr-content-links { margin: 16px 0 0 !important; font-size: 14px !important; }
+  .qsr-content-links a { color: var(--amber-2); font-weight: 700; text-decoration: underline; text-decoration-color: rgba(232,201,131,.35); text-underline-offset: 3px; }
+  .qsr-decision { max-width: 960px; margin: 0 auto; padding: 28px; border: 1px solid var(--border-hi); border-radius: 18px; background: linear-gradient(145deg, rgba(26,29,43,.8), var(--surface)); }
+  .qsr-decision h3 { margin: 0 0 8px; font-family: var(--display); font-size: 21px; letter-spacing: -.35px; }
+  .qsr-decision > p { margin: 0 0 20px; color: var(--text-2); font-size: 14px; line-height: 1.65; }
+  .qsr-decision-table-wrap { overflow-x: auto; border: 1px solid var(--border); border-radius: 11px; }
+  .qsr-decision-table { width: 100%; min-width: 620px; border-collapse: collapse; text-align: left; }
+  .qsr-decision-table th, .qsr-decision-table td { padding: 14px; border-bottom: 1px solid var(--border); font-size: 13px; line-height: 1.6; vertical-align: top; }
+  .qsr-decision-table thead th { background: rgba(202,160,76,.09); color: var(--amber-2); font-size: 10.5px; font-weight: 800; letter-spacing: .7px; text-transform: uppercase; }
+  .qsr-decision-table tbody th { width: 30%; color: var(--text); font-weight: 700; }
+  .qsr-decision-table td { color: var(--text-2); }
+  .qsr-decision-table td strong { color: var(--text); }
+  .qsr-decision-table tbody tr:last-child th, .qsr-decision-table tbody tr:last-child td { border-bottom: 0; }
+  @media (max-width: 620px) { .qsr-decision { padding: 20px 16px 6px; } .qsr-decision-table { min-width: 540px; } }
 </style>
