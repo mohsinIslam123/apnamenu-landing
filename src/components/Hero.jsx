@@ -1,33 +1,68 @@
+function CheckIcon() {
+  return (
+    <svg viewBox="0 0 20 20" aria-hidden="true">
+      <path d="m5 10 3.1 3.1L15.5 5.8" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  )
+}
+
+function BoltIcon() {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="m13.2 2-8 11h6l-.4 9 8-12h-6.1l.5-8Z" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  )
+}
+
+function KitchenIcon() {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <rect x="3" y="4" width="18" height="13" rx="2" fill="none" stroke="currentColor" strokeWidth="1.8" />
+      <path d="M8 21h8M12 17v4M7 9h10M7 13h5" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+    </svg>
+  )
+}
+
 export default function Hero() {
   return (
-    <section className="hero">
+    <section className="hero" aria-labelledby="hero-title">
       <div className="hero-inner">
-        <div>
-          <span className="eyebrow">Restaurant POS Billing Software</span>
-          <h1>Restaurant Billing Software India — Counter Billing, GST Invoice &amp; KDS</h1>
-          <p className="sub">Billing, kitchen orders, and GST invoices — all in one place, from any phone or counter. No more paper KOTs or manual calculations.</p>
+        <div className="hero-copy">
+          <span className="eyebrow">Zipla POS for Indian food businesses</span>
+          <h1 id="hero-title">Restaurant POS billing software built for faster service.</h1>
+          <p className="sub">From counter bills to kitchen orders and GST invoices, Zipla gives your team one simple system to run daily service.</p>
           <div className="hero-ctas">
             <a className="btn-cta" href="https://app.zipla.in/register">Start 14-Day Free Trial</a>
             <a className="btn-ghost" href="#demo">Book Free WhatsApp Demo</a>
           </div>
-          <p className="hero-note">No card required. Same-day setup.</p>
+          <ul className="hero-assurances" aria-label="Trial details">
+            <li><CheckIcon />14-day free trial</li>
+            <li><CheckIcon />No card required</li>
+            <li><CheckIcon />Android, tablet, and desktop</li>
+          </ul>
         </div>
-        <div className="ticket-stage">
-          <div className="kds-chip"><span className="dot" />Kitchen Notified</div>
-          <div className="ticket">
-            <div className="ticket-head">ZIPLA POS</div>
-            <div className="ticket-sub">Order #482 · Table 6</div>
-            <div className="ticket-rule" />
-            <div className="ticket-line"><span>Paneer Tikka x2</span><span>340</span></div>
-            <div className="ticket-line"><span>Butter Naan x3</span><span>90</span></div>
-            <div className="ticket-line"><span>Masala Chai x2</span><span>60</span></div>
-            <div className="ticket-rule" />
-            <div className="ticket-line"><span>Subtotal</span><span>490.00</span></div>
-            <div className="ticket-line"><span>CGST 2.5%</span><span>12.25</span></div>
-            <div className="ticket-line"><span>SGST 2.5%</span><span>12.25</span></div>
-            <div className="ticket-rule" />
-            <div className="ticket-total"><span>TOTAL</span><span>&#8377;514.50</span></div>
-            <div className="ticket-thanks">Thank You — Visit Again</div>
+        <div className="hero-product" aria-label="Zipla POS shown across desktop, tablet, and phone">
+          <div className="hero-product-glow" aria-hidden="true" />
+          <div className="hero-device">
+            <div className="hero-device-bar">
+              <span className="hero-device-brand"><span aria-hidden="true" />zipla POS</span>
+              <span className="hero-device-label">One workspace</span>
+            </div>
+            <img
+              src="/screenshots/ss-multi-device.webp"
+              alt="Zipla POS dashboard shown on desktop, tablet, and Android phone"
+              width="1232"
+              height="860"
+              decoding="async"
+            />
+          </div>
+          <div className="hero-callout hero-callout--billing">
+            <span className="hero-callout-icon"><BoltIcon /></span>
+            <span><strong>Counter billing</strong><small>GST invoices in one flow</small></span>
+          </div>
+          <div className="hero-callout hero-callout--kitchen">
+            <span className="hero-callout-icon"><KitchenIcon /></span>
+            <span><strong>Kitchen orders</strong><small>Live KDS order queue</small></span>
           </div>
         </div>
       </div>

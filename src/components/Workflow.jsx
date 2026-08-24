@@ -1,7 +1,7 @@
 const STEPS = [
-  { num: '01', title: 'Order', body: 'Orders come in from the table or QR scan, directly into the system — no writing needed.' },
-  { num: '02', title: 'Kitchen', body: 'Appears instantly on the KDS screen — no paper KOTs, fewer mistakes.' },
-  { num: '03', title: 'Billing', body: 'GST invoice in one tap — CGST/SGST auto-calculated, thermal print ready.' },
+  { num: '01', title: 'Order', body: 'Table and QR orders enter the same Zipla POS workflow.' },
+  { num: '02', title: 'Kitchen', body: 'The kitchen sees orders on the KDS screen instead of paper KOTs.' },
+  { num: '03', title: 'Billing', body: 'Create GST invoices with CGST and SGST calculated automatically.' },
   { num: '04', title: 'Report', body: 'Full day summary — sales, GST, low stock — all in one view.' },
 ]
 export default function Workflow() {

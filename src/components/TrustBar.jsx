@@ -1,9 +1,9 @@
 export default function TrustBar() {
   const items = [
-    { label: 'Lightning Setup', path: <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" /> },
-    { label: 'Data 100% Safe', path: <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /> },
-    { label: '\u20b90 UPI Commission', path: <><line x1="6" y1="3" x2="6" y2="21"/><path d="M6 8h9a4 4 0 0 1 0 8H6"/><line x1="6" y1="13" x2="14" y2="13"/></> },
-    { label: 'Learning Videos', path: <><circle cx="12" cy="12" r="9"/><polygon points="10 8 16 12 10 16 10 8" /></> },
+    { label: 'Counter billing + GST', path: <><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h4"/></> },
+    { label: 'Kitchen Display System', path: <><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4M7 9h10M7 13h5"/></> },
+    { label: 'QR table ordering', path: <><rect x="4" y="4" width="6" height="6"/><rect x="14" y="4" width="6" height="6"/><rect x="4" y="14" width="6" height="6"/><path d="M15 15h2v2h-2zM18 18h2v2h-2zM15 19h2"/></> },
+    { label: 'Android + Bluetooth printing', path: <><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M10 18h4M4 9h2M18 9h2"/></> },
   ]
   return (
     <div className="trust-bar">

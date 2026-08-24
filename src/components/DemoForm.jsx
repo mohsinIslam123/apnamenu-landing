@@ -56,7 +56,7 @@ export default function DemoForm() {
         <div className="demo-form-card demo-form-thanks">
           <div className="df-thanks-icon">✓</div>
           <h3>WhatsApp Opening...</h3>
-          <p>We reply within 2 hours. If WhatsApp didn't open, <a href={'https://wa.me/' + WHATSAPP_NUMBER} target="_blank" rel="noopener noreferrer">tap here</a>.</p>
+          <p>We opened WhatsApp with your details. If it did not open, <a href={'https://wa.me/' + WHATSAPP_NUMBER} target="_blank" rel="noopener noreferrer">tap here</a>.</p>
         </div>
       </section>
     )
@@ -66,8 +66,8 @@ export default function DemoForm() {
     <section className="demo-form" id="demo">
       <div className="section-head">
         <span className="eyebrow">Free Demo</span>
-        <h2>Book a Free Demo — Set Up in 30 Minutes</h2>
-        <p>Fill in your details. We'll walk you through Zipla POS on WhatsApp — same day.</p>
+        <h2>See Zipla POS before you decide</h2>
+        <p>Share your details and we’ll walk you through the relevant Zipla POS workflow on WhatsApp.</p>
       </div>
       <div className="demo-form-card">
         <div className="demo-form-grid">
@@ -103,7 +103,7 @@ export default function DemoForm() {
         <button className="btn-cta df-submit" onClick={handleSubmit}>
           Get Free Demo on WhatsApp
         </button>
-        <p className="df-note">No credit card. No commitment. We reply within 2 hours.</p>
+        <p className="df-note">Free demo. No card required.</p>
       </div>
     </section>
   )

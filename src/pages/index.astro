@@ -3,7 +3,6 @@ import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.jsx';
 import Hero from '../components/Hero.jsx';
 import TrustBar from '../components/TrustBar.jsx';
-import ProductShowcase from '../components/ProductShowcase.jsx';
 import BusinessTypes from '../components/BusinessTypes.jsx';
 import Workflow from '../components/Workflow.jsx';
 import Features from '../components/Features.jsx';
@@ -57,11 +56,11 @@ const jsonLd = {
     {
       "@type": "FAQPage",
       "mainEntity": [
-        { "@type": "Question", "name": "Is my data safe?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — your data is stored on secure cloud servers, accessible only through your login." } },
-        { "@type": "Question", "name": "Will my staff need training?", "acceptedAnswer": { "@type": "Answer", "text": "The interface is kept simple — touch-friendly, minimal clicks. Most staff are up and running within minutes." } },
+        { "@type": "Question", "name": "How do I access my business data?", "acceptedAnswer": { "@type": "Answer", "text": "Use your Zipla login to access your business workspace." } },
+        { "@type": "Question", "name": "Will my staff need training?", "acceptedAnswer": { "@type": "Answer", "text": "Zipla uses a touch-friendly interface with minimal clicks. Book a demo and we’ll walk your team through the relevant workflow." } },
         { "@type": "Question", "name": "What if the internet goes down?", "acceptedAnswer": { "@type": "Answer", "text": "Zipla POS works after the menu is loaded — you can create bills without internet. UPI and online payments require a connection. Full offline sync is on our roadmap." } },
         { "@type": "Question", "name": "How do I add my existing menu?", "acceptedAnswer": { "@type": "Answer", "text": "Add it manually, or use AI scan to build it from a photo of your existing menu — 20 scans/year free in Starter." } },
-        { "@type": "Question", "name": "How do I get support?", "acceptedAnswer": { "@type": "Answer", "text": "You talk directly to the founder on WhatsApp — no bots, no call-center queues." } }
+        { "@type": "Question", "name": "How do I get support?", "acceptedAnswer": { "@type": "Answer", "text": "You can contact the Zipla team on WhatsApp for support and a product walkthrough." } }
       ]
     }
   ]
@@ -78,11 +77,10 @@ const jsonLd = {
   <main>
     <Hero />
     <TrustBar />
-    <ProductShowcase />
     <BusinessTypes />
     <Workflow />
     <Features />
-    <Testimonials videos={CUSTOMER_VIDEOS} client:visible />
+    {CUSTOMER_VIDEOS.length > 0 && <Testimonials videos={CUSTOMER_VIDEOS} client:visible />}
     <Pricing />
     <FAQ />
     <DemoForm client:visible />

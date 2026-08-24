@@ -1,4 +1,3 @@
-import { waLink } from '../constants.js'
 export default function Header() {
   return (
     <header className="site-header">
@@ -10,9 +9,7 @@ export default function Header() {
         <a href="/#pricing">Pricing</a>
         <a href="/faq/">FAQ</a>
       </nav>
-      <a className="btn-cta" href={waLink('Hi, I would like a 14-day free demo of Zipla POS')} target="_blank" rel="noopener noreferrer">
-        WhatsApp Us
-      </a>
+      <a className="btn-cta" href="https://app.zipla.in/register">Start Free Trial</a>
     </header>
   )
 }
