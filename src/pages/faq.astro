@@ -4,183 +4,78 @@ import Header from '../components/Header.jsx';
 import Footer from '../components/Footer.jsx';
 import '../index.css';
 
-const title = "FAQ — Zipla POS Billing Software for Indian Businesses";
-const description = "Frequently asked questions about Zipla POS. POS cost in India, Android billing app, GST invoicing, Bluetooth printing, free trial — everything answered.";
-const canonical = "https://zipla.in/faq/";
+const title = 'Zipla POS FAQ | Restaurant Billing Software India';
+const description = 'Zipla POS FAQ for restaurant billing software India: confirmed features, Starter and Pro plans, Android devices, printing, GST invoices and trial details.';
+const canonical = 'https://zipla.in/faq/';
 
 const faqs = [
-  {
-    q: "What is the best POS billing software for small restaurants in India?",
-    a: `Zipla POS is built specifically for Indian small <a href="/restaurant-pos-software/">restaurants</a>, <a href="/dhaba-billing-software/">dhabas</a>, and <a href="/qsr-billing-software/">QSRs</a>. It handles counter billing, GST invoices, kitchen display (KDS), and QR table ordering — all on a standard Android phone. Pricing starts at ₹2,999/year with no per-bill commission or AMC charges.`
-  },
-  {
-    q: "How much does a POS system cost in India for a small business?",
-    a: "Most Indian POS systems charge either a monthly fee (₹500–₹2,000/month) or an annual fee (₹3,000–₹15,000/year) plus hardware. Zipla POS costs ₹2,999/year for the Starter plan or ₹4,999/year for Pro — no hardware required, no per-transaction fee, no hidden AMC. A basic Android phone and a Bluetooth thermal printer (₹2,000–₹4,000 one-time) is all you need."
-  },
-  {
-    q: "Can I use Zipla POS on my Android phone?",
-    a: "Yes. Zipla POS runs on any Android phone as a Progressive Web App (PWA) — install it from the browser, no app store required. It works on budget Android phones too. No dedicated POS terminal or tablet needed."
-  },
-  {
-    q: "Does Zipla POS work without internet?",
-    a: "Zipla POS works after the menu is loaded — you can create bills without internet. UPI and online payments require a connection. Full offline sync is on our roadmap."
-  },
-  {
-    q: "Does Zipla POS generate GST invoices automatically?",
-    a: "Yes. Zipla POS automatically calculates GST on every bill based on the tax rate you set per item. Bills include GSTIN, HSN/SAC codes, and itemized GST breakup — ready for customer and compliance use."
-  },
-  {
-    q: "What is a Kitchen Display System (KDS) and does Zipla POS have one?",
-    a: "A Kitchen Display System (KDS) shows incoming orders on a screen in the kitchen — replacing the paper chit system. Zipla POS has a built-in KDS that updates in real time when a bill is placed. Kitchen staff can mark orders as ready from the same screen. Works on any Android phone or tablet placed in the kitchen."
-  },
-  {
-    q: "What is QR code ordering and how does it work in Zipla POS?",
-    a: "QR table ordering lets customers scan a QR code at their table, browse the menu on their phone, and place orders directly — without waiting for a waiter. In Zipla POS, each table gets a unique QR code. Orders placed by customers appear instantly on the KDS and in the billing screen. Available on the Pro plan."
-  },
-  {
-    q: "Does Zipla POS support weight-based billing for sweet shops?",
-    a: `Yes. Each menu item can be set with a per-kg price. When billing, enter the weight in grams or kilograms — the total price calculates instantly. You can mix weight-based items and fixed-price items on the same bill. This is one of the core features built for <a href="/sweet-shop-billing/">mithai shops</a> and namkeen counters.`
-  },
-  {
-    q: "How do I print bills with Zipla POS?",
-    a: "Zipla POS prints bills on any Bluetooth thermal printer. Pair the printer with your Android phone via Bluetooth — no USB, no Wi-Fi, no driver installation needed. Compatible with most 58mm and 80mm thermal printers available in India (₹1,500–₹4,000). You can also share digital bills via WhatsApp."
-  },
-  {
-    q: "Can I manage multiple outlets or branches with Zipla POS?",
-    a: "Yes. Each outlet runs as a separate tenant in Zipla POS. The business owner can view reports from each outlet independently. Multi-outlet dashboard (consolidated view) is on our Pro roadmap. Currently suited for businesses managing each outlet separately."
-  },
-  {
-    q: "How does staff management work in Zipla POS?",
-    a: "You can create separate login accounts for each staff member — cashier, manager, or kitchen staff. Role-based permissions control who can apply discounts, access reports, or void bills. The owner account has full access. All activity is logged by staff login."
-  },
-  {
-    q: "What reports does Zipla POS provide?",
-    a: "Zipla POS provides a Day Close Report at end of each day — total sales, item-wise quantity sold, payment mode split (cash vs UPI vs card), and staff-wise billing summary. Pro plan includes stock reports and petty cash logs. Reports can be shared via WhatsApp directly from the app."
-  },
-  {
-    q: "Is there a free trial for Zipla POS?",
-    a: "Yes. Zipla POS offers a 14-day free trial — no credit card required, no payment needed to start. Full access to all features during the trial. Register at app.zipla.in and start billing immediately."
-  },
-  {
-    q: "What is the difference between Starter and Pro plan?",
-    a: "Starter (₹2,999/year) covers counter billing, GST invoices, Bluetooth printing, day close reports, and staff logins — everything a single-outlet food business needs. Pro (₹4,999/year) adds QR table ordering, Kitchen Display System (KDS), stock management, petty cash tracking, and advanced reports. Both plans have no per-bill fees."
-  },
-  {
-    q: "Does Zipla POS accept UPI payments?",
-    a: "Zipla POS tracks UPI payments — you mark each bill as cash, UPI, or card. The day close report then shows the exact split. Zipla POS does not process UPI transactions itself (customers pay via their own UPI app to your UPI ID) — it just records and reports the payment mode for your accounts."
-  },
-  {
-    q: "Is Zipla POS suitable for a cafe or bakery?",
-    a: `Yes. Zipla POS works for <a href="/cafe-pos-software/">cafes</a>, <a href="/bakery-billing-software/">bakeries</a>, <a href="/sweet-shop-billing/">sweet shops</a>, <a href="/restaurant-pos-software/">restaurants</a>, <a href="/dhaba-billing-software/">dhabas</a>, and <a href="/qsr-billing-software/">QSRs</a>. Cafes use it for table billing and KDS. Bakeries use it for counter sales and daily stock tracking. The menu system supports any item type — food, beverages, packaged goods, or weight-based items.`
-  },
-  {
-    q: "How do I get started with Zipla POS?",
-    a: "Register at app.zipla.in — takes under 2 minutes. Add your business name, set up your menu items with prices, and you can start billing immediately. No installation, no hardware setup required to begin. If you want Bluetooth printing, pair your thermal printer via Android Bluetooth settings."
-  },
-  {
-    q: "Can Zipla POS be used for home-based food businesses or cloud kitchens?",
-    a: "Yes. Home-based food businesses and cloud kitchens use Zipla POS for order tracking, billing, and daily sales reports — even without a physical counter. Orders can be entered manually from phone calls or WhatsApp orders, bills shared digitally, and daily totals tracked via the close report."
-  },
-  {
-    q: "What hardware do I need to run Zipla POS?",
-    a: "Minimum: one Android phone (any budget model with 4G). Optional but recommended: a Bluetooth thermal printer (58mm or 80mm, ₹1,500–₹4,000). No dedicated POS terminal, no PC, no router, no complicated setup. If you have a phone, you can start billing today."
-  },
-  {
-    q: "How is Zipla POS different from other POS software in India?",
-    a: "Most POS software in India is either too expensive for small businesses (₹10,000+/year plus AMC) or too basic (no KDS, no QR ordering, no multi-staff). Zipla POS is built for Indian small food businesses specifically — weight billing for mithai shops, KDS for restaurants, QR ordering for cafes — at ₹2,999/year with no hardware dependency and no per-transaction fee."
-  }
+  { question: 'What is Zipla POS?', answer: 'Zipla POS is billing software for Indian food businesses. It supports counter billing, GST invoices, payment-mode tracking, menu management, inventory with low-stock browser notifications and staff role-based logins.' },
+  { question: 'Who can use Zipla POS?', answer: 'Zipla POS is for Indian restaurants, cafes, bakeries, sweet shops, QSRs and dhabas. The suitable workflow depends on whether you run a counter, table service, a kitchen handoff or weight-based billing.' },
+  { question: 'What does the Starter plan include?', answer: 'Starter includes Counter POS Billing, Auto GST Bill, inventory with low-stock alerts, AI Menu Setup with 20 scans per year, cash/UPI/card payment tracking and staff roles.' },
+  { question: 'What does the Pro plan include?', answer: 'Pro includes everything in Starter plus Kitchen Display System, table QR ordering, Bluetooth KOT auto-print, unlimited AI Menu Scan, sales analytics and day-close reports.' },
+  { question: 'How much does Zipla POS cost?', answer: 'Starter costs ₹2,999 per year or ₹5,999 for three years. Pro costs ₹4,999 per year or ₹9,899 for three years. A 14-day trial is available with no card required.' },
+  { question: 'Can Zipla POS create GST invoices?', answer: 'Yes. Zipla POS creates GST invoices with the configured GSTIN and TAX INVOICE header, and uses configured CGST and SGST tax rates.' },
+  { question: 'Can Zipla POS track cash, UPI and card payments?', answer: 'Yes. During billing, a payment can be marked as cash, UPI or card. The payment split is available in the day-close report.' },
+  { question: 'Can I use Zipla POS on an Android phone or tablet?', answer: 'Yes. Zipla POS can be used on Android phones and tablets.' },
+  { question: 'Can Zipla POS print or share a customer bill?', answer: 'Yes. Bluetooth thermal printing supports 58 mm and 80 mm printers. Bills can also be shared on WhatsApp.' },
+  { question: 'Does Zipla POS work when the internet connection drops?', answer: 'After the menu has loaded, bills can be created without an internet connection. UPI and online payments require connectivity. Full offline sync is on the roadmap.' },
+  { question: 'Does Zipla POS support kitchen orders and table QR ordering?', answer: 'Yes. Kitchen Display System, table QR ordering and Bluetooth KOT auto-print are Pro features.' },
+  { question: 'Can a bakery or sweet shop bill products by weight?', answer: 'Yes. Zipla POS supports weight-based billing. A customer bill can combine products sold by weight with fixed-price items.' },
+  { question: 'What does the day-close report show?', answer: 'The day-close report includes orders, revenue, payment split, top items and discounts. Sales analytics also includes revenue, orders-by-hour, payment split, top-selling items and void analysis.' },
+  { question: 'How can I get product or account help?', answer: 'For product, setup or account help, contact support@zipla.in.' },
 ];
 
 const jsonLd = {
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "WebPage",
-      "@id": "https://zipla.in/faq/",
-      "url": "https://zipla.in/faq/",
-      "name": "FAQ — Zipla POS Billing Software for Indian Businesses",
-      "description": "Frequently asked questions about Zipla POS billing software for Indian restaurants, cafes, sweet shops, and bakeries.",
-      "isPartOf": { "@id": "https://zipla.in/#website" },
-      "breadcrumb": {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://zipla.in" },
-          { "@type": "ListItem", "position": 2, "name": "FAQ", "item": "https://zipla.in/faq/" }
-        ]
-      }
-    },
-    {
-      "@type": "FAQPage",
-      "mainEntity": faqs.map(f => ({
-        "@type": "Question",
-        "name": f.q,
-        "acceptedAnswer": { "@type": "Answer", "text": f.a }
-      }))
-    }
-  ]
+  '@context': 'https://schema.org',
+  '@graph': [
+    { '@type': 'WebPage', '@id': canonical, url: canonical, name: title, description, isPartOf: { '@id': 'https://zipla.in/#website' }, about: { '@id': 'https://zipla.in/#software' }, inLanguage: 'en-IN', breadcrumb: { '@id': `${canonical}#breadcrumb` } },
+    { '@type': 'BreadcrumbList', '@id': `${canonical}#breadcrumb`, itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: 'https://zipla.in/' }, { '@type': 'ListItem', position: 2, name: 'FAQ', item: canonical }] },
+    { '@type': 'FAQPage', '@id': `${canonical}#faq`, mainEntity: faqs.map((faq) => ({ '@type': 'Question', name: faq.question, acceptedAnswer: { '@type': 'Answer', text: faq.answer } })) },
+  ],
 };
 ---
 
 <Layout title={title} description={description} canonical={canonical} jsonLd={jsonLd}>
   <Header client:load />
-
   <main class="faq-main">
-    <div class="faq-container">
-
-      <div class="faq-header">
-        <p class="faq-eyebrow">Zipla POS</p>
-        <h1>Frequently Asked Questions — Restaurant Billing Software India</h1>
-        <p class="faq-lead">Everything you need to know about Zipla POS — pricing, features, hardware, and getting started.</p>
-      </div>
-
-      <div class="faq-list">
-        {faqs.map((item, i) => (
-          <div class="faq-item">
-            <h2>{item.q}</h2>
-            <p set:html={item.a} />
-          </div>
-        ))}
-      </div>
-
-      <div class="faq-cta">
-        <h2>Still have questions?</h2>
-        <p>For product, setup, or account help, email <a href="mailto:support@zipla.in">support@zipla.in</a>.</p>
-        <div class="faq-cta-buttons">
-          <a href="https://app.zipla.in/register" class="faq-btn-primary">Start Free Trial — No Card Required</a>
-          <a href="/" class="faq-btn-secondary">← Back to Zipla POS</a>
+    <article class="faq-article">
+      <header class="faq-hero">
+        <div class="faq-container">
+          <p class="faq-eyebrow">Zipla POS help centre</p>
+          <h1>Zipla POS FAQ: Restaurant Billing Software India</h1>
+          <p class="faq-summary"><strong>Key takeaway:</strong> This Zipla POS FAQ answers the confirmed product, plan, billing, device, printing and trial questions for restaurant billing software India.</p>
+          <p class="faq-lead"><strong>Quick answer:</strong> Use Zipla POS for counter billing, configured GST invoices, payment marking, menu management and inventory; choose Pro when you also need KDS, table QR ordering, Bluetooth KOT auto-print, sales analytics and day-close reports.</p>
         </div>
-      </div>
+      </header>
 
-    </div>
+      <section class="faq-section" aria-labelledby="faq-definition-title">
+        <div class="faq-container">
+          <header class="faq-section-head"><span>Definition and audience</span><h2 id="faq-definition-title">What is restaurant billing software India for a food business?</h2><p>Restaurant billing software India is a POS workflow for creating customer bills, marking payment modes, managing menu items and reviewing operating information. Zipla POS is for restaurant, cafe, bakery, sweet-shop, QSR and dhaba teams that need these workflows in one system.</p></header>
+          <div class="faq-link-grid"><p>For table-service operations, compare <a href="/restaurant-pos-software/">restaurant POS software</a>.</p><p>For counter-led quick service, see <a href="/qsr-billing-software/">QSR billing software</a>.</p><p>For highway or neighbourhood eateries, read <a href="/dhaba-billing-software/">dhaba billing software</a>.</p><p>For weight-led products, compare <a href="/bakery-billing-software/">bakery billing software</a> and <a href="/sweet-shop-billing/">sweet shop billing software</a>.</p></div>
+        </div>
+      </section>
+
+      <section class="faq-section faq-section--muted" aria-labelledby="faq-plan-title">
+        <div class="faq-container">
+          <header class="faq-section-head"><span>Plan decision</span><h2 id="faq-plan-title">Which Zipla POS plan should a food business consider?</h2><p><strong>Short answer:</strong> Consider Starter for counter billing and inventory alerts. Consider Pro when your workflow also needs a kitchen queue, table QR ordering, Bluetooth KOT auto-print, sales analytics and day-close reports.</p></header>
+          <div class="faq-table-wrap"><table><thead><tr><th scope="col">If you need</th><th scope="col">Relevant plan and workflow</th></tr></thead><tbody><tr><th scope="row">Counter bills, GST invoices and stock alerts</th><td><strong>Starter:</strong> Counter POS Billing, Auto GST Bill, inventory with low-stock alerts, AI Menu Setup, cash/UPI/card payment tracking and staff roles.</td></tr><tr><th scope="row">Kitchen queue, QR ordering and KOT printing</th><td><strong>Pro:</strong> Everything in Starter plus KDS, table QR ordering, Bluetooth KOT auto-print, unlimited AI Menu Scan, sales analytics and day-close reports.</td></tr><tr><th scope="row">A real fit check before purchase</th><td><strong>14-day trial:</strong> Set up a small version of your own menu and test the exact counter, payment and kitchen workflow you use.</td></tr></tbody></table></div>
+        </div>
+      </section>
+
+      <section class="faq-section" aria-labelledby="faq-proof-title">
+        <div class="faq-container faq-proof-layout"><div><span class="faq-kicker">Actual product reference</span><h2 id="faq-proof-title">What should you check during a Zipla POS trial?</h2><p><strong>Short answer:</strong> Test a real menu, one customer bill, payment marking and bill delivery. For Pro, also test the kitchen handoff and day-close reporting with your actual service flow.</p><ol><li>Set up familiar menu items and prices.</li><li>Create a GST invoice and mark cash, UPI or card payment.</li><li>Test Bluetooth printing or WhatsApp bill sharing.</li><li>For Pro, send an order to the KDS and review the day-close report.</li></ol><p>For current GST rules, filing or legal decisions, verify the applicable requirement on the <a href="https://tutorial.gst.gov.in/userguide/taxpayersdashboard/manual_accountingsoftware.htm" target="_blank" rel="noopener noreferrer">official GST Portal guidance</a> and with a qualified tax professional.</p></div><figure><img src="/screenshots/ss-new-order.webp" alt="Actual Zipla POS new-order screen for a restaurant billing workflow" loading="lazy" width="1232" height="860" /><figcaption>Actual Zipla POS new-order screen used as product reference, not a customer testimonial or performance claim.</figcaption></figure></div>
+      </section>
+
+      <section class="faq-section faq-section--muted" aria-labelledby="faq-list-title">
+        <div class="faq-container"><header class="faq-section-head"><span>Confirmed answers</span><h2 id="faq-list-title">Frequently asked questions about Zipla POS</h2><p>Each answer below is visible on this page and is also represented in the matching FAQPage schema.</p></header><div class="faq-list">{faqs.map((faq) => (<section class="faq-item"><h2>{faq.question}</h2><p>{faq.answer}</p></section>))}</div></div>
+      </section>
+
+      <section class="faq-section faq-section--compact"><div class="faq-container"><div class="faq-cta"><h2>Need to see the workflow with your own menu?</h2><p>Start the 14-day free trial, or book a WhatsApp demo for the relevant Zipla POS workflow.</p><div><a class="btn-cta" href="https://app.zipla.in/register">Start 14-Day Free Trial</a><a class="btn-ghost" href="/#demo">Book Free WhatsApp Demo</a></div><p class="faq-support">For support, email <a href="mailto:support@zipla.in">support@zipla.in</a>.</p></div></div></section>
+    </article>
   </main>
-
   <Footer />
 </Layout>
 
 <style>
-  .faq-main { background: #0D0D0D; min-height: 100vh; padding: 5rem 1.5rem 6rem; }
-  .faq-container { max-width: 800px; margin: 0 auto; }
-  .faq-header { text-align: center; margin-bottom: 3.5rem; }
-  .faq-eyebrow { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #C9A94B; margin-bottom: 0.75rem; }
-  .faq-header h1 { font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 700; color: #ffffff; margin: 0 0 1rem; }
-  .faq-lead { font-size: 1.05rem; color: #aaaaaa; line-height: 1.7; max-width: 540px; margin: 0 auto; }
-  .faq-list { display: flex; flex-direction: column; gap: 0; }
-  .faq-item { border-bottom: 1px solid #1a1a1a; padding: 1.75rem 0; }
-  .faq-item:first-child { border-top: 1px solid #1a1a1a; }
-  .faq-item h2 { font-size: 1.02rem; font-weight: 600; color: #ffffff; margin: 0 0 0.625rem; line-height: 1.45; }
-  .faq-item p { font-size: 0.96rem; color: #aaaaaa; line-height: 1.8; margin: 0; }
-  .faq-item p a { color: #C9A94B; text-decoration: underline; text-underline-offset: 3px; }
-  .faq-item p a:hover { opacity: 0.8; }
-  .faq-cta { text-align: center; margin-top: 4rem; padding: 3rem 2rem; background: #111111; border: 1px solid #1e1e1e; border-radius: 12px; }
-  .faq-cta h2 { font-size: 1.4rem; font-weight: 700; color: #ffffff; margin: 0 0 0.75rem; }
-  .faq-cta p { color: #aaaaaa; margin-bottom: 1.75rem; font-size: 0.97rem; }
-  .faq-cta p a { color: #C9A94B; text-decoration: underline; text-underline-offset: 3px; }
-  .faq-cta .faq-btn-primary { color: #0D0D0D; }
-  .faq-cta .faq-btn-secondary { color: #C9A94B; }
-  .faq-cta-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
-  .faq-btn-primary { display: inline-block; background: #C9A94B; color: #0D0D0D; font-weight: 700; padding: 0.875rem 2rem; border-radius: 6px; text-decoration: none; font-size: 1rem; transition: opacity 0.18s; }
-  .faq-btn-primary:hover { opacity: 0.85; }
-  .faq-btn-secondary { display: inline-block; color: #C9A94B; font-weight: 600; padding: 0.875rem 1.5rem; border-radius: 6px; text-decoration: none; font-size: 0.95rem; border: 1px solid #2a2a2a; background: transparent; transition: border-color 0.18s; }
-  .faq-btn-secondary:hover { border-color: #C9A94B; }
-  @media (max-width: 600px) { .faq-cta-buttons { flex-direction: column; align-items: center; } .faq-main { padding: 3.5rem 1.25rem 5rem; } }
+  .faq-main{min-height:100vh;background:var(--bg)}.faq-hero{padding:74px 24px 58px;border-bottom:1px solid var(--border);background:radial-gradient(ellipse 70% 70% at 50% 0,rgba(202,160,76,.14),transparent 72%)}.faq-container{width:min(100% - 48px,960px);margin:0 auto}.faq-eyebrow,.faq-section-head>span,.faq-kicker{display:block;margin-bottom:12px;color:var(--amber-2);font-size:11px;font-weight:800;letter-spacing:1.15px;text-transform:uppercase}.faq-hero h1{max-width:780px;margin:0 auto 16px;font-family:var(--display);font-size:clamp(33px,4vw,52px);line-height:1.08;text-align:center}.faq-summary{max-width:760px;margin:0 auto 12px;color:var(--text);font-size:16px;font-weight:650;line-height:1.7;text-align:center}.faq-lead{max-width:740px;margin:0 auto;color:var(--text-2);font-size:16px;line-height:1.75;text-align:center}.faq-section{padding:92px 0}.faq-section--muted{background:linear-gradient(180deg,rgba(202,160,76,.05),transparent 78%)}.faq-section--compact{padding-top:0}.faq-section-head{max-width:780px;margin:0 auto 36px;text-align:center}.faq-section-head h2,.faq-proof-layout h2,.faq-cta h2{margin:0 0 14px;font-family:var(--display);font-size:clamp(27px,3vw,39px);line-height:1.13}.faq-section-head p,.faq-proof-layout p{color:var(--text-2);font-size:15px;line-height:1.75}.faq-link-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.faq-link-grid p{margin:0;padding:18px;border:1px solid var(--border);border-radius:12px;background:var(--surface);color:var(--text-2);font-size:14px;line-height:1.65}.faq-link-grid a,.faq-proof-layout a,.faq-support a{color:var(--amber-2);font-weight:700;text-decoration:underline;text-decoration-color:rgba(232,201,131,.4);text-underline-offset:3px}.faq-table-wrap{overflow-x:auto;border:1px solid var(--border);border-radius:14px}.faq-table-wrap table{width:100%;min-width:640px;border-collapse:collapse;text-align:left}.faq-table-wrap th,.faq-table-wrap td{padding:15px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-2);font-size:13.5px;line-height:1.6}.faq-table-wrap thead th{background:rgba(202,160,76,.09);color:var(--amber-2);font-size:10.5px;font-weight:800;letter-spacing:.7px;text-transform:uppercase}.faq-table-wrap tbody th,.faq-table-wrap strong{color:var(--text);font-weight:700}.faq-table-wrap tbody tr:last-child>*{border-bottom:0}.faq-proof-layout{display:grid;grid-template-columns:minmax(0,.9fr) minmax(360px,1.1fr);gap:64px;align-items:center}.faq-proof-layout ol{margin:0 0 22px;padding-left:20px;color:var(--text-2);font-size:14px;line-height:1.85}.faq-proof-layout figure{margin:0}.faq-proof-layout img{width:100%;height:auto;border:1px solid var(--border-hi);border-radius:16px;box-shadow:0 20px 55px rgba(0,0,0,.28)}.faq-proof-layout figcaption{margin-top:10px;color:var(--text-3);font-size:11.5px;line-height:1.55;text-align:center}.faq-list{display:grid;gap:12px}.faq-item{padding:21px;border:1px solid var(--border);border-radius:12px;background:var(--surface)}.faq-item h2{margin:0 0 8px;font-family:var(--display);font-size:17px;line-height:1.4}.faq-item p{margin:0;color:var(--text-2);font-size:14px;line-height:1.7}.faq-cta{padding:58px 28px;border:1px solid var(--border-hi);border-radius:22px;background:linear-gradient(145deg,rgba(202,160,76,.15),var(--surface-2) 56%);text-align:center}.faq-cta h2{max-width:650px;margin-left:auto;margin-right:auto}.faq-cta>p{max-width:600px;margin:0 auto 25px;color:var(--text-2);font-size:15px;line-height:1.7}.faq-cta>div{display:flex;justify-content:center;flex-wrap:wrap;gap:12px}.faq-support{margin-top:20px!important;margin-bottom:0!important;font-size:13px!important}@media(max-width:800px){.faq-link-grid,.faq-proof-layout{grid-template-columns:1fr;gap:18px}.faq-section{padding:72px 0}}@media(max-width:620px){.faq-container{width:min(100% - 36px,960px)}.faq-hero{padding:56px 18px 44px}.faq-section{padding:62px 0}.faq-link-grid{grid-template-columns:1fr}.faq-cta{padding:42px 18px}.faq-cta>div{display:grid}.faq-cta a{justify-content:center;width:100%}}
 </style>
