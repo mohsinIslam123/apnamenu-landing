@@ -3,252 +3,288 @@ import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.jsx';
 import Footer from '../components/Footer.jsx';
 import '../index.css';
+import '../vertical-page.css';
 
-const title = "Sweet Shop Billing Software India — Mithai Shop POS | Zipla POS";
-const description = "Best sweet shop billing software for Indian mithai shops. Weight-based billing, festive rush management, fast cash & UPI counter. Zipla POS from ₹2,999/yr.";
-const canonical = "https://zipla.in/sweet-shop-billing/";
+const title = 'Sweet Shop Billing Software India | Weight Billing | Zipla POS';
+const description = 'Sweet Shop Billing Software India helps mithai and namkeen counters bill by weight or fixed price, create GST invoices and review cash, UPI and day-close reports.';
+const canonical = 'https://zipla.in/sweet-shop-billing/';
+
+const faqs = [
+  {
+    question: 'Can Zipla POS calculate mithai items sold by weight?',
+    answer: 'Yes. Set an item to weight-based pricing. At billing, enter the measured weight and Zipla POS calculates the price from the item rate.',
+  },
+  {
+    question: 'Can one sweet shop bill include weight-based mithai and fixed-price gift boxes?',
+    answer: 'Yes. A bill can combine weight-based mithai or namkeen with fixed-price boxes and packaged products in the same transaction.',
+  },
+  {
+    question: 'Can a sweet shop create fixed-price gift boxes in Zipla POS?',
+    answer: 'Yes. Use menu management to add a gift box or packaged product as a fixed-price item alongside weight-priced mithai. Test your own menu and pricing setup during the 14-day trial.',
+  },
+  {
+    question: 'What does Starter versus Pro include for a sweet shop?',
+    answer: 'Starter includes counter billing and inventory with low-stock alerts. Pro includes everything in Starter plus Kitchen Display System, table QR ordering, Bluetooth KOT auto-print, sales analytics and day-close reports.',
+  },
+  {
+    question: 'Does Zipla POS work on an Android phone or tablet at a mithai counter?',
+    answer: 'Yes. Zipla POS can be used on Android phones and tablets. You can pair a supported Bluetooth thermal printer when you want printed bills.',
+  },
+  {
+    question: 'What happens if the internet connection drops during counter service?',
+    answer: 'After the menu has loaded, you can create bills without an internet connection. UPI and online payments require connectivity. Full offline sync is on the roadmap.',
+  },
+  {
+    question: 'How is Zipla POS priced for a sweet shop?',
+    answer: 'Starter is ₹2,999 per year or ₹5,999 for three years. Pro is ₹4,999 per year or ₹9,899 for three years. Start with the plan whose listed features match your sweet shop workflow.',
+  },
+];
 
 const jsonLd = {
-  "@context": "https://schema.org",
-  "@graph": [
+  '@context': 'https://schema.org',
+  '@graph': [
     {
-      "@type": "WebPage",
-      "@id": "https://zipla.in/sweet-shop-billing/",
-      "url": "https://zipla.in/sweet-shop-billing/",
-      "name": "Sweet Shop Billing Software India — Mithai Shop POS | Zipla POS",
-      "description": "Best sweet shop billing software for Indian mithai shops. Weight billing, festive rush management, fast cash counter. Starts at ₹2,999/yr.",
-      "isPartOf": { "@id": "https://zipla.in/#website" },
-      "breadcrumb": {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://zipla.in" },
-          { "@type": "ListItem", "position": 2, "name": "Sweet Shop Billing Software", "item": "https://zipla.in/sweet-shop-billing/" }
-        ]
-      }
+      '@type': 'WebPage',
+      '@id': canonical,
+      url: canonical,
+      name: title,
+      description,
+      isPartOf: { '@id': 'https://zipla.in/#website' },
+      breadcrumb: { '@id': `${canonical}#breadcrumb` },
     },
     {
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "What is the best billing software for sweet shops in India?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Zipla POS is one of the few POS systems in India built with weight-based billing as a core feature. It handles per-kg pricing, gram-level weight entry, and mixed billing (weight + fixed price items on one bill). Pricing starts at ₹2,999/year with no per-transaction fees." }
-        },
-        {
-          "@type": "Question",
-          "name": "Does Zipla POS support billing by weight for mithai?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Yes. Each menu item can have a per-kg price. When billing, enter weight in grams or kg — the total price calculates instantly. No calculator, no mental math, no billing errors at the counter." }
-        },
-        {
-          "@type": "Question",
-          "name": "How does a sweet shop POS handle Diwali or festive season rush?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Zipla POS fast item search, auto price calculation, and one-tap UPI or cash tracking reduce transaction time significantly. During festive peaks, this means more customers served per hour without additional counter staff." }
-        },
-        {
-          "@type": "Question",
-          "name": "Can I create Diwali box sets or combo pricing in Zipla POS?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Yes. Create combo items like Diwali gift hampers at a fixed price alongside regular weight items. Festival special prices can be set temporarily without changing your regular price list." }
-        },
-        {
-          "@type": "Question",
-          "name": "Does Zipla POS work on a basic Android phone for a sweet shop?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Yes. Zipla POS runs on any Android phone. No dedicated POS terminal needed. Most sweet shop owners use a budget Android phone at the counter paired with a Bluetooth thermal printer." }
-        },
-        {
-          "@type": "Question",
-          "name": "Can the sweet shop owner see sales data without being at the counter?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Yes. The day close report can be shared via WhatsApp by counter staff to the owner at end of day. Pro plan users can access reports from any device remotely — no need to be physically present to know the day's total sales." }
-        },
-        {
-          "@type": "Question",
-          "name": "Does Zipla POS work offline at a sweet shop counter?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Zipla POS works after the menu is loaded — you can create bills without internet. UPI and online payments require a connection. Full offline sync is on our roadmap." }
-        }
-      ]
-    }
-  ]
+      '@type': 'BreadcrumbList',
+      '@id': `${canonical}#breadcrumb`,
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://zipla.in/' },
+        { '@type': 'ListItem', position: 2, name: 'Sweet Shop Billing Software', item: canonical },
+      ],
+    },
+    {
+      '@type': 'FAQPage',
+      mainEntity: faqs.map((faq) => ({
+        '@type': 'Question',
+        name: faq.question,
+        acceptedAnswer: { '@type': 'Answer', text: faq.answer },
+      })),
+    },
+  ],
 };
 ---
 
 <Layout title={title} description={description} canonical={canonical} jsonLd={jsonLd}>
   <Header client:load />
 
-  <main class="vp-main">
+  <main class="vertical-page">
+    <div class="vertical-container vertical-breadcrumbs" aria-label="Breadcrumb">
+      <a href="/">Home</a><span aria-hidden="true">/</span><span> Sweet Shop Billing Software</span>
+    </div>
 
-    <section class="vp-hero">
-      <div class="vp-container">
-        <p class="vp-eyebrow">For Sweet Shops</p>
-        <h1 class="vp-h1">Sweet Shop Billing Software India — Mithai Shop POS Built for Indian Counters</h1>
-        <p class="vp-lead">A mithai shop counter is one of the busiest in Indian retail — especially during festivals. Zipla POS gives your counter team weight-based billing, fast cash handling, and daily sales reports that run on any Android phone.</p>
-        <div class="vp-cta-group">
-          <a href="https://app.zipla.in/register" class="vp-btn-primary">Start Free Trial</a>
-          <a href="/" class="vp-btn-secondary">← Back to Zipla POS</a>
-        </div>
-      </div>
-    </section>
+    <article class="sweet-page-article">
+      <section class="vertical-hero" aria-labelledby="sweet-hero-title">
+        <div class="vertical-container vertical-hero-grid">
+          <div>
+            <span class="vertical-eyebrow">Sweet shop billing software for India</span>
+            <h1 id="sweet-hero-title">Sweet Shop Billing Software India</h1>
+            <p class="sweet-top-summary"><strong>Key takeaway:</strong> Sweet Shop Billing Software India gives owner-led mithai and namkeen counters one workflow for weight-based or fixed-price bills, GST invoices, payment marking and day-close review.</p>
+            <p class="vertical-lead"><strong>Quick answer:</strong> Zipla POS is sweet shop billing software for India for Indian mithai, namkeen and gift-box counters where one customer bill can combine products sold by weight and at a fixed price.</p>
+            <div class="vertical-actions">
+              <a class="btn-cta" href="https://app.zipla.in/register">Start 14-Day Free Trial</a>
+              <a class="btn-ghost" href="/#demo">Book Free WhatsApp Demo</a>
+            </div>
+            <ul class="vertical-trial-note" aria-label="Trial details">
+              <li>No card required</li>
+              <li>Android phone or tablet</li>
+              <li>Bluetooth printing supported</li>
+            </ul>
+          </div>
 
-    <section class="vp-screenshots">
-      <div class="vp-container">
-        <h2 class="vp-ss-heading">See Zipla POS in Action</h2>
-        <div class="vp-ss-grid">
-          <figure class="vp-ss-item">
-            <img src="/screenshots/ss-dashboard.webp" alt="Zipla POS dashboard for sweet shop billing" loading="lazy" width="1232" height="860" />
-            <figcaption>Dashboard — all your billing and management in one screen</figcaption>
+          <figure class="vertical-hero-visual">
+            <div class="vertical-hero-frame">
+              <img src="/screenshots/ss-dashboard.webp" alt="Actual Zipla POS dashboard screenshot for a sweet shop billing workflow" width="1232" height="860" />
+              <figcaption class="vertical-hero-caption"><strong>zipla POS</strong><span>Actual dashboard screenshot for billing and daily visibility</span></figcaption>
+            </div>
+            <div class="vertical-callout vertical-callout--left">
+              <span class="vertical-callout-mark">kg</span><span><strong>Weight billing</strong><small>Enter weight, calculate price</small></span>
+            </div>
+            <div class="vertical-callout vertical-callout--right">
+              <span class="vertical-callout-mark">₹</span><span><strong>Mixed bills</strong><small>Weight and fixed-price items</small></span>
+            </div>
           </figure>
-          <figure class="vp-ss-item">
-            <img src="/screenshots/ss-gst-invoice.webp" alt="GST tax invoice for sweet shop on Zipla POS" loading="lazy" width="1232" height="860" />
-            <figcaption>GST Tax Invoice — auto CGST/SGST split printed on every bill</figcaption>
+        </div>
+      </section>
+
+      <section class="vertical-proof-strip" aria-label="Sweet shop billing capabilities">
+        <div class="vertical-container vertical-proof-grid">
+          <div class="vertical-proof"><strong>Weight calculation</strong><span>Set the rate, then enter the measured weight.</span></div>
+          <div class="vertical-proof"><strong>Mixed item bills</strong><span>Use weight and fixed-price products together.</span></div>
+          <div class="vertical-proof"><strong>Cash and UPI</strong><span>Mark payment mode for reporting.</span></div>
+          <div class="vertical-proof"><strong>Day close</strong><span>Review sales, quantities and payment split.</span></div>
+        </div>
+      </section>
+
+      <section class="vertical-section" aria-labelledby="sweet-audience-title">
+        <div class="vertical-container">
+          <header class="vertical-section-head">
+            <span class="vertical-kicker">Audience and use case</span>
+            <h2 id="sweet-audience-title">Who should use Sweet Shop Billing Software India?</h2>
+            <p><strong>Best for:</strong> owner-led single-outlet mithai shops, traditional halwai counters, namkeen or farsan counters, and gift-box sales in India. Use it when a customer bill can mix weight-priced sweets with fixed-price boxes or packaged products.</p>
+          </header>
+          <div class="vertical-card-grid">
+            <div class="vertical-card"><span class="vertical-card-label">Counter team</span><h3>Build one mixed basket</h3><p>Use one billing flow when staff need to add mithai by weight, namkeen by weight and boxed products at a fixed price.</p></div>
+            <div class="vertical-card"><span class="vertical-card-label">Shop owner</span><h3>Review the operating day</h3><p>Review marked cash and UPI payments, item-wise quantities and the day-close information that fits your plan.</p></div>
+            <div class="vertical-card"><span class="vertical-card-label">Gift-box counter</span><h3>Set clear fixed-price items</h3><p>Use menu management to prepare fixed-price gift boxes or packaged products beside regular weight-priced items.</p></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="vertical-section vertical-section--muted" aria-labelledby="sweet-workflow-title">
+        <div class="vertical-container">
+          <header class="vertical-section-head">
+            <span class="vertical-kicker">Mixed-basket billing explained</span>
+            <h2 id="sweet-workflow-title">What is sweet shop billing software for a mithai counter?</h2>
+            <p>Sweet shop billing software is a POS workflow for creating one customer bill across items priced by weight, quantity or a fixed amount. It is useful when a counter sells loose mithai, namkeen and packaged boxes in the same transaction.</p>
+          </header>
+          <div class="vertical-workflow">
+            <div class="vertical-step"><span class="vertical-step-number">01</span><h3>Select the item</h3><p>Choose the mithai, namkeen, gift box or packaged product from your menu.</p></div>
+            <div class="vertical-step"><span class="vertical-step-number">02</span><h3>Enter weight or quantity</h3><p>Enter the measured weight for weight-priced products or choose the quantity for piece and box items.</p></div>
+            <div class="vertical-step"><span class="vertical-step-number">03</span><h3>Close the bill</h3><p>Mark the payment mode, then print a bill on a supported Bluetooth printer or share it on WhatsApp.</p></div>
+            <div class="vertical-step"><span class="vertical-step-number">04</span><h3>Review the day</h3><p>Use sales, item-wise quantities and payment split to review the counter after service.</p></div>
+          </div>
+          <p class="sweet-content-links">Need a different food-business workflow? Use our <a href="/cafe-pos-software/">cafe POS billing software guide</a> for counter and table service, <a href="/restaurant-pos-software/">restaurant POS billing software guide</a> for KDS and table flow, or <a href="/bakery-billing-software/">bakery billing software guide</a> for bakery baskets. See the <a href="/faq/">Zipla POS FAQ</a> for product and trial answers.</p>
+        </div>
+      </section>
+
+      <section class="vertical-section" aria-labelledby="sweet-owner-title">
+        <div class="vertical-container vertical-feature-layout vertical-feature-layout--reverse">
+          <div class="vertical-feature-copy">
+            <header class="vertical-section-head vertical-section-head--left">
+              <span class="vertical-kicker">Control the counter and the day</span>
+              <h2 id="sweet-owner-title">What should a sweet shop billing system show after a counter sale?</h2>
+              <p class="sweet-heading-answer"><strong>Short answer:</strong> It should help staff finish the customer bill and help the owner review payment marking, item movement, menu setup and day-close information.</p>
+            </header>
+            <p>Sweet shop owners need more than a total printed on a receipt. Zipla POS connects counter billing with GST invoices, payment-mode tracking, menu management, inventory visibility and reporting.</p>
+            <ul class="vertical-check-list">
+              <li><strong>Menu structure:</strong> organise mithai, namkeen, gift boxes and packaged products so staff can find them during service.</li>
+              <li><strong>Payment marking:</strong> mark cash or UPI so the payment split is available for reporting.</li>
+              <li><strong>Bill delivery:</strong> use a supported Bluetooth thermal printer or WhatsApp bill sharing.</li>
+              <li><strong>Owner review:</strong> Starter includes inventory with low-stock alerts; Pro also includes sales analytics and day-close reports.</li>
+            </ul>
+          </div>
+          <figure class="vertical-image-stack">
+            <img src="/screenshots/ss-gst-invoice.webp" alt="Actual Zipla POS GST invoice screenshot for a sweet shop customer bill" loading="lazy" width="1232" height="860" />
+            <figcaption>Actual Zipla POS GST invoice screenshot for a customer billing workflow.</figcaption>
           </figure>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section class="vp-section">
-      <div class="vp-container">
-
-        <h2>Why Sweet Shop Billing Needs a Dedicated POS — Not a Generic App</h2>
-        <p>Most mithai shop owners in India still weigh items on a scale, calculate price on a calculator, write receipts by hand, and keep a register at the end of the day. This works when you have one customer. During Diwali, Eid, Holi, or Raksha Bandhan — when 40 customers are waiting in queue at 6 PM — this system completely breaks down.</p>
-        <p>Zipla POS is built specifically for the mithai shop counter. Weight-based billing for every item, instant price calculation, fast cash and UPI handling, and a daily report that shows exactly what you sold — so your accounts always match your cash drawer.</p>
-
-        <h2>Key Features — Mithai Shop Billing Software</h2>
-        <ul class="vp-feature-list">
-          <li><strong>Weight-Based Billing:</strong> Every mithai item priced per kg. Enter weight in grams or kilograms — total price calculates instantly. Zero manual math, zero billing errors at the counter.</li>
-          <li><strong>Mixed Billing on One Receipt:</strong> Customer buys 500g kaju katli (by weight) + 1 assorted box (fixed price) + 250g besan ladoo (by weight) — all on one clean bill in a single transaction.</li>
-          <li><strong>Festival Offer Management:</strong> Create special prices or combo packs for Diwali boxes, gift hampers, or seasonal discounts — without editing your regular price list. Switch back after the festival automatically.</li>
-          <li><strong>Fast Counter Search:</strong> Find any mithai by name in under 2 seconds. No menu scrolling during peak hour. A complete bill with 4–5 items takes under 45 seconds, even for new counter staff.</li>
-          <li><strong>Cash & UPI Tracking:</strong> Mark each transaction as cash or UPI. Day-end report shows exact split — so you know how much physical cash to deposit and what hit your UPI account.</li>
-          <li><strong>Day Close Report:</strong> Total sales, item-wise kg sold, payment mode breakdown — all in one screen. Share via WhatsApp to the owner without printing anything.</li>
-          <li><strong>Multiple Staff Logins:</strong> Each counter person logs in separately. Owner can see who billed what, and control which staff can apply discounts or access reports.</li>
-          <li><strong>Bluetooth Thermal Printing:</strong> Print detailed receipts on any Bluetooth thermal printer — item names, weights, prices, and total clearly printed for each customer.</li>
-        </ul>
-
-        <h2>The Festival Season Test — How Zipla POS Changes the Counter</h2>
-        <p>Picture a Diwali evening. Your shop has a queue of 40 customers at 6 PM. Old method: weigh mithai on scale → calculate price on calculator → write receipt by hand → collect cash → give change. One customer takes 90 seconds. The queue barely moves.</p>
-        <p>With Zipla POS: weigh on digital scale → enter weight in app → price appears instantly → accept UPI or cash in one tap → print or WhatsApp receipt → next customer. Same transaction takes 25 seconds. That difference decides how many customers you serve and how much revenue you make before closing time — without hiring extra counter staff.</p>
-
-        <h2>Zipla POS at a Mithai Shop Counter — Full Workflow</h2>
-        <ol class="vp-steps">
-          <li>Customer selects mithai items — staff opens a new bill in Zipla POS</li>
-          <li>Add items: search by name → enter weight in grams → price auto-fills from per-kg rate</li>
-          <li>Mix weight items with box items or fixed-price items on the same bill</li>
-          <li>Apply festival discount or special combo price if applicable</li>
-          <li>Total appears — customer pays cash or UPI in one tap</li>
-          <li>Print receipt on Bluetooth thermal printer or share on customer's WhatsApp</li>
-          <li>End of day: close report shows total sales, item-wise kg sold, cash vs UPI split</li>
-        </ol>
-
-        <h2>Works for All Sweet Shop Formats in India</h2>
-        <ul>
-          <li>Traditional halwai counters selling mithai by weight</li>
-          <li>Sweet shops with packaged gift box sets for festivals and weddings</li>
-          <li>Namkeen and farsan shops with high-volume weight billing</li>
-          <li>Home-based sweet makers handling delivery and walk-in orders</li>
-          <li>Regional sweet brands with multiple outlets and remote owner oversight</li>
-        </ul>
-
-        <h2>Pricing — One Annual Fee, No Commission per Sale</h2>
-        <p>Zipla POS never charges a percentage of your sales. Pay once a year — that is it. No per-kg-billed fee, no per-transaction commission, no renewal surprises, no AMC.</p>
-        <ul>
-          <li><strong>Starter:</strong> ₹2,999/year &nbsp;|&nbsp; ₹5,999/3 years</li>
-          <li><strong>Pro:</strong> ₹4,999/year &nbsp;|&nbsp; ₹9,899/3 years</li>
-        </ul>
-
-        <h2>Frequently Asked Questions</h2>
-        <div class="vp-faq">
-
-          <div class="vp-faq-item">
-            <h3>What is the best billing software for sweet shops in India?</h3>
-            <p>Zipla POS is one of the few POS systems in India built with weight-based billing as a core feature — not an afterthought. It handles per-kg pricing, gram-level weight entry, and mixed billing. Pricing starts at ₹2,999/year with no per-transaction fees or hidden AMC charges.</p>
+      <section class="vertical-section" aria-labelledby="sweet-plan-title">
+        <div class="vertical-container">
+          <header class="vertical-section-head">
+            <span class="vertical-kicker">Choose the right sweet shop workflow</span>
+            <h2 id="sweet-plan-title">Which Zipla POS plan fits a sweet shop billing workflow?</h2>
+            <p class="sweet-heading-answer"><strong>Short answer:</strong> Starter fits a counter that needs billing and low-stock alerts; Pro fits a sweet shop that also needs table QR ordering, KDS and stronger reporting.</p>
+          </header>
+          <div class="sweet-decision">
+            <h3>Sweet shop plan decision: Starter or Pro?</h3>
+            <p>Choose around the service workflow you need to run—not around a generic feature checklist.</p>
+            <div class="sweet-decision-table-wrap">
+              <table class="sweet-decision-table">
+                <thead>
+                  <tr><th scope="col">Sweet shop situation</th><th scope="col">Relevant Zipla POS workflow</th><th scope="col">Plan to consider</th></tr>
+                </thead>
+                <tbody>
+                  <tr><th scope="row">Retail mithai or namkeen counter</th><td>Counter billing for weight and fixed-price items, plus inventory with low-stock alerts.</td><td><strong>Starter</strong><br />₹2,999/year or ₹5,999 for 3 years</td></tr>
+                  <tr><th scope="row">Sweet shop with service or kitchen handoff</th><td>Add table QR ordering, Kitchen Display System, Bluetooth KOT auto-print, sales analytics and day-close reports.</td><td><strong>Pro</strong><br />₹4,999/year or ₹9,899 for 3 years</td></tr>
+                  <tr><th scope="row">Before committing</th><td>Test a real mixed basket using your own menu, then check the counter and owner workflow.</td><td><strong>14-day trial</strong><br />No card required</td></tr>
+                </tbody>
+              </table>
+            </div>
           </div>
-
-          <div class="vp-faq-item">
-            <h3>Does Zipla POS support billing by weight for mithai?</h3>
-            <p>Yes. Each item can have a per-kg price. Enter weight in grams or kg when billing — total price calculates instantly. No calculator needed at the counter, no arithmetic errors, no customer disputes over pricing.</p>
-          </div>
-
-          <div class="vp-faq-item">
-            <h3>How does a sweet shop POS handle Diwali or festive rush?</h3>
-            <p>Zipla POS fast item search, automatic weight-based price calculation, and one-tap cash or UPI tracking reduce per-customer transaction time from 90 seconds to under 30. During festive peaks, this directly translates to more customers served per hour without hiring extra staff.</p>
-          </div>
-
-          <div class="vp-faq-item">
-            <h3>Can I create Diwali box sets or combo pricing in Zipla POS?</h3>
-            <p>Yes. Create combo items like Diwali gift hampers or premium box sets at a fixed price, alongside regular weight-based mithai. Festival-specific prices can be activated and deactivated without touching your regular price list.</p>
-          </div>
-
-          <div class="vp-faq-item">
-            <h3>Does Zipla POS work on a basic Android phone at a sweet shop counter?</h3>
-            <p>Yes. Zipla POS runs on any Android phone. No dedicated POS terminal or high-end hardware required. Most sweet shop owners use an affordable Android phone at the counter paired with a Bluetooth thermal printer for receipts.</p>
-          </div>
-
-          <div class="vp-faq-item">
-            <h3>Can the sweet shop owner see daily sales data without being physically present?</h3>
-            <p>Yes. Counter staff can share the day close report via WhatsApp to the owner at end of day. Pro plan users can access live reports from any device at any time — so the owner always knows the day's total sales, top-selling items, and cash position without visiting the shop.</p>
-          </div>
-
-          <div class="vp-faq-item">
-            <h3>Does Zipla POS work offline at a sweet shop counter?</h3>
-            <p>Zipla POS works after the menu is loaded — you can create bills without internet. UPI and online payments require a connection. Full offline sync is on our roadmap.</p>
-          </div>
-
         </div>
+      </section>
 
-        <div class="vp-related">
-          <h2>Other Businesses Zipla POS Serves</h2>
-          <p>Zipla POS works across Indian food businesses — <a href="/restaurant-pos-software/">restaurant POS software</a>, <a href="/cafe-pos-software/">cafe billing software</a>, and <a href="/bakery-billing-software/">bakery billing software</a>.</p>
+      <section class="vertical-section vertical-section--muted" aria-labelledby="sweet-trial-title">
+        <div class="vertical-container">
+          <header class="vertical-section-head">
+            <span class="vertical-kicker">Use the trial with a real counter basket</span>
+            <h2 id="sweet-trial-title">What should a mithai shop test before choosing billing software?</h2>
+            <p class="sweet-heading-answer"><strong>Short answer:</strong> Test a real mixed basket, the customer bill, payment marking and the owner’s review workflow before choosing a plan.</p>
+            <p>Use your own menu items rather than a polished sample. That is the safest way to judge whether a billing workflow fits your actual counter.</p>
+          </header>
+          <div class="vertical-workflow">
+            <div class="vertical-step"><span class="vertical-step-number">01</span><h3>Configure price types</h3><p>Set up a mithai item by weight, a namkeen item by weight and a fixed-price gift box using your own menu.</p></div>
+            <div class="vertical-step"><span class="vertical-step-number">02</span><h3>Build one mixed bill</h3><p>Put those product types into a single transaction and check that the counter flow is clear for staff.</p></div>
+            <div class="vertical-step"><span class="vertical-step-number">03</span><h3>Close the customer bill</h3><p>Mark the payment mode, then test a Bluetooth print or WhatsApp bill share.</p></div>
+            <div class="vertical-step"><span class="vertical-step-number">04</span><h3>Check the owner view</h3><p>Review inventory with low-stock alerts in Starter. For Pro, also review sales analytics and day-close reports after the test.</p></div>
+          </div>
         </div>
+      </section>
 
-        <div class="vp-final-cta">
-          <h2>Ready to Speed Up Your Mithai Counter?</h2>
-          <p>Weight billing, festive offers, daily reports — everything your sweet shop needs in one app. No hardware. No monthly fees.</p>
-          <a href="https://app.zipla.in/register" class="vp-btn-primary">Start Free — No Credit Card</a>
-          <a href="/" class="vp-btn-secondary">Learn More About Zipla POS</a>
+      <section class="vertical-section" aria-labelledby="sweet-faq-title">
+        <div class="vertical-container vertical-faq-layout">
+          <header class="vertical-section-head">
+            <span class="vertical-kicker">Buyer questions</span>
+            <h2 id="sweet-faq-title">What do sweet shop owners ask before starting a trial?</h2>
+            <p class="sweet-heading-answer"><strong>Short answer:</strong> These answers cover weight billing, mixed baskets, Android devices, connectivity and plan pricing before you start a trial.</p>
+          </header>
+          <div class="vertical-faq-list">
+            {faqs.map((faq) => (
+              <details>
+                <summary>{faq.question}</summary>
+                <p>{faq.answer}</p>
+              </details>
+            ))}
+          </div>
         </div>
+      </section>
 
-      </div>
-    </section>
+      <section class="vertical-section vertical-section--compact" aria-labelledby="sweet-related-title">
+        <div class="vertical-container">
+          <div class="vertical-related">
+            <h2 id="sweet-related-title">Which Zipla POS workflows are useful to compare?</h2>
+            <p>For other food-business billing needs, see <a class="vertical-inline-link" href="/bakery-billing-software/">bakery billing software</a>, <a class="vertical-inline-link" href="/cafe-pos-software/">cafe POS software</a>, <a class="vertical-inline-link" href="/restaurant-pos-software/">restaurant POS software</a>, or the complete <a class="vertical-inline-link" href="/faq/">Zipla POS FAQ</a>.</p>
+          </div>
+        </div>
+      </section>
 
+      <section class="vertical-section vertical-section--compact">
+        <div class="vertical-container">
+          <div class="vertical-final-cta">
+            <h2>Test Zipla POS with the way your sweet shop actually bills.</h2>
+            <p>Start a 14-day free trial online, or book a WhatsApp demo to see weight, fixed-price and mixed-basket billing in context.</p>
+            <div class="vertical-final-actions">
+              <a class="btn-cta" href="https://app.zipla.in/register">Start 14-Day Free Trial</a>
+              <a class="btn-ghost" href="/#demo">Book Free WhatsApp Demo</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </article>
   </main>
 
   <Footer />
 </Layout>
 
 <style>
-  .vp-main { background: #0D0D0D; }
-  .vp-hero { padding: 5rem 1.5rem 3.5rem; text-align: center; border-bottom: 1px solid #1a1a1a; }
-  .vp-container { max-width: 820px; margin: 0 auto; padding: 0 1rem; }
-  .vp-eyebrow { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #C9A94B; margin-bottom: 1rem; }
-  .vp-h1 { font-size: clamp(1.8rem, 4.5vw, 2.75rem); font-weight: 700; color: #ffffff; line-height: 1.22; margin: 0 auto 1.25rem; max-width: 760px; }
-  .vp-lead { font-size: 1.1rem; color: #aaaaaa; line-height: 1.75; max-width: 600px; margin: 0 auto 2rem; }
-  .vp-cta-group { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
-  .vp-btn-primary { display: inline-block; background: #C9A94B; color: #0D0D0D; font-weight: 700; padding: 0.875rem 2rem; border-radius: 6px; text-decoration: none; font-size: 1rem; transition: opacity 0.18s; }
-  .vp-btn-primary:hover { opacity: 0.85; }
-  .vp-btn-secondary { display: inline-block; color: #C9A94B; font-weight: 600; padding: 0.875rem 1.5rem; border-radius: 6px; text-decoration: none; font-size: 0.95rem; border: 1px solid #2a2a2a; background: transparent; transition: border-color 0.18s; }
-  .vp-btn-secondary:hover { border-color: #C9A94B; }
-  .vp-screenshots { padding: 0 1.5rem 3rem; }
-  .vp-ss-heading { font-size: 1.4rem; font-weight: 700; color: #C9A94B; text-align: center; margin: 0 0 2rem; }
-  .vp-ss-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; max-width: 1000px; margin: 0 auto; }
-  .vp-ss-item { margin: 0; }
-  .vp-ss-item img { width: 100%; height: auto; border-radius: 10px; display: block; border: 1px solid #1e1e1e; }
-  .vp-ss-item figcaption { font-size: 0.82rem; color: #888888; text-align: center; margin-top: 0.625rem; }
-  @media (max-width: 640px) { .vp-ss-grid { grid-template-columns: 1fr; } }
-  .vp-section { padding: 3rem 1.5rem 5rem; color: #cccccc; }
-  .vp-section h2 { font-size: 1.45rem; color: #C9A94B; margin: 2.75rem 0 0.875rem; font-weight: 600; }
-  .vp-section h3 { font-size: 1.05rem; color: #ffffff; margin: 0 0 0.5rem; font-weight: 600; }
-  .vp-section p { line-height: 1.8; margin-bottom: 1rem; color: #cccccc; font-size: 0.98rem; }
-  .vp-feature-list { padding-left: 1.25rem; margin-bottom: 1rem; }
-  .vp-feature-list li { line-height: 1.8; margin-bottom: 0.625rem; color: #cccccc; font-size: 0.98rem; }
-  .vp-section ul:not(.vp-feature-list):not(.vp-faq *) { padding-left: 1.25rem; margin-bottom: 1rem; }
-  .vp-section ul:not(.vp-feature-list):not(.vp-faq *) li { line-height: 1.8; margin-bottom: 0.5rem; color: #cccccc; font-size: 0.98rem; }
-  .vp-steps { padding-left: 1.25rem; margin-bottom: 1rem; }
-  .vp-steps li { line-height: 1.8; margin-bottom: 0.625rem; color: #cccccc; font-size: 0.98rem; }
-  .vp-faq { margin-top: 0.75rem; }
-  .vp-faq-item { background: #111111; border: 1px solid #1e1e1e; border-radius: 8px; padding: 1.25rem 1.5rem; margin-bottom: 0.875rem; }
-  .vp-final-cta { text-align: center; padding: 3rem 1.5rem; margin-top: 3rem; background: #111111; border: 1px solid #1e1e1e; border-radius: 12px; }
-  .vp-final-cta h2 { color: #ffffff !important; margin-top: 0 !important; }
-  .vp-final-cta .vp-btn-primary, .vp-final-cta .vp-btn-secondary { margin: 0.5rem; }
-  .vp-related { margin: 2.5rem 0 0; padding: 1.25rem 1.5rem; background: #111111; border: 1px solid #1e1e1e; border-radius: 8px; }
-  .vp-related h2 { margin-top: 0 !important; }
-  .vp-related a { color: #C9A94B; text-decoration: underline; text-underline-offset: 3px; }
-  @media (max-width: 600px) { .vp-cta-group { flex-direction: column; align-items: center; } .vp-hero { padding: 3.5rem 1.25rem 2.5rem; } }
+  .vertical-lead strong, .sweet-top-summary strong, .sweet-heading-answer strong { color: var(--text); }
+  .sweet-top-summary { max-width: 570px; margin: 0 0 12px; color: var(--text-2); font-size: 15px; font-weight: 650; line-height: 1.68; }
+  .sweet-heading-answer { margin: 0; color: var(--text-2); }
+  .sweet-content-links { max-width: 800px; margin: 28px auto 0; color: var(--text-2); font-size: 14px; line-height: 1.75; text-align: center; }
+  .sweet-content-links a { color: var(--amber-2); font-weight: 700; text-decoration: underline; text-decoration-color: rgba(232,201,131,.35); text-underline-offset: 3px; }
+  .sweet-decision { max-width: 960px; margin: 0 auto; padding: 28px; border: 1px solid var(--border-hi); border-radius: 18px; background: linear-gradient(145deg, rgba(26,29,43,.8), var(--surface)); }
+  .sweet-decision h3 { margin: 0 0 8px; font-family: var(--display); font-size: 21px; letter-spacing: -.35px; }
+  .sweet-decision > p { margin: 0 0 20px; color: var(--text-2); font-size: 14px; line-height: 1.65; }
+  .sweet-decision-table-wrap { overflow-x: auto; border: 1px solid var(--border); border-radius: 11px; }
+  .sweet-decision-table { width: 100%; min-width: 620px; border-collapse: collapse; text-align: left; }
+  .sweet-decision-table th, .sweet-decision-table td { padding: 14px; border-bottom: 1px solid var(--border); font-size: 13px; line-height: 1.6; vertical-align: top; }
+  .sweet-decision-table thead th { background: rgba(202,160,76,.09); color: var(--amber-2); font-size: 10.5px; font-weight: 800; letter-spacing: .7px; text-transform: uppercase; }
+  .sweet-decision-table tbody th { width: 30%; color: var(--text); font-weight: 700; }
+  .sweet-decision-table td { color: var(--text-2); }
+  .sweet-decision-table td strong { color: var(--text); }
+  .sweet-decision-table tbody tr:last-child th, .sweet-decision-table tbody tr:last-child td { border-bottom: 0; }
+  @media (max-width: 620px) {
+    .sweet-decision { padding: 20px 16px 6px; }
+    .sweet-decision-table { min-width: 540px; }
+  }
 </style>
