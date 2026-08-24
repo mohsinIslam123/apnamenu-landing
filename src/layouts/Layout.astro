@@ -2,8 +2,10 @@
 interface Props {
   title?: string;
   description?: string;
-  canonical?: string;
+  canonical?: string | null;
   ogImage?: string;
+  ogImageAlt?: string;
+  robots?: string;
   jsonLd?: object;
 }
 
@@ -12,76 +14,94 @@ const {
   description = 'Restaurant POS billing software for Indian businesses — counter billing, auto GST invoice, kitchen display, QR ordering. 14-day free trial, no card required.',
   canonical = 'https://zipla.in',
   ogImage = 'https://zipla.in/og-image.jpg',
+  ogImageAlt = 'Zipla POS billing dashboard shown across desktop, tablet, and Android phone',
+  robots,
   jsonLd,
 } = Astro.props;
 
-const defaultJsonLd = {
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "WebSite",
-      "@id": "https://zipla.in/#website",
-      "name": "Zipla POS",
-      "url": "https://zipla.in",
-      "publisher": { "@id": "https://zipla.in/#organization" }
-    },
-    {
-      "@type": "Organization",
-      "@id": "https://zipla.in/#organization",
-      "name": "Zipla POS",
-      "url": "https://zipla.in",
-      "logo": { "@type": "ImageObject", "url": "https://zipla.in/zipla-logo.webp" },
-      "email": "support@zipla.in"
-    },
-    {
-      "@type": "SoftwareApplication",
-      "@id": "https://zipla.in/#software",
-      "name": "Zipla POS",
-      "url": "https://zipla.in",
-      "applicationCategory": "BusinessApplication",
-      "operatingSystem": "Web Browser",
-      "description": "Restaurant POS billing software for Indian small businesses — counter billing, auto GST invoice, kitchen display, and QR table ordering.",
-      "author": { "@id": "https://zipla.in/#organization" },
-      "offers": [
-        { "@type": "Offer", "price": "2999", "priceCurrency": "INR", "name": "Starter" },
-        { "@type": "Offer", "price": "4999", "priceCurrency": "INR", "name": "Pro" }
-      ]
-    }
-  ]
-};
+const globalGraph = [
+  {
+    "@type": "WebSite",
+    "@id": "https://zipla.in/#website",
+    "name": "Zipla POS",
+    "url": "https://zipla.in",
+    "publisher": { "@id": "https://zipla.in/#organization" }
+  },
+  {
+    "@type": "Organization",
+    "@id": "https://zipla.in/#organization",
+    "name": "Zipla POS",
+    "url": "https://zipla.in",
+    "logo": { "@type": "ImageObject", "url": "https://zipla.in/zipla-logo.webp" },
+    "email": "support@zipla.in"
+  },
+  {
+    "@type": "SoftwareApplication",
+    "@id": "https://zipla.in/#software",
+    "name": "Zipla POS",
+    "url": "https://zipla.in",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web Browser",
+    "description": "Restaurant POS billing software for Indian small businesses — counter billing, auto GST invoice, kitchen display, and QR table ordering.",
+    "author": { "@id": "https://zipla.in/#organization" },
+    "offers": [
+      { "@type": "Offer", "price": "2999", "priceCurrency": "INR", "name": "Starter" },
+      { "@type": "Offer", "price": "4999", "priceCurrency": "INR", "name": "Pro" }
+    ]
+  }
+];
 
-const structuredData = jsonLd ?? defaultJsonLd;
+type JsonLdWithGraph = { "@graph"?: object[] };
+
+const pageJsonLd = jsonLd as JsonLdWithGraph | undefined;
+const pageGraph = Array.isArray(pageJsonLd?.["@graph"])
+  ? pageJsonLd["@graph"]
+  : jsonLd
+    ? [jsonLd]
+    : [];
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@graph": [...globalGraph, ...pageGraph]
+};
 
 // GA4 Measurement ID — zipla.in
 const GA_ID = 'G-48WXKXR3F1';
 ---
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-IN">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <title>{title}</title>
   <meta name="description" content={description} />
+  {robots && <meta name="robots" content={robots} />}
 
-  <!-- Open Graph -->
-  <meta property="og:title" content={title} />
-  <meta property="og:description" content={description} />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content={canonical} />
-  <meta property="og:site_name" content="Zipla POS" />
-  <meta property="og:locale" content="en_IN" />
-  <meta property="og:image" content={ogImage} />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
+  {canonical && (
+    <>
+      <!-- Open Graph -->
+      <meta property="og:title" content={title} />
+      <meta property="og:description" content={description} />
+      <meta property="og:type" content="website" />
+      <meta property="og:url" content={canonical} />
+      <meta property="og:site_name" content="Zipla POS" />
+      <meta property="og:locale" content="en_IN" />
+      <meta property="og:image" content={ogImage} />
+      <meta property="og:image:alt" content={ogImageAlt} />
+      <meta property="og:image:width" content="1200" />
+      <meta property="og:image:height" content="630" />
 
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content={title} />
-  <meta name="twitter:description" content={description} />
-  <meta name="twitter:image" content={ogImage} />
+      <!-- Twitter -->
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content={title} />
+      <meta name="twitter:description" content={description} />
+      <meta name="twitter:image" content={ogImage} />
+      <meta name="twitter:image:alt" content={ogImageAlt} />
 
-  <link rel="canonical" href={canonical} />
+      <link rel="canonical" href={canonical} />
+    </>
+  )}
   <link rel="icon" type="image/png" href="/favicon.png" />
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
