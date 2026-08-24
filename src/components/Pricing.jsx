@@ -3,11 +3,11 @@ const S = ['Counter POS Billing','Auto GST Bill — CGST + SGST','Inventory + Lo
 const P = ['Everything in Starter','Kitchen Display Screen (KDS)','Table QR Ordering — Waiter Free','Bluetooth KOT Auto-Print','AI Menu Scan Unlimited','Sales analytics + day-close reports']
 export default function Pricing() {
   return (
-    <section className="pricing" id="pricing">
+    <section className="pricing" id="pricing" aria-labelledby="pricing-title">
       <div className="section-head">
         <span className="eyebrow">Pricing</span>
-        <h2>Transparent Pricing. No Hidden Fees.</h2>
-        <p>Choose a plan and start with a 14-day free trial. No card required.</p>
+        <h2 id="pricing-title">How much does Zipla POS cost?</h2>
+        <p>Starter begins at ₹2,999/year and Pro begins at ₹4,999/year. Both start with a 14-day free trial and no card is required.</p>
       </div>
       <div className="pricing-grid">
         <div className="price-card">
