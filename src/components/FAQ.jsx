@@ -8,10 +8,11 @@ const ITEMS = [
 function Plus() { return <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg> }
 export default function FAQ() {
   return (
-    <section className="faq" id="faq">
+    <section className="faq" id="faq" aria-labelledby="faq-title">
       <div className="section-head">
         <span className="eyebrow">FAQ</span>
-        <h2>Frequently Asked Questions</h2>
+        <h2 id="faq-title">What do food businesses ask before starting Zipla POS?</h2>
+        <p>These answers cover data access, team onboarding, menu setup, connectivity, and product support.</p>
       </div>
       <div className="faq-list">
         {ITEMS.map(i => <details className="faq-item" key={i.q}><summary className="faq-q">{i.q}<Plus /></summary><div className="faq-a">{i.a}</div></details>)}

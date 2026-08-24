@@ -29,8 +29,8 @@ export default function Hero() {
       <div className="hero-inner">
         <div className="hero-copy">
           <span className="eyebrow">Zipla POS for Indian food businesses</span>
-          <h1 id="hero-title">Restaurant POS billing software built for faster service.</h1>
-          <p className="sub">From counter bills to kitchen orders and GST invoices, Zipla gives your team one simple system to run daily service.</p>
+          <h1 id="hero-title">Restaurant POS Billing Software for India</h1>
+          <p className="sub">Zipla is restaurant POS billing software for Indian food businesses: it connects counter billing, GST invoices, kitchen orders, and daily operations in one system.</p>
           <div className="hero-ctas">
             <a className="btn-cta" href="https://app.zipla.in/register">Start 14-Day Free Trial</a>
             <a className="btn-ghost" href="/#demo">Book Free WhatsApp Demo</a>
@@ -41,7 +41,7 @@ export default function Hero() {
             <li><CheckIcon />Android, tablet, and desktop</li>
           </ul>
         </div>
-        <div className="hero-product" aria-label="Zipla POS shown across desktop, tablet, and phone">
+        <figure className="hero-product" aria-labelledby="hero-product-caption">
           <div className="hero-product-glow" aria-hidden="true" />
           <div className="hero-device">
             <div className="hero-device-bar">
@@ -64,7 +64,8 @@ export default function Hero() {
             <span className="hero-callout-icon"><KitchenIcon /></span>
             <span><strong>Kitchen orders</strong><small>Live KDS order queue</small></span>
           </div>
-        </div>
+          <figcaption id="hero-product-caption">Actual Zipla POS interface shown across desktop, tablet, and Android.</figcaption>
+        </figure>
       </div>
     </section>
   )

@@ -8,11 +8,11 @@ const FEATURES = [
 ]
 export default function Features() {
   return (
-    <section className="features" id="features">
+    <section className="features" id="features" aria-labelledby="features-title">
       <div className="section-head">
         <span className="eyebrow">Features</span>
-        <h2>Only What You Need</h2>
-        <p>Every feature solves a real counter problem — no unnecessary clutter.</p>
+        <h2 id="features-title">What can you manage with restaurant POS software?</h2>
+        <p>Zipla POS helps manage counter billing, kitchen order visibility, table ordering, GST invoices, inventory alerts, and staff access.</p>
       </div>
       <div className="feature-grid">
         {FEATURES.map(f => (

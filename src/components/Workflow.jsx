@@ -6,11 +6,11 @@ const STEPS = [
 ]
 export default function Workflow() {
   return (
-    <section className="workflow">
+    <section className="workflow" aria-labelledby="workflow-title">
       <div className="section-head">
         <span className="eyebrow">How It Works</span>
-        <h2>From Order to Report — Four Steps</h2>
-        <p>Every step is connected. Enter data once and it reflects across your entire operation.</p>
+        <h2 id="workflow-title">How does Zipla POS work during restaurant service?</h2>
+        <p>It connects order taking, kitchen handoff, GST billing, and a daily operational review in one workflow.</p>
       </div>
       <div className="workflow-row">
         {STEPS.map(s => <div className="wf-step" key={s.num}><div className="wf-num">{s.num}</div><h3>{s.title}</h3><p>{s.body}</p></div>)}

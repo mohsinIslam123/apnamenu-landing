@@ -63,11 +63,11 @@ export default function DemoForm() {
   }
 
   return (
-    <section className="demo-form" id="demo">
+    <section className="demo-form" id="demo" aria-labelledby="demo-title">
       <div className="section-head">
         <span className="eyebrow">Free Demo</span>
-        <h2>See Zipla POS before you decide</h2>
-        <p>Share your details and we’ll walk you through the relevant Zipla POS workflow on WhatsApp.</p>
+        <h2 id="demo-title">Can I see Zipla POS before I start?</h2>
+        <p>Yes. Share your details and we’ll walk you through the relevant Zipla POS workflow on WhatsApp.</p>
       </div>
       <div className="demo-form-card">
         <div className="demo-form-grid">
