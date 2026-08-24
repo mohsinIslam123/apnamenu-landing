@@ -5,7 +5,7 @@ import Footer from '../../components/Footer.jsx';
 import '../../index.css';
 
 const title = 'Restaurant Billing & POS Guides for India | Zipla POS Blog';
-const description = 'Restaurant billing and POS guides for India for restaurant, dhaba, cafe, QSR, bakery and sweet-shop owners evaluating billing workflows.';
+const description = 'Restaurant Billing & POS Guides for India for restaurant, dhaba, cafe, QSR, bakery and sweet-shop owners evaluating billing workflows.';
 const canonical = 'https://zipla.in/blog/';
 
 const faqs = [
@@ -18,7 +18,7 @@ const faqs = [
 const jsonLd = {
   '@context': 'https://schema.org',
   '@graph': [
-    { '@type': 'WebPage', '@id': canonical, url: canonical, name: title, description, isPartOf: { '@id': 'https://zipla.in/#website' }, about: { '@id': 'https://zipla.in/#software' }, inLanguage: 'en-IN', breadcrumb: { '@id': `${canonical}#breadcrumb` } },
+    { '@type': 'WebPage', '@id': canonical, url: canonical, name: title, description, isPartOf: { '@id': 'https://zipla.in/#website' }, about: { '@id': 'https://zipla.in/#software' }, inLanguage: 'en-IN', dateModified: '2026-08-24', breadcrumb: { '@id': `${canonical}#breadcrumb` } },
     { '@type': 'BreadcrumbList', '@id': `${canonical}#breadcrumb`, itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: 'https://zipla.in/' }, { '@type': 'ListItem', position: 2, name: 'Blog', item: canonical }] },
     { '@type': 'FAQPage', '@id': `${canonical}#faq`, mainEntity: faqs.map((faq) => ({ '@type': 'Question', name: faq.question, acceptedAnswer: { '@type': 'Answer', text: faq.answer } })) },
   ],
@@ -35,6 +35,8 @@ const jsonLd = {
           <h1 id="blog-title">Restaurant Billing & POS Guides for India</h1>
           <p class="blog-summary"><strong>Key takeaway:</strong> Restaurant Billing & POS Guides for India help food-business owners understand billing, GST-invoice, counter, kitchen and plan-selection questions before they test a workflow.</p>
           <p class="blog-lead"><strong>Quick answer:</strong> This Zipla POS blog is for Indian restaurant, dhaba, cafe, QSR, bakery and sweet-shop owners who want practical, product-specific guidance without unsupported claims or generic software comparisons.</p>
+          <p class="blog-audience-note"><strong>Who this is for:</strong> owners and counter, kitchen or service teams in Indian food businesses. <strong>Use these guides when:</strong> you are choosing a billing workflow, comparing Starter with Pro, or preparing a small real-menu trial.</p>
+          <p class="blog-review-meta"><strong>Last reviewed:</strong> <time datetime="2026-08-24">24 August 2026</time>. Product and plan details on this page are checked against the current Zipla POS website.</p>
         </div>
       </section>
 
@@ -42,8 +44,8 @@ const jsonLd = {
         <div class="blog-container">
           <header class="blog-section-head">
             <span>Guide purpose</span>
-            <h2 id="blog-definition-title">What are restaurant billing and POS guides for India?</h2>
-            <p>Restaurant billing and POS guides explain the operating steps behind a food-business counter: setting up menu items, creating a bill, marking a payment mode, handing an order to a kitchen when relevant and reviewing the day. Use them when you need to decide whether your actual workflow fits a billing system.</p>
+            <h2 id="blog-definition-title">What is a restaurant billing and POS guide for India?</h2>
+            <p>A restaurant billing and POS guide is a plain-language resource that explains the operating steps behind a food-business counter: setting up menu items, creating a bill, marking a payment mode, handing an order to a kitchen when relevant and reviewing the day. Use it when you need to decide whether your actual workflow fits a billing system.</p>
           </header>
           <div class="blog-card-grid">
             <div class="blog-info-card"><span>Restaurant and dhaba</span><h3>GST invoice questions</h3><p>Read the current guide when you need a plain-language starting point for restaurant or dhaba GST invoice fields and billing workflow questions.</p><a href="/blog/restaurant-dhaba-gst-invoice-guide-2026/">Read the restaurant and dhaba GST invoice guide</a></div>
@@ -73,16 +75,43 @@ const jsonLd = {
         </div>
       </section>
 
+      <section class="blog-section" aria-labelledby="blog-trial-checklist-title">
+        <div class="blog-container">
+          <header class="blog-section-head">
+            <span>Practical decision checklist</span>
+            <h2 id="blog-trial-checklist-title">How should an owner use a billing guide before starting a trial?</h2>
+            <p><strong>Direct answer:</strong> Match the guide to the service model you run, then test the smallest version of that same workflow with a real menu.</p>
+          </header>
+          <div class="blog-checklist-layout">
+            <ol class="blog-process">
+              <li><strong>Choose the service model.</strong> Start with restaurant, cafe, QSR, dhaba, bakery or sweet-shop guidance based on how customers order and how the kitchen receives work.</li>
+              <li><strong>Set up familiar menu items.</strong> Add a few genuine products and prices rather than judging the workflow only from a sample screen.</li>
+              <li><strong>Run one customer bill.</strong> Mark cash, UPI or card, then test Bluetooth printing or WhatsApp bill sharing when relevant.</li>
+              <li><strong>Check the relevant Pro handoff.</strong> If the outlet uses a kitchen queue or table QR ordering, test KDS and QR ordering before choosing Pro.</li>
+            </ol>
+            <aside class="blog-facts" aria-label="Verified Zipla POS plan facts">
+              <h3>Verified Zipla plan facts</h3>
+              <ul>
+                <li><strong>Starter:</strong> ₹2,999 per year or ₹5,999 for 3 years; includes counter billing, GST bills, inventory low-stock alerts, payment tracking and staff roles.</li>
+                <li><strong>Pro:</strong> ₹4,999 per year or ₹9,899 for 3 years; adds KDS, table QR ordering, Bluetooth KOT auto-print, sales analytics and day-close reports.</li>
+                <li><strong>Trial:</strong> 14 days with no card required, so an owner can check fit with a small real-menu workflow.</li>
+              </ul>
+            </aside>
+          </div>
+        </div>
+      </section>
+
       <section class="blog-section" aria-labelledby="blog-proof-title">
         <div class="blog-container blog-proof-layout">
           <div>
-            <span class="blog-kicker">Product reference</span>
+            <span class="blog-kicker">Original product reference</span>
             <h2 id="blog-proof-title">What can an owner verify in a Zipla POS workflow?</h2>
             <p><strong>Short answer:</strong> Use the guides with an actual Zipla POS screen and your own menu. That is more useful than relying on a generic feature list.</p>
+            <p><strong>Product-test example:</strong> create a bill from familiar menu items, mark a payment mode and review the result in the actual product. This is a workflow example, not a customer case study or an outcome claim.</p>
             <p>For a real counter test, add familiar menu items, create one customer bill, mark cash, UPI or card, and then check whether the owner-review information fits your plan. If your business needs a kitchen handoff, test the Pro KDS workflow separately.</p>
             <p>Need product-specific answers before a test? Read the <a href="/faq/">Zipla POS FAQ</a> for confirmed features, device use, printing, trial and plan information.</p>
           </div>
-          <figure><img src="/screenshots/ss-gst-invoice.webp" alt="Actual Zipla POS GST invoice screen used as product reference in billing guides" loading="lazy" width="1232" height="860" /><figcaption>Actual Zipla POS GST invoice screen. It is product reference material, not a customer testimonial or performance claim.</figcaption></figure>
+          <figure><img src="/screenshots/ss-gst-invoice.webp" alt="Actual Zipla POS GST invoice screen used as product reference in billing guides" loading="lazy" width="1232" height="860" /><figcaption>Original Zipla POS GST invoice screenshot used as product reference. It shows an interface example, not a customer testimonial or performance claim.</figcaption></figure>
         </div>
       </section>
 
@@ -91,7 +120,7 @@ const jsonLd = {
           <header class="blog-section-head">
             <span>Source and verification</span>
             <h2 id="blog-source-title">Where should a food-business owner verify current GST requirements?</h2>
-            <p>Use the official <a href="https://tutorial.gst.gov.in/userguide/taxpayersdashboard/manual_accountingsoftware.htm" target="_blank" rel="noopener noreferrer">GST Portal accounting and billing software guidance</a> and a qualified tax professional for current tax, filing or legal decisions. Zipla POS guides explain the product workflow; they do not replace professional advice.</p>
+            <p>For current tax, filing or legal decisions, use the official <a href="https://tutorial.gst.gov.in/userguide/taxpayersdashboard/manual_accountingsoftware.htm" target="_blank" rel="noopener noreferrer">GST Portal accounting and billing software guidance</a>, the <a href="https://cbic-gst.gov.in/gst-invoice-rules.html" target="_blank" rel="noopener noreferrer">CBIC tax invoice rules</a> and a qualified tax professional. Zipla POS guides explain the product workflow; they do not replace professional advice.</p>
           </header>
         </div>
       </section>
@@ -113,4 +142,8 @@ const jsonLd = {
 
 <style>
   .blog-main{background:var(--bg);min-height:100vh}.blog-hero{padding:74px 24px 58px;background:radial-gradient(ellipse 70% 70% at 50% 0,rgba(202,160,76,.14),transparent 72%);border-bottom:1px solid var(--border)}.blog-container{width:min(100% - 48px,960px);margin:0 auto}.blog-eyebrow,.blog-section-head>span,.blog-kicker{display:block;margin-bottom:12px;color:var(--amber-2);font-size:11px;font-weight:800;letter-spacing:1.15px;text-transform:uppercase}.blog-h1,.blog-hero h1{max-width:760px;margin:0 auto 16px;font-family:var(--display);font-size:clamp(34px,4vw,52px);line-height:1.08;text-align:center}.blog-summary{max-width:730px;margin:0 auto 12px;color:var(--text);font-size:16px;font-weight:650;line-height:1.7;text-align:center}.blog-lead{max-width:710px;margin:0 auto;color:var(--text-2);font-size:16px;line-height:1.75;text-align:center}.blog-section{padding:92px 0}.blog-section--muted{background:linear-gradient(180deg,rgba(202,160,76,.05),transparent 78%)}.blog-section--compact{padding-top:0}.blog-section-head{max-width:760px;margin:0 auto 36px;text-align:center}.blog-section-head h2,.blog-proof-layout h2,.blog-cta h2{margin:0 0 14px;font-family:var(--display);font-size:clamp(27px,3vw,39px);line-height:1.13}.blog-section-head p,.blog-proof-layout p{color:var(--text-2);font-size:15px;line-height:1.75}.blog-section-head a,.blog-proof-layout a,.blog-info-card a,.blog-table-wrap a{color:var(--amber-2);font-weight:700;text-decoration:underline;text-decoration-color:rgba(232,201,131,.4);text-underline-offset:3px}.blog-card-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.blog-info-card{padding:25px;border:1px solid var(--border);border-radius:16px;background:var(--surface)}.blog-info-card>span{display:block;margin-bottom:15px;color:var(--amber-2);font-size:10px;font-weight:800;letter-spacing:1px;text-transform:uppercase}.blog-info-card h3{margin:0 0 10px;font-family:var(--display);font-size:18px}.blog-info-card p{margin:0 0 18px;color:var(--text-2);font-size:13.5px;line-height:1.65}.blog-info-card a{font-size:13px}.blog-table-wrap{overflow-x:auto;border:1px solid var(--border);border-radius:14px}.blog-table-wrap table{width:100%;min-width:640px;border-collapse:collapse;text-align:left}.blog-table-wrap th,.blog-table-wrap td{padding:15px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-2);font-size:13.5px;line-height:1.6}.blog-table-wrap thead th{background:rgba(202,160,76,.09);color:var(--amber-2);font-size:10.5px;font-weight:800;letter-spacing:.7px;text-transform:uppercase}.blog-table-wrap tbody th{color:var(--text);font-weight:700}.blog-table-wrap tbody tr:last-child>*{border-bottom:0}.blog-proof-layout{display:grid;grid-template-columns:minmax(0,.9fr) minmax(360px,1.1fr);gap:64px;align-items:center}.blog-proof-layout figure{margin:0}.blog-proof-layout img{width:100%;height:auto;border:1px solid var(--border-hi);border-radius:16px;box-shadow:0 20px 55px rgba(0,0,0,.28)}.blog-proof-layout figcaption{margin-top:10px;color:var(--text-3);font-size:11.5px;line-height:1.55;text-align:center}.blog-faq-list{display:grid;gap:12px}.blog-faq-item{padding:20px;border:1px solid var(--border);border-radius:12px;background:var(--surface)}.blog-faq-item h3{margin:0 0 8px;font-family:var(--display);font-size:17px}.blog-faq-item p{margin:0;color:var(--text-2);font-size:14px;line-height:1.7}.blog-cta{padding:58px 28px;border:1px solid var(--border-hi);border-radius:22px;background:linear-gradient(145deg,rgba(202,160,76,.15),var(--surface-2) 56%);text-align:center}.blog-cta h2{max-width:650px;margin-left:auto;margin-right:auto}.blog-cta p{max-width:600px;margin:0 auto 25px;color:var(--text-2);font-size:15px;line-height:1.7}.blog-cta>div{display:flex;justify-content:center;flex-wrap:wrap;gap:12px}@media(max-width:800px){.blog-card-grid,.blog-proof-layout{grid-template-columns:1fr;gap:18px}.blog-section{padding:72px 0}}@media(max-width:620px){.blog-container{width:min(100% - 36px,960px)}.blog-hero{padding:56px 18px 44px}.blog-section{padding:62px 0}.blog-cta{padding:42px 18px}.blog-cta>div{display:grid}.blog-cta a{justify-content:center;width:100%}}
+</style>
+
+<style>
+  .blog-audience-note,.blog-review-meta{max-width:730px;margin:12px auto 0;color:var(--text-2);font-size:13px;line-height:1.7;text-align:center}.blog-review-meta{color:var(--text-3);font-size:11.5px}.blog-checklist-layout{display:grid;grid-template-columns:minmax(0,1fr) minmax(300px,.92fr);gap:18px;align-items:start}.blog-process,.blog-facts{margin:0;border:1px solid var(--border);border-radius:16px;background:var(--surface)}.blog-process{padding:24px 24px 24px 44px;color:var(--text-2);font-size:14px;line-height:1.7}.blog-process li+li{margin-top:13px}.blog-process strong,.blog-facts strong{color:var(--text)}.blog-facts{padding:24px}.blog-facts h3{margin:0 0 14px;font-family:var(--display);font-size:18px}.blog-facts ul{display:grid;gap:12px;margin:0;padding-left:18px;color:var(--text-2);font-size:13.5px;line-height:1.65}.blog-facts li::marker{color:var(--amber-2)}@media(max-width:800px){.blog-checklist-layout{grid-template-columns:1fr}}@media(max-width:620px){.blog-process,.blog-facts{border-radius:12px}.blog-process{padding:20px 20px 20px 38px}.blog-facts{padding:20px}}
 </style>
