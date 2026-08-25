@@ -1,0 +1,122 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.jsx';
+import Footer from '../components/Footer.jsx';
+import '../index.css';
+
+const description = 'Read the Zipla POS Cancellation and Refund Policy, including the 14-day free trial, 7-day refund window and cancellation process.';
+const canonical = 'https://zipla.in/refund-policy/';
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://zipla.in/refund-policy/",
+      "url": "https://zipla.in/refund-policy/",
+      "name": "Cancellation & Refund Policy",
+      "description": description,
+      "isPartOf": { "@id": "https://zipla.in/#website" },
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://zipla.in" },
+          { "@type": "ListItem", "position": 2, "name": "Cancellation & Refund Policy", "item": "https://zipla.in/refund-policy/" }
+        ]
+      }
+    }
+  ]
+};
+---
+
+<Layout title="Cancellation & Refund Policy" description={description} canonical={canonical} jsonLd={jsonLd}>
+  <Header client:load />
+
+  <main class="legal-main">
+    <article class="legal-container">
+      <div class="legal-header">
+        <p class="legal-eyebrow">Zipla POS</p>
+        <h1>Cancellation &amp; Refund Policy</h1>
+        <p class="legal-meta">Last updated: August 25, 2026</p>
+        <p class="legal-summary"><strong>Key takeaway:</strong> Zipla POS offers a 14-day free trial. Paid annual subscriptions may qualify for a refund when the request is made within 7 days of payment and meets the conditions below.</p>
+        <p class="legal-audience"><strong>Who this is for:</strong> Zipla POS trial users and paid subscribers. <strong>Use this policy when:</strong> you want to understand the cancellation and refund process before or after purchasing a subscription.</p>
+      </div>
+
+      <div class="legal-body">
+        <p>This Cancellation &amp; Refund Policy applies to paid Zipla POS subscriptions. It should be read together with the <a href="/terms-and-conditions/">Zipla POS Terms and Conditions</a>.</p>
+
+        <h2>Does Zipla POS offer a free trial?</h2>
+        <p class="legal-direct-answer"><strong>Short answer:</strong> Yes. Zipla POS offers a 14-day free trial with no credit card or payment required to begin.</p>
+        <p>You can use the trial to assess whether Zipla POS fits your business before purchasing a paid plan.</p>
+
+        <h2>When can you request a refund?</h2>
+        <p class="legal-direct-answer"><strong>Short answer:</strong> Annual subscriptions may qualify for a refund request made within 7 days of payment, subject to the conditions below.</p>
+        <ul>
+          <li>The refund request must be submitted within <strong>7 days</strong> of payment.</li>
+          <li>The request must be sent to <a href="mailto:support@zipla.in">support@zipla.in</a>.</li>
+          <li>The account must not have processed more than <strong>50 bills</strong> during the subscription period.</li>
+          <li>Refunds are not available for 3-year plan purchases after the 7-day refund window.</li>
+          <li>No refund is available for partial periods; Zipla POS does not prorate subscriptions.</li>
+        </ul>
+        <p>Zipla POS may decline a refund request where there are clear signs of abuse of this policy.</p>
+
+        <h2>What happens after the 7-day refund window?</h2>
+        <p><strong>Short answer:</strong> After 7 days from payment, the paid subscription is non-refundable.</p>
+        <p>You may still ask to cancel future use of the service, but the current paid subscription will remain non-refundable after the 7-day window.</p>
+
+        <h2>How are approved refunds processed?</h2>
+        <p><strong>Short answer:</strong> Approved refunds are processed within 7–10 working days to the original payment method.</p>
+        <p>Refund timing after processing can depend on the payment provider or your bank.</p>
+
+        <h2>How do you cancel a subscription or request a refund?</h2>
+        <p>Send an email to <a href="mailto:support@zipla.in">support@zipla.in</a> from your registered email address. Include your business name, registered phone number, payment date and whether you are requesting cancellation or a refund.</p>
+        <div class="legal-template">
+          <h3>Refund-request email template</h3>
+          <p><strong>Subject:</strong> Refund request for my Zipla POS subscription<br />
+          <strong>Include:</strong> your business name, registered phone number, payment date and a short reason for the request.</p>
+        </div>
+
+        <h2>How can you contact Zipla POS about this policy?</h2>
+        <div class="legal-contact">
+          <p><strong>Zipla POS Support</strong><br />
+          Email: <a href="mailto:support@zipla.in">support@zipla.in</a></p>
+        </div>
+      </div>
+
+      <nav class="legal-related" aria-labelledby="refund-related-title">
+        <h2 id="refund-related-title">Where can you find related Zipla information?</h2>
+        <p>Read the <a href="/terms-and-conditions/">Zipla POS Terms and Conditions</a>, review the <a href="/privacy-policy/">Privacy Policy</a>, or return to the <a href="/">Zipla POS homepage</a>.</p>
+      </nav>
+
+      <div class="legal-back">
+        <a href="/" class="legal-back-link">← Back to Zipla POS</a>
+      </div>
+    </article>
+  </main>
+
+  <Footer />
+</Layout>
+
+<style>
+  .legal-main { background: #0D0D0D; min-height: 100vh; padding: 5rem 1.5rem 6rem; }
+  .legal-container { max-width: 760px; margin: 0 auto; }
+  .legal-header { margin-bottom: 3rem; padding-bottom: 2rem; border-bottom: 1px solid #1e1e1e; }
+  .legal-eyebrow { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #C9A94B; margin-bottom: 0.75rem; }
+  .legal-header h1 { font-size: clamp(1.8rem, 4vw, 2.4rem); font-weight: 700; color: #ffffff; margin: 0 0 0.75rem; }
+  .legal-meta { font-size: 0.85rem; color: #666666; }
+  .legal-body { color: #cccccc; font-size: 0.97rem; line-height: 1.85; }
+  .legal-body > p { margin-bottom: 1.25rem; }
+  .legal-body h2 { font-size: 1.2rem; font-weight: 700; color: #C9A94B; margin: 2.75rem 0 0.875rem; }
+  .legal-body h3 { font-size: 1rem; font-weight: 600; color: #ffffff; margin: 1.5rem 0 0.5rem; }
+  .legal-body ul, .legal-body ol { padding-left: 1.4rem; margin-bottom: 1.25rem; }
+  .legal-body li { margin-bottom: 0.5rem; }
+  .legal-body a { color: #C9A94B; text-decoration: underline; text-underline-offset: 3px; }
+  .legal-body a:hover { opacity: 0.8; }
+  .legal-body strong { color: #ffffff; font-weight: 600; }
+  .legal-contact { background: #111111; border: 1px solid #1e1e1e; border-radius: 8px; padding: 1.25rem 1.5rem; margin-top: 0.5rem; }
+  .legal-contact p { margin: 0; line-height: 1.8; }
+  .legal-back { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid #1e1e1e; }
+  .legal-back-link { color: #C9A94B; text-decoration: none; font-size: 0.9rem; font-weight: 600; }
+  .legal-back-link:hover { opacity: 0.8; }
+  .legal-summary,.legal-audience{max-width:690px;margin:14px 0 0;color:#aaaaaa;font-size:.94rem;line-height:1.72}.legal-summary{color:#cccccc}.legal-direct-answer{padding:12px 14px;border-left:3px solid #C9A94B;border-radius:0 8px 8px 0;background:rgba(201,169,75,.08);color:#cccccc}.legal-template,.legal-related{margin-top:2.75rem;padding:1.5rem;border:1px solid #1e1e1e;border-radius:12px;background:#111111}.legal-template h3,.legal-related h2{margin-top:0}.legal-template p,.legal-related p{margin:0;color:#cccccc;line-height:1.8}.legal-related a{color:#C9A94B;text-decoration:underline;text-underline-offset:3px}
+</style>
