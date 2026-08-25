@@ -7,7 +7,7 @@ export default function Footer() {
         </div>
         <div className="footer-note">&#169; 2026 Zipla POS. Made in India.</div>
         <div className="footer-links"><a href="/restaurant-pos-software/">Restaurant POS</a><a href="/cafe-pos-software/">Cafe POS</a><a href="/bakery-billing-software/">Bakery Billing</a><a href="/sweet-shop-billing/">Sweet Shop Billing</a><a href="/qsr-billing-software/">QSR Billing</a><a href="/dhaba-billing-software/">Dhaba Billing</a><a href="/blog/">Blog</a><a href="/faq/">FAQ</a></div>
-        <div className="footer-links"><a href="/privacy-policy/">Privacy Policy</a><a href="/terms-and-conditions/">Terms &amp; Conditions</a></div>
+        <div className="footer-links"><a href="/privacy-policy/">Privacy Policy</a><a href="/terms-and-conditions/">Terms &amp; Conditions</a><a href="/refund-policy/">Refund Policy</a><a href="/contact-us/">Contact Us</a></div>
       </div>
     </footer>
   )
