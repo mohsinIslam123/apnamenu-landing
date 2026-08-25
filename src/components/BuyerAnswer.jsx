@@ -38,8 +38,8 @@ export default function BuyerAnswer() {
               <tbody>
                 {DECISIONS.map((decision) => (
                   <tr key={decision.need}>
-                    <th scope="row">{decision.need}</th>
-                    <td>{decision.answer}</td>
+                    <th scope="row" data-label="If you need">{decision.need}</th>
+                    <td data-label="Relevant Zipla POS workflow">{decision.answer}</td>
                   </tr>
                 ))}
               </tbody>
