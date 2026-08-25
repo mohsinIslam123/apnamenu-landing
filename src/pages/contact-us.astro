@@ -4,65 +4,144 @@ import Header from '../components/Header.jsx';
 import Footer from '../components/Footer.jsx';
 import '../index.css';
 
-const description = 'Contact Zipla POS for product support, subscription assistance, cancellations and refund requests.';
+const title = 'Contact Zipla POS Support | Billing Software Help';
+const description = 'Contact Zipla POS support for billing software help, subscriptions, cancellations and refund requests by email, phone or WhatsApp.';
 const canonical = 'https://zipla.in/contact-us/';
 
+const contactFaqs = [
+  {
+    question: 'How can I contact Zipla POS support?',
+    answer: 'Contact Zipla POS support at support@zipla.in, by phone or WhatsApp at +91 7817851009, during Monday to Saturday, 10:00 AM to 7:00 PM.',
+  },
+  {
+    question: 'What should I include in a Zipla POS support request?',
+    answer: 'Include your business name, registered phone number and a short description of the issue or request. Do not send passwords, UPI PINs or payment credentials by email or WhatsApp.',
+  },
+  {
+    question: 'How do I request a cancellation or refund?',
+    answer: 'Email support@zipla.in from your registered email address. Include your business name, registered phone number, payment date and whether you want cancellation or a refund. Read the Cancellation & Refund Policy for the applicable conditions.',
+  },
+  {
+    question: 'Can I contact Zipla POS before starting a trial?',
+    answer: 'Yes. Zipla POS trial users, customers and Indian food-business owners evaluating the service can use these support contact details for product, subscription and business enquiries.',
+  },
+];
+
 const jsonLd = {
-  "@context": "https://schema.org",
-  "@graph": [
+  '@context': 'https://schema.org',
+  '@graph': [
     {
-      "@type": "ContactPage",
-      "@id": "https://zipla.in/contact-us/",
-      "url": "https://zipla.in/contact-us/",
-      "name": "Contact Us",
-      "description": description,
-      "isPartOf": { "@id": "https://zipla.in/#website" },
-      "breadcrumb": {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://zipla.in" },
-          { "@type": "ListItem", "position": 2, "name": "Contact Us", "item": "https://zipla.in/contact-us/" }
-        ]
-      }
-    }
-  ]
+      '@type': 'ContactPage',
+      '@id': canonical,
+      url: canonical,
+      name: title,
+      description,
+      isPartOf: { '@id': 'https://zipla.in/#website' },
+      about: { '@id': 'https://zipla.in/#software' },
+      inLanguage: 'en-IN',
+      dateModified: '2026-08-25',
+      breadcrumb: { '@id': `${canonical}#breadcrumb` },
+    },
+    {
+      '@type': 'BreadcrumbList',
+      '@id': `${canonical}#breadcrumb`,
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://zipla.in/' },
+        { '@type': 'ListItem', position: 2, name: 'Contact Zipla POS Support', item: canonical },
+      ],
+    },
+    {
+      '@type': 'FAQPage',
+      '@id': `${canonical}#faq`,
+      mainEntity: contactFaqs.map((faq) => ({
+        '@type': 'Question',
+        name: faq.question,
+        acceptedAnswer: { '@type': 'Answer', text: faq.answer },
+      })),
+    },
+  ],
 };
 ---
 
-<Layout title="Contact Us" description={description} canonical={canonical} jsonLd={jsonLd}>
+<Layout title={title} description={description} canonical={canonical} jsonLd={jsonLd}>
   <Header client:load />
 
   <main class="legal-main">
     <article class="legal-container">
-      <div class="legal-header">
+      <header class="legal-header">
         <p class="legal-eyebrow">Zipla POS</p>
-        <h1>Contact Us</h1>
-        <p class="legal-summary"><strong>Key takeaway:</strong> Contact Zipla POS for product support, subscription help, cancellation requests or refund requests.</p>
-        <p class="legal-audience"><strong>Who this is for:</strong> Zipla POS trial users, customers and business owners evaluating the service. <strong>Use this page when:</strong> you need support or want to contact the Zipla POS team.</p>
-      </div>
+        <h1>Contact Zipla POS Support</h1>
+        <p class="legal-meta">Last updated: <time datetime="2026-08-25">August 25, 2026</time></p>
+        <p class="legal-summary"><strong>Key takeaway:</strong> Contact Zipla POS support for billing software help, subscription questions, cancellation requests or refund requests.</p>
+        <p class="legal-audience"><strong>Who this is for:</strong> Zipla POS trial users, customers and Indian food-business owners evaluating the service. <strong>Use this page when:</strong> you need product, account, subscription, cancellation or refund help.</p>
+      </header>
 
       <div class="legal-body">
-        <p>For support or business enquiries, use the contact details below during our business hours.</p>
+        <p>A contact page gives Zipla POS users and prospective customers a direct route for product support, subscription questions, cancellations and refund requests. Use the contact details below during business hours.</p>
 
-        <h2>Zipla POS contact details</h2>
+        <h2>How can you contact Zipla POS support?</h2>
+        <p class="legal-direct-answer"><strong>Short answer:</strong> Email <a href="mailto:support@zipla.in">support@zipla.in</a>, call or WhatsApp <a href="tel:+917817851009">+91 7817851009</a>, or use the operating address below.</p>
         <div class="legal-contact">
-          <p><strong>Business Name:</strong> ZIPLA (Operating as Zipla POS)</p>
-          <p><strong>Support Email:</strong> <a href="mailto:support@zipla.in">support@zipla.in</a></p>
-          <p><strong>Support Phone / WhatsApp:</strong> <a href="tel:+917817851009">+91 7817851009</a></p>
-          <p><strong>Business Hours:</strong> Mon - Sat (10:00 AM - 7:00 PM)</p>
-          <address><strong>Operating Address:</strong><br />House no 395, Peer wali gali,<br />Rawli road, Muradnagar, Ghaziabad,<br />Uttar Pradesh - 201206</address>
+          <dl>
+            <div><dt>Business name</dt><dd>ZIPLA (Operating as Zipla POS)</dd></div>
+            <div><dt>Support email</dt><dd><a href="mailto:support@zipla.in">support@zipla.in</a></dd></div>
+            <div><dt>Support phone / WhatsApp</dt><dd><a href="tel:+917817851009">+91 7817851009</a></dd></div>
+            <div><dt>Business hours</dt><dd>Mon - Sat (10:00 AM - 7:00 PM)</dd></div>
+            <div><dt>Operating address</dt><dd><address>House no 395, Peer wali gali,<br />Rawli road, Muradnagar, Ghaziabad,<br />Uttar Pradesh - 201206</address></dd></div>
+          </dl>
+        </div>
+
+        <h2>Which Zipla POS support route should you use?</h2>
+        <p class="legal-direct-answer"><strong>Short answer:</strong> Choose the route that matches your request, then include enough account information for Zipla POS to identify it safely.</p>
+        <div class="legal-decision">
+          <h3>Support request guide</h3>
+          <table>
+            <thead>
+              <tr><th scope="col">If you need</th><th scope="col">Contact route</th><th scope="col">Include</th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">Product or setup help</th><td>Email, phone or WhatsApp</td><td>Business name, registered phone number and a short description of the billing-software question.</td></tr>
+              <tr><th scope="row">Subscription, cancellation or refund</th><td><a href="mailto:support@zipla.in">support@zipla.in</a></td><td>Business name, registered phone number, payment date and the request type.</td></tr>
+              <tr><th scope="row">General business enquiry</th><td>Email, phone or WhatsApp</td><td>Your business name and the information you need before starting a trial.</td></tr>
+            </tbody>
+          </table>
         </div>
 
         <h2>What should you include in a support request?</h2>
-        <p>To help us identify your account, include your business name, registered phone number and a short description of the issue or request. Do not send passwords, UPI PINs or payment credentials by email or WhatsApp.</p>
+        <p>Use this short checklist so Zipla POS can identify the right account or request without asking you to share sensitive credentials.</p>
+        <ol>
+          <li>State your business name and registered phone number.</li>
+          <li>Describe the product, subscription, cancellation or refund request in a few sentences.</li>
+          <li>For a payment request, include the payment date.</li>
+          <li>Do not send passwords, UPI PINs or payment credentials by email or WhatsApp.</li>
+        </ol>
+        <div class="legal-template">
+          <h3>Example support email</h3>
+          <p><strong>Subject:</strong> Help with my Zipla POS account<br />
+          <strong>Include:</strong> business name, registered phone number, the request type and a short description of the issue. For a subscription, cancellation or refund request, also include the payment date.</p>
+        </div>
 
         <h2>Need to cancel or request a refund?</h2>
-        <p>Send your request to <a href="mailto:support@zipla.in">support@zipla.in</a>. Read the <a href="/refund-policy/">Cancellation &amp; Refund Policy</a> for the applicable refund conditions.</p>
+        <p class="legal-direct-answer"><strong>Short answer:</strong> Send the request to <a href="mailto:support@zipla.in">support@zipla.in</a> from your registered email address, then review the applicable conditions in the <a href="/refund-policy/">Zipla POS Cancellation &amp; Refund Policy</a>.</p>
+        <p>For information about the payment provider's own support process after you have contacted Zipla POS, use the official <a href="https://razorpay.com/support/" target="_blank" rel="noopener noreferrer">Razorpay Support</a> page. Zipla subscription, cancellation and refund requests should start with Zipla POS support.</p>
       </div>
+
+      <section class="legal-faq" aria-labelledby="contact-faq-title">
+        <h2 id="contact-faq-title">Zipla POS Support FAQs</h2>
+        <p>Concise answers for trial users, customers and food-business owners who need the right Zipla POS support route.</p>
+        <div class="legal-faq-list">
+          {contactFaqs.map((faq) => (
+            <section class="legal-faq-item">
+              <h3>{faq.question}</h3>
+              <p>{faq.answer}</p>
+            </section>
+          ))}
+        </div>
+      </section>
 
       <nav class="legal-related" aria-labelledby="contact-related-title">
         <h2 id="contact-related-title">Where can you find related Zipla information?</h2>
-        <p>Read the <a href="/refund-policy/">Cancellation &amp; Refund Policy</a>, the <a href="/terms-and-conditions/">Terms and Conditions</a>, or the <a href="/privacy-policy/">Privacy Policy</a>.</p>
+        <p>Read the <a href="/refund-policy/">Cancellation &amp; Refund Policy</a>, the <a href="/terms-and-conditions/">Terms and Conditions</a>, the <a href="/privacy-policy/">Privacy Policy</a>, or return to the <a href="/">Zipla POS homepage</a>.</p>
       </nav>
 
       <div class="legal-back">
@@ -80,17 +159,40 @@ const jsonLd = {
   .legal-header { margin-bottom: 3rem; padding-bottom: 2rem; border-bottom: 1px solid #1e1e1e; }
   .legal-eyebrow { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #C9A94B; margin-bottom: 0.75rem; }
   .legal-header h1 { font-size: clamp(1.8rem, 4vw, 2.4rem); font-weight: 700; color: #ffffff; margin: 0 0 0.75rem; }
+  .legal-meta { font-size: 0.85rem; color: #666666; }
   .legal-body { color: #cccccc; font-size: 0.97rem; line-height: 1.85; }
   .legal-body > p { margin-bottom: 1.25rem; }
   .legal-body h2 { font-size: 1.2rem; font-weight: 700; color: #C9A94B; margin: 2.75rem 0 0.875rem; }
-  .legal-body a { color: #C9A94B; text-decoration: underline; text-underline-offset: 3px; }
-  .legal-body a:hover { opacity: 0.8; }
+  .legal-body h3 { font-size: 1rem; font-weight: 600; color: #ffffff; margin: 0 0 0.5rem; }
+  .legal-body ol { padding-left: 1.4rem; margin-bottom: 1.25rem; }
+  .legal-body li { margin-bottom: 0.5rem; }
+  .legal-body a, .legal-related a { color: #C9A94B; text-decoration: underline; text-underline-offset: 3px; }
+  .legal-body a:hover, .legal-related a:hover { opacity: 0.8; }
   .legal-body strong { color: #ffffff; font-weight: 600; }
-  .legal-contact { background: #111111; border: 1px solid #1e1e1e; border-radius: 8px; padding: 1.25rem 1.5rem; margin-top: 0.5rem; }
-  .legal-contact p { margin: 0 0 0.75rem; line-height: 1.8; }
-  .legal-contact address { font-style: normal; line-height: 1.8; }
+  .legal-contact, .legal-decision, .legal-template, .legal-faq, .legal-related { margin-top: 0.75rem; padding: 1.5rem; border: 1px solid #1e1e1e; border-radius: 12px; background: #111111; }
+  .legal-contact dl { display: grid; gap: 0.875rem; margin: 0; }
+  .legal-contact dt { color: #ffffff; font-weight: 600; }
+  .legal-contact dd { margin: 0; }
+  .legal-contact address { font-style: normal; }
+  .legal-direct-answer { padding: 12px 14px; border-left: 3px solid #C9A94B; border-radius: 0 8px 8px 0; background: rgba(201,169,75,.08); color: #cccccc; }
+  .legal-decision { margin: 1.25rem 0; overflow: hidden; }
+  .legal-decision h3 { margin-bottom: 0.75rem; }
+  .legal-decision table { width: 100%; border-collapse: collapse; text-align: left; }
+  .legal-decision th, .legal-decision td { padding: 13px; border-bottom: 1px solid #1e1e1e; vertical-align: top; font-size: 0.9rem; line-height: 1.65; }
+  .legal-decision thead th { background: rgba(201,169,75,.09); color: #C9A94B; font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; }
+  .legal-decision tbody th { width: 27%; color: #ffffff; font-weight: 600; }
+  .legal-decision tbody tr:last-child th, .legal-decision tbody tr:last-child td { border-bottom: 0; }
+  .legal-template, .legal-faq, .legal-related { margin-top: 2.75rem; }
+  .legal-template h3, .legal-faq h2, .legal-related h2 { margin-top: 0; }
+  .legal-template p, .legal-faq > p, .legal-related p { margin: 0; color: #cccccc; line-height: 1.8; }
+  .legal-faq-list { display: grid; gap: 12px; margin-top: 18px; }
+  .legal-faq-item { padding: 16px; border: 1px solid #242424; border-radius: 8px; background: #0D0D0D; }
+  .legal-faq-item h3 { margin: 0 0 7px; color: #ffffff; font-size: 1rem; }
+  .legal-faq-item p { margin: 0; color: #aaaaaa; font-size: .94rem; line-height: 1.75; }
   .legal-back { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid #1e1e1e; }
   .legal-back-link { color: #C9A94B; text-decoration: none; font-size: 0.9rem; font-weight: 600; }
   .legal-back-link:hover { opacity: 0.8; }
-  .legal-summary,.legal-audience{max-width:690px;margin:14px 0 0;color:#aaaaaa;font-size:.94rem;line-height:1.72}.legal-summary{color:#cccccc}.legal-related{margin-top:2.75rem;padding:1.5rem;border:1px solid #1e1e1e;border-radius:12px;background:#111111}.legal-related h2{margin-top:0}.legal-related p{margin:0;color:#cccccc;line-height:1.8}.legal-related a{color:#C9A94B;text-decoration:underline;text-underline-offset:3px}
+  .legal-summary, .legal-audience { max-width: 690px; margin: 14px 0 0; color: #aaaaaa; font-size: .94rem; line-height: 1.72; }
+  .legal-summary { color: #cccccc; }
+  @media (max-width: 560px) { .legal-main { padding: 3.5rem 1.125rem 4.5rem; } .legal-contact, .legal-decision, .legal-template, .legal-faq, .legal-related { padding: 1.125rem; } .legal-decision th, .legal-decision td { padding: 11px; overflow-wrap: anywhere; } .legal-decision tbody th { width: 31%; } }
 </style>
