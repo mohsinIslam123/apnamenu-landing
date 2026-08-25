@@ -1,0 +1,96 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.jsx';
+import Footer from '../components/Footer.jsx';
+import '../index.css';
+
+const description = 'Contact Zipla POS for product support, subscription assistance, cancellations and refund requests.';
+const canonical = 'https://zipla.in/contact-us/';
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ContactPage",
+      "@id": "https://zipla.in/contact-us/",
+      "url": "https://zipla.in/contact-us/",
+      "name": "Contact Us",
+      "description": description,
+      "isPartOf": { "@id": "https://zipla.in/#website" },
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://zipla.in" },
+          { "@type": "ListItem", "position": 2, "name": "Contact Us", "item": "https://zipla.in/contact-us/" }
+        ]
+      }
+    }
+  ]
+};
+---
+
+<Layout title="Contact Us" description={description} canonical={canonical} jsonLd={jsonLd}>
+  <Header client:load />
+
+  <main class="legal-main">
+    <article class="legal-container">
+      <div class="legal-header">
+        <p class="legal-eyebrow">Zipla POS</p>
+        <h1>Contact Us</h1>
+        <p class="legal-summary"><strong>Key takeaway:</strong> Contact Zipla POS for product support, subscription help, cancellation requests or refund requests.</p>
+        <p class="legal-audience"><strong>Who this is for:</strong> Zipla POS trial users, customers and business owners evaluating the service. <strong>Use this page when:</strong> you need support or want to contact the Zipla POS team.</p>
+      </div>
+
+      <div class="legal-body">
+        <p>For support or business enquiries, use the contact details below during our business hours.</p>
+
+        <h2>Zipla POS contact details</h2>
+        <div class="legal-contact">
+          <p><strong>Business Name:</strong> ZIPLA (Operating as Zipla POS)</p>
+          <p><strong>Support Email:</strong> <a href="mailto:support@zipla.in">support@zipla.in</a></p>
+          <p><strong>Support Phone / WhatsApp:</strong> <a href="tel:+917817851009">+91 7817851009</a></p>
+          <p><strong>Business Hours:</strong> Mon - Sat (10:00 AM - 7:00 PM)</p>
+          <address><strong>Operating Address:</strong><br />House no 395, Peer wali gali,<br />Rawli road, Muradnagar, Ghaziabad,<br />Uttar Pradesh - 201206</address>
+        </div>
+
+        <h2>What should you include in a support request?</h2>
+        <p>To help us identify your account, include your business name, registered phone number and a short description of the issue or request. Do not send passwords, UPI PINs or payment credentials by email or WhatsApp.</p>
+
+        <h2>Need to cancel or request a refund?</h2>
+        <p>Send your request to <a href="mailto:support@zipla.in">support@zipla.in</a>. Read the <a href="/refund-policy/">Cancellation &amp; Refund Policy</a> for the applicable refund conditions.</p>
+      </div>
+
+      <nav class="legal-related" aria-labelledby="contact-related-title">
+        <h2 id="contact-related-title">Where can you find related Zipla information?</h2>
+        <p>Read the <a href="/refund-policy/">Cancellation &amp; Refund Policy</a>, the <a href="/terms-and-conditions/">Terms and Conditions</a>, or the <a href="/privacy-policy/">Privacy Policy</a>.</p>
+      </nav>
+
+      <div class="legal-back">
+        <a href="/" class="legal-back-link">← Back to Zipla POS</a>
+      </div>
+    </article>
+  </main>
+
+  <Footer />
+</Layout>
+
+<style>
+  .legal-main { background: #0D0D0D; min-height: 100vh; padding: 5rem 1.5rem 6rem; }
+  .legal-container { max-width: 760px; margin: 0 auto; }
+  .legal-header { margin-bottom: 3rem; padding-bottom: 2rem; border-bottom: 1px solid #1e1e1e; }
+  .legal-eyebrow { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #C9A94B; margin-bottom: 0.75rem; }
+  .legal-header h1 { font-size: clamp(1.8rem, 4vw, 2.4rem); font-weight: 700; color: #ffffff; margin: 0 0 0.75rem; }
+  .legal-body { color: #cccccc; font-size: 0.97rem; line-height: 1.85; }
+  .legal-body > p { margin-bottom: 1.25rem; }
+  .legal-body h2 { font-size: 1.2rem; font-weight: 700; color: #C9A94B; margin: 2.75rem 0 0.875rem; }
+  .legal-body a { color: #C9A94B; text-decoration: underline; text-underline-offset: 3px; }
+  .legal-body a:hover { opacity: 0.8; }
+  .legal-body strong { color: #ffffff; font-weight: 600; }
+  .legal-contact { background: #111111; border: 1px solid #1e1e1e; border-radius: 8px; padding: 1.25rem 1.5rem; margin-top: 0.5rem; }
+  .legal-contact p { margin: 0 0 0.75rem; line-height: 1.8; }
+  .legal-contact address { font-style: normal; line-height: 1.8; }
+  .legal-back { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid #1e1e1e; }
+  .legal-back-link { color: #C9A94B; text-decoration: none; font-size: 0.9rem; font-weight: 600; }
+  .legal-back-link:hover { opacity: 0.8; }
+  .legal-summary,.legal-audience{max-width:690px;margin:14px 0 0;color:#aaaaaa;font-size:.94rem;line-height:1.72}.legal-summary{color:#cccccc}.legal-related{margin-top:2.75rem;padding:1.5rem;border:1px solid #1e1e1e;border-radius:12px;background:#111111}.legal-related h2{margin-top:0}.legal-related p{margin:0;color:#cccccc;line-height:1.8}.legal-related a{color:#C9A94B;text-decoration:underline;text-underline-offset:3px}
+</style>
