@@ -15,32 +15,87 @@ import FinalCTA from '../components/FinalCTA.jsx';
 import Footer from '../components/Footer.jsx';
 import '../index.css';
 
-// Add customer videos here once available:
-// { id: 'uid', youtubeId: 'YT_ID', thumbnail: '/testimonials/name.jpg', name: 'Owner', business: 'Restaurant Name' }
 const CUSTOMER_VIDEOS = [];
 
+const PAGE_TITLE = 'Zipla POS — Restaurant POS Billing Software for India';
+
+const PAGE_DESCRIPTION =
+  'Zipla POS is restaurant POS billing software for India, for restaurants, cafés, bakeries, QSRs and sweet shops. Start a 14-day free trial; no card required.';
+
+const TOP_TAKEAWAY =
+  'Zipla POS helps restaurants, cafés, bakeries, QSRs and sweet shops in India manage counter billing, GST invoices, kitchen workflows and QR ordering with a 14-day free trial and no card required.';
+
 const jsonLd = {
-  "@context": "https://schema.org",
-  "@graph": [
+  '@context': 'https://schema.org',
+  '@graph': [
     {
-      "@type": "WebPage",
-      "@id": "https://zipla.in/#webpage",
-      "url": "https://zipla.in",
-      "name": "Zipla POS — Restaurant POS Billing Software for India",
-      "description": "Restaurant POS billing software for India — counter billing, GST invoices, kitchen display and QR ordering. 14-day free trial, no card required.",
-      "isPartOf": { "@id": "https://zipla.in/#website" },
-      "about": { "@id": "https://zipla.in/#software" },
-      "inLanguage": "en-IN"
+      '@type': 'WebPage',
+      '@id': 'https://zipla.in/#webpage',
+      url: 'https://zipla.in',
+      name: PAGE_TITLE,
+      description: PAGE_DESCRIPTION,
+      abstract: TOP_TAKEAWAY,
+      isPartOf: { '@id': 'https://zipla.in/#website' },
+      about: { '@id': 'https://zipla.in/#software' },
+      breadcrumb: { '@id': 'https://zipla.in/#breadcrumb' },
+      inLanguage: 'en-IN'
     },
     {
-      "@type": "FAQPage",
-      "@id": "https://zipla.in/#faq",
-      "mainEntity": [
-        { "@type": "Question", "name": "How do I access my business data?", "acceptedAnswer": { "@type": "Answer", "text": "Use your Zipla login to access your business workspace." } },
-        { "@type": "Question", "name": "Will my staff need training?", "acceptedAnswer": { "@type": "Answer", "text": "Zipla uses a touch-friendly interface with minimal clicks. Book a demo and we’ll walk your team through the relevant workflow." } },
-        { "@type": "Question", "name": "What if the internet goes down?", "acceptedAnswer": { "@type": "Answer", "text": "Zipla POS works after the menu is loaded — you can create bills without internet. UPI and online payments require a connection. Full offline sync is on our roadmap." } },
-        { "@type": "Question", "name": "How do I add my existing menu?", "acceptedAnswer": { "@type": "Answer", "text": "Add it manually, or use AI scan to build it from a photo of your existing menu — 20 scans/year free in Starter." } },
-        { "@type": "Question", "name": "How do I get support?", "acceptedAnswer": { "@type": "Answer", "text": "You can contact the Zipla team on WhatsApp for support and a product walkthrough." } }
+      '@type': 'BreadcrumbList',
+      '@id': 'https://zipla.in/#breadcrumb',
+      itemListElement: [
+        {
+          '@type': 'ListItem',
+          position: 1,
+          name: 'Home',
+          item: 'https://zipla.in/'
+        }
+      ]
+    },
+    {
+      '@type': 'FAQPage',
+      '@id': 'https://zipla.in/#faq',
+      mainEntity: [
+        {
+          '@type': 'Question',
+          name: 'How do I access my business data?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Use your Zipla login to access your business workspace.'
+          }
+        },
+        {
+          '@type': 'Question',
+          name: 'Will my staff need training?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Zipla uses a touch-friendly interface with minimal clicks. Book a demo and we’ll walk your team through the relevant workflow.'
+          }
+        },
+        {
+          '@type': 'Question',
+          name: 'What if the internet goes down?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Zipla POS works after the menu is loaded — you can create bills without internet. UPI and online payments require a connection. Full offline sync is on our roadmap.'
+          }
+        },
+        {
+          '@type': 'Question',
+          name: 'How do I add my existing menu?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Add it manually, or use AI scan to build it from a photo of your existing menu — 20 scans/year free in Starter.'
+          }
+        },
+        {
+          '@type': 'Question',
+          name: 'How do I get support?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'You can contact the Zipla team on WhatsApp for support and a product walkthrough.'
+          }
+        }
       ]
     }
   ]
@@ -48,13 +103,14 @@ const jsonLd = {
 ---
 
 <Layout
-  title="Zipla POS — Restaurant POS Billing Software for India"
-  description="Restaurant POS billing software for India — counter billing, GST invoices, kitchen display and QR ordering. 14-day free trial, no card required."
+  title={PAGE_TITLE}
+  description={PAGE_DESCRIPTION}
   canonical="https://zipla.in"
   jsonLd={jsonLd}
 >
   <Header client:load />
-  <main>
+
+  <main aria-label="Zipla POS restaurant POS billing software for India">
     <Hero />
     <TrustBar />
     <BuyerAnswer />
@@ -67,5 +123,6 @@ const jsonLd = {
     <DemoForm client:visible />
     <FinalCTA />
   </main>
+
   <Footer />
 </Layout>
