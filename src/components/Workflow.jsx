@@ -23,6 +23,11 @@ const WORKFLOWS = [
       ['Create the GST invoice', 'Generate the customer bill with the configured tax workflow.'],
       ['Deliver the bill when needed', 'Use the available printing or bill-sharing workflow for the customer.'],
     ],
+    proofNote: {
+      kicker: 'What this workflow covers',
+      title: 'Order, payment and GST invoice at the counter',
+      body: 'Build the customer order, record the payment mode and create the GST invoice from the counter billing workflow.',
+    },
   },
   {
     id: 'qr-ordering',
@@ -159,7 +164,7 @@ export default function Workflow() {
                   </ol>
                 </figure>
 
-                <div className={'workflow-proof-stack workflow-proof-stack--' + workflow.screenshots.length}>
+                <div className={'workflow-proof-stack workflow-proof-stack--' + workflow.screenshots.length + (workflow.proofNote ? ' workflow-proof-stack--with-note' : '')}>
                   {workflow.screenshots.map((screenshot) => (
                     <figure className="workflow-figure workflow-figure--actual" key={screenshot.src}>
                       <figcaption><span>Actual Zipla POS screen</span><strong>{screenshot.caption}</strong></figcaption>
@@ -173,6 +178,13 @@ export default function Workflow() {
                       />
                     </figure>
                   ))}
+                  {workflow.proofNote && (
+                    <aside className="workflow-proof-note">
+                      <span>{workflow.proofNote.kicker}</span>
+                      <strong>{workflow.proofNote.title}</strong>
+                      <p>{workflow.proofNote.body}</p>
+                    </aside>
+                  )}
                 </div>
               </div>
             </div>
