@@ -1,0 +1,93 @@
+/*
+  Homepage visual-workflow refinement for tablets and desktops only.
+  The existing phone layout remains untouched below 641px.
+*/
+@media (min-width: 641px) and (max-width: 980px) {
+  .workflow {
+    padding: 78px 24px 92px;
+  }
+
+  .workflow-panel-content {
+    padding: 18px 20px 24px;
+  }
+
+  .workflow-visual-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+    align-items: start;
+  }
+
+  .workflow-figure-steps {
+    padding: 14px;
+  }
+
+  .workflow-figure-steps li {
+    padding: 10px;
+  }
+
+  .workflow-figure-steps strong {
+    font-size: 13px;
+  }
+
+  .workflow-figure-steps p {
+    font-size: 12px;
+  }
+
+  .workflow-proof-stack--1,
+  .workflow-proof-stack--with-note {
+    grid-template-rows: auto;
+    align-self: start;
+  }
+
+  .workflow-proof-stack--2 {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, auto);
+    align-self: start;
+  }
+
+  .workflow-proof-note {
+    min-height: 0;
+    padding: 18px;
+  }
+}
+
+@media (min-width: 981px) {
+  .workflow-visual-grid {
+    grid-template-columns: minmax(0, 1.08fr) minmax(360px, 0.92fr);
+    gap: 20px;
+    align-items: start;
+  }
+
+  .workflow-figure-steps {
+    padding: 14px;
+  }
+
+  .workflow-figure-steps li {
+    padding: 10px;
+  }
+
+  .workflow-figure-steps strong {
+    font-size: 13px;
+  }
+
+  .workflow-figure-steps p {
+    font-size: 12px;
+    line-height: 1.48;
+  }
+
+  .workflow-proof-stack--1,
+  .workflow-proof-stack--with-note {
+    grid-template-rows: auto;
+    align-self: start;
+  }
+
+  .workflow-proof-stack--2 {
+    grid-template-rows: repeat(2, auto);
+    align-self: start;
+  }
+
+  .workflow-proof-note {
+    min-height: 0;
+    padding: 18px;
+  }
+}
