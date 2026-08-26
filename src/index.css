@@ -244,3 +244,52 @@ footer{border-top:1px solid var(--border);padding:36px 24px}
 .demo-form-thanks p{font-size:14px;color:var(--text-2)}
 .demo-form-thanks a{color:var(--amber)}
 @media(max-width:600px){.demo-form-grid{grid-template-columns:1fr}.demo-form-card{padding:28px 20px}}
+
+/* THEME TOGGLE */
+:root{color-scheme:dark}
+.header-actions{display:flex;align-items:center;gap:10px}
+.theme-toggle{display:grid;place-items:center;width:40px;height:40px;padding:0;border:1px solid var(--border-hi);border-radius:var(--r-md);background:var(--surface);color:var(--text-2);transition:border-color .15s,color .15s,background .15s}
+.theme-toggle:hover{border-color:var(--amber);color:var(--text)}
+.theme-toggle svg{width:18px;height:18px}
+
+@media(max-width:760px){
+  .header-actions{margin-left:auto}
+  .header-actions .btn-cta{display:none}
+  .theme-toggle{width:38px;height:38px}
+}
+
+/* LIGHT THEME */
+:root[data-theme='light']{
+  color-scheme:light;
+  --bg:#f7f6f1;--surface:#ffffff;--surface-2:#efede6;
+  --border:rgba(41,38,31,.14);--border-hi:rgba(41,38,31,.24);
+  --text:#1c1a16;--text-2:#5c584f;--text-3:#777168;
+  --amber:#9a711a;--amber-2:#765513;--amber-dim:rgba(154,113,26,.13);--on-amber:#1b1407;
+  --green:#187a42;--green-dim:rgba(24,122,66,.12);
+}
+:root[data-theme='light'] .site-header{background:rgba(247,246,241,.86);box-shadow:0 1px 0 rgba(41,38,31,.05)}
+:root[data-theme='light'] .hero{background:radial-gradient(ellipse 80% 56% at 72% 15%,rgba(202,160,76,.15),transparent 68%),radial-gradient(ellipse 60% 50% at 10% -10%,rgba(202,160,76,.08),transparent 70%)}
+:root[data-theme='light'] .hero::before{background-image:linear-gradient(rgba(28,26,22,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(28,26,22,.045) 1px,transparent 1px)}
+:root[data-theme='light'] .hero-device{background:var(--surface-2);border-color:rgba(154,113,26,.36);box-shadow:0 26px 68px rgba(50,43,31,.18),0 0 0 8px rgba(154,113,26,.07)}
+:root[data-theme='light'] .hero-device-bar,:root[data-theme='light'] .hero-callout{background:rgba(255,255,255,.92);box-shadow:0 14px 36px rgba(50,43,31,.14)}
+:root[data-theme='light'] .trust-bar{background:rgba(255,255,255,.74)}
+:root[data-theme='light'] .buyer-answer-decision{background:linear-gradient(145deg,#fff,var(--surface-2))}
+:root[data-theme='light'] .business-type-card{background:linear-gradient(145deg,#fff,var(--surface-2))}
+:root[data-theme='light'] .business-type-card:hover{background:linear-gradient(145deg,#fff,#ebe8df);border-color:rgba(154,113,26,.5)}
+:root[data-theme='light'] .buyer-answer tbody tr{background:rgba(255,255,255,.74)}
+
+/* Buyer pages */
+:root[data-theme='light'] .vertical-hero::after{background:linear-gradient(90deg,rgba(247,246,241,.84) 0%,transparent 62%)}
+:root[data-theme='light'] .vertical-hero-frame{box-shadow:0 24px 60px rgba(50,43,31,.16),0 0 0 7px rgba(154,113,26,.06)}
+:root[data-theme='light'] .vertical-callout{background:rgba(255,255,255,.94);box-shadow:0 14px 34px rgba(50,43,31,.14)}
+:root[data-theme='light'] .vertical-proof-strip{background:rgba(255,255,255,.74)}
+:root[data-theme='light'] .vertical-image-stack img{box-shadow:0 18px 45px rgba(50,43,31,.14)}
+:root[data-theme='light'] .vertical-card{background:linear-gradient(145deg,#fff,var(--surface-2))}
+
+/* Blog article and legal pages use page-level dark styles, so override them explicitly. */
+:root[data-theme='light'] .post-main,:root[data-theme='light'] .legal-main{background:var(--bg)}
+:root[data-theme='light'] .post-h1,:root[data-theme='light'] .post-body h3,:root[data-theme='light'] .post-cta h2,:root[data-theme='light'] .legal-header h1,:root[data-theme='light'] .legal-body h3,:root[data-theme='light'] .legal-body strong,:root[data-theme='light'] .legal-contact dt,:root[data-theme='light'] .legal-decision tbody th,:root[data-theme='light'] .legal-faq-item h3{color:var(--text)}
+:root[data-theme='light'] .post-breadcrumb,:root[data-theme='light'] .post-date,:root[data-theme='light'] .post-lead,:root[data-theme='light'] .post-body,:root[data-theme='light'] .post-note,:root[data-theme='light'] .legal-meta,:root[data-theme='light'] .legal-body,:root[data-theme='light'] .legal-summary,:root[data-theme='light'] .legal-audience,:root[data-theme='light'] .legal-template p,:root[data-theme='light'] .legal-faq>p,:root[data-theme='light'] .legal-related p,:root[data-theme='light'] .legal-faq-item p{color:var(--text-2)}
+:root[data-theme='light'] .post-mistake,:root[data-theme='light'] .post-faq-item,:root[data-theme='light'] .post-related,:root[data-theme='light'] .post-cta,:root[data-theme='light'] .legal-contact,:root[data-theme='light'] .legal-decision,:root[data-theme='light'] .legal-template,:root[data-theme='light'] .legal-faq,:root[data-theme='light'] .legal-related{background:var(--surface);border-color:var(--border-hi)}
+:root[data-theme='light'] .legal-faq-item{background:var(--surface-2);border-color:var(--border)}
+:root[data-theme='light'] .legal-back{border-color:var(--border-hi)}
