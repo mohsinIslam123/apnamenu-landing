@@ -105,6 +105,18 @@ const GA_ID = 'G-48WXKXR3F1';
   <link rel="icon" type="image/png" href="/favicon.png" />
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
+  <script is:inline>
+    try {
+      const savedTheme = localStorage.getItem('zipla-theme');
+      const theme = savedTheme === 'light' ? 'light' : 'dark';
+      document.documentElement.dataset.theme = theme;
+      document.documentElement.style.colorScheme = theme;
+    } catch {
+      document.documentElement.dataset.theme = 'dark';
+      document.documentElement.style.colorScheme = 'dark';
+    }
+  </script>
+
   <!-- JSON-LD Structured Data -->
   <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
 
