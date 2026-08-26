@@ -1,0 +1,906 @@
+This file is a merged representation of a subset of the codebase, containing specifically included files, combined into a single document by Repomix.
+
+<file_summary>
+This section contains a summary of this file.
+
+<purpose>
+This file contains a packed representation of a subset of the repository's contents that is considered the most important context.
+It is designed to be easily consumable by AI systems for analysis, code review,
+or other automated processes.
+</purpose>
+
+<file_format>
+The content is organized as follows:
+1. This summary section
+2. Repository information
+3. Directory structure
+4. Repository files (if enabled)
+5. Multiple file entries, each consisting of:
+  - File path as an attribute
+  - Full contents of the file
+</file_format>
+
+<usage_guidelines>
+- This file should be treated as read-only. Any changes should be made to the
+  original repository files, not this packed version.
+- When processing this file, use the file path to distinguish
+  between different files in the repository.
+- Be aware that this file may contain sensitive information. Handle it with
+  the same level of security as you would the original repository.
+</usage_guidelines>
+
+<notes>
+- Some files may have been excluded based on .gitignore rules and Repomix's configuration
+- Binary files are not included in this packed representation. Please refer to the Repository Structure section for a complete list of file paths, including binary files
+- Only files matching these patterns are included: src/pages/contact-us.astro, src/pages/refund-policy.astro, src/layouts/Layout.astro, src/components/Footer.jsx, src/index.css, package.json, astro.config.mjs
+- Files matching patterns in .gitignore are excluded
+- Files matching default ignore patterns are excluded
+- Files are sorted by Git change count (files with more changes are at the bottom)
+</notes>
+
+</file_summary>
+
+<directory_structure>
+src/
+  components/
+    Footer.jsx
+  layouts/
+    Layout.astro
+  pages/
+    contact-us.astro
+    refund-policy.astro
+  index.css
+astro.config.mjs
+package.json
+</directory_structure>
+
+<files>
+This section contains the contents of the repository's files.
+
+<file path="src/pages/contact-us.astro">
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.jsx';
+import Footer from '../components/Footer.jsx';
+import '../index.css';
+
+const title = 'Contact Zipla POS Support | Billing Software Help';
+const description = 'Contact Zipla POS support for billing software help, subscriptions, cancellations and refund requests by email, phone or WhatsApp.';
+const canonical = 'https://zipla.in/contact-us/';
+
+const contactFaqs = [
+  {
+    question: 'How can I contact Zipla POS support?',
+    answer: 'Contact Zipla POS support at support@zipla.in, by phone or WhatsApp at +91 7817851009, during Monday to Saturday, 10:00 AM to 7:00 PM.',
+  },
+  {
+    question: 'What should I include in a Zipla POS support request?',
+    answer: 'Include your business name, registered phone number and a short description of the issue or request. Do not send passwords, UPI PINs or payment credentials by email or WhatsApp.',
+  },
+  {
+    question: 'How do I request a cancellation or refund?',
+    answer: 'Email support@zipla.in from your registered email address. Include your business name, registered phone number, payment date and whether you want cancellation or a refund. Read the Cancellation & Refund Policy for the applicable conditions.',
+  },
+  {
+    question: 'Can I contact Zipla POS before starting a trial?',
+    answer: 'Yes. Zipla POS trial users, customers and Indian food-business owners evaluating the service can use these support contact details for product, subscription and business enquiries.',
+  },
+];
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'ContactPage',
+      '@id': canonical,
+      url: canonical,
+      name: title,
+      description,
+      isPartOf: { '@id': 'https://zipla.in/#website' },
+      about: { '@id': 'https://zipla.in/#software' },
+      inLanguage: 'en-IN',
+      dateModified: '2026-08-25',
+      breadcrumb: { '@id': `${canonical}#breadcrumb` },
+    },
+    {
+      '@type': 'BreadcrumbList',
+      '@id': `${canonical}#breadcrumb`,
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://zipla.in/' },
+        { '@type': 'ListItem', position: 2, name: 'Contact Zipla POS Support', item: canonical },
+      ],
+    },
+    {
+      '@type': 'FAQPage',
+      '@id': `${canonical}#faq`,
+      mainEntity: contactFaqs.map((faq) => ({
+        '@type': 'Question',
+        name: faq.question,
+        acceptedAnswer: { '@type': 'Answer', text: faq.answer },
+      })),
+    },
+  ],
+};
+---
+
+<Layout title={title} description={description} canonical={canonical} jsonLd={jsonLd}>
+  <Header client:load />
+
+  <main class="legal-main">
+    <article class="legal-container">
+      <header class="legal-header">
+        <p class="legal-eyebrow">Zipla POS</p>
+        <h1>Contact Zipla POS Support</h1>
+        <p class="legal-meta">Last updated: <time datetime="2026-08-25">August 25, 2026</time></p>
+        <p class="legal-summary"><strong>Key takeaway:</strong> Contact Zipla POS support for billing software help, subscription questions, cancellation requests or refund requests.</p>
+        <p class="legal-audience"><strong>Who this is for:</strong> Zipla POS trial users, customers and Indian food-business owners evaluating the service. <strong>Use this page when:</strong> you need product, account, subscription, cancellation or refund help.</p>
+      </header>
+
+      <div class="legal-body">
+        <p>A contact page gives Zipla POS users and prospective customers a direct route for product support, subscription questions, cancellations and refund requests. Use the contact details below during business hours.</p>
+
+        <h2>How can you contact Zipla POS support?</h2>
+        <p class="legal-direct-answer"><strong>Short answer:</strong> Email <a href="mailto:support@zipla.in">support@zipla.in</a>, call or WhatsApp <a href="tel:+917817851009">+91 7817851009</a>, or use the operating address below.</p>
+        <div class="legal-contact">
+          <dl>
+            <div><dt>Business name</dt><dd>ZIPLA (Operating as Zipla POS)</dd></div>
+            <div><dt>Support email</dt><dd><a href="mailto:support@zipla.in">support@zipla.in</a></dd></div>
+            <div><dt>Support phone / WhatsApp</dt><dd><a href="tel:+917817851009">+91 7817851009</a></dd></div>
+            <div><dt>Business hours</dt><dd>Mon - Sat (10:00 AM - 7:00 PM)</dd></div>
+            <div><dt>Operating address</dt><dd><address>House no 395, Peer wali gali,<br />Rawli road, Muradnagar, Ghaziabad,<br />Uttar Pradesh - 201206</address></dd></div>
+          </dl>
+        </div>
+
+        <h2>Which Zipla POS support route should you use?</h2>
+        <p class="legal-direct-answer"><strong>Short answer:</strong> Choose the route that matches your request, then include enough account information for Zipla POS to identify it safely.</p>
+        <div class="legal-decision">
+          <h3>Support request guide</h3>
+          <table>
+            <thead>
+              <tr><th scope="col">If you need</th><th scope="col">Contact route</th><th scope="col">Include</th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">Product or setup help</th><td>Email, phone or WhatsApp</td><td>Business name, registered phone number and a short description of the billing-software question.</td></tr>
+              <tr><th scope="row">Subscription, cancellation or refund</th><td><a href="mailto:support@zipla.in">support@zipla.in</a></td><td>Business name, registered phone number, payment date and the request type.</td></tr>
+              <tr><th scope="row">General business enquiry</th><td>Email, phone or WhatsApp</td><td>Your business name and the information you need before starting a trial.</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2>What should you include in a support request?</h2>
+        <p>Use this short checklist so Zipla POS can identify the right account or request without asking you to share sensitive credentials.</p>
+        <ol>
+          <li>State your business name and registered phone number.</li>
+          <li>Describe the product, subscription, cancellation or refund request in a few sentences.</li>
+          <li>For a payment request, include the payment date.</li>
+          <li>Do not send passwords, UPI PINs or payment credentials by email or WhatsApp.</li>
+        </ol>
+        <div class="legal-template">
+          <h3>Example support email</h3>
+          <p><strong>Subject:</strong> Help with my Zipla POS account<br />
+          <strong>Include:</strong> business name, registered phone number, the request type and a short description of the issue. For a subscription, cancellation or refund request, also include the payment date.</p>
+        </div>
+
+        <h2>Need to cancel or request a refund?</h2>
+        <p class="legal-direct-answer"><strong>Short answer:</strong> Send the request to <a href="mailto:support@zipla.in">support@zipla.in</a> from your registered email address, then review the applicable conditions in the <a href="/refund-policy/">Zipla POS Cancellation &amp; Refund Policy</a>.</p>
+        <p>For information about the payment provider's own support process after you have contacted Zipla POS, use the official <a href="https://razorpay.com/support/" target="_blank" rel="noopener noreferrer">Razorpay Support</a> page. Zipla subscription, cancellation and refund requests should start with Zipla POS support.</p>
+      </div>
+
+      <section class="legal-faq" aria-labelledby="contact-faq-title">
+        <h2 id="contact-faq-title">Zipla POS Support FAQs</h2>
+        <p>Concise answers for trial users, customers and food-business owners who need the right Zipla POS support route.</p>
+        <div class="legal-faq-list">
+          {contactFaqs.map((faq) => (
+            <section class="legal-faq-item">
+              <h3>{faq.question}</h3>
+              <p>{faq.answer}</p>
+            </section>
+          ))}
+        </div>
+      </section>
+
+      <nav class="legal-related" aria-labelledby="contact-related-title">
+        <h2 id="contact-related-title">Where can you find related Zipla information?</h2>
+        <p>Read the <a href="/refund-policy/">Cancellation &amp; Refund Policy</a>, the <a href="/terms-and-conditions/">Terms and Conditions</a>, the <a href="/privacy-policy/">Privacy Policy</a>, or return to the <a href="/">Zipla POS homepage</a>.</p>
+      </nav>
+
+      <div class="legal-back">
+        <a href="/" class="legal-back-link">← Back to Zipla POS</a>
+      </div>
+    </article>
+  </main>
+
+  <Footer />
+</Layout>
+
+<style>
+  .legal-main { background: #0D0D0D; min-height: 100vh; padding: 5rem 1.5rem 6rem; }
+  .legal-container { max-width: 760px; margin: 0 auto; }
+  .legal-header { margin-bottom: 3rem; padding-bottom: 2rem; border-bottom: 1px solid #1e1e1e; }
+  .legal-eyebrow { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #C9A94B; margin-bottom: 0.75rem; }
+  .legal-header h1 { font-size: clamp(1.8rem, 4vw, 2.4rem); font-weight: 700; color: #ffffff; margin: 0 0 0.75rem; }
+  .legal-meta { font-size: 0.85rem; color: #666666; }
+  .legal-body { color: #cccccc; font-size: 0.97rem; line-height: 1.85; }
+  .legal-body > p { margin-bottom: 1.25rem; }
+  .legal-body h2 { font-size: 1.2rem; font-weight: 700; color: #C9A94B; margin: 2.75rem 0 0.875rem; }
+  .legal-body h3 { font-size: 1rem; font-weight: 600; color: #ffffff; margin: 0 0 0.5rem; }
+  .legal-body ol { padding-left: 1.4rem; margin-bottom: 1.25rem; }
+  .legal-body li { margin-bottom: 0.5rem; }
+  .legal-body a, .legal-related a { color: #C9A94B; text-decoration: underline; text-underline-offset: 3px; }
+  .legal-body a:hover, .legal-related a:hover { opacity: 0.8; }
+  .legal-body strong { color: #ffffff; font-weight: 600; }
+  .legal-contact, .legal-decision, .legal-template, .legal-faq, .legal-related { margin-top: 0.75rem; padding: 1.5rem; border: 1px solid #1e1e1e; border-radius: 12px; background: #111111; }
+  .legal-contact dl { display: grid; gap: 0.875rem; margin: 0; }
+  .legal-contact dt { color: #ffffff; font-weight: 600; }
+  .legal-contact dd { margin: 0; }
+  .legal-contact address { font-style: normal; }
+  .legal-direct-answer { padding: 12px 14px; border-left: 3px solid #C9A94B; border-radius: 0 8px 8px 0; background: rgba(201,169,75,.08); color: #cccccc; }
+  .legal-decision { margin: 1.25rem 0; overflow: hidden; }
+  .legal-decision h3 { margin-bottom: 0.75rem; }
+  .legal-decision table { width: 100%; border-collapse: collapse; text-align: left; }
+  .legal-decision th, .legal-decision td { padding: 13px; border-bottom: 1px solid #1e1e1e; vertical-align: top; font-size: 0.9rem; line-height: 1.65; }
+  .legal-decision thead th { background: rgba(201,169,75,.09); color: #C9A94B; font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; }
+  .legal-decision tbody th { width: 27%; color: #ffffff; font-weight: 600; }
+  .legal-decision tbody tr:last-child th, .legal-decision tbody tr:last-child td { border-bottom: 0; }
+  .legal-template, .legal-faq, .legal-related { margin-top: 2.75rem; }
+  .legal-template h3, .legal-faq h2, .legal-related h2 { margin-top: 0; }
+  .legal-template p, .legal-faq > p, .legal-related p { margin: 0; color: #cccccc; line-height: 1.8; }
+  .legal-faq-list { display: grid; gap: 12px; margin-top: 18px; }
+  .legal-faq-item { padding: 16px; border: 1px solid #242424; border-radius: 8px; background: #0D0D0D; }
+  .legal-faq-item h3 { margin: 0 0 7px; color: #ffffff; font-size: 1rem; }
+  .legal-faq-item p { margin: 0; color: #aaaaaa; font-size: .94rem; line-height: 1.75; }
+  .legal-back { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid #1e1e1e; }
+  .legal-back-link { color: #C9A94B; text-decoration: none; font-size: 0.9rem; font-weight: 600; }
+  .legal-back-link:hover { opacity: 0.8; }
+  .legal-summary, .legal-audience { max-width: 690px; margin: 14px 0 0; color: #aaaaaa; font-size: .94rem; line-height: 1.72; }
+  .legal-summary { color: #cccccc; }
+  @media (max-width: 560px) { .legal-main { padding: 3.5rem 1.125rem 4.5rem; } .legal-contact, .legal-decision, .legal-template, .legal-faq, .legal-related { padding: 1.125rem; } .legal-decision th, .legal-decision td { padding: 11px; overflow-wrap: anywhere; } .legal-decision tbody th { width: 31%; } }
+</style>
+</file>
+
+<file path="src/pages/refund-policy.astro">
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.jsx';
+import Footer from '../components/Footer.jsx';
+import '../index.css';
+
+const title = 'Zipla POS Cancellation & Refund Policy';
+const description = 'Zipla POS Cancellation & Refund Policy explains the 14-day free trial, 7-day refund window, eligibility conditions and request process.';
+const canonical = 'https://zipla.in/refund-policy/';
+
+const refundFaqs = [
+  {
+    question: 'What is the Zipla POS Cancellation & Refund Policy?',
+    answer: 'The Zipla POS Cancellation & Refund Policy explains the 14-day free trial, the conditions for requesting a refund after payment and how to request cancellation or a refund.',
+  },
+  {
+    question: 'Does Zipla POS offer a free trial?',
+    answer: 'Yes. Zipla POS offers a 14-day free trial with no credit card or payment required to begin.',
+  },
+  {
+    question: 'How do I request a Zipla POS refund?',
+    answer: 'Email support@zipla.in from your registered email address within 7 days of payment. Include your business name, registered phone number, payment date and a short reason for the request.',
+  },
+  {
+    question: 'Can I get a refund after the 7-day window?',
+    answer: 'No. After 7 days from payment, the current paid subscription is non-refundable. You may still contact Zipla POS to cancel future use of the service.',
+  },
+  {
+    question: 'Does the number of bills affect refund eligibility?',
+    answer: 'Yes. A refund request may qualify only when the account has not processed more than 50 bills during the subscription period, along with the other conditions on this page.',
+  },
+];
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'WebPage',
+      '@id': canonical,
+      url: canonical,
+      name: title,
+      description,
+      isPartOf: { '@id': 'https://zipla.in/#website' },
+      about: { '@id': 'https://zipla.in/#software' },
+      inLanguage: 'en-IN',
+      dateModified: '2026-08-25',
+      breadcrumb: { '@id': `${canonical}#breadcrumb` },
+    },
+    {
+      '@type': 'BreadcrumbList',
+      '@id': `${canonical}#breadcrumb`,
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://zipla.in/' },
+        { '@type': 'ListItem', position: 2, name: 'Cancellation & Refund Policy', item: canonical },
+      ],
+    },
+    {
+      '@type': 'FAQPage',
+      '@id': `${canonical}#faq`,
+      mainEntity: refundFaqs.map((faq) => ({
+        '@type': 'Question',
+        name: faq.question,
+        acceptedAnswer: { '@type': 'Answer', text: faq.answer },
+      })),
+    },
+  ],
+};
+---
+
+<Layout title={title} description={description} canonical={canonical} jsonLd={jsonLd}>
+  <Header client:load />
+
+  <main class="legal-main">
+    <article class="legal-container">
+      <header class="legal-header">
+        <p class="legal-eyebrow">Zipla POS</p>
+        <h1>Zipla POS Cancellation &amp; Refund Policy</h1>
+        <p class="legal-meta">Last updated: <time datetime="2026-08-25">August 25, 2026</time></p>
+        <p class="legal-summary"><strong>Key takeaway:</strong> Zipla POS offers a 14-day free trial. A paid subscription may qualify for a full refund when the request is made within 7 days of payment and meets the conditions below.</p>
+        <p class="legal-audience"><strong>Who this is for:</strong> Zipla POS trial users and paid subscribers. <strong>Use this policy when:</strong> you are deciding whether to purchase, cancel a subscription or request a refund.</p>
+      </header>
+
+      <div class="legal-body">
+        <p>A cancellation and refund policy is a set of rules that explains how a subscriber can stop using a service and when a refund request can be considered. This Zipla POS Cancellation &amp; Refund Policy applies to paid Zipla POS subscriptions and should be read with the <a href="/terms-and-conditions/">Zipla POS Terms and Conditions</a>.</p>
+
+        <h2>Does Zipla POS offer a free trial?</h2>
+        <p class="legal-direct-answer"><strong>Short answer:</strong> Yes. Zipla POS offers a 14-day free trial with no credit card or payment required to begin.</p>
+        <p>Use the trial to assess whether the Zipla POS workflow fits your business before purchasing a paid subscription.</p>
+
+        <h2>When can you request a refund?</h2>
+        <p class="legal-direct-answer"><strong>Short answer:</strong> A paid subscription may qualify for a full refund request made within 7 days of payment, subject to every condition below.</p>
+        <div class="legal-decision">
+          <h3>Refund eligibility checklist</h3>
+          <table>
+            <thead>
+              <tr><th scope="col">Check</th><th scope="col">What this policy requires</th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">Request timing</th><td>Send the refund request within <strong>7 days</strong> of payment.</td></tr>
+              <tr><th scope="row">Where to send it</th><td>Email <a href="mailto:support@zipla.in">support@zipla.in</a> from your registered email address.</td></tr>
+              <tr><th scope="row">Account use</th><td>The account must not have processed more than <strong>50 bills</strong> during the subscription period.</td></tr>
+              <tr><th scope="row">3-year plan</th><td>A 3-year plan is non-refundable after the same 7-day refund window.</td></tr>
+              <tr><th scope="row">Partial periods</th><td>Zipla POS does not prorate subscriptions, so no refund is available for a partial period.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>Zipla POS may decline a request where there are clear signs of abuse of this policy.</p>
+
+        <h2>How do you cancel a subscription or request a refund?</h2>
+        <p class="legal-direct-answer"><strong>Short answer:</strong> Email <a href="mailto:support@zipla.in">support@zipla.in</a> with the account and payment details needed to identify your request.</p>
+        <ol>
+          <li>Send the request from your registered email address.</li>
+          <li>State whether you are requesting a cancellation or a refund.</li>
+          <li>Include your business name, registered phone number and payment date.</li>
+          <li>Add a short reason for the request so Zipla POS can review it against this policy.</li>
+        </ol>
+        <div class="legal-template">
+          <h3>Refund-request email template</h3>
+          <p><strong>Subject:</strong> Refund request for my Zipla POS subscription<br />
+          <strong>Include:</strong> your business name, registered phone number, payment date and a short reason for the request.</p>
+        </div>
+
+        <h2>What happens after the 7-day refund window?</h2>
+        <p class="legal-direct-answer"><strong>Short answer:</strong> After 7 days from payment, the current paid subscription is non-refundable.</p>
+        <p>You may still ask to cancel future use of the service, but the paid subscription remains non-refundable after the 7-day window.</p>
+
+        <h2>How are approved refunds processed?</h2>
+        <p class="legal-direct-answer"><strong>Short answer:</strong> Approved refunds are processed within 7–10 working days to the original payment method.</p>
+        <p>Payment posting after Zipla POS processes an approved refund can depend on the payment provider or your bank. The eligibility rules on this page are Zipla POS rules. For payment-provider refund mechanics, see the official <a href="https://razorpay.com/docs/payments/refunds/issue/" target="_blank" rel="noopener noreferrer">Razorpay refund documentation</a>.</p>
+
+        <h2>How can you contact Zipla POS about this policy?</h2>
+        <div class="legal-contact">
+          <p><strong>Zipla POS Support</strong><br />
+          Email: <a href="mailto:support@zipla.in">support@zipla.in</a></p>
+        </div>
+      </div>
+
+      <section class="legal-faq" aria-labelledby="refund-faq-title">
+        <h2 id="refund-faq-title">Cancellation and Refund Policy FAQs</h2>
+        <p>These concise answers repeat the visible policy rules for people deciding whether to start a trial, buy a plan, cancel or request a refund.</p>
+        <div class="legal-faq-list">
+          {refundFaqs.map((faq) => (
+            <section class="legal-faq-item">
+              <h3>{faq.question}</h3>
+              <p>{faq.answer}</p>
+            </section>
+          ))}
+        </div>
+      </section>
+
+      <nav class="legal-related" aria-labelledby="refund-related-title">
+        <h2 id="refund-related-title">Where can you find related Zipla information?</h2>
+        <p>Read the <a href="/terms-and-conditions/">Zipla POS Terms and Conditions</a>, use <a href="/contact-us/">Zipla POS contact details</a> for a support request, review the <a href="/privacy-policy/">Privacy Policy</a>, or return to the <a href="/">Zipla POS homepage</a>.</p>
+      </nav>
+
+      <div class="legal-back">
+        <a href="/" class="legal-back-link">← Back to Zipla POS</a>
+      </div>
+    </article>
+  </main>
+
+  <Footer />
+</Layout>
+
+<style>
+  .legal-main { background: #0D0D0D; min-height: 100vh; padding: 5rem 1.5rem 6rem; }
+  .legal-container { max-width: 760px; margin: 0 auto; }
+  .legal-header { margin-bottom: 3rem; padding-bottom: 2rem; border-bottom: 1px solid #1e1e1e; }
+  .legal-eyebrow { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #C9A94B; margin-bottom: 0.75rem; }
+  .legal-header h1 { font-size: clamp(1.8rem, 4vw, 2.4rem); font-weight: 700; color: #ffffff; margin: 0 0 0.75rem; }
+  .legal-meta { font-size: 0.85rem; color: #666666; }
+  .legal-body { color: #cccccc; font-size: 0.97rem; line-height: 1.85; }
+  .legal-body > p { margin-bottom: 1.25rem; }
+  .legal-body h2 { font-size: 1.2rem; font-weight: 700; color: #C9A94B; margin: 2.75rem 0 0.875rem; }
+  .legal-body h3 { font-size: 1rem; font-weight: 600; color: #ffffff; margin: 0 0 0.5rem; }
+  .legal-body ul, .legal-body ol { padding-left: 1.4rem; margin-bottom: 1.25rem; }
+  .legal-body li { margin-bottom: 0.5rem; }
+  .legal-body a, .legal-related a { color: #C9A94B; text-decoration: underline; text-underline-offset: 3px; }
+  .legal-body a:hover, .legal-related a:hover { opacity: 0.8; }
+  .legal-body strong { color: #ffffff; font-weight: 600; }
+  .legal-contact, .legal-decision, .legal-template, .legal-faq, .legal-related { margin-top: 0.75rem; padding: 1.5rem; border: 1px solid #1e1e1e; border-radius: 12px; background: #111111; }
+  .legal-contact p, .legal-template p, .legal-related p { margin: 0; color: #cccccc; line-height: 1.8; }
+  .legal-direct-answer { padding: 12px 14px; border-left: 3px solid #C9A94B; border-radius: 0 8px 8px 0; background: rgba(201,169,75,.08); color: #cccccc; }
+  .legal-decision { margin: 1.25rem 0; overflow: hidden; }
+  .legal-decision h3 { margin-bottom: 0.75rem; }
+  .legal-decision table { width: 100%; border-collapse: collapse; text-align: left; }
+  .legal-decision th, .legal-decision td { padding: 13px; border-bottom: 1px solid #1e1e1e; vertical-align: top; font-size: 0.9rem; line-height: 1.65; }
+  .legal-decision thead th { background: rgba(201,169,75,.09); color: #C9A94B; font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; }
+  .legal-decision tbody th { width: 34%; color: #ffffff; font-weight: 600; }
+  .legal-decision tbody tr:last-child th, .legal-decision tbody tr:last-child td { border-bottom: 0; }
+  .legal-template, .legal-faq, .legal-related { margin-top: 2.75rem; }
+  .legal-template h3, .legal-faq h2, .legal-related h2 { margin-top: 0; }
+  .legal-faq > p { margin: 0; color: #cccccc; line-height: 1.8; }
+  .legal-faq-list { display: grid; gap: 12px; margin-top: 18px; }
+  .legal-faq-item { padding: 16px; border: 1px solid #242424; border-radius: 8px; background: #0D0D0D; }
+  .legal-faq-item h3 { margin: 0 0 7px; color: #ffffff; font-size: 1rem; }
+  .legal-faq-item p { margin: 0; color: #aaaaaa; font-size: .94rem; line-height: 1.75; }
+  .legal-back { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid #1e1e1e; }
+  .legal-back-link { color: #C9A94B; text-decoration: none; font-size: 0.9rem; font-weight: 600; }
+  .legal-back-link:hover { opacity: 0.8; }
+  .legal-summary, .legal-audience { max-width: 690px; margin: 14px 0 0; color: #aaaaaa; font-size: .94rem; line-height: 1.72; }
+  .legal-summary { color: #cccccc; }
+  @media (max-width: 560px) { .legal-main { padding: 3.5rem 1.125rem 4.5rem; } .legal-contact, .legal-decision, .legal-template, .legal-faq, .legal-related { padding: 1.125rem; } .legal-decision th, .legal-decision td { padding: 11px; overflow-wrap: anywhere; } .legal-decision tbody th { width: 40%; } }
+</style>
+</file>
+
+<file path="astro.config.mjs">
+import { defineConfig } from 'astro/config';
+import react from '@astrojs/react';
+import sitemap from '@astrojs/sitemap';
+
+export default defineConfig({
+  site: 'https://zipla.in',
+  output: 'static',
+  trailingSlash: 'always',
+  integrations: [
+    react(),
+    sitemap(),
+  ],
+  build: {
+    inlineStylesheets: 'never',
+  },
+});
+</file>
+
+<file path="package.json">
+{
+  "name": "zipla-landing",
+  "private": true,
+  "version": "2.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "astro": "^7.2.0",
+    "@astrojs/react": "^6.0.2",
+    "@astrojs/sitemap": "^3.7.3"
+  }
+}
+</file>
+
+<file path="src/layouts/Layout.astro">
+---
+interface Props {
+  title?: string;
+  description?: string;
+  canonical?: string | null;
+  ogImage?: string;
+  ogImageAlt?: string;
+  robots?: string;
+  jsonLd?: object;
+}
+
+const {
+  title = 'Zipla POS — Restaurant POS Billing Software for India',
+  description = 'Restaurant POS billing software for India — counter billing, GST invoices, kitchen display and QR ordering. 14-day free trial, no card required.',
+  canonical = 'https://zipla.in',
+  ogImage = 'https://zipla.in/og-image.jpg',
+  ogImageAlt = 'Zipla POS billing dashboard shown across desktop, tablet, and Android phone',
+  robots,
+  jsonLd,
+} = Astro.props;
+
+const globalGraph = [
+  {
+    "@type": "WebSite",
+    "@id": "https://zipla.in/#website",
+    "name": "Zipla POS",
+    "url": "https://zipla.in",
+    "publisher": { "@id": "https://zipla.in/#organization" }
+  },
+  {
+    "@type": "Organization",
+    "@id": "https://zipla.in/#organization",
+    "name": "Zipla POS",
+    "url": "https://zipla.in",
+    "logo": { "@type": "ImageObject", "url": "https://zipla.in/zipla-logo.webp" },
+    "email": "support@zipla.in"
+  },
+  {
+    "@type": "SoftwareApplication",
+    "@id": "https://zipla.in/#software",
+    "name": "Zipla POS",
+    "url": "https://zipla.in",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web Browser",
+    "description": "Restaurant POS billing software for Indian small businesses — counter billing, auto GST invoice, kitchen display, and QR table ordering.",
+    "author": { "@id": "https://zipla.in/#organization" },
+    "offers": [
+      { "@type": "Offer", "price": "2999", "priceCurrency": "INR", "name": "Starter" },
+      { "@type": "Offer", "price": "4999", "priceCurrency": "INR", "name": "Pro" }
+    ]
+  }
+];
+
+type JsonLdWithGraph = { "@graph"?: object[] };
+
+const pageJsonLd = jsonLd as JsonLdWithGraph | undefined;
+const pageGraph = Array.isArray(pageJsonLd?.["@graph"])
+  ? pageJsonLd["@graph"]
+  : jsonLd
+    ? [jsonLd]
+    : [];
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@graph": [...globalGraph, ...pageGraph]
+};
+
+// GA4 Measurement ID — zipla.in
+const GA_ID = 'G-48WXKXR3F1';
+---
+<!DOCTYPE html>
+<html lang="en-IN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  {robots && <meta name="robots" content={robots} />}
+
+  {canonical && (
+    <>
+      <!-- Open Graph -->
+      <meta property="og:title" content={title} />
+      <meta property="og:description" content={description} />
+      <meta property="og:type" content="website" />
+      <meta property="og:url" content={canonical} />
+      <meta property="og:site_name" content="Zipla POS" />
+      <meta property="og:locale" content="en_IN" />
+      <meta property="og:image" content={ogImage} />
+      <meta property="og:image:alt" content={ogImageAlt} />
+      <meta property="og:image:width" content="1200" />
+      <meta property="og:image:height" content="630" />
+
+      <!-- Twitter -->
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content={title} />
+      <meta name="twitter:description" content={description} />
+      <meta name="twitter:image" content={ogImage} />
+      <meta name="twitter:image:alt" content={ogImageAlt} />
+
+      <link rel="canonical" href={canonical} />
+    </>
+  )}
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+
+  <!-- Google Analytics 4 — replace G-XXXXXXXXXX with your Measurement ID -->
+  <script is:inline async src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}></script>
+  <script is:inline define:vars={{ GA_ID }}>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', GA_ID);
+  </script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <slot />
+</body>
+</html>
+</file>
+
+<file path="src/components/Footer.jsx">
+export default function Footer() {
+  return (
+    <footer>
+      <div className="footer-inner">
+        <div className="brand">
+          <a href="/"><img src="/zipla-logo.webp" alt="Zipla POS" style={{height:'28px',display:'block',width:'auto'}} /></a>
+        </div>
+        <div className="footer-note">&#169; 2026 Zipla POS. Made in India.</div>
+        <div className="footer-links"><a href="/restaurant-pos-software/">Restaurant POS</a><a href="/cafe-pos-software/">Cafe POS</a><a href="/bakery-billing-software/">Bakery Billing</a><a href="/sweet-shop-billing/">Sweet Shop Billing</a><a href="/qsr-billing-software/">QSR Billing</a><a href="/dhaba-billing-software/">Dhaba Billing</a><a href="/blog/">Blog</a><a href="/faq/">FAQ</a></div>
+        <div className="footer-links"><a href="/privacy-policy/">Privacy Policy</a><a href="/terms-and-conditions/">Terms &amp; Conditions</a><a href="/refund-policy/">Refund Policy</a><a href="/contact-us/">Contact Us</a></div>
+      </div>
+    </footer>
+  )
+}
+</file>
+
+<file path="src/index.css">
+:root {
+  --bg:#0a0b12;--surface:#12141f;--surface-2:#1a1d2b;
+  --border:rgba(226,230,255,0.07);--border-hi:rgba(226,230,255,0.14);
+  --text:#f5f1e8;--text-2:rgba(245,241,232,0.64);--text-3:rgba(245,241,232,0.42);
+  --amber:#caa04c;--amber-2:#e8c983;--amber-dim:rgba(202,160,76,0.14);--on-amber:#1a1408;
+  --green:#22c55e;--green-dim:rgba(34,197,94,0.12);
+  --sans:'Plus Jakarta Sans',system-ui,sans-serif;--display:'Syne',var(--sans);--mono:'Courier New',monospace;
+  --r-sm:8px;--r-md:12px;--r-lg:16px;--r-xl:24px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:var(--sans);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img,svg{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+:focus-visible{outline:2px solid var(--amber);outline-offset:2px}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.001ms!important;transition-duration:.001ms!important}}
+
+/* HEADER */
+.site-header{position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:16px 24px;background:rgba(10,11,18,0.82);backdrop-filter:blur(14px);border-bottom:1px solid var(--border)}
+.brand{display:flex;align-items:center;gap:10px}
+.brand-logo{height:38px;width:auto;display:block}
+.brand-mark{width:34px;height:34px;border-radius:9px;background:var(--amber);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.brand-name{font-family:var(--display);font-weight:800;font-size:18px;letter-spacing:-0.3px}
+.brand-name em{font-style:normal;color:var(--amber)}
+.nav-links{display:flex;gap:28px;font-size:14px;font-weight:600;color:var(--text-2)}
+.nav-links a:hover{color:var(--text)}
+.btn-cta{display:inline-flex;align-items:center;gap:8px;background:var(--amber);color:var(--on-amber);font-weight:700;font-size:13.5px;padding:10px 18px;border-radius:var(--r-md);border:none;transition:transform .12s,opacity .12s}
+.btn-cta:hover{opacity:.92}
+.btn-cta:active{transform:scale(.97)}
+.btn-ghost{display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--text-2);font-weight:600;font-size:13.5px;padding:10px 18px;border-radius:var(--r-md);border:1px solid var(--border-hi);transition:border-color .12s,color .12s}
+.btn-ghost:hover{border-color:var(--amber);color:var(--text)}
+/* HERO */
+.hero{position:relative;isolation:isolate;overflow:hidden;padding:clamp(72px,8vw,116px) 24px 104px;background:radial-gradient(ellipse 80% 56% at 72% 15%,rgba(202,160,76,.15),transparent 68%),radial-gradient(ellipse 60% 50% at 10% -10%,rgba(202,160,76,.07),transparent 70%)}
+.hero::before{content:'';position:absolute;inset:0;z-index:-1;background-image:linear-gradient(rgba(255,255,255,.018) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.018) 1px,transparent 1px);background-size:40px 40px;mask-image:linear-gradient(to bottom,black,transparent 78%);pointer-events:none}
+.hero-inner{max-width:1120px;margin:0 auto;display:grid;grid-template-columns:minmax(0,.95fr) minmax(440px,1.05fr);gap:clamp(36px,5vw,72px);align-items:center}
+.eyebrow{display:inline-block;font-size:11px;font-weight:800;letter-spacing:1.35px;color:var(--amber-2);text-transform:uppercase;margin-bottom:18px}
+.hero h1{max-width:610px;font-family:var(--display);font-weight:800;font-size:clamp(40px,4.15vw,58px);line-height:1.03;letter-spacing:-1.7px;margin-bottom:22px}
+.hero p.sub{font-size:17px;color:var(--text-2);line-height:1.68;margin-bottom:30px;max-width:530px}
+.hero-ctas{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:24px}
+.hero-ctas .btn-cta,.hero-ctas .btn-ghost{padding:13px 20px;font-size:14px}
+.hero-assurances{display:flex;flex-wrap:wrap;gap:11px 18px;list-style:none;color:var(--text-3);font-size:12.5px;font-weight:600}
+.hero-assurances li{display:flex;align-items:center;gap:6px}
+.hero-assurances svg{width:15px;height:15px;color:var(--green);flex:none}
+.hero-product{position:relative;min-width:0;padding:18px 0 14px 18px}
+.hero-product-glow{position:absolute;inset:7% -6% -3% 8%;z-index:-1;border-radius:45%;background:radial-gradient(ellipse,rgba(202,160,76,.2),transparent 68%);filter:blur(22px)}
+.hero-device{position:relative;overflow:hidden;border:1px solid rgba(232,201,131,.33);border-radius:22px;background:#11131e;box-shadow:0 28px 80px rgba(0,0,0,.45),0 0 0 8px rgba(202,160,76,.045)}
+.hero-device-bar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:11px 14px 10px;border-bottom:1px solid var(--border);background:rgba(18,20,31,.94);font-size:10.5px;font-weight:700;letter-spacing:.04em}
+.hero-device-brand{display:flex;align-items:center;gap:7px;color:var(--text)}
+.hero-device-brand>span{width:7px;height:7px;border-radius:50%;background:var(--amber);box-shadow:0 0 0 3px var(--amber-dim)}
+.hero-device-label{color:var(--text-3)}
+.hero-device img{display:block;width:100%;height:auto}
+.hero-product figcaption{padding:12px 10px 0;color:var(--text-3);font-size:11.5px;font-weight:600;letter-spacing:.01em}
+.hero-callout{position:absolute;z-index:2;display:flex;align-items:center;gap:10px;min-width:188px;padding:10px 12px;border:1px solid rgba(232,201,131,.22);border-radius:12px;background:rgba(18,20,31,.92);box-shadow:0 14px 36px rgba(0,0,0,.35);backdrop-filter:blur(12px)}
+.hero-callout--billing{left:-24px;bottom:58px}
+.hero-callout--kitchen{right:-26px;top:58px}
+.hero-callout-icon{display:grid;place-items:center;width:31px;height:31px;flex:none;border-radius:9px;background:var(--amber-dim);color:var(--amber-2)}
+.hero-callout-icon svg{width:17px;height:17px}
+.hero-callout strong,.hero-callout small{display:block}
+.hero-callout strong{font-size:11.5px;color:var(--text);line-height:1.25}
+.hero-callout small{margin-top:3px;color:var(--text-3);font-size:9.5px;line-height:1.25}
+@media(max-width:980px){.hero{padding-bottom:86px}.hero-inner{grid-template-columns:1fr;max-width:720px}.hero-copy{text-align:center}.hero h1,.hero p.sub{margin-left:auto;margin-right:auto}.hero-ctas,.hero-assurances{justify-content:center}.hero-product{max-width:670px;width:100%;margin:2px auto 0;padding-left:0}.hero-callout--billing{left:-12px}.hero-callout--kitchen{right:-12px}}
+@media(max-width:560px){.hero{padding:62px 18px 72px}.hero h1{font-size:38px;letter-spacing:-1.25px}.hero p.sub{font-size:15.5px}.hero-ctas{display:grid;grid-template-columns:1fr}.hero-ctas .btn-cta,.hero-ctas .btn-ghost{justify-content:center;width:100%}.hero-assurances{display:grid;grid-template-columns:max-content max-content;justify-content:center;text-align:left;gap:9px 12px}.hero-assurances li:last-child{grid-column:1 / -1;justify-self:center}.hero-product{padding-top:4px}.hero-device{border-radius:16px}.hero-device-bar{padding:9px 11px 8px}.hero-callout{display:none}.hero-product figcaption{text-align:center;padding-left:0;padding-right:0}}
+
+/* TRUST */
+.trust-bar{border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:rgba(18,20,31,.8)}
+.trust-grid{display:grid;grid-template-columns:repeat(4,1fr);max-width:1120px;margin:0 auto}
+.trust-item{display:flex;align-items:center;gap:10px;justify-content:center;padding:19px 12px;font-size:12.5px;font-weight:700;color:var(--text-2);border-right:1px solid var(--border)}
+.trust-item:last-child{border-right:none}
+.trust-item svg{width:18px;height:18px;color:var(--amber-2);flex-shrink:0}
+@media(max-width:700px){.trust-grid{grid-template-columns:repeat(2,1fr)}.trust-item{border-right:1px solid var(--border);border-bottom:1px solid var(--border)}}
+
+/* BUYER ANSWER */
+.buyer-answer{padding:86px 24px;background:linear-gradient(180deg,rgba(202,160,76,.055),transparent 82%)}
+.buyer-answer-inner{display:grid;grid-template-columns:minmax(0,.86fr) minmax(0,1.14fr);gap:clamp(32px,5vw,72px);align-items:start;max-width:1120px;margin:0 auto}
+.buyer-answer-intro h2{max-width:530px;font-family:var(--display);font-size:clamp(30px,3.15vw,42px);line-height:1.08;letter-spacing:-1px;margin-bottom:16px}
+.buyer-answer-intro p{max-width:540px;color:var(--text-2);font-size:15px;line-height:1.7}
+.buyer-answer-intro .buyer-answer-lead{color:var(--text);font-weight:650;margin-bottom:12px}
+.buyer-answer-decision{padding:25px 25px 8px;border:1px solid var(--border-hi);border-radius:18px;background:linear-gradient(145deg,rgba(26,29,43,.8),var(--surface))}
+.buyer-answer-decision h3{font-family:var(--display);font-size:20px;letter-spacing:-.35px;margin-bottom:8px}
+.buyer-answer-decision>p{color:var(--text-2);font-size:13.5px;line-height:1.6;margin-bottom:19px}
+.buyer-answer-table-wrap{overflow-x:auto;border:1px solid var(--border);border-radius:11px}
+.buyer-answer table{width:100%;min-width:540px;border-collapse:collapse;text-align:left}
+.buyer-answer th,.buyer-answer td{padding:13px 14px;border-bottom:1px solid var(--border);font-size:12.5px;line-height:1.55;vertical-align:top}
+.buyer-answer thead th{background:rgba(202,160,76,.09);color:var(--amber-2);font-size:10.5px;font-weight:800;letter-spacing:.7px;text-transform:uppercase}
+.buyer-answer tbody th{width:36%;color:var(--text);font-weight:700}
+.buyer-answer td{color:var(--text-2)}
+.buyer-answer tbody tr:last-child th,.buyer-answer tbody tr:last-child td{border-bottom:0}
+.buyer-answer td strong{color:var(--text)}
+.buyer-answer td a{color:var(--amber-2);font-weight:700;text-decoration:underline;text-decoration-color:rgba(232,201,131,.38);text-underline-offset:3px}
+.buyer-answer td a:hover{color:var(--text)}
+@media(max-width:800px){.buyer-answer{padding:74px 24px}.buyer-answer-inner{grid-template-columns:1fr;gap:30px}.buyer-answer-intro h2,.buyer-answer-intro p{max-width:680px}}
+@media(max-width:540px){.buyer-answer{padding:64px 18px}.buyer-answer-decision{padding:20px 16px 6px}}
+@media(max-width:760px){
+  .site-header{position:relative;justify-content:flex-start;width:100%;max-width:100%;padding:14px 18px;overflow-x:clip}
+  .brand{flex-shrink:0}
+  .brand-logo{height:38.4px}
+  .nav-links,.site-header>.btn-cta{display:none}
+
+  .buyer-answer,.buyer-answer-inner,.buyer-answer-decision{min-width:0;max-width:100%}
+  .buyer-answer{overflow-x:clip}
+  .buyer-answer-table-wrap{margin:0;overflow:visible;border:0;border-radius:0}
+  .buyer-answer table{width:100%;min-width:0;border-collapse:separate;border-spacing:0}
+  .buyer-answer thead{position:absolute;width:1px;height:1px;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap}
+  .buyer-answer tbody{display:grid;gap:12px}
+  .buyer-answer tbody tr{display:block;overflow:hidden;border:1px solid var(--border);border-radius:11px;background:rgba(10,11,18,.36)}
+  .buyer-answer th,.buyer-answer td{display:block;width:100%;padding:14px;border:0;overflow-wrap:anywhere}
+  .buyer-answer tbody th{width:100%;background:rgba(202,160,76,.09)}
+  .buyer-answer tbody td{border-top:1px solid var(--border)}
+  .buyer-answer tbody th::before,.buyer-answer tbody td::before{display:block;margin-bottom:6px;color:var(--amber-2);font-size:10.5px;font-weight:800;letter-spacing:.7px;text-transform:uppercase;content:attr(data-label)}
+}
+
+/* BUSINESS TYPES */
+.business-types{padding:104px 24px 112px}
+.business-types-head{max-width:1120px;margin:0 auto 38px;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(280px,.72fr);gap:48px;align-items:end}
+.business-types-head .eyebrow{margin-bottom:12px}
+.business-types-head h2{max-width:620px;font-family:var(--display);font-size:clamp(30px,3.15vw,42px);line-height:1.08;letter-spacing:-1px}
+.business-types-answer{max-width:620px;margin-top:14px;color:var(--text-2);font-size:15px;line-height:1.68}
+.business-types-head>p{padding-bottom:3px;color:var(--text-2);font-size:15px;line-height:1.68}
+.business-types-grid{max-width:1120px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.business-type-card{position:relative;display:flex;min-height:230px;flex-direction:column;align-items:flex-start;overflow:hidden;background:linear-gradient(145deg,var(--surface),rgba(26,29,43,.75));border:1px solid var(--border);border-radius:18px;padding:25px;transition:transform .18s,border-color .18s,background .18s}
+.business-type-card::after{content:'';position:absolute;right:-34px;bottom:-34px;width:106px;height:106px;border:1px solid rgba(202,160,76,.1);border-radius:50%;transition:transform .22s,border-color .22s}
+.business-type-card:hover{transform:translateY(-4px);border-color:rgba(232,201,131,.42);background:linear-gradient(145deg,rgba(30,33,47,.96),var(--surface))}
+.business-type-card:hover::after{transform:scale(1.32);border-color:rgba(232,201,131,.3)}
+.business-type-number{position:absolute;right:21px;top:20px;color:rgba(232,201,131,.45);font-family:var(--display);font-size:12px;font-weight:800;letter-spacing:.08em}
+.business-type-label{margin-bottom:15px;color:var(--amber-2)!important;font-size:10px!important;font-weight:800!important;letter-spacing:1.1px;text-transform:uppercase}
+.business-type-card h3{position:relative;z-index:1;max-width:220px;font-family:var(--display);font-size:19px;line-height:1.2;letter-spacing:-.3px;margin-bottom:11px}
+.business-type-card>p:not(.business-type-label){position:relative;z-index:1;font-size:13.5px;line-height:1.62;color:var(--text-2);margin-bottom:20px}
+.business-type-link{position:relative;z-index:1;margin-top:auto;color:var(--text);font-size:12.5px;font-weight:800}
+.business-type-link span{display:inline-block;margin-left:5px;color:var(--amber-2);transition:transform .15s}
+.business-type-card:hover .business-type-link span{transform:translateX(3px)}
+@media(max-width:800px){.business-types{padding:78px 24px 88px}.business-types-head{grid-template-columns:1fr;gap:16px;margin-bottom:30px}.business-types-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:540px){.business-types{padding:68px 18px 76px}.business-types-grid{grid-template-columns:1fr}.business-type-card{min-height:205px}}
+
+/* SECTION HEADS */
+.section-head{text-align:center;max-width:620px;margin:0 auto 56px;padding:0 24px}
+.section-head .eyebrow{display:block;margin-bottom:12px}
+.section-head h2{font-family:var(--display);font-weight:800;font-size:32px;letter-spacing:-0.6px;margin-bottom:14px}
+.section-head p{color:var(--text-2);font-size:15.5px;line-height:1.6}
+
+/* WORKFLOW */
+.workflow{padding:100px 24px}
+.workflow-row{max-width:1120px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);position:relative}
+.workflow-row::before{content:'';position:absolute;top:22px;left:60px;right:60px;height:1px;background:var(--border-hi)}
+.wf-step{position:relative;padding:0 16px;text-align:left}
+.wf-num{font-family:var(--display);font-weight:800;font-size:15px;color:var(--amber);width:44px;height:44px;border-radius:50%;background:var(--surface);border:1px solid var(--border-hi);display:flex;align-items:center;justify-content:center;margin-bottom:18px;position:relative;z-index:1}
+.wf-step h3{font-family:var(--display);font-weight:700;font-size:16px;margin-bottom:8px}
+.wf-step p{font-size:13.5px;color:var(--text-2);line-height:1.55}
+@media(max-width:800px){.workflow-row{grid-template-columns:1fr 1fr;row-gap:40px}.workflow-row::before{display:none}}
+
+/* FEATURES */
+.features{padding:0 24px 110px}
+.feature-grid{max-width:1120px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.feature-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-lg);padding:26px 24px;transition:border-color .15s}
+.feature-card:hover{border-color:var(--border-hi)}
+.f-icon{width:42px;height:42px;border-radius:var(--r-sm);background:var(--amber-dim);border:1px solid rgba(202,160,76,.2);display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+.f-icon svg{width:20px;height:20px;color:var(--amber)}
+.f-icon.pct{font-family:var(--display);font-weight:800;color:var(--amber);font-size:17px}
+.feature-card h3{font-family:var(--display);font-weight:700;font-size:16px;margin-bottom:8px;display:flex;align-items:center;gap:8px}
+.pro-chip{font-size:9.5px;font-weight:800;letter-spacing:.5px;color:var(--amber);background:var(--amber-dim);padding:2px 7px;border-radius:5px}
+.feature-card p{font-size:13.5px;color:var(--text-2);line-height:1.55}
+@media(max-width:800px){.feature-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:540px){.feature-grid{grid-template-columns:1fr}}
+
+/* TESTIMONIALS */
+.testimonials{padding:0 24px 110px}
+.testimonial-grid{max-width:1120px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.testimonial-empty{max-width:380px;margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:20px}
+.video-card{position:relative;aspect-ratio:16/10;border-radius:var(--r-lg);overflow:hidden;background:var(--surface);border:1px solid var(--border)}
+.video-card--empty{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;border:1.5px dashed var(--border-hi);color:var(--text-3);font-size:13px;width:100%}
+.video-play-icon{width:46px;height:46px;border-radius:50%;background:var(--amber-dim);color:var(--amber);display:flex;align-items:center;justify-content:center}
+.video-play-icon svg{width:22px;height:22px}
+.video-thumb{position:relative;width:100%;height:100%;border:none;padding:0;background:none;cursor:pointer}
+.video-thumb img{width:100%;height:100%;object-fit:cover}
+.video-thumb .video-play-icon{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%)}
+.video-card iframe{width:100%;height:100%;border:none}
+.video-caption{position:absolute;left:0;right:0;bottom:0;padding:12px 14px;background:linear-gradient(0deg,rgba(0,0,0,.7),transparent);display:flex;flex-direction:column}
+.video-caption strong{font-size:13px;color:#fff}
+.video-caption span{font-size:11.5px;color:rgba(255,255,255,.7)}
+@media(max-width:800px){.testimonial-grid{grid-template-columns:1fr}}
+
+/* PRICING */
+.pricing{padding:0 24px 110px}
+.pricing-grid{max-width:900px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.price-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-xl);padding:32px 28px;position:relative}
+.price-card.popular{border-color:var(--amber);background:linear-gradient(180deg,var(--amber-dim),var(--surface) 40%)}
+.popular-tag{position:absolute;top:-12px;right:24px;background:var(--amber);color:var(--on-amber);font-size:10.5px;font-weight:800;letter-spacing:.4px;padding:5px 12px;border-radius:99px}
+.price-plan{font-family:var(--display);font-weight:800;font-size:13px;letter-spacing:1px;color:var(--text-3);text-transform:uppercase;margin-bottom:10px}
+.price-amt{font-family:var(--display);font-weight:800;font-size:40px;letter-spacing:-1px}
+.price-amt span{font-size:15px;font-weight:600;color:var(--text-3)}
+.price-sub{font-size:12.5px;color:var(--text-3);margin:6px 0 24px}
+.price-list{list-style:none;display:flex;flex-direction:column;gap:11px;margin-bottom:28px}
+.price-list li{display:flex;align-items:flex-start;gap:9px;font-size:13.5px;color:var(--text-2)}
+.price-list svg{width:16px;height:16px;color:var(--green);flex-shrink:0;margin-top:2px}
+.price-card .btn-cta,.price-card .btn-ghost{width:100%;justify-content:center;padding:13px}
+@media(max-width:700px){.pricing-grid{grid-template-columns:1fr}}
+
+/* FAQ */
+.faq{padding:0 24px 110px}
+.faq-list{max-width:720px;margin:0 auto;display:flex;flex-direction:column;gap:10px}
+.faq-item{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-md);overflow:hidden}
+.faq-q{width:100%;background:none;border:none;text-align:left;padding:18px 20px;display:flex;justify-content:space-between;align-items:center;font-size:14.5px;font-weight:600;color:var(--text)}
+.faq-q svg{width:16px;height:16px;color:var(--text-3);flex-shrink:0;transition:transform .2s}
+.faq-item[open] .faq-q svg{transform:rotate(45deg)}
+.faq-a{padding:0 20px 18px;font-size:13.5px;color:var(--text-2);line-height:1.6}
+.faq-more{max-width:720px;margin:22px auto 0;text-align:center;font-size:13.5px;font-weight:700}
+.faq-more a{color:var(--amber-2);text-decoration:underline;text-decoration-color:rgba(232,201,131,.42);text-underline-offset:4px}
+.faq-more a:hover{color:var(--text)}
+
+/* FINAL CTA */
+.final-cta{max-width:1120px;margin:0 auto 100px;background:linear-gradient(145deg,rgba(202,160,76,.1),var(--surface-2) 45%);border:1px solid var(--border-hi);border-radius:var(--r-xl);padding:60px 40px;text-align:center}
+.final-cta h2{font-family:var(--display);font-weight:800;font-size:28px;letter-spacing:-0.5px;margin-bottom:12px}
+.final-cta p{color:var(--text-2);font-size:14.5px;margin-bottom:28px}
+.final-cta .btn-cta{padding:14px 28px;font-size:15px}
+.final-cta-actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
+.final-cta-actions .btn-ghost{padding:14px 22px;font-size:15px}
+@media(max-width:540px){.final-cta{margin:0 18px 76px;padding:42px 20px}.final-cta-actions{display:grid}.final-cta-actions a{justify-content:center}}
+
+/* FOOTER */
+footer{border-top:1px solid var(--border);padding:36px 24px}
+.footer-inner{max-width:1120px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+.footer-note{font-size:12.5px;color:var(--text-3)}
+.footer-links{display:flex;gap:20px;font-size:12.5px;color:var(--text-3)}
+
+/* DEMO FORM */
+.demo-form{padding:0 24px 110px}
+.demo-form-card{max-width:720px;margin:0 auto;background:var(--surface);border:1px solid var(--border-hi);border-radius:var(--r-xl);padding:40px 36px}
+.demo-form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
+.df-field{display:flex;flex-direction:column;gap:6px}
+.df-field--full{margin-bottom:20px}
+.df-field label{font-size:13px;font-weight:600;color:var(--text-2);letter-spacing:0.2px}
+.df-field input,.df-field select{background:var(--surface-2);border:1px solid var(--border);border-radius:var(--r-sm);padding:12px 14px;font-size:14px;color:var(--text);font-family:var(--sans);outline:none;transition:border-color .15s;-webkit-appearance:none;appearance:none;width:100%;box-sizing:border-box}
+.df-field input:focus,.df-field select:focus{border-color:var(--amber)}
+.df-field input::placeholder{color:var(--text-3)}
+.df-field select{cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23666' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:36px}
+.df-err{font-size:12px;color:#f87171;margin-top:2px}
+.df-submit{width:100%;justify-content:center;padding:14px;font-size:15px;border:none;cursor:pointer;margin-bottom:12px;margin-top:4px}
+.df-note{font-size:12.5px;color:var(--text-3);text-align:center}
+.demo-form-thanks{text-align:center;padding:48px 36px}
+.df-thanks-icon{width:52px;height:52px;border-radius:50%;background:var(--green-dim);border:1px solid rgba(34,197,94,.25);color:var(--green);font-size:22px;display:flex;align-items:center;justify-content:center;margin:0 auto 16px}
+.demo-form-thanks h3{font-family:var(--display);font-weight:700;font-size:20px;margin-bottom:10px}
+.demo-form-thanks p{font-size:14px;color:var(--text-2)}
+.demo-form-thanks a{color:var(--amber)}
+@media(max-width:600px){.demo-form-grid{grid-template-columns:1fr}.demo-form-card{padding:28px 20px}}
+</file>
+
+</files>
