@@ -1,23 +1,27 @@
 const WORKFLOWS = [
   {
-    id: 'ai-menu-scan',
-    title: 'AI Menu Scan',
+    id: 'counter-billing',
+    title: 'Counter POS Billing',
     plan: 'Starter and Pro',
-    summary: 'Use a menu photo, review the detected items, then import the items you approve.',
-    illustration: '/workflows/ai-menu-scan-workflow.webp',
-    illustrationAlt: 'Illustrative four-step AI menu scan workflow from menu photo to reviewed menu items',
+    summary: 'Build the customer order, record the payment mode and create the GST invoice from the counter.',
+    illustration: '/workflows/counter-billing-workflow.webp',
+    illustrationAlt: 'Illustrative counter POS billing workflow from menu selection to payment and customer bill',
     illustrationWidth: 1200,
     illustrationHeight: 900,
-    screenshot: '/workflows/ai-menu-review-screen.webp',
-    screenshotAlt: 'Actual Zipla POS menu review screen showing detected menu items before import',
-    screenshotWidth: 867,
-    screenshotHeight: 1000,
-    screenshotCaption: 'Actual Zipla POS menu-review screen.',
+    screenshots: [
+      {
+        src: '/screenshots/ss-new-order.webp',
+        alt: 'Actual Zipla POS new-order screen for counter billing',
+        width: 1232,
+        height: 860,
+        caption: 'Actual Zipla POS counter billing screen.',
+      },
+    ],
     steps: [
-      ['Select a menu photo', 'Start with a photo of the menu you want to set up.'],
-      ['Review detected items', 'Check the items before adding them to your live menu.'],
-      ['Edit the details you need', 'Review category, item name, price and food type before import.'],
-      ['Import approved items', 'Add the reviewed items to the menu you will use for billing or ordering.'],
+      ['Build the order', 'Select the customer’s items from the counter billing screen.'],
+      ['Mark the payment mode', 'Record cash, UPI or card payment for the bill.'],
+      ['Create the GST invoice', 'Generate the customer bill with the configured tax workflow.'],
+      ['Deliver the bill when needed', 'Use the available printing or bill-sharing workflow for the customer.'],
     ],
   },
   {
@@ -26,61 +30,87 @@ const WORKFLOWS = [
     plan: 'Pro',
     summary: 'Diners can scan a table QR code, view the menu on their phone and place a table order.',
     illustration: '/workflows/qr-ordering-workflow.webp',
-    illustrationAlt: 'Illustrative QR table ordering workflow from scan to menu selection and kitchen order queue',
+    illustrationAlt: 'Illustrative QR table ordering workflow from scan to menu selection and kitchen handoff',
     illustrationWidth: 1200,
     illustrationHeight: 900,
-    screenshot: '/screenshots/ss-customer-menu.webp',
-    screenshotAlt: 'Actual Zipla POS customer menu screen used for QR ordering',
-    screenshotWidth: 1232,
-    screenshotHeight: 860,
-    screenshotCaption: 'Actual Zipla POS customer-menu screen.',
+    screenshots: [
+      {
+        src: '/screenshots/ss-customer-menu.webp',
+        alt: 'Actual Zipla POS customer menu screen used for QR ordering',
+        width: 1232,
+        height: 860,
+        caption: 'Actual Zipla POS customer-menu screen.',
+      },
+      {
+        src: '/screenshots/ss-kds.webp',
+        alt: 'Actual Zipla POS Kitchen Display System screen for active kitchen orders',
+        width: 1232,
+        height: 860,
+        caption: 'Actual Pro Kitchen Display System screen.',
+      },
+    ],
     steps: [
       ['Scan the table QR', 'The diner opens the menu from the QR code at the table.'],
       ['Choose menu items', 'The diner selects items on their own phone.'],
       ['Place the table order', 'The order enters the restaurant ordering workflow.'],
-      ['Use kitchen handoff when relevant', 'On Pro, use the Kitchen Display System for a visible kitchen queue.'],
+      ['Use kitchen handoff when relevant', 'On Pro, use KDS to keep active kitchen orders visible.'],
     ],
   },
   {
-    id: 'counter-kds',
-    title: 'Counter Billing and Kitchen Handoff',
-    plan: 'Starter billing · Pro KDS',
-    summary: 'Create the customer bill at the counter, then use a Pro kitchen queue when your service flow needs it.',
-    illustration: '/workflows/counter-billing-workflow.webp',
-    illustrationAlt: 'Illustrative counter billing workflow from menu selection to payment and customer bill',
-    illustrationWidth: 1200,
-    illustrationHeight: 900,
-    screenshot: '/screenshots/ss-kds.webp',
-    screenshotAlt: 'Actual Zipla POS Kitchen Display System screen showing a kitchen order queue',
-    screenshotWidth: 1232,
-    screenshotHeight: 860,
-    screenshotCaption: 'Actual Zipla POS Kitchen Display System screen.',
+    id: 'ai-menu-scan',
+    title: 'AI Menu Scan',
+    plan: 'Starter and Pro',
+    summary: 'Use a menu photo, review the detected items, then import the items you approve.',
+    illustration: '/workflows/ai-menu-scan-workflow-v2.webp',
+    illustrationAlt: 'Illustrative four-step AI menu scan workflow with visible food items, item review and a live menu',
+    illustrationWidth: 1439,
+    illustrationHeight: 810,
+    screenshots: [
+      {
+        src: '/workflows/ai-menu-review-screen.webp',
+        alt: 'Actual Zipla POS menu review screen showing detected menu items before import',
+        width: 867,
+        height: 1000,
+        caption: 'Actual Zipla POS menu-review screen.',
+      },
+    ],
     steps: [
-      ['Build the customer order', 'Select the items from the counter billing screen.'],
-      ['Mark the payment mode', 'Record cash, UPI or card payment for the bill.'],
-      ['Create the customer bill', 'Generate the GST invoice from the billing workflow.'],
-      ['Hand off to the kitchen if needed', 'For Pro, use KDS to keep active kitchen orders visible.'],
+      ['Select a menu photo', 'Start with a photo of the menu you want to set up.'],
+      ['Review detected items', 'Check the items before adding them to your live menu.'],
+      ['Edit the details you need', 'Review category, item name, price and food type before import.'],
+      ['Import approved items', 'Add the reviewed items to the menu you will use for billing or ordering.'],
     ],
   },
   {
-    id: 'day-close',
-    title: 'Day-Close Review',
+    id: 'day-close-analytics',
+    title: 'Day-Close and Analytics',
     plan: 'Pro',
-    summary: 'Review the completed orders, payment split, voids and day-close information after service.',
+    summary: 'Review completed orders, payment split, voids and sales information after service.',
     illustration: '/workflows/day-close-workflow.webp',
     illustrationAlt: 'Illustrative day-close workflow from completed orders to payment review and business reporting',
     illustrationWidth: 1200,
     illustrationHeight: 675,
-    screenshot: '/workflows/day-close-report-screen.webp',
-    screenshotAlt: 'Actual Zipla POS day-close report showing orders, revenue, payment split, voids and expected cash',
-    screenshotWidth: 994,
-    screenshotHeight: 631,
-    screenshotCaption: 'Actual Zipla POS day-close report.',
+    screenshots: [
+      {
+        src: '/workflows/day-close-report-screen.webp',
+        alt: 'Actual Zipla POS day-close report showing orders, revenue, payments, voids and expected cash',
+        width: 994,
+        height: 631,
+        caption: 'Actual Zipla POS day-close report.',
+      },
+      {
+        src: '/workflows/analytics-dashboard-screen.webp',
+        alt: 'Actual Zipla POS analytics dashboard with sales metrics and payment split',
+        width: 1100,
+        height: 694,
+        caption: 'Actual Zipla POS analytics dashboard.',
+      },
+    ],
     steps: [
       ['Complete the day’s orders', 'Close the customer orders recorded during service.'],
       ['Review payment split', 'Check the recorded cash, UPI and card amounts.'],
       ['Check operational details', 'Review voids and expected cash in the day-close report.'],
-      ['Use the owner view', 'Use the day-close information to review the operating day.'],
+      ['Use the owner view', 'Review sales information after the operating day.'],
     ],
   },
 ]
@@ -129,17 +159,22 @@ export default function Workflow() {
                     decoding="async"
                   />
                 </figure>
-                <figure className="workflow-figure workflow-figure--actual">
-                  <figcaption><span>Actual Zipla POS screen</span><strong>{workflow.screenshotCaption}</strong></figcaption>
-                  <img
-                    src={workflow.screenshot}
-                    alt={workflow.screenshotAlt}
-                    width={workflow.screenshotWidth}
-                    height={workflow.screenshotHeight}
-                    loading="lazy"
-                    decoding="async"
-                  />
-                </figure>
+
+                <div className={'workflow-proof-stack workflow-proof-stack--' + workflow.screenshots.length}>
+                  {workflow.screenshots.map((screenshot) => (
+                    <figure className="workflow-figure workflow-figure--actual" key={screenshot.src}>
+                      <figcaption><span>Actual Zipla POS screen</span><strong>{screenshot.caption}</strong></figcaption>
+                      <img
+                        src={screenshot.src}
+                        alt={screenshot.alt}
+                        width={screenshot.width}
+                        height={screenshot.height}
+                        loading="lazy"
+                        decoding="async"
+                      />
+                    </figure>
+                  ))}
+                </div>
               </div>
             </div>
           </details>
