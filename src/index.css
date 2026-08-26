@@ -293,3 +293,49 @@ footer{border-top:1px solid var(--border);padding:36px 24px}
 :root[data-theme='light'] .post-mistake,:root[data-theme='light'] .post-faq-item,:root[data-theme='light'] .post-related,:root[data-theme='light'] .post-cta,:root[data-theme='light'] .legal-contact,:root[data-theme='light'] .legal-decision,:root[data-theme='light'] .legal-template,:root[data-theme='light'] .legal-faq,:root[data-theme='light'] .legal-related{background:var(--surface);border-color:var(--border-hi)}
 :root[data-theme='light'] .legal-faq-item{background:var(--surface-2);border-color:var(--border)}
 :root[data-theme='light'] .legal-back{border-color:var(--border-hi)}
+
+/* VISUAL WORKFLOWS */
+.workflow-showcase{max-width:1120px;margin:0 auto;display:grid;gap:14px}
+.workflow-panel{overflow:hidden;border:1px solid var(--border-hi);border-radius:18px;background:var(--surface)}
+.workflow-panel[open]{border-color:rgba(202,160,76,.4);box-shadow:0 18px 48px rgba(0,0,0,.14)}
+.workflow-panel summary{display:grid;grid-template-columns:auto minmax(0,1fr) auto auto;align-items:center;gap:16px;padding:19px 22px;cursor:pointer;list-style:none}
+.workflow-panel summary::-webkit-details-marker{display:none}
+.workflow-panel-number{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--amber-dim);color:var(--amber-2);font-size:11px;font-weight:800;letter-spacing:.8px}
+.workflow-panel-copy{min-width:0}
+.workflow-panel-copy strong,.workflow-panel-copy small{display:block}
+.workflow-panel-copy strong{font-family:var(--display);font-size:18px;letter-spacing:-.3px}
+.workflow-panel-copy small{margin-top:4px;color:var(--text-2);font-size:12.5px;line-height:1.5}
+.workflow-plan{padding:5px 8px;border:1px solid rgba(202,160,76,.23);border-radius:999px;background:var(--amber-dim);color:var(--amber-2);font-size:10px;font-weight:800;letter-spacing:.5px;white-space:nowrap;text-transform:uppercase}
+.workflow-panel-toggle{display:grid;place-items:center;width:30px;height:30px;border:1px solid var(--border-hi);border-radius:50%;color:var(--text-2);font-size:21px;font-weight:400;line-height:1;transition:transform .18s}
+.workflow-panel[open] .workflow-panel-toggle{transform:rotate(45deg);color:var(--amber-2);border-color:rgba(202,160,76,.4)}
+.workflow-panel-content{padding:0 22px 24px;border-top:1px solid var(--border)}
+.workflow-step-list{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:22px 0;list-style:none}
+.workflow-step-list li{display:flex;gap:9px;min-width:0}
+.workflow-step-list>li>span{display:grid;place-items:center;flex:none;width:23px;height:23px;margin-top:1px;border-radius:50%;background:var(--amber-dim);color:var(--amber-2);font-size:10px;font-weight:800}
+.workflow-step-list strong{display:block;font-size:12px;line-height:1.35}
+.workflow-step-list p{margin:4px 0 0;color:var(--text-2);font-size:11px;line-height:1.48}
+.workflow-visual-grid{display:grid;grid-template-columns:minmax(0,1.12fr) minmax(0,.88fr);gap:16px;align-items:stretch}
+.workflow-figure{overflow:hidden;border:1px solid var(--border);border-radius:14px;background:var(--surface-2)}
+.workflow-figure figcaption{display:flex;flex-direction:column;gap:3px;padding:12px 14px;border-bottom:1px solid var(--border)}
+.workflow-figure figcaption span{color:var(--text-3);font-size:9.5px;font-weight:800;letter-spacing:.8px;text-transform:uppercase}
+.workflow-figure figcaption strong{font-size:12px;line-height:1.35}
+.workflow-figure img{display:block;width:100%;height:auto}
+.workflow-figure--illustration{background:#f8f7f2}
+.workflow-figure--illustration figcaption{background:rgba(255,255,255,.8);color:#1c1a16;border-color:rgba(41,38,31,.12)}
+.workflow-figure--illustration figcaption span{color:#777168}
+.workflow-figure--actual{display:flex;flex-direction:column}
+.workflow-figure--actual img{object-fit:contain;min-height:0;margin:auto}
+@media(max-width:820px){
+  .workflow-step-list{grid-template-columns:repeat(2,1fr)}
+  .workflow-visual-grid{grid-template-columns:1fr}
+}
+@media(max-width:560px){
+  .workflow-panel summary{grid-template-columns:auto minmax(0,1fr) auto;gap:11px;padding:16px}
+  .workflow-panel-copy strong{font-size:16px}
+  .workflow-panel-copy small{font-size:11.5px}
+  .workflow-plan{grid-column:2;justify-self:start;margin-top:-5px}
+  .workflow-panel-toggle{grid-column:3;grid-row:1;width:28px;height:28px}
+  .workflow-panel-content{padding:0 16px 16px}
+  .workflow-step-list{grid-template-columns:1fr;gap:13px;margin:18px 0}
+  .workflow-visual-grid{gap:12px}
+}
