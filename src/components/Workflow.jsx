@@ -138,15 +138,6 @@ export default function Workflow() {
             </summary>
 
             <div className="workflow-panel-content">
-              <ol className="workflow-step-list" aria-label={workflow.title + ' steps'}>
-                {workflow.steps.map(([title, body], stepIndex) => (
-                  <li key={title}>
-                    <span>{stepIndex + 1}</span>
-                    <div><strong>{title}</strong><p>{body}</p></div>
-                  </li>
-                ))}
-              </ol>
-
               <div className="workflow-visual-grid">
                 <figure className="workflow-figure workflow-figure--illustration">
                   <figcaption><span>Illustrative workflow diagram (AI-generated)</span><strong>{workflow.title}</strong></figcaption>
@@ -158,6 +149,14 @@ export default function Workflow() {
                     loading="lazy"
                     decoding="async"
                   />
+                  <ol className="workflow-figure-steps" aria-label={workflow.title + ' steps'}>
+                    {workflow.steps.map(([title, body], stepIndex) => (
+                      <li key={title}>
+                        <span>{stepIndex + 1}</span>
+                        <div><strong>{title}</strong><p>{body}</p></div>
+                      </li>
+                    ))}
+                  </ol>
                 </figure>
 
                 <div className={'workflow-proof-stack workflow-proof-stack--' + workflow.screenshots.length}>
