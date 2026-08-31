@@ -62,7 +62,7 @@ export default function Header() {
         >
           <ThemeIcon isLight={isLight} />
         </button>
-        <a className="btn-cta" href="https://app.zipla.in/register">Start Free Trial</a>
+        <a className="btn-cta" href="/#demo">Get a Free WhatsApp Demo</a>
       </div>
     </header>
   )

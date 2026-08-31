@@ -29,13 +29,11 @@ export default function Hero() {
       <div className="hero-inner">
         <div className="hero-copy">
           <span className="eyebrow">Zipla POS for Indian food businesses</span>
-          <h1 id="hero-title">Restaurant POS Billing Software for India</h1>
-          <p className="sub">
-            <strong>Key takeaway:</strong> Zipla POS is restaurant POS billing software for India, built for restaurants, cafés, bakeries, sweet shops, QSRs and dhabas. Use it for counter billing, GST invoices and kitchen-order workflows.
-          </p>
+          <h1 id="hero-title">Simple billing for busy Indian restaurants.</h1>
+          <p className="sub">Make GST bills, send orders to the kitchen, and close your day faster.</p>
           <div className="hero-ctas">
-            <a className="btn-cta" href="https://app.zipla.in/register">Start 14-Day Free Trial</a>
-            <a className="btn-ghost" href="/#demo">Book Free WhatsApp Demo</a>
+            <a className="btn-cta" href="/#demo">Get a Free WhatsApp Demo</a>
+            <a className="hero-trial-link" href="https://app.zipla.in/register">Try free for 14 days</a>
           </div>
           <ul className="hero-assurances" aria-label="Trial details">
             <li><CheckIcon />14-day free trial</li>
@@ -49,7 +47,7 @@ export default function Hero() {
           <div className="hero-device">
             <div className="hero-device-bar">
               <span className="hero-device-brand"><span aria-hidden="true" />zipla POS</span>
-              <span className="hero-device-label">One workspace</span>
+              <span className="hero-device-label">Everything your counter needs</span>
             </div>
             <img
               src="/screenshots/ss-multi-device.webp"
@@ -65,7 +63,7 @@ export default function Hero() {
           </div>
           <div className="hero-callout hero-callout--kitchen">
             <span className="hero-callout-icon"><KitchenIcon /></span>
-            <span><strong>Kitchen orders</strong><small>Live KDS order queue</small></span>
+            <span><strong>Kitchen orders</strong><small>Kitchen sees every order</small></span>
           </div>
           <figcaption id="hero-product-caption">Actual Zipla POS product screenshot shown across desktop, tablet, and Android.</figcaption>
         </figure>
