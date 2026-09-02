@@ -35,11 +35,17 @@ export default function Hero() {
             <a className="btn-cta" href="/#demo">Get a Free WhatsApp Demo</a>
             <a className="hero-trial-link" href="https://app.zipla.in/register">Try free for 14 days</a>
           </div>
-          <ul className="hero-assurances" aria-label="Trial details">
-            <li><CheckIcon />14-day free trial</li>
-            <li><CheckIcon />No card required</li>
-            <li><CheckIcon />Android, tablet, and desktop</li>
-          </ul>
+          <div className="hero-trust-badges" style={{ marginTop: '16px', maxWidth: '480px', display: 'flex', flexDirection: 'column', gap: '8px' }}>
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px 12px', fontSize: '13px', fontWeight: 500, color: '#4a4036', alignItems: 'center' }}>
+              <span>✓ No Credit Card Required</span>
+              <span>✓ Setup in 5 Mins</span>
+              <span>✓ Offline Local Billing</span>
+            </div>
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
+              <span style={{ display: 'inline-flex', alignItems: 'center', background: 'rgba(0, 0, 0, 0.05)', border: '1px solid rgba(0, 0, 0, 0.08)', borderRadius: '4px', padding: '3px 8px', fontSize: '12px', fontWeight: 600, color: '#2d261e' }}>58mm / 80mm Thermal Printers</span>
+              <span style={{ display: 'inline-flex', alignItems: 'center', background: 'rgba(0, 0, 0, 0.05)', border: '1px solid rgba(0, 0, 0, 0.08)', borderRadius: '4px', padding: '3px 8px', fontSize: '12px', fontWeight: 600, color: '#2d261e' }}>Android, Tablet & PC</span>
+            </div>
+          </div>
         </div>
 
         <figure className="hero-product" aria-labelledby="hero-product-caption">
