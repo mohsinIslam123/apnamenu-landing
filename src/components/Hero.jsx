@@ -26,11 +26,11 @@ function KitchenIcon() {
 export default function Hero() {
   return (
     <section className="hero" aria-labelledby="hero-title">
-      <div className="hero-inner">
+      <div className="hero-inner" style={{ alignItems: 'flex-start' }}>
         <div className="hero-copy">
-          <span className="eyebrow">Zipla POS for Indian food businesses</span>
-          <h1 id="hero-title">Simple billing for busy Indian restaurants.</h1>
-          <p className="sub">Make GST bills, send orders to the kitchen, and close your day faster.</p>
+          <span className="eyebrow" style={{ marginTop: 0, marginBottom: '10px', display: 'inline-block' }}>Zipla POS for Indian food businesses</span>
+          <h1 id="hero-title" style={{ marginTop: 0, marginBottom: '16px' }}>Simple billing for busy Indian restaurants.</h1>
+          <p className="sub" style={{ marginTop: 0, marginBottom: '24px' }}>Make GST bills, send orders to the kitchen, and close your day faster.</p>
           <div className="hero-ctas">
             <a className="btn-cta" href="/#demo">Get a Free WhatsApp Demo</a>
             <a className="hero-trial-link" href="https://app.zipla.in/register">Try free for 14 days</a>
