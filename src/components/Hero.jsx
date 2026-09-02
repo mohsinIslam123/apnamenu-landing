@@ -35,15 +35,25 @@ export default function Hero() {
             <a className="btn-cta" href="/#demo">Get a Free WhatsApp Demo</a>
             <a className="hero-trial-link" href="https://app.zipla.in/register">Try free for 14 days</a>
           </div>
-          <div className="hero-trust-badges" style={{ marginTop: '16px', maxWidth: '480px', display: 'flex', flexDirection: 'column', gap: '8px' }}>
-            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px 12px', fontSize: '13px', fontWeight: 500, color: '#4a4036', alignItems: 'center' }}>
-              <span>✓ No Credit Card Required</span>
-              <span>✓ Setup in 5 Mins</span>
-              <span>✓ Offline Local Billing</span>
+          <div className="hero-trust-badges" style={{ marginTop: '16px', maxWidth: '480px', display: 'flex', flexDirection: 'column', gap: '8px', color: 'inherit' }}>
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px 14px', fontSize: '13px', fontWeight: 500, opacity: 0.9, alignItems: 'center' }}>
+              <span style={{ display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
+                <span style={{ fontWeight: 700 }}>✓</span> No Credit Card Required
+              </span>
+              <span style={{ display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
+                <span style={{ fontWeight: 700 }}>✓</span> Setup in 5 Mins
+              </span>
+              <span style={{ display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
+                <span style={{ fontWeight: 700 }}>✓</span> Offline Local Billing
+              </span>
             </div>
-            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
-              <span style={{ display: 'inline-flex', alignItems: 'center', background: 'rgba(0, 0, 0, 0.05)', border: '1px solid rgba(0, 0, 0, 0.08)', borderRadius: '4px', padding: '3px 8px', fontSize: '12px', fontWeight: 600, color: '#2d261e' }}>58mm / 80mm Thermal Printers</span>
-              <span style={{ display: 'inline-flex', alignItems: 'center', background: 'rgba(0, 0, 0, 0.05)', border: '1px solid rgba(0, 0, 0, 0.08)', borderRadius: '4px', padding: '3px 8px', fontSize: '12px', fontWeight: 600, color: '#2d261e' }}>Android, Tablet & PC</span>
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginTop: '2px' }}>
+              <span style={{ display: 'inline-flex', alignItems: 'center', background: 'rgba(127, 127, 127, 0.12)', border: '1px solid rgba(127, 127, 127, 0.25)', borderRadius: '6px', padding: '4px 10px', fontSize: '12px', fontWeight: 600, opacity: 0.95, whiteSpace: 'nowrap', cursor: 'default', userSelect: 'none' }}>
+                58mm / 80mm Thermal Printers
+              </span>
+              <span style={{ display: 'inline-flex', alignItems: 'center', background: 'rgba(127, 127, 127, 0.12)', border: '1px solid rgba(127, 127, 127, 0.25)', borderRadius: '6px', padding: '4px 10px', fontSize: '12px', fontWeight: 600, opacity: 0.95, whiteSpace: 'nowrap', cursor: 'default', userSelect: 'none' }}>
+                Android, Tablet & PC
+              </span>
             </div>
           </div>
         </div>
