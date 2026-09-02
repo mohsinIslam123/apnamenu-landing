@@ -12,7 +12,7 @@ const TYPES = [
 ]
 
 export default function DemoForm() {
-  const [form, setForm] = useState({ name: '', phone: '', city: '', business: '', type: '' })
+  const [form, setForm] = useState({ name: '', phone: '', type: '' })
   const [errors, setErrors] = useState({})
   const [submitted, setSubmitted] = useState(false)
 
@@ -28,8 +28,6 @@ export default function DemoForm() {
     var e = {}
     if (!form.name.trim()) e.name = 'Name required'
     if (form.phone.replace(/\D/g, '').length < 10) e.phone = '10-digit number required'
-    if (!form.city.trim()) e.city = 'City required'
-    if (!form.business.trim()) e.business = 'Business name required'
     if (!form.type) e.type = 'Select business type'
     return e
   }
@@ -42,8 +40,6 @@ export default function DemoForm() {
       '',
       'Name: ' + form.name,
       'Phone: ' + form.phone,
-      'City: ' + form.city,
-      'Business: ' + form.business,
       'Type: ' + form.type,
     ].join('\n')
     window.open('https://wa.me/' + WHATSAPP_NUMBER + '?text=' + encodeURIComponent(msg), '_blank', 'noopener,noreferrer')
@@ -81,16 +77,6 @@ export default function DemoForm() {
             <input id="df-phone" type="tel" placeholder="9876543210" value={form.phone} onChange={set('phone')} />
             {errors.phone && <span className="df-err">{errors.phone}</span>}
           </div>
-          <div className="df-field">
-            <label htmlFor="df-city">City</label>
-            <input id="df-city" type="text" placeholder="Delhi, Mumbai, Lucknow..." value={form.city} onChange={set('city')} />
-            {errors.city && <span className="df-err">{errors.city}</span>}
-          </div>
-          <div className="df-field">
-            <label htmlFor="df-business">Business Name</label>
-            <input id="df-business" type="text" placeholder="Sharma Dhaba" value={form.business} onChange={set('business')} />
-            {errors.business && <span className="df-err">{errors.business}</span>}
-          </div>
         </div>
         <div className="df-field df-field--full">
           <label htmlFor="df-type">Business Type</label>
@@ -103,7 +89,7 @@ export default function DemoForm() {
         <button className="btn-cta df-submit" onClick={handleSubmit}>
           Get Free Demo on WhatsApp
         </button>
-        <p className="df-note">Free demo. No card required.</p>
+        <p className="df-note" style={{ marginTop: '8px', fontSize: '13px', textAlign: 'center', opacity: 0.8 }}>✓ Instant setup • ✓ No credit card required</p>
       </div>
     </section>
   )

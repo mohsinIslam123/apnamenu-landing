@@ -140,7 +140,7 @@ export default function Workflow() {
             <div className="workflow-panel-content">
               <div className="workflow-visual-grid">
                 <figure className="workflow-figure workflow-figure--illustration">
-                  <figcaption><span>Illustrative workflow diagram (AI-generated)</span><strong>{workflow.title}</strong></figcaption>
+                  <figcaption><span>ILLUSTRATIVE WORKFLOW</span><strong>{workflow.title}</strong></figcaption>
                   <img
                     src={workflow.illustration}
                     alt={workflow.illustrationAlt}
