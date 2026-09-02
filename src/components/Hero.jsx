@@ -66,11 +66,14 @@ export default function Hero() {
               <span className="hero-device-label">Everything your counter needs</span>
             </div>
             <img
-              src="/screenshots/ss-multi-device.webp"
-              alt="Zipla POS dashboard shown on desktop, tablet, and Android phone"
+              src="/screenshots/ss-new-order.webp"
+              alt="Zipla POS order billing interface on desktop and tablet"
               width="1232"
               height="860"
+              loading="eager"
+              fetchPriority="high"
               decoding="async"
+              style={{ width: '100%', height: 'auto', display: 'block', borderRadius: '8px' }}
             />
           </div>
           <div className="hero-callout hero-callout--billing">
@@ -81,7 +84,7 @@ export default function Hero() {
             <span className="hero-callout-icon"><KitchenIcon /></span>
             <span><strong>Kitchen orders</strong><small>Kitchen sees every order</small></span>
           </div>
-          <figcaption id="hero-product-caption">Actual Zipla POS product screenshot shown across desktop, tablet, and Android.</figcaption>
+          <figcaption id="hero-product-caption">Actual Zipla POS order billing and counter interface.</figcaption>
         </figure>
       </div>
     </section>
