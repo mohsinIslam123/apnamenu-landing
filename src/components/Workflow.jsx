@@ -57,28 +57,28 @@ const WORKFLOWS = [
     ],
   },
   {
-    id: 'ai-menu-scan',
-    title: 'AI Menu Scan',
-    plan: 'Starter & Pro',
-    summary: 'Use a menu photo, review the detected items, then import the items you approve.',
+    id: 'menu-setup',
+    title: 'Menu Setup and Review',
+    plan: 'Illustrative',
+    summary: 'Review a menu-setup concept, then confirm the current item-management process in a demo.',
     illustration: '/workflows/ai-menu-scan-workflow-v2.webp',
-    illustrationAlt: 'Illustrative four-step AI menu scan workflow with visible food items, item review and a live menu',
+    illustrationAlt: 'Illustrative menu-setup concept with visible food items, item review and a live menu',
     illustrationWidth: 1439,
     illustrationHeight: 810,
     screenshots: [
       {
         src: '/workflows/ai-menu-review-screen.webp',
-        alt: 'Actual Zipla POS menu review screen showing detected menu items before import',
+        alt: 'Illustrative Zipla POS menu-review concept showing item details before menu use',
         width: 867,
         height: 1000,
-        caption: 'Actual Zipla POS menu-review screen.',
+        caption: 'Illustrative menu-review concept.',
       },
     ],
     steps: [
-      ['Upload menu photo', 'Take a quick photo of paper menu or board.'],
-      ['AI item extraction', 'System recognizes dishes, prices, and categories.'],
-      ['Review & edit', 'Adjust pricing, taxes, or food tags in one view.'],
-      ['Publish to menu', 'Import approved items straight to live POS billing.'],
+      ['Prepare menu items', 'Collect the names, prices, and categories you want to add.'],
+      ['Review item details', 'Check prices, taxes, and categories before using the menu.'],
+      ['Confirm the setup path', 'Use a demo to confirm the current menu-management process.'],
+      ['Use the menu in billing', 'Select approved items in the counter billing workflow.'],
     ],
   },
   {
@@ -283,6 +283,16 @@ export default function Workflow() {
           color: #f4f4f5;
           background-color: rgba(255, 255, 255, 0.1);
           border-color: rgba(255, 255, 255, 0.2);
+        }
+        .workflow-plan-badge--illustrative {
+          color: #166534;
+          background-color: #dcfce7;
+          border: 1.5px solid #86efac;
+        }
+        [data-theme=dark] .workflow-plan-badge--illustrative {
+          color: #86efac;
+          background-color: rgba(34, 197, 94, 0.14);
+          border-color: rgba(134, 239, 172, 0.36);
         }
         .workflow-toggle-icon {
           width: 32px;
@@ -489,13 +499,14 @@ export default function Workflow() {
           How does restaurant POS billing work? (Step-by-Step Workflow)
         </h2>
         <p className="workflow-desc">
-          See the actual operating steps. Each step pairs the simplified workflow diagram with live Zipla POS software screens so you know exactly how orders flow before starting your trial.
+          See the operating steps. Each panel pairs an actual Zipla POS screen with a clearly labelled illustrative concept where the current workflow needs confirmation.
         </p>
       </div>
 
       <div className="workflow-showcase">
         {WORKFLOWS.map((workflow, index) => {
           const isProOnly = workflow.plan === 'Pro'
+          const isIllustrative = workflow.plan === 'Illustrative'
           return (
             <details className="workflow-panel" key={workflow.id} name="workflow-accordion" open={index === 0}>
               <summary className="workflow-summary-btn">
@@ -507,7 +518,7 @@ export default function Workflow() {
                   </div>
                 </div>
                 <div className="workflow-summary-right">
-                  <span className={isProOnly ? 'workflow-plan-badge workflow-plan-badge--pro' : 'workflow-plan-badge workflow-plan-badge--starter'}>
+                  <span className={isProOnly ? 'workflow-plan-badge workflow-plan-badge--pro' : isIllustrative ? 'workflow-plan-badge workflow-plan-badge--illustrative' : 'workflow-plan-badge workflow-plan-badge--starter'}>
                     {workflow.plan}
                   </span>
                   <span className="workflow-toggle-icon" aria-hidden="true">+</span>
@@ -531,7 +542,7 @@ export default function Workflow() {
                   <div className={'workflow-proof-stack workflow-proof-stack--' + workflow.screenshots.length}>
                     {workflow.screenshots.map((screenshot) => (
                       <figure className="workflow-figure workflow-figure--actual" key={screenshot.src}>
-                        <figcaption><span>Actual Zipla POS screen</span><strong>{screenshot.caption}</strong></figcaption>
+                        <figcaption><span>{isIllustrative ? 'ILLUSTRATIVE CONCEPT' : 'Actual Zipla POS screen'}</span><strong>{screenshot.caption}</strong></figcaption>
                         <img
                           src={screenshot.src}
                           alt={screenshot.alt}
@@ -565,8 +576,8 @@ export default function Workflow() {
       </div>
 
       <div className="workflow-bridge-cta">
-        <a href="#demo-form" className="workflow-bridge-link">
-          Prefer a live walkthrough on your phone or counter? Book a 5-minute WhatsApp demo &rarr;
+        <a href="#demo" className="workflow-bridge-link">
+          Prefer a live walkthrough on your phone or counter? Book a WhatsApp demo &rarr;
         </a>
       </div>
     </section>

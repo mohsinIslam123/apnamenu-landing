@@ -1,7 +1,7 @@
 const DECISIONS = [
   {
     need: 'Counter billing and GST invoices',
-    answer: <>Start with <strong>Starter</strong>: Counter POS Billing, Auto GST Bill, inventory + low-stock alerts, payment modes, and staff roles. <a href="/#pricing">See plan pricing</a>.</>,
+    answer: <>Start with <strong>Starter</strong> for counter POS billing, GST invoices, and payment-mode tracking. <a href="/#pricing">See plan pricing</a>.</>,
   },
   {
     need: 'Table orders and kitchen coordination',

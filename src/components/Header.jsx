@@ -126,7 +126,7 @@ export default function Header() {
         >
           <ThemeIcon isLight={isLight} />
         </button>
-        <a className="btn-cta" href="/#demo-form">Get a Free WhatsApp Demo</a>
+        <a className="btn-cta" href="/#demo">Get a Free WhatsApp Demo</a>
       </div>
     </header>
   )

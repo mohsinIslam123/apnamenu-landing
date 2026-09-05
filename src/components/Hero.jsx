@@ -23,36 +23,37 @@ function KitchenIcon() {
   )
 }
 
-export default function Hero() {
+export default function Hero({ takeaway }) {
   return (
     <section className="hero" aria-labelledby="hero-title">
       <div className="hero-inner" style={{ alignItems: 'flex-start' }}>
         <div className="hero-copy">
           <span className="eyebrow" style={{ marginTop: 0, marginBottom: '10px', display: 'inline-block' }}>Zipla POS for Indian food businesses</span>
-          <h1 id="hero-title" style={{ marginTop: 0, marginBottom: '16px' }}>Simple billing for busy Indian restaurants.</h1>
+          <h1 id="hero-title" style={{ marginTop: 0, marginBottom: '16px' }}>Restaurant POS Billing Software for India</h1>
           <p className="sub" style={{ marginTop: 0, marginBottom: '24px' }}>Make GST bills, send orders to the kitchen, and close your day faster.</p>
+          <p className="hero-key-takeaway"><strong>Key takeaway:</strong> {takeaway}</p>
           <div className="hero-ctas">
             <a className="btn-cta" href="/#demo">Get a Free WhatsApp Demo</a>
             <a className="hero-trial-link" href="https://app.zipla.in/register">Try free for 14 days</a>
           </div>
-          <div className="hero-trust-badges" style={{ marginTop: '16px', maxWidth: '480px', display: 'flex', flexDirection: 'column', gap: '8px', color: 'inherit' }}>
+          <div className="hero-assurances">
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px 14px', fontSize: '13px', fontWeight: 500, opacity: 0.9, alignItems: 'center' }}>
               <span style={{ display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
                 <span style={{ fontWeight: 700 }}>✓</span> No Credit Card Required
               </span>
+                <span style={{ display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
+                  <span style={{ fontWeight: 700 }}>✓</span> 14-day free trial
+                </span>
               <span style={{ display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
-                <span style={{ fontWeight: 700 }}>✓</span> Setup in 5 Mins
-              </span>
-              <span style={{ display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
-                <span style={{ fontWeight: 700 }}>✓</span> Offline Local Billing
+                <span style={{ fontWeight: 700 }}>✓</span> Works after menu loads
               </span>
             </div>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginTop: '2px' }}>
               <span style={{ display: 'inline-flex', alignItems: 'center', background: 'rgba(127, 127, 127, 0.12)', border: '1px solid rgba(127, 127, 127, 0.25)', borderRadius: '6px', padding: '4px 10px', fontSize: '12px', fontWeight: 600, opacity: 0.95, whiteSpace: 'nowrap', cursor: 'default', userSelect: 'none' }}>
-                58mm / 80mm Thermal Printers
+                Supported thermal printing
               </span>
               <span style={{ display: 'inline-flex', alignItems: 'center', background: 'rgba(127, 127, 127, 0.12)', border: '1px solid rgba(127, 127, 127, 0.25)', borderRadius: '6px', padding: '4px 10px', fontSize: '12px', fontWeight: 600, opacity: 0.95, whiteSpace: 'nowrap', cursor: 'default', userSelect: 'none' }}>
-                Android, Tablet & PC
+                Android, tablet & Windows PC
               </span>
             </div>
           </div>
@@ -67,7 +68,7 @@ export default function Hero() {
             </div>
             <img
               src="/screenshots/ss-new-order.webp"
-              alt="Zipla POS order billing interface on desktop and tablet"
+              alt="Zipla POS new-order billing interface"
               width="1232"
               height="860"
               loading="eager"

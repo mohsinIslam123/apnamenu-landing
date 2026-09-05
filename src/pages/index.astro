@@ -19,10 +19,10 @@ const CUSTOMER_VIDEOS = [];
 const PAGE_TITLE = 'Zipla POS — Restaurant POS Billing Software for India';
 
 const PAGE_DESCRIPTION =
-  'Zipla POS is restaurant POS billing software for India, for restaurants, cafés, bakeries, QSRs and sweet shops. Start a 14-day free trial; no card required.';
+  'Zipla POS is restaurant POS billing software for India, for restaurants, cafés, bakeries, QSRs, sweet shops and dhabas. Start a 14-day free trial; no card required.';
 
 const TOP_TAKEAWAY =
-  'Zipla POS helps restaurants, cafés, bakeries, QSRs and sweet shops in India manage counter billing, GST invoices, kitchen workflows and QR ordering with a 14-day free trial and no card required.';
+  'Zipla POS helps restaurants, cafés, bakeries, QSRs, sweet shops and dhabas in India manage counter billing, GST invoices, kitchen workflows and QR ordering with a 14-day free trial and no card required.';
 
 const jsonLd = {
   '@context': 'https://schema.org',
@@ -30,7 +30,7 @@ const jsonLd = {
     {
       '@type': 'WebPage',
       '@id': 'https://zipla.in/#webpage',
-      url: 'https://zipla.in',
+      url: 'https://zipla.in/',
       name: PAGE_TITLE,
       description: PAGE_DESCRIPTION,
       abstract: TOP_TAKEAWAY,
@@ -84,7 +84,7 @@ const jsonLd = {
           name: 'How do I add my existing menu?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: 'Add it manually, or use AI scan to build it from a photo of your existing menu — 20 scans/year free in Starter.'
+          text: 'Use the Zipla menu-management workflow to add and review your items. Book a demo if you want help confirming the current setup process.'
           }
         },
         {
@@ -104,13 +104,13 @@ const jsonLd = {
 <Layout
   title={PAGE_TITLE}
   description={PAGE_DESCRIPTION}
-  canonical="https://zipla.in"
+  canonical="https://zipla.in/"
   jsonLd={jsonLd}
 >
   <Header client:load />
 
   <main aria-label="Zipla POS restaurant POS billing software for India">
-    <Hero />
+    <Hero takeaway={TOP_TAKEAWAY} />
     <TrustBar />
     <BuyerAnswer />
     <BusinessTypes />

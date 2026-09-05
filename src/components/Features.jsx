@@ -58,7 +58,7 @@ const CAPABILITIES = [
 
 export default function QuickAnswer() {
   return (
-    <section className="qa-section" aria-labelledby="qa-title">
+    <section className="qa-section" id="features" aria-labelledby="features-title">
       <style>{`
         .qa-section {
           padding: 3.5rem 1.25rem 4.5rem;
@@ -342,31 +342,31 @@ export default function QuickAnswer() {
       </div>
 
       <div className="qa-grid">
-        {/* LEFT COLUMN: AEO/GEO FOCUSED DEFINITION & TRUST POINTS */}
+        {/* LEFT COLUMN: FEATURE SUMMARY & TRUST POINTS */}
         <div>
-          <span className="qa-left-eyebrow">QUICK ANSWER</span>
-          <h2 id="qa-title" className="qa-left-title">
-            What is restaurant POS billing software?
+          <span className="qa-left-eyebrow">FEATURES</span>
+          <h2 id="features-title" className="qa-left-title">
+            Which food-business workflows does Zipla POS support?
           </h2>
           <p className="qa-def-p1">
-            Restaurant POS billing software is a system that brings food orders, GST invoices, kitchen orders, and day-close review into one workflow.
+            Start with the workflow that matches your outlet: counter billing, table orders and kitchen coordination, or weight-based and piece billing.
           </p>
           <p className="qa-def-p2">
-            Zipla POS is designed for Indian restaurants, cafés, bakeries, sweet shops, QSRs, and dhabas—whether you run a counter, tables, or weight-based billing.
+            The comparison below shows the relevant Zipla POS workflow and plan for each need.
           </p>
 
           <ul className="qa-key-points">
             <li className="qa-key-item">
               <CheckGreen />
-              <span><strong>Offline Local Billing:</strong> Keeps billing smoothly without internet lockouts</span>
+              <span><strong>Billing after menu loads:</strong> Bills can be created without internet; UPI and online payments need a connection</span>
             </li>
             <li className="qa-key-item">
               <CheckGreen />
-              <span><strong>Instant 5-Minute Setup:</strong> Runs on existing Android phone, tablet, or Windows PC</span>
+              <span><strong>Supported devices:</strong> Use an Android phone, tablet, or Windows PC with compatible printing</span>
             </li>
             <li className="qa-key-item">
               <CheckGreen />
-              <span><strong>Zero Commission:</strong> 100% flat yearly plans with no per-order fees</span>
+              <span><strong>Yearly plans:</strong> Starter ₹2,999/year and Pro ₹4,999/year</span>
             </li>
           </ul>
         </div>
@@ -387,7 +387,7 @@ export default function QuickAnswer() {
             <div className="qa-table-row">
               <div className="qa-need-col">Counter billing and GST invoices</div>
               <div className="qa-flow-col">
-                Start with <span className="qa-badge-starter">Starter</span>: Counter POS billing, auto GST invoices, inventory low-stock alerts, split payments, and staff roles.{' '}
+                Start with <span className="qa-badge-starter">Starter</span>: Counter POS billing, GST invoices, and payment-mode tracking.{' '}
                 <a href="#pricing" className="qa-link">See plan pricing &rarr;</a>
               </div>
             </div>
@@ -395,7 +395,7 @@ export default function QuickAnswer() {
             <div className="qa-table-row">
               <div className="qa-need-col">Table orders and kitchen coordination</div>
               <div className="qa-flow-col">
-                Choose <span className="qa-badge-pro">Pro</span> for Live Kitchen Display System (KDS), Table QR ordering, Bluetooth &amp; USB KOT auto-print, and detailed daily sales analytics.
+                Choose <span className="qa-badge-pro">Pro</span> for Live Kitchen Display System (KDS), Table QR ordering, and Bluetooth &amp; USB KOT auto-print.
               </div>
             </div>
 
@@ -404,7 +404,7 @@ export default function QuickAnswer() {
               <div className="qa-flow-col">
                 Use dedicated workflows for{' '}
                 <a href="/bakery-billing-software/" className="qa-link">Bakery</a> or{' '}
-                <a href="/sweet-shop-billing-software/" className="qa-link">Sweet Shop</a>{' '}
+                <a href="/sweet-shop-billing/" className="qa-link">Sweet Shop</a>{' '}
                 for items sold by weight, piece, or fixed box price.
               </div>
             </div>

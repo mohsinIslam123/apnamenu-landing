@@ -66,7 +66,7 @@ const BUSINESSES = [
     number: '01',
     name: 'Restaurants',
     title: 'Restaurant POS Software',
-    summary: 'Table layout, Live KDS routing, QR ordering, split bills, and auto GST invoicing.',
+    summary: 'Counter and table billing, KDS workflow, QR ordering, and GST invoicing.',
     icon: RestaurantIcon,
     href: '/restaurant-pos-software/',
     highlight: 'Dine-in & Full Service',
@@ -75,7 +75,7 @@ const BUSINESSES = [
     number: '02',
     name: 'Cafes',
     title: 'Cafe POS Software',
-    summary: 'Rapid counter service, combo bills, barista token display, and fast UPI checkouts.',
+    summary: 'Counter billing, payment-mode tracking, and an optional kitchen workflow for café service.',
     icon: CafeIcon,
     href: '/cafe-pos-software/',
     highlight: 'Fast Counter & Barista',
@@ -84,34 +84,34 @@ const BUSINESSES = [
     number: '03',
     name: 'Bakeries',
     title: 'Bakery Billing Software',
-    summary: 'Weighing scale sync, piece & pound pricing, advance custom cake booking, and batch tracking.',
+    summary: 'Billing for items sold by weight, piece, or fixed price at a bakery counter.',
     icon: BakeryIcon,
     href: '/bakery-billing-software/',
-    highlight: 'Weight & Advance Orders',
+    highlight: 'Weight & Piece Billing',
   },
   {
     number: '04',
     name: 'Sweet Shops',
     title: 'Sweet Shop Billing Software',
-    summary: 'High-speed mithai billing, automatic empty-box tare weight deduction, and rush-hour mode.',
+    summary: 'Billing for sweets and other counter items sold by weight, piece, or fixed price.',
     icon: SweetShopIcon,
-    href: '/sweet-shop-billing-software/',
-    highlight: 'Tare Weight & Box Pricing',
+    href: '/sweet-shop-billing/',
+    highlight: 'Weight & Piece Billing',
   },
   {
     number: '05',
     name: 'QSRs',
     title: 'QSR Billing Software',
-    summary: '3-second rapid order punching, kitchen printer auto-routing, and digital token screen.',
+    summary: 'Counter billing with an optional kitchen handoff for quick-service food businesses.',
     icon: QsrIcon,
     href: '/qsr-billing-software/',
-    highlight: 'High-Speed Token Billing',
+    highlight: 'Counter & Kitchen Workflow',
   },
   {
     number: '06',
     name: 'Dhabas',
     title: 'Dhaba Billing Software',
-    summary: '100% offline Android tablet billing, Bluetooth 58mm printer slips, and daily cash audit.',
+    summary: 'Counter billing after the menu loads, payment-mode tracking, and supported thermal printing.',
     icon: DhabaIcon,
     href: '/dhaba-billing-software/',
     highlight: 'Android & Bluetooth Print',
@@ -266,11 +266,11 @@ export default function BusinessTypes() {
         .biz-card-num {
           font-size: 1.15rem;
           font-weight: 850;
-          color: #a1a1aa;
+          color: #52525b;
           font-variant-numeric: tabular-nums;
         }
         [data-theme=dark] .biz-card-num {
-          color: #71717a;
+          color: #a1a1aa;
         }
         .biz-card-tag {
           font-size: 0.76rem;
@@ -354,11 +354,11 @@ export default function BusinessTypes() {
           <span className="biz-eyebrow">BUILT FOR YOUR SERVICE MODEL</span>
           <h2 id="business-types-title" className="biz-title">Who is Zipla POS for?</h2>
           <p className="biz-sub-answer">
-            Zipla POS is built specifically for Indian food businesses that require fast billing, accurate GST calculation, and zero complexity.
+            Zipla POS is built for Indian food businesses that need counter billing, GST invoices, and a clear operating workflow.
           </p>
         </div>
         <p className="biz-sub-instruction">
-          Select your outlet type below to explore how the billing flow, KOT auto-print, and weight scale adapt directly to your counter.
+          Select your outlet type below to compare the billing workflow relevant to your service model.
         </p>
       </div>
 
@@ -376,7 +376,7 @@ export default function BusinessTypes() {
                 <div className="biz-icon-box">
                   <Icon />
                 </div>
-                <span className="biz-card-num">{business.number}</span>
+                <span className="biz-card-num" aria-hidden="true">{business.number}</span>
               </div>
 
               <div className="biz-card-tag">For {business.name}</div>

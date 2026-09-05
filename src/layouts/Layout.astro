@@ -12,9 +12,9 @@ interface Props {
 const {
   title = 'Zipla POS — Restaurant POS Billing Software for India',
   description = 'Restaurant POS billing software for India — counter billing, GST invoices, kitchen display and QR ordering. 14-day free trial, no card required.',
-  canonical = 'https://zipla.in',
+  canonical = 'https://zipla.in/',
   ogImage = 'https://zipla.in/og-image.jpg',
-  ogImageAlt = 'Zipla POS billing dashboard shown across desktop, tablet, and Android phone',
+  ogImageAlt = 'Zipla POS logo on a dark background',
   robots,
   jsonLd,
 } = Astro.props;
@@ -24,22 +24,28 @@ const globalGraph = [
     "@type": "WebSite",
     "@id": "https://zipla.in/#website",
     "name": "Zipla POS",
-    "url": "https://zipla.in",
+    "url": "https://zipla.in/",
     "publisher": { "@id": "https://zipla.in/#organization" }
   },
   {
     "@type": "Organization",
     "@id": "https://zipla.in/#organization",
     "name": "Zipla POS",
-    "url": "https://zipla.in",
+    "url": "https://zipla.in/",
     "logo": { "@type": "ImageObject", "url": "https://zipla.in/zipla-logo.webp" },
-    "email": "support@zipla.in"
+    "email": "support@zipla.in",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "customer support",
+      "email": "support@zipla.in",
+      "telephone": "+91 7817851009"
+    }
   },
   {
     "@type": "SoftwareApplication",
     "@id": "https://zipla.in/#software",
     "name": "Zipla POS",
-    "url": "https://zipla.in",
+    "url": "https://zipla.in/",
     "applicationCategory": "BusinessApplication",
     "operatingSystem": "Web Browser",
     "description": "Restaurant POS billing software for Indian small businesses — counter billing, auto GST invoice, kitchen display, and QR table ordering.",

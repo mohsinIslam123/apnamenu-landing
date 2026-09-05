@@ -20,18 +20,17 @@ function Check() {
 const S = [
   'Fast Counter POS Billing',
   'GST & Non-GST Invoice Print',
-  'Inventory & Low Stock Alerts',
+  'Menu & Item Management',
   'Cash · UPI · Card Split Payments',
-  'Thermal Printer Support (58mm / 80mm)',
-  'Staff Roles (Owner & Cashier Logins)'
+  'Supported Thermal Printing',
+  'Payment-Mode Tracking'
 ]
 
 const P = [
   'Table QR Ordering (Customer Self-Order)',
   'Live Kitchen Display Screen (KDS)',
   'Bluetooth & USB KOT Auto-Print',
-  'AI Menu Scan & Bulk Item Setup',
-  'Detailed Daily Sales & Tax Reports'
+  'Day-Close Workflow'
 ]
 
 export default function Pricing() {
@@ -41,10 +40,10 @@ export default function Pricing() {
         <span className="eyebrow">Pricing</span>
         <h2 id="pricing-title">How much does Zipla POS cost?</h2>
         <p style={{ color: 'inherit', fontWeight: 600, fontSize: '1.02rem', lineHeight: '1.6', margin: '0 auto' }}>
-          <strong>Flat, Honest Pricing with Zero Commissions:</strong> No per-order cuts, no platform fees, and zero hardware lock-in. Purpose-built for Indian restaurants, cafés, bakeries, QSRs, sweet shops, and dhabas.
+          <strong>Simple yearly plans:</strong> Starter is ₹2,999/year and Pro is ₹4,999/year for Indian restaurants, cafés, bakeries, QSRs, sweet shops, and dhabas.
         </p>
         <p style={{ marginTop: '0.6rem', color: 'inherit', fontWeight: 500, fontSize: '0.92rem' }}>
-          All plans include full features during your 14-day free trial. Setup takes under 5 minutes on your existing devices.
+          Try the Zipla POS workflow for 14 days with no card required.
         </p>
       </div>
 
@@ -68,27 +67,6 @@ export default function Pricing() {
 
           <div style={{ fontSize: '0.8rem', fontWeight: 600, color: 'inherit', marginTop: '0.25rem', marginBottom: '0.75rem' }}>
             Flat Price • Zero Setup Fee • No Hidden Taxes
-          </div>
-
-          {/* 3-YEAR SAVINGS BADGE */}
-          <div
-            style={{
-              padding: '0.5rem 0.75rem',
-              borderRadius: '8px',
-              border: '1.5px solid rgba(127, 127, 127, 0.35)',
-              backgroundColor: 'rgba(127, 127, 127, 0.08)',
-              fontSize: '0.82rem',
-              fontWeight: 600,
-              color: 'inherit',
-              marginBottom: '1.25rem',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'space-between',
-              gap: '0.5rem'
-            }}
-          >
-            <span><strong>3-Year Plan:</strong> ₹5,999</span>
-            <span style={{ color: '#16a34a', fontWeight: 800, fontSize: '0.78rem' }}>Save 33% (1 Yr Free)</span>
           </div>
 
           <ul className="price-list" style={{ paddingLeft: 0, listStyle: 'none', margin: 0 }}>
@@ -130,7 +108,7 @@ export default function Pricing() {
               Start 14-Day Free Trial
             </a>
             <div style={{ fontSize: '0.78rem', fontWeight: 600, color: 'inherit', textAlign: 'center', marginTop: '0.5rem' }}>
-              No credit card required • Instant activation
+              No credit card required
             </div>
           </div>
         </div>
@@ -157,27 +135,6 @@ export default function Pricing() {
 
           <div style={{ fontSize: '0.8rem', fontWeight: 600, color: 'inherit', marginTop: '0.25rem', marginBottom: '0.75rem' }}>
             Flat Price • Zero Setup Fee • No Hidden Taxes
-          </div>
-
-          {/* 3-YEAR SAVINGS BADGE */}
-          <div
-            style={{
-              padding: '0.5rem 0.75rem',
-              borderRadius: '8px',
-              border: '1.5px solid rgba(127, 127, 127, 0.4)',
-              backgroundColor: 'rgba(127, 127, 127, 0.1)',
-              fontSize: '0.82rem',
-              fontWeight: 600,
-              color: 'inherit',
-              marginBottom: '1.25rem',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'space-between',
-              gap: '0.5rem'
-            }}
-          >
-            <span><strong>3-Year Plan:</strong> ₹9,899</span>
-            <span style={{ color: '#16a34a', fontWeight: 800, fontSize: '0.78rem' }}>Save 33% (1 Yr Free)</span>
           </div>
 
           <ul className="price-list" style={{ paddingLeft: 0, listStyle: 'none', margin: 0 }}>
@@ -232,7 +189,7 @@ export default function Pricing() {
               Start 14-Day Free Trial
             </a>
             <div style={{ fontSize: '0.78rem', fontWeight: 600, color: 'inherit', textAlign: 'center', marginTop: '0.5rem' }}>
-              No credit card required • Instant activation
+              No credit card required
             </div>
           </div>
         </div>
@@ -263,12 +220,12 @@ export default function Pricing() {
             Zero Proprietary Hardware Lock-In
           </div>
           <div style={{ fontSize: '0.9rem', fontWeight: 500, color: 'inherit', marginTop: '0.25rem' }}>
-            Use your existing Android phone, tablet, Windows PC, or 58mm/80mm Bluetooth &amp; USB thermal printers.
+            Use supported Android, tablet, and Windows PC setups with compatible thermal printers.
           </div>
         </div>
 
         <a
-          href="#demo-form"
+          href="#demo"
           style={{
             color: 'inherit',
             textDecoration: 'none',
@@ -283,7 +240,7 @@ export default function Pricing() {
             marginTop: '0.25rem'
           }}
         >
-          Prefer a guided setup? Book a 5-minute live demo &rarr;
+          Prefer a guided setup? Book a live demo &rarr;
         </a>
       </div>
     </section>

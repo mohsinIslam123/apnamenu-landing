@@ -3,7 +3,7 @@ export default function Footer() {
     <footer>
       <div className="footer-inner">
         <div className="brand">
-          <a href="/"><img src="/zipla-logo.webp" alt="Zipla POS" style={{height:'28px',display:'block',width:'auto'}} /></a>
+          <a href="/"><img src="/zipla-logo.webp" alt="Zipla POS" width="640" height="211" loading="lazy" decoding="async" style={{height:'28px',display:'block',width:'auto'}} /></a>
         </div>
         <div className="footer-note">&#169; 2026 Zipla POS. Made in India.</div>
         <div className="footer-links"><a href="/restaurant-pos-software/">Restaurant POS</a><a href="/cafe-pos-software/">Cafe POS</a><a href="/bakery-billing-software/">Bakery Billing</a><a href="/sweet-shop-billing/">Sweet Shop Billing</a><a href="/qsr-billing-software/">QSR Billing</a><a href="/dhaba-billing-software/">Dhaba Billing</a><a href="/blog/">Blog</a><a href="/faq/">FAQ</a></div>
