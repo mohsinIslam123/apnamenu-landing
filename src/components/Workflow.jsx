@@ -139,7 +139,7 @@ export default function Workflow() {
           display: inline-block;
           margin-bottom: 0.5rem;
         }
-        [data-theme="dark"] .workflow-eyebrow {
+        [data-theme=dark] .workflow-eyebrow {
           color: #fbbf24;
         }
         .workflow-title-text {
@@ -149,7 +149,7 @@ export default function Workflow() {
           margin: 0 0 0.85rem;
           color: #09090b;
         }
-        [data-theme="dark"] .workflow-title-text {
+        [data-theme=dark] .workflow-title-text {
           color: #f4f4f5;
         }
         .workflow-desc {
@@ -159,7 +159,7 @@ export default function Workflow() {
           line-height: 1.6;
           margin: 0 auto;
         }
-        [data-theme="dark"] .workflow-desc {
+        [data-theme=dark] .workflow-desc {
           color: #d4d4d8;
         }
         .workflow-showcase {
@@ -179,12 +179,12 @@ export default function Workflow() {
           border-color: #d97706;
           box-shadow: 0 8px 24px rgba(0, 0, 0, 0.07);
         }
-        [data-theme="dark"] .workflow-panel {
+        [data-theme=dark] .workflow-panel {
           background-color: #18181b;
           border-color: rgba(255, 255, 255, 0.12);
           box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
         }
-        [data-theme="dark"] .workflow-panel[open] {
+        [data-theme=dark] .workflow-panel[open] {
           border-color: #fbbf24;
           box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
         }
@@ -222,10 +222,10 @@ export default function Workflow() {
         .workflow-panel[open] .workflow-panel-number {
           color: #b45309;
         }
-        [data-theme="dark"] .workflow-panel-number {
+        [data-theme=dark] .workflow-panel-number {
           color: #a1a1aa;
         }
-        [data-theme="dark"] .workflow-panel[open] .workflow-panel-number {
+        [data-theme=dark] .workflow-panel[open] .workflow-panel-number {
           color: #fbbf24;
         }
         .workflow-panel-copy {
@@ -238,7 +238,7 @@ export default function Workflow() {
           font-weight: 850;
           color: #09090b;
         }
-        [data-theme="dark"] .workflow-panel-copy strong {
+        [data-theme=dark] .workflow-panel-copy strong {
           color: #f4f4f5;
         }
         .workflow-panel-copy small {
@@ -247,7 +247,7 @@ export default function Workflow() {
           color: #52525b;
           line-height: 1.45;
         }
-        [data-theme="dark"] .workflow-panel-copy small {
+        [data-theme=dark] .workflow-panel-copy small {
           color: #a1a1aa;
         }
         .workflow-summary-right {
@@ -269,7 +269,7 @@ export default function Workflow() {
           background-color: #fef3c7;
           border: 1.5px solid #fcd34d;
         }
-        [data-theme="dark"] .workflow-plan-badge--pro {
+        [data-theme=dark] .workflow-plan-badge--pro {
           color: #fbbf24;
           background-color: rgba(245, 158, 11, 0.18);
           border-color: rgba(251, 191, 36, 0.4);
@@ -279,7 +279,7 @@ export default function Workflow() {
           background-color: #f4f4f5;
           border: 1.5px solid #d4d4d8;
         }
-        [data-theme="dark"] .workflow-plan-badge--starter {
+        [data-theme=dark] .workflow-plan-badge--starter {
           color: #f4f4f5;
           background-color: rgba(255, 255, 255, 0.1);
           border-color: rgba(255, 255, 255, 0.2);
@@ -306,7 +306,7 @@ export default function Workflow() {
           border-top: 1.5px solid #e4e4e7;
           background-color: #fafafa;
         }
-        [data-theme="dark"] .workflow-panel-content {
+        [data-theme=dark] .workflow-panel-content {
           border-top-color: rgba(255, 255, 255, 0.08);
           background-color: #131316;
         }
@@ -330,7 +330,7 @@ export default function Workflow() {
           background-color: #ffffff;
           box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
         }
-        [data-theme="dark"] .workflow-figure {
+        [data-theme=dark] .workflow-figure {
           border-color: rgba(255, 255, 255, 0.1);
           background-color: #18181b;
         }
@@ -347,7 +347,7 @@ export default function Workflow() {
           color: #71717a;
           background-color: #f4f4f5;
         }
-        [data-theme="dark"] .workflow-figure figcaption {
+        [data-theme=dark] .workflow-figure figcaption {
           border-bottom-color: rgba(255, 255, 255, 0.08);
           background-color: rgba(255, 255, 255, 0.04);
           color: #a1a1aa;
@@ -355,7 +355,7 @@ export default function Workflow() {
         .workflow-figure figcaption strong {
           color: #09090b;
         }
-        [data-theme="dark"] .workflow-figure figcaption strong {
+        [data-theme=dark] .workflow-figure figcaption strong {
           color: #f4f4f5;
         }
         .workflow-figure img {
@@ -371,7 +371,7 @@ export default function Workflow() {
           border: 1.5px solid #e4e4e7;
           box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
         }
-        [data-theme="dark"] .workflow-steps-container {
+        [data-theme=dark] .workflow-steps-container {
           background-color: #18181b;
           border-color: rgba(255, 255, 255, 0.1);
         }
@@ -414,7 +414,7 @@ export default function Workflow() {
           flex-shrink: 0;
           margin-top: 2px;
         }
-        [data-theme="dark"] .workflow-step-num {
+        [data-theme=dark] .workflow-step-num {
           background-color: rgba(245, 158, 11, 0.2);
           color: #fbbf24;
           border-color: rgba(251, 191, 36, 0.35);
@@ -425,7 +425,7 @@ export default function Workflow() {
           font-weight: 850;
           color: #09090b;
         }
-        [data-theme="dark"] .workflow-step-text strong {
+        [data-theme=dark] .workflow-step-text strong {
           color: #f4f4f5;
         }
         .workflow-step-text p {
@@ -435,7 +435,7 @@ export default function Workflow() {
           color: #3f3f46;
           line-height: 1.45;
         }
-        [data-theme="dark"] .workflow-step-text p {
+        [data-theme=dark] .workflow-step-text p {
           color: #d4d4d8;
         }
         .workflow-proof-stack {
@@ -460,10 +460,10 @@ export default function Workflow() {
         .workflow-bridge-link:hover {
           color: #92400e;
         }
-        [data-theme="dark"] .workflow-bridge-link {
+        [data-theme=dark] .workflow-bridge-link {
           color: #fbbf24;
         }
-        [data-theme="dark"] .workflow-bridge-link:hover {
+        [data-theme=dark] .workflow-bridge-link:hover {
           color: #fef08a;
         }
         @media (max-width: 640px) {

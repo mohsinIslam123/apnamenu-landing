@@ -151,7 +151,7 @@ export default function BusinessTypes() {
           display: inline-block;
           margin-bottom: 0.5rem;
         }
-        [data-theme="dark"] .biz-eyebrow {
+        [data-theme=dark] .biz-eyebrow {
           color: #fbbf24;
         }
         .biz-title {
@@ -161,7 +161,7 @@ export default function BusinessTypes() {
           color: #09090b;
           margin: 0 0 0.85rem;
         }
-        [data-theme="dark"] .biz-title {
+        [data-theme=dark] .biz-title {
           color: #f4f4f5;
         }
         .biz-sub-answer {
@@ -171,7 +171,7 @@ export default function BusinessTypes() {
           color: #27272a;
           margin: 0;
         }
-        [data-theme="dark"] .biz-sub-answer {
+        [data-theme=dark] .biz-sub-answer {
           color: #d4d4d8;
         }
         .biz-sub-instruction {
@@ -181,7 +181,7 @@ export default function BusinessTypes() {
           color: #52525b;
           margin: 0;
         }
-        [data-theme="dark"] .biz-sub-instruction {
+        [data-theme=dark] .biz-sub-instruction {
           color: #a1a1aa;
         }
         .biz-grid {
@@ -224,16 +224,16 @@ export default function BusinessTypes() {
           border-color: #d97706;
           box-shadow: 0 0 0 3px rgba(217, 119, 6, 0.35);
         }
-        [data-theme="dark"] .biz-card {
+        [data-theme=dark] .biz-card {
           background-color: #18181b;
           border-color: rgba(255, 255, 255, 0.12);
           box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
         }
-        [data-theme="dark"] .biz-card:hover {
+        [data-theme=dark] .biz-card:hover {
           border-color: #fbbf24;
           box-shadow: 0 12px 28px rgba(251, 191, 36, 0.15);
         }
-        [data-theme="dark"] .biz-card:focus-visible {
+        [data-theme=dark] .biz-card:focus-visible {
           border-color: #fbbf24;
           box-shadow: 0 0 0 3px rgba(251, 191, 36, 0.35);
         }
@@ -258,7 +258,7 @@ export default function BusinessTypes() {
         .biz-card:hover .biz-icon-box {
           transform: scale(1.05);
         }
-        [data-theme="dark"] .biz-icon-box {
+        [data-theme=dark] .biz-icon-box {
           background-color: rgba(245, 158, 11, 0.18);
           color: #fbbf24;
           border-color: rgba(251, 191, 36, 0.35);
@@ -269,7 +269,7 @@ export default function BusinessTypes() {
           color: #a1a1aa;
           font-variant-numeric: tabular-nums;
         }
-        [data-theme="dark"] .biz-card-num {
+        [data-theme=dark] .biz-card-num {
           color: #71717a;
         }
         .biz-card-tag {
@@ -280,7 +280,7 @@ export default function BusinessTypes() {
           text-transform: uppercase;
           margin-bottom: 0.35rem;
         }
-        [data-theme="dark"] .biz-card-tag {
+        [data-theme=dark] .biz-card-tag {
           color: #fbbf24;
         }
         .biz-card-h3 {
@@ -290,7 +290,7 @@ export default function BusinessTypes() {
           color: #09090b;
           margin: 0 0 0.65rem;
         }
-        [data-theme="dark"] .biz-card-h3 {
+        [data-theme=dark] .biz-card-h3 {
           color: #f4f4f5;
         }
         .biz-card-body {
@@ -301,7 +301,7 @@ export default function BusinessTypes() {
           margin: 0 0 1.5rem;
           flex-grow: 1;
         }
-        [data-theme="dark"] .biz-card-body {
+        [data-theme=dark] .biz-card-body {
           color: #d4d4d8;
         }
         .biz-card-footer {
@@ -311,7 +311,7 @@ export default function BusinessTypes() {
           padding-top: 1rem;
           border-top: 1.5px solid #f4f4f5;
         }
-        [data-theme="dark"] .biz-card-footer {
+        [data-theme=dark] .biz-card-footer {
           border-top-color: rgba(255, 255, 255, 0.08);
         }
         .biz-highlight-badge {
@@ -323,7 +323,7 @@ export default function BusinessTypes() {
           padding: 3px 8px;
           border-radius: 6px;
         }
-        [data-theme="dark"] .biz-highlight-badge {
+        [data-theme=dark] .biz-highlight-badge {
           background-color: rgba(255, 255, 255, 0.08);
           border-color: rgba(255, 255, 255, 0.12);
           color: #d4d4d8;
@@ -341,10 +341,10 @@ export default function BusinessTypes() {
           gap: 0.65rem;
           color: #92400e;
         }
-        [data-theme="dark"] .biz-link-text {
+        [data-theme=dark] .biz-link-text {
           color: #fbbf24;
         }
-        [data-theme="dark"] .biz-card:hover .biz-link-text {
+        [data-theme=dark] .biz-card:hover .biz-link-text {
           color: #fef08a;
         }
       `}</style>

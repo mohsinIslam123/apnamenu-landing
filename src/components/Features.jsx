@@ -85,7 +85,7 @@ export default function QuickAnswer() {
           color: #18181b;
           box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
         }
-        [data-theme="dark"] .qa-cap-pill {
+        [data-theme=dark] .qa-cap-pill {
           background-color: #18181b;
           border-color: rgba(255, 255, 255, 0.12);
           color: #f4f4f5;
@@ -95,7 +95,7 @@ export default function QuickAnswer() {
           display: flex;
           align-items: center;
         }
-        [data-theme="dark"] .qa-cap-pill-icon {
+        [data-theme=dark] .qa-cap-pill-icon {
           color: #fbbf24;
         }
         .qa-grid {
@@ -119,7 +119,7 @@ export default function QuickAnswer() {
           display: inline-block;
           margin-bottom: 0.5rem;
         }
-        [data-theme="dark"] .qa-left-eyebrow {
+        [data-theme=dark] .qa-left-eyebrow {
           color: #fbbf24;
         }
         .qa-left-title {
@@ -129,7 +129,7 @@ export default function QuickAnswer() {
           color: #09090b;
           margin: 0 0 1.25rem;
         }
-        [data-theme="dark"] .qa-left-title {
+        [data-theme=dark] .qa-left-title {
           color: #f4f4f5;
         }
         .qa-def-p1 {
@@ -139,7 +139,7 @@ export default function QuickAnswer() {
           color: #18181b;
           margin-bottom: 0.85rem;
         }
-        [data-theme="dark"] .qa-def-p1 {
+        [data-theme=dark] .qa-def-p1 {
           color: #f4f4f5;
         }
         .qa-def-p2 {
@@ -149,7 +149,7 @@ export default function QuickAnswer() {
           color: #3f3f46;
           margin-bottom: 1.75rem;
         }
-        [data-theme="dark"] .qa-def-p2 {
+        [data-theme=dark] .qa-def-p2 {
           color: #d4d4d8;
         }
         .qa-key-points {
@@ -169,7 +169,7 @@ export default function QuickAnswer() {
           color: #18181b;
           line-height: 1.5;
         }
-        [data-theme="dark"] .qa-key-item {
+        [data-theme=dark] .qa-key-item {
           color: #f4f4f5;
         }
         .qa-right-card {
@@ -180,7 +180,7 @@ export default function QuickAnswer() {
           box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
           box-sizing: border-box;
         }
-        [data-theme="dark"] .qa-right-card {
+        [data-theme=dark] .qa-right-card {
           background-color: #18181b;
           border-color: rgba(255, 255, 255, 0.12);
           box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
@@ -192,7 +192,7 @@ export default function QuickAnswer() {
           margin: 0 0 0.45rem;
           line-height: 1.3;
         }
-        [data-theme="dark"] .qa-card-h3 {
+        [data-theme=dark] .qa-card-h3 {
           color: #f4f4f5;
         }
         .qa-card-sub {
@@ -202,7 +202,7 @@ export default function QuickAnswer() {
           margin: 0 0 1.5rem;
           line-height: 1.55;
         }
-        [data-theme="dark"] .qa-card-sub {
+        [data-theme=dark] .qa-card-sub {
           color: #a1a1aa;
         }
         .qa-table-wrap {
@@ -210,7 +210,7 @@ export default function QuickAnswer() {
           border-radius: 12px;
           overflow: hidden;
         }
-        [data-theme="dark"] .qa-table-wrap {
+        [data-theme=dark] .qa-table-wrap {
           border-color: rgba(255, 255, 255, 0.1);
         }
         .qa-table-header {
@@ -225,7 +225,7 @@ export default function QuickAnswer() {
           text-transform: uppercase;
           border-bottom: 1.5px solid #e4e4e7;
         }
-        [data-theme="dark"] .qa-table-header {
+        [data-theme=dark] .qa-table-header {
           background-color: rgba(255, 255, 255, 0.06);
           color: #fbbf24;
           border-bottom-color: rgba(255, 255, 255, 0.1);
@@ -241,7 +241,7 @@ export default function QuickAnswer() {
         .qa-table-row:last-child {
           border-bottom: none;
         }
-        [data-theme="dark"] .qa-table-row {
+        [data-theme=dark] .qa-table-row {
           border-bottom-color: rgba(255, 255, 255, 0.08);
         }
         .qa-need-col {
@@ -250,7 +250,7 @@ export default function QuickAnswer() {
           color: #09090b;
           line-height: 1.4;
         }
-        [data-theme="dark"] .qa-need-col {
+        [data-theme=dark] .qa-need-col {
           color: #f4f4f5;
         }
         .qa-flow-col {
@@ -259,7 +259,7 @@ export default function QuickAnswer() {
           color: #18181b;
           line-height: 1.6;
         }
-        [data-theme="dark"] .qa-flow-col {
+        [data-theme=dark] .qa-flow-col {
           color: #e4e4e7;
         }
         .qa-badge-starter {
@@ -273,7 +273,7 @@ export default function QuickAnswer() {
           border: 1px solid #d4d4d8;
           margin-right: 0.35rem;
         }
-        [data-theme="dark"] .qa-badge-starter {
+        [data-theme=dark] .qa-badge-starter {
           background-color: rgba(255, 255, 255, 0.1);
           color: #f4f4f5;
           border-color: rgba(255, 255, 255, 0.2);
@@ -289,7 +289,7 @@ export default function QuickAnswer() {
           border: 1px solid #fcd34d;
           margin-right: 0.35rem;
         }
-        [data-theme="dark"] .qa-badge-pro {
+        [data-theme=dark] .qa-badge-pro {
           background-color: rgba(245, 158, 11, 0.2);
           color: #fbbf24;
           border-color: rgba(251, 191, 36, 0.35);
@@ -303,10 +303,10 @@ export default function QuickAnswer() {
         .qa-link:hover {
           color: #92400e;
         }
-        [data-theme="dark"] .qa-link {
+        [data-theme=dark] .qa-link {
           color: #fbbf24;
         }
-        [data-theme="dark"] .qa-link:hover {
+        [data-theme=dark] .qa-link:hover {
           color: #fef08a;
         }
       `}</style>
