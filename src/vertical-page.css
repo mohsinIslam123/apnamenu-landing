@@ -7,10 +7,10 @@
 .vertical-breadcrumbs span[aria-hidden="true"]{color:var(--border-hi)}
 .vertical-hero{position:relative;padding:34px 0 88px;background:radial-gradient(ellipse 72% 56% at 83% 20%,rgba(202,160,76,.15),transparent 72%)}
 .vertical-hero::after{content:'';position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,rgba(10,11,18,.82) 0%,transparent 62%)}
-.vertical-hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,.88fr) minmax(400px,1.12fr);align-items:center;gap:clamp(36px,6vw,78px)}
+.vertical-hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,.9fr) minmax(440px,1.1fr);align-items:center;gap:clamp(30px,4vw,56px)}
 .vertical-eyebrow{display:inline-flex;align-items:center;gap:8px;margin-bottom:18px;color:var(--amber-2);font-size:11px;font-weight:800;letter-spacing:1.3px;text-transform:uppercase}
 .vertical-eyebrow::before{width:22px;height:1px;background:currentColor;content:''}
-.vertical-hero h1{max-width:610px;font-family:var(--display);font-size:clamp(38px,4vw,56px);font-weight:800;line-height:1.04;letter-spacing:-1.5px;margin:0 0 20px}
+.vertical-hero h1{max-width:610px;font-family:var(--display);font-size:clamp(36px,3.7vw,52px);font-weight:800;line-height:1.06;letter-spacing:-1.2px;margin:0 0 20px}
 .vertical-lead{max-width:570px;color:var(--text-2);font-size:17px;line-height:1.7;margin:0 0 28px}
 .vertical-actions{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:20px}
 .vertical-actions .btn-cta,.vertical-actions .btn-ghost{padding:13px 20px;font-size:14px}

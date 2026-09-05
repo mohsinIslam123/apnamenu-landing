@@ -309,6 +309,23 @@ export default function QuickAnswer() {
         [data-theme=dark] .qa-link:hover {
           color: #fef08a;
         }
+        @media (max-width: 620px) {
+          .qa-right-card {
+            padding: 1.25rem;
+          }
+          .qa-table-header,
+          .qa-table-row {
+            grid-template-columns: 1fr;
+          }
+          .qa-table-header {
+            gap: 0.3rem;
+            padding: 0.85rem 1rem;
+          }
+          .qa-table-row {
+            gap: 0.5rem;
+            padding: 1rem;
+          }
+        }
       `}</style>
 
       {/* TOP CAPABILITIES STRIP */}
