@@ -1,3 +1,19 @@
+@font-face {
+  font-family: 'Syne';
+  src: url('/fonts/syne-latin.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 700 800;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  src: url('/fonts/plus-jakarta-sans-latin.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 400 800;
+  font-display: swap;
+}
+
 :root {
   --bg:#0a0b12;--surface:#12141f;--surface-2:#1a1d2b;
   --border:rgba(226,230,255,0.07);--border-hi:rgba(226,230,255,0.14);
