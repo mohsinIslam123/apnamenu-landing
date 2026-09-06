@@ -144,6 +144,7 @@ export default function Workflow() {
           color: #fbbf24;
         }
         .workflow-title-text {
+          font-family: var(--display);
           font-weight: 850;
           font-size: clamp(1.85rem, 3.2vw, 2.45rem);
           line-height: 1.22;
@@ -235,6 +236,7 @@ export default function Workflow() {
           gap: 0.25rem;
         }
         .workflow-panel-copy strong {
+          font-family: var(--display);
           font-size: 1.2rem;
           font-weight: 850;
           color: #09090b;
@@ -432,6 +434,7 @@ export default function Workflow() {
         }
         .workflow-step-text strong {
           display: block;
+          font-family: var(--display);
           font-size: 0.94rem;
           font-weight: 850;
           color: #09090b;

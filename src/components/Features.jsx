@@ -123,6 +123,7 @@ export default function QuickAnswer() {
           color: #fbbf24;
         }
         .qa-left-title {
+          font-family: var(--display);
           font-weight: 850;
           font-size: clamp(2rem, 3.2vw, 2.5rem);
           line-height: 1.18;
@@ -186,6 +187,7 @@ export default function QuickAnswer() {
           box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
         }
         .qa-card-h3 {
+          font-family: var(--display);
           font-size: 1.35rem;
           font-weight: 850;
           color: #09090b;

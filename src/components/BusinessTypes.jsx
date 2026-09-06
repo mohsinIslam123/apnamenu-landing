@@ -155,6 +155,7 @@ export default function BusinessTypes() {
           color: #fbbf24;
         }
         .biz-title {
+          font-family: var(--display);
           font-weight: 850;
           font-size: clamp(2rem, 3.2vw, 2.5rem);
           line-height: 1.18;
@@ -284,6 +285,7 @@ export default function BusinessTypes() {
           color: #fbbf24;
         }
         .biz-card-h3 {
+          font-family: var(--display);
           font-size: 1.25rem;
           font-weight: 850;
           line-height: 1.3;
