@@ -104,8 +104,8 @@ export default function BusinessTypes() {
         html.dark .biz-section,
         body.dark .biz-section,
         .dark .biz-section,
-        [data-theme='dark'] .biz-section,
-        html[data-theme='dark'] .biz-section {
+        [data-theme=dark] .biz-section,
+        html[data-theme=dark] .biz-section {
           --biz-card-bg: #141417;
           --biz-card-border: #2a2a2f;
           --biz-card-text: #f4f4f5;
@@ -210,8 +210,8 @@ export default function BusinessTypes() {
         html.dark .biz-card,
         body.dark .biz-card,
         .dark .biz-card,
-        [data-theme='dark'] .biz-card,
-        html[data-theme='dark'] .biz-card {
+        [data-theme=dark] .biz-card,
+        html[data-theme=dark] .biz-card {
           box-shadow: 0 10px 28px rgba(0, 0, 0, 0.22);
         }
 
