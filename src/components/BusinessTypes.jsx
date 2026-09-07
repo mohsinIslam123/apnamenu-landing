@@ -85,6 +85,7 @@ export default function BusinessTypes() {
           --biz-scene-gold: #f5a623;
           --biz-scene-amber: #d97706;
           --biz-scene-warm: #fed7aa;
+          --biz-scene-accent-warm: #fed7aa;
           --biz-scene-cream: #fffbeb;
           --biz-scene-green: #15803d;
           --biz-scene-red: #dc2626;
@@ -123,6 +124,7 @@ export default function BusinessTypes() {
           --biz-scene-gold: #f5a623;
           --biz-scene-amber: #fbbf24;
           --biz-scene-warm: #9a3412;
+          --biz-scene-accent-warm: #9a3412;
           --biz-scene-cream: #fef3c7;
           --biz-scene-green: #16a34a;
           --biz-scene-red: #ef4444;
