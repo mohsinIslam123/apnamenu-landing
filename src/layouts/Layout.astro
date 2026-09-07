@@ -126,14 +126,6 @@ const GA_ID = 'G-48WXKXR3F1';
   <!-- JSON-LD Structured Data -->
   <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
 
-  <!-- Google Analytics 4 — replace G-XXXXXXXXXX with your Measurement ID -->
-  <script is:inline async src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}></script>
-  <script is:inline define:vars={{ GA_ID }}>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', GA_ID);
-  </script>
 
   <!-- Self-hosted fonts prevent external font swaps after first paint. -->
   <link rel="preload" href="/fonts/syne-latin.woff2" as="font" type="font/woff2" crossorigin />
@@ -141,5 +133,160 @@ const GA_ID = 'G-48WXKXR3F1';
 </head>
 <body>
   <slot />
+  <aside id="zipla-consent-banner" class="zipla-consent-banner" role="dialog" aria-labelledby="zipla-consent-title" aria-describedby="zipla-consent-copy" hidden>
+    <h2 id="zipla-consent-title">Help us improve Zipla.in</h2>
+    <p id="zipla-consent-copy">We use optional analytics to understand visits and improve this site. You can allow or reject analytics. Read our <a href="/privacy-policy/">Privacy Policy</a>.</p>
+    <div class="zipla-consent-actions">
+      <button type="button" class="zipla-consent-button zipla-consent-button--reject" data-zipla-consent="reject">Reject analytics</button>
+      <button type="button" class="zipla-consent-button zipla-consent-button--manage" data-zipla-consent="manage">Manage</button>
+      <button type="button" class="zipla-consent-button zipla-consent-button--accept" data-zipla-consent="accept">Allow analytics</button>
+    </div>
+  </aside>
+  <aside id="zipla-consent-preferences" class="zipla-consent-banner zipla-consent-preferences" role="dialog" aria-labelledby="zipla-preferences-title" hidden>
+    <h2 id="zipla-preferences-title">Privacy settings</h2>
+    <p>Analytics is optional. Choose whether Zipla.in may use GA4 analytics cookies.</p>
+    <div class="zipla-consent-actions">
+      <button type="button" class="zipla-consent-button zipla-consent-button--reject" data-zipla-consent="reject">Reject analytics</button>
+      <button type="button" class="zipla-consent-button zipla-consent-button--accept" data-zipla-consent="accept">Allow analytics</button>
+    </div>
+  </aside>
+  <script is:inline define:vars={{ GA_ID }}>
+    (function () {
+      const CONSENT_KEY = 'zipla-analytics-consent';
+      const consentBanner = document.getElementById('zipla-consent-banner');
+      const consentPreferences = document.getElementById('zipla-consent-preferences');
+
+      function getSavedConsent() {
+        try {
+          return window.localStorage.getItem(CONSENT_KEY);
+        } catch (error) {
+          return null;
+        }
+      }
+
+      let consentState = getSavedConsent();
+
+      function setConsent(value) {
+        consentState = value;
+        try {
+          window.localStorage.setItem(CONSENT_KEY, value);
+        } catch (error) {
+          // Continue for this page if storage is unavailable.
+        }
+      }
+
+      function setVisible(element, visible) {
+        if (element) element.hidden = !visible;
+      }
+
+      window.dataLayer = window.dataLayer || [];
+      window.gtag = window.gtag || function () {
+        window.dataLayer.push(arguments);
+      };
+      window.gtag('consent', 'default', {
+        analytics_storage: 'denied',
+        ad_storage: 'denied',
+        ad_user_data: 'denied',
+        ad_personalization: 'denied',
+        wait_for_update: 500
+      });
+
+      function updateAnalyticsConsent(granted) {
+        window.gtag('consent', 'update', {
+          analytics_storage: granted ? 'granted' : 'denied',
+          ad_storage: 'denied',
+          ad_user_data: 'denied',
+          ad_personalization: 'denied'
+        });
+      }
+
+      function loadAnalytics() {
+        if (window.__ziplaAnalyticsLoaded) {
+          updateAnalyticsConsent(true);
+          return;
+        }
+
+        updateAnalyticsConsent(true);
+        window.gtag('js', new Date());
+        window.gtag('config', GA_ID);
+
+        const analyticsScript = document.createElement('script');
+        analyticsScript.async = true;
+        analyticsScript.src = 'https://www.googletagmanager.com/gtag/js?id=' + encodeURIComponent(GA_ID);
+        document.head.appendChild(analyticsScript);
+        window.__ziplaAnalyticsLoaded = true;
+      }
+
+      window.ziplaTrack = function (eventName, parameters) {
+        if (consentState !== 'granted' || typeof window.gtag !== 'function') return;
+        window.gtag('event', eventName, parameters || {});
+      };
+
+      function hideConsent() {
+        setVisible(consentBanner, false);
+        setVisible(consentPreferences, false);
+      }
+
+      function showPreferences() {
+        setVisible(consentBanner, false);
+        setVisible(consentPreferences, true);
+        const focusTarget = consentPreferences && consentPreferences.querySelector('button');
+        if (focusTarget) focusTarget.focus();
+      }
+
+      function saveConsent(granted) {
+        setConsent(granted ? 'granted' : 'denied');
+        if (granted) loadAnalytics();
+        else updateAnalyticsConsent(false);
+        hideConsent();
+      }
+
+      document.addEventListener('click', function (event) {
+        const element = event.target instanceof Element ? event.target : null;
+        const consentControl = element && element.closest('[data-zipla-consent]');
+        if (consentControl) {
+          const action = consentControl.getAttribute('data-zipla-consent');
+          if (action === 'accept') saveConsent(true);
+          if (action === 'reject') saveConsent(false);
+          if (action === 'manage') showPreferences();
+          return;
+        }
+
+        const settingsButton = element && element.closest('#zipla-consent-settings');
+        if (settingsButton) {
+          showPreferences();
+          return;
+        }
+
+        const link = element && element.closest('a');
+        if (!link) return;
+        const href = link.getAttribute('href') || '';
+
+        if (href.indexOf('https://app.zipla.in/register') === 0) {
+          const ctaLocation = link.closest('.site-header') ? 'header'
+            : link.closest('.pricing') ? 'pricing'
+            : link.closest('.final-cta') ? 'final_cta'
+            : 'page';
+          window.ziplaTrack('trial_click', { cta_location: ctaLocation });
+          return;
+        }
+
+        if (href.indexOf('#demo') !== -1) {
+          window.ziplaTrack('demo_cta_click');
+          return;
+        }
+
+        if (href.indexOf('https://wa.me/') === 0) {
+          window.ziplaTrack('whatsapp_click');
+        }
+      });
+
+      if (consentState === 'granted') {
+        loadAnalytics();
+      } else if (!consentState) {
+        setVisible(consentBanner, true);
+      }
+    }());
+  </script>
 </body>
 </html>

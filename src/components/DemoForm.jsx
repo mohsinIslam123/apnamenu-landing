@@ -44,6 +44,7 @@ export default function DemoForm() {
       'Type: ' + form.type,
     ].join('\n')
     window.open('https://wa.me/' + WHATSAPP_NUMBER + '?text=' + encodeURIComponent(msg), '_blank', 'noopener,noreferrer')
+    if (typeof window.ziplaTrack === 'function') window.ziplaTrack('demo_submit')
     setSubmitted(true)
   }
 
@@ -90,6 +91,7 @@ export default function DemoForm() {
         <button type="submit" className="btn-cta df-submit">
           Get Free Demo on WhatsApp
         </button>
+        <p className="df-privacy-note">We use these details to contact you about your demo request. See our <a href="/privacy-policy/">Privacy Policy</a>.</p>
         <p className="df-note" style={{ marginTop: '8px', fontSize: '13px', textAlign: 'center', opacity: 0.8 }}>✓ No credit card required</p>
       </form>
     </section>

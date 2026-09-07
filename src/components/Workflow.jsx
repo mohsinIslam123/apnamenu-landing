@@ -68,11 +68,11 @@ const WORKFLOWS = [
     screenshots: [
       {
         src: '/workflows/ai-menu-review-screen.webp',
-        alt: 'Actual Zipla POS menu-review screen showing item details before menu use',
+        alt: 'Illustrative menu-review concept showing item details before menu use',
         width: 867,
         height: 1000,
-        label: 'ACTUAL ZIPLA POS SCREEN',
-        caption: 'Actual Zipla POS menu-review screen.',
+        label: 'ILLUSTRATIVE CONCEPT',
+        caption: 'Illustrative menu-review concept.',
       },
     ],
     steps: [
@@ -545,7 +545,7 @@ export default function Workflow() {
 
                   <div className={'workflow-proof-stack workflow-proof-stack--' + workflow.screenshots.length}>
                     {workflow.screenshots.map((screenshot) => (
-                      <figure className="workflow-figure workflow-figure--actual" key={screenshot.src}>
+                      <figure className={'workflow-figure ' + (isIllustrative ? 'workflow-figure--illustration' : 'workflow-figure--actual')} key={screenshot.src}>
                         <figcaption><span>{screenshot.label || (isIllustrative ? 'ILLUSTRATIVE CONCEPT' : 'Actual Zipla POS screen')}</span><strong>{screenshot.caption}</strong></figcaption>
                         <img
                           src={screenshot.src}
