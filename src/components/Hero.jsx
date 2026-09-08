@@ -28,10 +28,10 @@ export default function Hero({ takeaway }) {
     <section className="hero" aria-labelledby="hero-title">
       <div className="hero-inner" style={{ alignItems: 'flex-start' }}>
         <div className="hero-copy">
-          <span className="eyebrow" style={{ marginTop: 0, marginBottom: '10px', display: 'inline-block' }}>Zipla POS for Indian food businesses</span>
-          <h1 id="hero-title" style={{ marginTop: 0, marginBottom: '16px' }}>Simple Billing for Indian Food Businesses</h1>
-          <p className="sub" style={{ marginTop: 0, marginBottom: '24px' }}>Keep customer billing, table orders and kitchen handoff in one clear workflow during service.</p>
-          <p className="hero-key-takeaway"><strong>How Zipla POS fits:</strong> {takeaway}</p>
+          <span className="eyebrow" style={{ marginTop: 0, marginBottom: '10px', display: 'inline-block' }}>For Indian food businesses</span>
+          <h1 id="hero-title" style={{ marginTop: 0, marginBottom: '16px' }}>Simple Restaurant Billing Software</h1>
+          <p className="sub" style={{ marginTop: 0, marginBottom: '24px' }}>For Indian food businesses, keep customer billing, table orders and kitchen handoff in one clear workflow during service.</p>
+          <p className="hero-key-takeaway"><strong>Key takeaway:</strong> {takeaway}</p>
           <div className="hero-ctas">
             <a className="btn-cta" href="/#demo">Book a WhatsApp Demo</a>
             <a className="hero-trial-link" href="https://app.zipla.in/register">Start 14-Day Free Trial</a>
