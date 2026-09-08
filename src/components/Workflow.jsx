@@ -52,8 +52,8 @@ const WORKFLOWS = [
     steps: [
       ['Scan table QR', 'Diner opens digital menu from table code.'],
       ['Pick menu items', 'Guests customize and select food items on phone.'],
-      ['Place table order', 'Order instantly routes into active billing system.'],
-      ['Live KDS handoff', 'Kitchen receives tickets on display without delays.'],
+      ['Place table order', 'The order moves into the active billing workflow.'],
+      ['View the kitchen queue', 'Use the Kitchen Display System to view active tickets.'],
     ],
   },
   {
@@ -500,10 +500,10 @@ export default function Workflow() {
       <div className="workflow-head">
         <span className="workflow-eyebrow">HOW IT WORKS</span>
         <h2 id="workflow-title" className="workflow-title-text">
-          How does restaurant POS billing work? (Step-by-Step Workflow)
+          How does Zipla POS fit into a food-service workflow?
         </h2>
         <p className="workflow-desc">
-          See the operating steps. Each panel pairs an actual Zipla POS screen with a clearly labelled illustrative concept where the current workflow needs confirmation.
+          See how customer orders move from the counter or table to payment, kitchen handoff and daily review. Actual Zipla POS screens are marked; illustrative concepts are clearly labelled.
         </p>
       </div>
 
@@ -581,7 +581,7 @@ export default function Workflow() {
 
       <div className="workflow-bridge-cta">
         <a href="#demo" className="workflow-bridge-link">
-          Prefer a live walkthrough on your phone or counter? Book a WhatsApp demo &rarr;
+          Book a WhatsApp demo for your own workflow &rarr;
         </a>
       </div>
     </section>

@@ -1,14 +1,14 @@
 const DECISIONS = [
   {
-    need: 'Counter billing and GST invoices',
-    answer: <>Start with <strong>Starter</strong> for counter POS billing, GST invoices, and payment-mode tracking. <a href="/#pricing">See plan pricing</a>.</>,
+    need: 'Counter service: billing, GST invoices and payment marking',
+    answer: <>Start with <strong>Starter</strong> for counter billing, GST invoices and payment-mode tracking. <a href="/#pricing">See plan pricing</a>.</>,
   },
   {
-    need: 'Table orders and kitchen coordination',
-    answer: <>Choose <strong>Pro</strong> for Kitchen Display System (KDS), Table QR Ordering, Bluetooth KOT Auto-Print, and sales analytics with day-close reports.</>,
+    need: 'Table service: customer orders and kitchen handoff',
+    answer: <>Choose <strong>Pro</strong> for Kitchen Display System (KDS), table QR ordering, Bluetooth KOT auto-print, sales analytics and day-close reports.</>,
   },
   {
-    need: 'Weight-based or piece billing',
+    need: 'Weight-, piece- or fixed-price items',
     answer: <>Use the dedicated <a href="/bakery-billing-software/">Bakery</a> or <a href="/sweet-shop-billing/">Sweet Shop</a> workflow for products sold by weight, piece, or fixed price.</>,
   },
 ]
@@ -19,26 +19,26 @@ export default function BuyerAnswer() {
       <div className="buyer-answer-inner">
         <div className="buyer-answer-intro">
           <span className="eyebrow">Quick answer</span>
-          <h2 id="buyer-answer-title">What is restaurant POS billing software?</h2>
-          <p className="buyer-answer-lead">Restaurant POS billing software is a system that brings food orders, GST invoices, kitchen orders, and day-close review into one workflow.</p>
-          <p>Zipla POS is designed for Indian restaurants, cafés, bakeries, sweet shops, QSRs, and dhabas—whether you run a counter, tables, or weight-based billing.</p>
+          <h2 id="buyer-answer-title">Choose billing software around your service workflow</h2>
+          <p className="buyer-answer-lead">The key decision is how a customer order moves from the counter or table to payment, kitchen handoff and daily review.</p>
+          <p>Zipla POS is designed for Indian restaurants, cafés, bakeries, sweet shops, QSRs and dhabas—whether you run a counter, tables, or weight-based billing.</p>
         </div>
 
         <div className="buyer-answer-decision">
-          <h3>Which Zipla POS workflow should you choose?</h3>
-          <p>Match the plan and workflow to the way your food business serves customers today.</p>
+          <h3>Which workflow fits your food business?</h3>
+          <p>Choose the plan around your current service model, not a generic feature checklist.</p>
           <div className="buyer-answer-table-wrap">
             <table>
               <thead>
                 <tr>
-                  <th scope="col">If you need</th>
+                  <th scope="col">Operational need</th>
                   <th scope="col">Relevant Zipla POS workflow</th>
                 </tr>
               </thead>
               <tbody>
                 {DECISIONS.map((decision) => (
                   <tr key={decision.need}>
-                    <th scope="row" data-label="If you need">{decision.need}</th>
+                    <th scope="row" data-label="Operational need">{decision.need}</th>
                     <td data-label="Relevant Zipla POS workflow">{decision.answer}</td>
                   </tr>
                 ))}

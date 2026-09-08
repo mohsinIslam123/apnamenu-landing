@@ -50,10 +50,10 @@ function CheckGreen() {
 }
 
 const CAPABILITIES = [
-  { icon: PosIcon, label: 'Counter billing + GST' },
-  { icon: KdsIcon, label: 'Kitchen Display System' },
-  { icon: QrIcon, label: 'QR table ordering' },
-  { icon: HardwareIcon, label: 'Android + Bluetooth printing' }
+  { icon: PosIcon, label: 'Counter checkout + GST' },
+  { icon: KdsIcon, label: 'Pro kitchen order queue' },
+  { icon: QrIcon, label: 'Pro table QR ordering' },
+  { icon: HardwareIcon, label: 'Supported bill printing' }
 ]
 
 export default function QuickAnswer() {
@@ -348,61 +348,61 @@ export default function QuickAnswer() {
         <div>
           <span className="qa-left-eyebrow">FEATURES</span>
           <h2 id="features-title" className="qa-left-title">
-            Which food-business workflows does Zipla POS support?
+            What does each Zipla POS workflow help you run?
           </h2>
           <p className="qa-def-p1">
-            Start with the workflow that matches your outlet: counter billing, table orders and kitchen coordination, or weight-based and piece billing.
+            Choose the workflow that matches your outlet: counter checkout, table service, kitchen handoff, or weight- and piece-based billing.
           </p>
           <p className="qa-def-p2">
-            The comparison below shows the relevant Zipla POS workflow and plan for each need.
+            Each option below explains the operational need it supports and the plan to consider.
           </p>
 
           <ul className="qa-key-points">
             <li className="qa-key-item">
               <CheckGreen />
-              <span><strong>Billing after menu loads:</strong> Bills can be created without internet; UPI and online payments need a connection</span>
+              <span><strong>Offline billing:</strong> After the menu loads, bills can be created without internet; UPI and online payments need a connection</span>
             </li>
             <li className="qa-key-item">
               <CheckGreen />
-              <span><strong>Supported devices:</strong> Use an Android phone, tablet, or Windows PC with compatible printing</span>
+              <span><strong>Supported setup:</strong> Use an Android phone, tablet, or Windows PC with compatible thermal printing</span>
             </li>
             <li className="qa-key-item">
               <CheckGreen />
-              <span><strong>Yearly plans:</strong> Starter ₹2,999/year and Pro ₹4,999/year</span>
+              <span><strong>Annual plans:</strong> Starter ₹2,999/year for counter billing; Pro ₹4,999/year for table and kitchen workflows</span>
             </li>
           </ul>
         </div>
 
         {/* RIGHT COLUMN: WORKFLOW COMPARISON TABLE */}
         <div className="qa-right-card">
-          <h3 className="qa-card-h3">Which Zipla POS workflow should you choose?</h3>
+          <h3 className="qa-card-h3">Which workflow fits your current service?</h3>
           <p className="qa-card-sub">
-            Match the plan and workflow to the way your food business serves customers today.
+            Choose a plan around the operational handoff your team needs to manage.
           </p>
 
           <div className="qa-table-wrap">
             <div className="qa-table-header">
-              <span>If You Need</span>
+              <span>Operational Need</span>
               <span>Relevant Zipla POS Workflow</span>
             </div>
 
             <div className="qa-table-row">
-              <div className="qa-need-col">Counter billing and GST invoices</div>
+              <div className="qa-need-col">Counter rush: bill, payment marking and GST invoice in one checkout</div>
               <div className="qa-flow-col">
-                Start with <span className="qa-badge-starter">Starter</span>: Counter POS billing, GST invoices, and payment-mode tracking.{' '}
+                Start with <span className="qa-badge-starter">Starter</span>: Counter POS billing, GST invoices and payment-mode tracking.{' '}
                 <a href="#pricing" className="qa-link">See plan pricing &rarr;</a>
               </div>
             </div>
 
             <div className="qa-table-row">
-              <div className="qa-need-col">Table orders and kitchen coordination</div>
+              <div className="qa-need-col">Table orders that need a clear kitchen handoff</div>
               <div className="qa-flow-col">
-                Choose <span className="qa-badge-pro">Pro</span> for Live Kitchen Display System (KDS), Table QR ordering, and Bluetooth KOT auto-print.
+                Choose <span className="qa-badge-pro">Pro</span> for Kitchen Display System (KDS), table QR ordering, Bluetooth KOT auto-print, sales analytics and day-close reports.
               </div>
             </div>
 
             <div className="qa-table-row">
-              <div className="qa-need-col">Weight-based or piece billing</div>
+              <div className="qa-need-col">Weight-, piece- or fixed-price items at the same counter</div>
               <div className="qa-flow-col">
                 Use dedicated workflows for{' '}
                 <a href="/bakery-billing-software/" className="qa-link">Bakery</a> or{' '}

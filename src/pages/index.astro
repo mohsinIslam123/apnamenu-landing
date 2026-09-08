@@ -16,13 +16,13 @@ import '../index.css';
 
 const CUSTOMER_VIDEOS = [];
 
-const PAGE_TITLE = 'Zipla POS — Restaurant POS Billing Software for India';
+const PAGE_TITLE = 'Simple Restaurant Billing Software for India | Zipla POS';
 
 const PAGE_DESCRIPTION =
-  'Zipla POS is restaurant POS billing software for India, for restaurants, cafés, bakeries, QSRs, sweet shops and dhabas. Start a 14-day free trial; no card required.';
+  'Restaurant billing software for Indian food businesses. Keep counter billing, GST invoices, table orders and kitchen handoff in one clear workflow.';
 
 const TOP_TAKEAWAY =
-  'Zipla POS helps restaurants, cafés, bakeries, QSRs, sweet shops and dhabas in India manage counter billing, GST invoices, kitchen workflows and QR ordering with a 14-day free trial and no card required.';
+  'Zipla POS connects counter billing, GST invoices, table orders, kitchen handoff and daily review in one clear workflow for Indian food businesses.';
 
 const jsonLd = {
   '@context': 'https://schema.org',
@@ -73,10 +73,10 @@ const jsonLd = {
         },
         {
           '@type': 'Question',
-          name: 'What if the internet goes down?',
+          name: 'Can I continue billing if the internet connection drops?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: 'Zipla POS works after the menu is loaded — you can create bills without internet. UPI and online payments require a connection. Full offline sync is on our roadmap.'
+            text: 'After the menu has loaded, Zipla POS can create bills without an internet connection. UPI and online payments require connectivity. Full offline sync is on our roadmap.'
           }
         },
         {
@@ -109,7 +109,7 @@ const jsonLd = {
 >
   <Header client:load />
 
-  <main aria-label="Zipla POS restaurant POS billing software for India">
+  <main aria-label="Zipla POS restaurant billing software for Indian food businesses">
     <Hero takeaway={TOP_TAKEAWAY} />
     <TrustBar />
     <BuyerAnswer />
