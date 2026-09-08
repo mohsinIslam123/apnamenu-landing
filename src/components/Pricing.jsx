@@ -18,19 +18,20 @@ function Check() {
 }
 
 const S = [
-  'Fast Counter POS Billing',
-  'GST & Non-GST Invoice Print',
-  'Menu & Item Management',
-  'Cash · UPI · Card Split Payments',
+  'Counter POS Billing',
+  'GST and Non-GST Invoice Print',
+  'Menu and Item Management',
+  'Inventory with Low-Stock Alerts',
+  'Cash, UPI and Card Payment Tracking',
   'Supported Thermal Printing',
-  'Payment-Mode Tracking'
+  'Staff Roles'
 ]
 
 const P = [
-  'Table QR Ordering (Customer Self-Order)',
-  'Live Kitchen Display Screen (KDS)',
+  'Table QR Ordering',
+  'Kitchen Display System (KDS)',
   'Bluetooth KOT Auto-Print',
-  'Day-Close Workflow'
+  'Sales Analytics and Day-Close Reports'
 ]
 
 export default function Pricing() {
@@ -38,12 +39,12 @@ export default function Pricing() {
     <section className="pricing" id="pricing" aria-labelledby="pricing-title">
       <div className="section-head" style={{ marginBottom: '2.5rem' }}>
         <span className="eyebrow">Pricing</span>
-        <h2 id="pricing-title">How much does Zipla POS cost?</h2>
+        <h2 id="pricing-title">Choose a plan around your service workflow</h2>
         <p style={{ color: 'inherit', fontWeight: 600, fontSize: '1.02rem', lineHeight: '1.6', margin: '0 auto' }}>
-          <strong>Simple plans:</strong> Starter is ₹2,999/year and Pro is ₹4,999/year for Indian restaurants, cafés, bakeries, QSRs, sweet shops, and dhabas.
+          <strong>Simple annual plans:</strong> Starter is ₹2,999/year for counter billing. Pro is ₹4,999/year when your service also needs table QR ordering and a kitchen workflow.
         </p>
         <p style={{ marginTop: '0.6rem', color: 'inherit', fontWeight: 500, fontSize: '0.92rem' }}>
-          Try the Zipla POS workflow for 14 days with no card required.
+          Try the relevant workflow for 14 days with no card required.
         </p>
       </div>
 
@@ -53,7 +54,7 @@ export default function Pricing() {
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline' }}>
             <h3 className="price-plan" style={{ margin: 0, fontWeight: 800 }}>Starter</h3>
             <span style={{ fontSize: '0.72rem', fontWeight: 700, letterSpacing: '0.5px', color: 'inherit', opacity: 0.9 }}>
-              COUNTER &amp; TAKEAWAY
+              COUNTER-LED SERVICE
             </span>
           </div>
 
@@ -62,7 +63,7 @@ export default function Pricing() {
           </div>
 
           <div style={{ fontSize: '0.92rem', fontWeight: 700, color: 'inherit', marginTop: '0.2rem' }}>
-            (Just ₹250 / month)
+            (₹250/month, billed annually)
           </div>
 
           <div style={{ fontSize: '0.8rem', fontWeight: 600, color: 'inherit', marginTop: '0.25rem', marginBottom: '0.75rem' }}>
@@ -121,7 +122,7 @@ export default function Pricing() {
               <h3 className="price-plan" style={{ margin: 0, fontWeight: 800 }}>Pro</h3>
             </div>
             <span style={{ fontSize: '0.72rem', fontWeight: 700, letterSpacing: '0.5px', color: 'inherit', opacity: 0.9 }}>
-              DINE-IN &amp; FULL SERVICE
+              TABLES &amp; KITCHEN WORKFLOW
             </span>
           </div>
 
@@ -130,7 +131,7 @@ export default function Pricing() {
           </div>
 
           <div style={{ fontSize: '0.92rem', fontWeight: 700, color: 'inherit', marginTop: '0.2rem' }}>
-            (About ₹417 / month)
+            (₹417/month, billed annually)
           </div>
 
           <div style={{ fontSize: '0.8rem', fontWeight: 600, color: 'inherit', marginTop: '0.25rem', marginBottom: '0.75rem' }}>

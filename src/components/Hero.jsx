@@ -28,24 +28,24 @@ export default function Hero({ takeaway }) {
     <section className="hero" aria-labelledby="hero-title">
       <div className="hero-inner" style={{ alignItems: 'flex-start' }}>
         <div className="hero-copy">
-          <span className="eyebrow" style={{ marginTop: 0, marginBottom: '10px', display: 'inline-block' }}>Zipla POS for Indian food businesses</span>
-          <h1 id="hero-title" style={{ marginTop: 0, marginBottom: '16px' }}>Restaurant POS Billing Software for India</h1>
-          <p className="sub" style={{ marginTop: 0, marginBottom: '24px' }}>Make GST bills, send orders to the kitchen, and close your day faster.</p>
+          <span className="eyebrow" style={{ marginTop: 0, marginBottom: '10px', display: 'inline-block' }}>For Indian food businesses</span>
+          <h1 id="hero-title" style={{ marginTop: 0, marginBottom: '16px' }}>Simple Restaurant Billing Software</h1>
+          <p className="sub" style={{ marginTop: 0, marginBottom: '24px' }}>For Indian food businesses, keep customer billing, table orders and kitchen handoff in one clear workflow during service.</p>
           <p className="hero-key-takeaway"><strong>Key takeaway:</strong> {takeaway}</p>
           <div className="hero-ctas">
-            <a className="btn-cta" href="/#demo">Get a Free WhatsApp Demo</a>
-            <a className="hero-trial-link" href="https://app.zipla.in/register">Try free for 14 days</a>
+            <a className="btn-cta" href="/#demo">Book a WhatsApp Demo</a>
+            <a className="hero-trial-link" href="https://app.zipla.in/register">Start 14-Day Free Trial</a>
           </div>
           <div className="hero-assurances">
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px 14px', fontSize: '13px', fontWeight: 500, opacity: 0.9, alignItems: 'center' }}>
               <span style={{ display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
-                <span style={{ fontWeight: 700 }}>✓</span> No Credit Card Required
+                <span style={{ fontWeight: 700 }}>✓</span> No credit card required
               </span>
                 <span style={{ display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
                   <span style={{ fontWeight: 700 }}>✓</span> 14-day free trial
                 </span>
               <span style={{ display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
-                <span style={{ fontWeight: 700 }}>✓</span> Works after menu loads
+                <span style={{ fontWeight: 700 }}>✓</span> Offline billing after menu loads; online payments need internet
               </span>
             </div>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginTop: '2px' }}>
@@ -64,7 +64,7 @@ export default function Hero({ takeaway }) {
           <div className="hero-device">
             <div className="hero-device-bar">
               <span className="hero-device-brand"><span aria-hidden="true" />zipla POS</span>
-              <span className="hero-device-label">Everything your counter needs</span>
+              <span className="hero-device-label">Built around your service workflow</span>
             </div>
             <img
               src="/screenshots/ss-new-order.webp"
@@ -79,11 +79,11 @@ export default function Hero({ takeaway }) {
           </div>
           <div className="hero-callout hero-callout--billing">
             <span className="hero-callout-icon"><BoltIcon /></span>
-            <span><strong>Counter billing</strong><small>GST invoices in one flow</small></span>
+            <span><strong>Counter billing</strong><small>GST invoices and payment marking</small></span>
           </div>
           <div className="hero-callout hero-callout--kitchen">
             <span className="hero-callout-icon"><KitchenIcon /></span>
-            <span><strong>Kitchen orders</strong><small>Kitchen sees every order</small></span>
+            <span><strong>Kitchen handoff</strong><small>Pro KDS for active order queues</small></span>
           </div>
           <figcaption id="hero-product-caption">Actual Zipla POS order billing and counter interface.</figcaption>
         </figure>

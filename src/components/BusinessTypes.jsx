@@ -7,7 +7,7 @@ const BUSINESSES = [
     number: '01',
     name: 'Restaurants',
     title: 'Restaurant POS Software',
-    summary: 'Counter and table billing, KDS workflow, QR ordering, and GST invoicing.',
+    summary: 'Counter and table service in one workflow, with Pro KDS and table QR ordering.',
     href: '/restaurant-pos-software/',
     highlight: 'Dine-in & Full Service',
   },
@@ -16,16 +16,16 @@ const BUSINESSES = [
     number: '02',
     name: 'Cafes',
     title: 'Cafe POS Software',
-    summary: 'Counter billing, payment-mode tracking, and an optional kitchen workflow for café service.',
+    summary: 'Counter checkout with payment tracking; add Pro table ordering and kitchen handoff when relevant.',
     href: '/cafe-pos-software/',
-    highlight: 'Fast Counter & Barista',
+    highlight: 'Counter & Barista Workflow',
   },
   {
     id: 'bakery',
     number: '03',
     name: 'Bakeries',
     title: 'Bakery Billing Software',
-    summary: 'Billing for items sold by weight, piece, or fixed price at a bakery counter.',
+    summary: 'Bill weight-, piece- and fixed-price items from one counter workflow.',
     href: '/bakery-billing-software/',
     highlight: 'Weight & Piece Billing',
   },
@@ -34,7 +34,7 @@ const BUSINESSES = [
     number: '04',
     name: 'Sweet Shops',
     title: 'Sweet Shop Billing Software',
-    summary: 'Billing for sweets and other counter items sold by weight, piece, or fixed price.',
+    summary: 'Bill mithai and counter items sold by weight, piece, or fixed price.',
     href: '/sweet-shop-billing/',
     highlight: 'Weight & Piece Billing',
   },
@@ -43,7 +43,7 @@ const BUSINESSES = [
     number: '05',
     name: 'QSRs',
     title: 'QSR Billing Software',
-    summary: 'Counter billing with an optional kitchen handoff for quick-service food businesses.',
+    summary: 'Counter billing first; add a Pro kitchen queue when orders need a handoff.',
     href: '/qsr-billing-software/',
     highlight: 'Counter & Kitchen Workflow',
   },
@@ -52,7 +52,7 @@ const BUSINESSES = [
     number: '06',
     name: 'Dhabas',
     title: 'Dhaba Billing Software',
-    summary: 'Counter billing after the menu loads, payment-mode tracking, and supported thermal printing.',
+    summary: 'Counter billing, GST invoices, payment tracking and supported bill printing.',
     href: '/dhaba-billing-software/',
     highlight: 'Android & Bluetooth Print',
   },
@@ -505,14 +505,14 @@ export default function BusinessTypes() {
 
       <div className="biz-head">
         <div>
-          <span className="biz-eyebrow">BUILT FOR YOUR SERVICE MODEL</span>
-          <h2 id="business-types-title" className="biz-title">Who is Zipla POS for?</h2>
+          <span className="biz-eyebrow">BUILT AROUND YOUR SERVICE MODEL</span>
+          <h2 id="business-types-title" className="biz-title">Restaurant billing software for the way you serve</h2>
           <p className="biz-sub-answer">
-            Zipla POS is built for Indian food businesses that need counter billing, GST invoices, and a clear operating workflow.
+            Choose an outlet type to see the operational workflow and plan that fit its day-to-day service.
           </p>
         </div>
         <p className="biz-sub-instruction">
-          Select your outlet type below to compare the billing workflow relevant to your service model.
+          Compare the service workflow before choosing a plan.
         </p>
       </div>
 
