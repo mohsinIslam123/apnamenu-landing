@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 const THEME_STORAGE_KEY = 'zipla-theme'
 
@@ -56,12 +56,34 @@ export default function Header() {
     return 'dark'
   })
 
+  const [menuOpen, setMenuOpen] = useState(false)
+  const menuButtonRef = useRef(null)
+
   const isLight = theme === 'light'
 
   useEffect(() => {
     const currentTheme = document.documentElement.dataset.theme === 'light' ? 'light' : 'dark'
     setTheme(currentTheme)
   }, [])
+
+  useEffect(() => {
+    if (!menuOpen) return undefined
+
+    function handleMenuKeyDown(event) {
+      if (event.key === 'Escape') {
+        setMenuOpen(false)
+        menuButtonRef.current?.focus()
+      }
+    }
+
+    document.addEventListener('keydown', handleMenuKeyDown)
+    return () => document.removeEventListener('keydown', handleMenuKeyDown)
+  }, [menuOpen])
+
+  function closeMenu() {
+    setMenuOpen(false)
+    menuButtonRef.current?.focus()
+  }
 
   function toggleTheme() {
     const nextTheme = isLight ? 'dark' : 'light'
@@ -93,12 +115,32 @@ export default function Header() {
           />
         </a>
       </div>
-      <nav className="nav-links">
-        <a href="/#features">Features</a>
-        <a href="/#pricing">Pricing</a>
-        <a href="/faq/">FAQ</a>
+      <nav
+        className={`nav-links${menuOpen ? ' nav-links--open' : ''}`}
+        id="primary-navigation"
+        aria-label="Primary navigation"
+      >
+        <a href="/#features" onClick={closeMenu}>Features</a>
+        <a href="/#pricing" onClick={closeMenu}>Pricing</a>
+        <a href="/faq/" onClick={closeMenu}>FAQ</a>
+        <a className="mobile-nav-demo" href="/#demo" onClick={closeMenu}>Get a Free WhatsApp Demo</a>
       </nav>
       <div className="header-actions" style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+        <button
+          className="mobile-menu-toggle"
+          type="button"
+          aria-expanded={menuOpen}
+          aria-controls="primary-navigation"
+          aria-label={menuOpen ? 'Close navigation menu' : 'Open navigation menu'}
+          onClick={() => setMenuOpen((open) => !open)}
+          ref={menuButtonRef}
+        >
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true">
+            <path d="M4 7h16" />
+            <path d="M4 12h16" />
+            <path d="M4 17h16" />
+          </svg>
+        </button>
         <button
           className="theme-toggle"
           type="button"

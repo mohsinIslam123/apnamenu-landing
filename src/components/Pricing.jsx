@@ -29,7 +29,7 @@ const S = [
 const P = [
   'Table QR Ordering (Customer Self-Order)',
   'Live Kitchen Display Screen (KDS)',
-  'Bluetooth & USB KOT Auto-Print',
+  'Bluetooth KOT Auto-Print',
   'Day-Close Workflow'
 ]
 
@@ -40,7 +40,7 @@ export default function Pricing() {
         <span className="eyebrow">Pricing</span>
         <h2 id="pricing-title">How much does Zipla POS cost?</h2>
         <p style={{ color: 'inherit', fontWeight: 600, fontSize: '1.02rem', lineHeight: '1.6', margin: '0 auto' }}>
-          <strong>Simple plans:</strong> Starter is ₹2,999/year or ₹5,999 for 3 years, and Pro is ₹4,999/year or ₹9,899 for 3 years for Indian restaurants, cafés, bakeries, QSRs, sweet shops, and dhabas.
+          <strong>Simple plans:</strong> Starter is ₹2,999/year and Pro is ₹4,999/year for Indian restaurants, cafés, bakeries, QSRs, sweet shops, and dhabas.
         </p>
         <p style={{ marginTop: '0.6rem', color: 'inherit', fontWeight: 500, fontSize: '0.92rem' }}>
           Try the Zipla POS workflow for 14 days with no card required.
@@ -63,11 +63,10 @@ export default function Pricing() {
 
           <div style={{ fontSize: '0.92rem', fontWeight: 700, color: 'inherit', marginTop: '0.2rem' }}>
             (Just ₹250 / month)
-            or ₹5,999 / 3 years
           </div>
 
           <div style={{ fontSize: '0.8rem', fontWeight: 600, color: 'inherit', marginTop: '0.25rem', marginBottom: '0.75rem' }}>
-            Flat Price • Zero Setup Fee • No Hidden Taxes
+            Annual pricing • Zero Setup Fee
           </div>
 
           <ul className="price-list" style={{ paddingLeft: 0, listStyle: 'none', margin: 0 }}>
@@ -132,11 +131,10 @@ export default function Pricing() {
 
           <div style={{ fontSize: '0.92rem', fontWeight: 700, color: 'inherit', marginTop: '0.2rem' }}>
             (About ₹417 / month)
-            or ₹9,899 / 3 years
           </div>
 
           <div style={{ fontSize: '0.8rem', fontWeight: 600, color: 'inherit', marginTop: '0.25rem', marginBottom: '0.75rem' }}>
-            Flat Price • Zero Setup Fee • No Hidden Taxes
+            Annual pricing • Zero Setup Fee
           </div>
 
           <ul className="price-list" style={{ paddingLeft: 0, listStyle: 'none', margin: 0 }}>
@@ -219,7 +217,7 @@ export default function Pricing() {
       >
         <div>
           <div style={{ fontWeight: 800, fontSize: '1.02rem', color: 'inherit' }}>
-            Zero Proprietary Hardware Lock-In
+            Supported setup options
           </div>
           <div style={{ fontSize: '0.9rem', fontWeight: 500, color: 'inherit', marginTop: '0.25rem' }}>
             Use supported Android, tablet, and Windows PC setups with compatible thermal printers.

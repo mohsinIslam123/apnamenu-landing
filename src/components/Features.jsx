@@ -397,7 +397,7 @@ export default function QuickAnswer() {
             <div className="qa-table-row">
               <div className="qa-need-col">Table orders and kitchen coordination</div>
               <div className="qa-flow-col">
-                Choose <span className="qa-badge-pro">Pro</span> for Live Kitchen Display System (KDS), Table QR ordering, and Bluetooth &amp; USB KOT auto-print.
+                Choose <span className="qa-badge-pro">Pro</span> for Live Kitchen Display System (KDS), Table QR ordering, and Bluetooth KOT auto-print.
               </div>
             </div>
 

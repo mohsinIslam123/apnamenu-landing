@@ -91,7 +91,7 @@ export default function DemoForm() {
         <button type="submit" className="btn-cta df-submit">
           Get Free Demo on WhatsApp
         </button>
-        <p className="df-privacy-note">We use these details to contact you about your demo request. See our <a href="/privacy-policy/">Privacy Policy</a>.</p>
+        <p className="df-privacy-note">Submitting places your name, phone number and business type into a WhatsApp message to Zipla's demo number. WhatsApp opens the message, and you choose whether to send it. See our <a href="/privacy-policy/">Privacy Policy</a>.</p>
         <p className="df-note" style={{ marginTop: '8px', fontSize: '13px', textAlign: 'center', opacity: 0.8 }}>✓ No credit card required</p>
       </form>
     </section>
