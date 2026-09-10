@@ -19,10 +19,10 @@ const CUSTOMER_VIDEOS = [];
 const PAGE_TITLE = 'Complete Restaurant Billing Software for India | Zipla POS';
 
 const PAGE_DESCRIPTION =
-  'Complete restaurant billing and ordering software for growing restaurants, cafes, bakeries, QSRs and dhabas. ₹4,999/year or ₹11,999 for 3 years prepaid, with a 14-day free trial and no credit card required.';
+  'Complete restaurant billing and ordering software for growing restaurants, cafes, bakeries, QSRs and dhabas, with table and customer QR ordering and live order status tracking. ₹4,999/year or ₹11,999 for 3 years prepaid, with a 14-day free trial and no credit card required.';
 
 const TOP_TAKEAWAY =
-  'Zipla POS is complete restaurant billing and ordering software for growing restaurants, cafes, bakeries, QSRs and dhabas. The Complete plan is ₹4,999/year or ₹11,999 for 3 years prepaid, with guided online setup/help included and a 14-day free trial.';
+  'Zipla POS is complete restaurant billing and ordering software for growing restaurants, cafes, bakeries, QSRs and dhabas. The Complete plan includes table and customer QR ordering with live order status tracking, costs ₹4,999/year or ₹11,999 for 3 years prepaid, and includes guided online setup/help and online training with a 14-day free trial.';
 
 const jsonLd = {
   '@context': 'https://schema.org',
@@ -68,7 +68,15 @@ const jsonLd = {
           name: 'Will my staff need training?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: 'Zipla uses a touch-friendly interface with minimal clicks. Book a demo and we’ll walk your team through the relevant workflow.'
+            text: 'Guided online setup and online training are included. Book a demo if you want us to walk your team through the relevant workflow.'
+          }
+        },
+        {
+          '@type': 'Question',
+          name: 'Can customers order from home and track the order?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Yes. Customer QR Home Ordering lets customers enter their name, phone number and address, place an order from home, and track accepted, preparing and completed status on their phone.'
           }
         },
         {

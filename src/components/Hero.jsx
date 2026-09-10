@@ -30,7 +30,7 @@ export default function Hero({ takeaway }) {
         <div className="hero-copy">
           <span className="eyebrow" style={{ marginTop: 0, marginBottom: '10px', display: 'inline-block' }}>For Indian food businesses</span>
           <h1 id="hero-title" style={{ marginTop: 0, marginBottom: '16px' }}>Simple Restaurant Billing Software</h1>
-          <p className="sub" style={{ marginTop: 0, marginBottom: '24px' }}>For Indian food businesses, keep customer billing, table orders and kitchen handoff in one clear workflow during service.</p>
+          <p className="sub" style={{ marginTop: 0, marginBottom: '24px' }}>For Indian food businesses, manage counter billing, table orders and Customer QR home orders with a clear cashier-to-kitchen handoff.</p>
           <p className="hero-key-takeaway"><strong>Key takeaway:</strong> {takeaway}</p>
           <div className="hero-ctas">
             <a className="btn-cta" href="/#demo">Book a WhatsApp Demo</a>

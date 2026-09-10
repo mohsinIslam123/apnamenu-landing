@@ -17,19 +17,37 @@ function Check() {
   )
 }
 
-// Existing Landing claims, presented under the single Complete plan.
-const FEATURES = [
-  'Counter POS Billing',
-  'GST and Non-GST Invoice Print',
-  'Menu and Item Management',
-  'Inventory with Low-Stock Alerts',
-  'Cash, UPI and Card Payment Tracking',
-  'Supported Thermal Printing',
-  'Staff Roles',
-  'Table QR Ordering',
-  'Kitchen Display System (KDS)',
-  'Bluetooth KOT Auto-Print',
-  'Sales Analytics and Day-Close Reports'
+// Existing Landing claims, grouped under the single Complete plan.
+const FEATURE_GROUPS = [
+  {
+    title: 'Billing & payments',
+    features: [
+      'Counter POS Billing',
+      'GST and Non-GST Invoice Print',
+      'Cash, UPI and Card Payment Tracking'
+    ]
+  },
+  {
+    title: 'Ordering & kitchen',
+    features: [
+      'Table QR Ordering',
+      'Customer QR Home Ordering',
+      'Live Order Status Tracking',
+      'Cashier-to-Kitchen Order Handoff',
+      'Kitchen Display System (KDS)',
+      'Bluetooth KOT Auto-Print'
+    ]
+  },
+  {
+    title: 'Daily operations',
+    features: [
+      'Menu and Item Management',
+      'Inventory with Low-Stock Alerts',
+      'Staff Roles',
+      'Sales Analytics and Day-Close Reports',
+      'Supported Thermal Printing'
+    ]
+  }
 ]
 
 export default function Pricing() {
@@ -41,80 +59,66 @@ export default function Pricing() {
         <p style={{ color: 'inherit', fontWeight: 600, fontSize: '1.02rem', lineHeight: '1.6', margin: '0 auto' }}>
           <strong>Complete restaurant billing and ordering software for growing restaurants, cafes, bakeries, QSRs and dhabas.</strong>
         </p>
-        <p style={{ marginTop: '0.6rem', color: 'inherit', fontWeight: 500, fontSize: '0.92rem' }}>
-          ₹4,999/year or ₹11,999 for a 3-year prepaid term. Try it free for 14 days with no credit card required.
-        </p>
       </div>
 
       <div className="pricing-grid">
-        <div className="price-card popular" style={{ display: 'flex', flexDirection: 'column' }}>
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', gap: '1rem' }}>
+        <div className="price-card popular">
+          <div className="price-card-header">
             <div>
               <span className="popular-tag">COMPLETE PLAN</span>
-              <h3 className="price-plan" style={{ margin: 0, fontWeight: 800 }}>Complete plan</h3>
+              <h3 className="price-plan">Complete plan</h3>
             </div>
-            <span style={{ fontSize: '0.72rem', fontWeight: 700, letterSpacing: '0.5px', color: 'inherit', opacity: 0.9, textAlign: 'right' }}>
+            <span className="price-card-label">
               BILLING &amp; ORDERING WORKFLOW
             </span>
           </div>
 
-          <div className="price-amt" style={{ marginTop: '0.75rem', fontWeight: 800 }}>
+          <div className="price-amt">
             ₹4,999<span>/year</span>
           </div>
 
-          <div style={{ fontSize: '0.92rem', fontWeight: 700, color: 'inherit', marginTop: '0.2rem' }}>
-            ₹11,999 for 3 years prepaid
+          <div className="price-term">
+            <strong>Same Complete plan</strong> — ₹11,999 for 3 years prepaid
           </div>
 
-          <div style={{ fontSize: '0.8rem', fontWeight: 600, color: 'inherit', marginTop: '0.35rem', marginBottom: '0.75rem' }}>
+          <div className="price-trial">
             14-day free trial • No credit card required
           </div>
 
-          <ul className="price-list" style={{ paddingLeft: 0, listStyle: 'none', margin: 0 }}>
-            {FEATURES.map((feature) => (
-              <li
-                key={feature}
-                style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '0.65rem',
-                  fontSize: '0.92rem',
-                  fontWeight: 600,
-                  color: 'inherit',
-                  marginBottom: '0.75rem'
-                }}
-              >
-                <Check />
-                <span>{feature}</span>
-              </li>
+          <div className="price-groups">
+            {FEATURE_GROUPS.map((group) => (
+              <div className="price-group" key={group.title}>
+                <h4>{group.title}</h4>
+                <ul className="price-list">
+                  {group.features.map((feature) => (
+                    <li key={feature}>
+                      <Check />
+                      <span>{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             ))}
-          </ul>
+          </div>
 
-          <div style={{ marginTop: 'auto', paddingTop: '1.5rem' }}>
-            <div style={{ display: 'grid', gap: '0.45rem', marginBottom: '1.25rem', fontSize: '0.88rem', lineHeight: '1.55' }}>
-              <div><strong>Guided online setup/help included</strong></div>
-              <div>On-site setup: ₹2,000 one-time</div>
-              <div>Field first-year package: ₹6,999</div>
-              <div>Field 3-year package: ₹13,999</div>
+          <div className="price-support">
+            <div className="price-online-support">
+              <strong>Guided online setup and online training included</strong>
             </div>
+            <aside className="price-onsite-note" aria-label="Optional offline onboarding">
+              <strong>Optional offline onboarding</strong>
+              <span>+₹1,999 one-time only when our team visits for complete setup and 2-hour staff training.</span>
+            </aside>
+          </div>
+
+          <div className="price-actions">
             <a
               className="btn-cta"
               href="https://app.zipla.in/register"
               aria-label="Start a 14-day free trial of the Zipla POS Complete plan"
-              style={{
-                display: 'block',
-                textAlign: 'center',
-                fontWeight: 700,
-                fontSize: '0.95rem',
-                borderRadius: '8px',
-                padding: '0.7rem 1rem'
-              }}
             >
               Start 14-Day Free Trial
             </a>
-            <div style={{ fontSize: '0.78rem', fontWeight: 600, color: 'inherit', textAlign: 'center', marginTop: '0.5rem' }}>
-              No credit card required
-            </div>
           </div>
         </div>
       </div>

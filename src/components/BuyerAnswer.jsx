@@ -8,6 +8,10 @@ const DECISIONS = [
     answer: <>The <strong>Complete plan</strong> also covers Kitchen Display System (KDS), table QR ordering, Bluetooth KOT auto-print, sales analytics and day-close reports.</>,
   },
   {
+    need: 'Home orders: customer details and phone-based status tracking',
+    answer: <>Use <strong>Customer QR Home Ordering</strong> for name, phone number and address capture, cashier order alerts, kitchen handoff and customer status tracking from accepted to preparing to completed.</>,
+  },
+  {
     need: 'Weight-, piece- or fixed-price items',
     answer: <>Use the dedicated <a href="/bakery-billing-software/">Bakery</a> or <a href="/sweet-shop-billing/">Sweet Shop</a> workflow for products sold by weight, piece, or fixed price.</>,
   },
@@ -20,7 +24,7 @@ export default function BuyerAnswer() {
         <div className="buyer-answer-intro">
           <span className="eyebrow">Quick answer</span>
           <h2 id="buyer-answer-title">Choose billing software around your service workflow</h2>
-          <p className="buyer-answer-lead">The key decision is how a customer order moves from the counter or table to payment, kitchen handoff and daily review.</p>
+          <p className="buyer-answer-lead">The key decision is how a customer order moves from the counter, table or home to payment, kitchen handoff and daily review.</p>
           <p>Zipla POS is designed for Indian restaurants, cafés, bakeries, sweet shops, QSRs and dhabas—whether you run a counter, tables, or weight-based billing.</p>
         </div>
 

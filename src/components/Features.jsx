@@ -52,7 +52,7 @@ function CheckGreen() {
 const CAPABILITIES = [
   { icon: PosIcon, label: 'Counter checkout + GST' },
   { icon: KdsIcon, label: 'Kitchen order queue' },
-  { icon: QrIcon, label: 'Table QR ordering' },
+  { icon: QrIcon, label: 'Table & customer QR ordering' },
   { icon: HardwareIcon, label: 'Supported bill printing' }
 ]
 
@@ -351,7 +351,7 @@ export default function QuickAnswer() {
             What does each Zipla POS workflow help you run?
           </h2>
           <p className="qa-def-p1">
-            Choose the workflow that matches your outlet: counter checkout, table service, kitchen handoff, or weight- and piece-based billing.
+            Choose the workflow that matches your outlet: counter checkout, table service, customer home ordering, kitchen handoff, or weight- and piece-based billing.
           </p>
           <p className="qa-def-p2">
             Each option below explains the operational need it supports and the plan to consider.
@@ -368,7 +368,7 @@ export default function QuickAnswer() {
             </li>
             <li className="qa-key-item">
               <CheckGreen />
-              <span><strong>Complete plan:</strong> ₹4,999/year or ₹11,999 for 3 years prepaid, covering the listed counter, table and kitchen workflows</span>
+              <span><strong>Complete plan:</strong> ₹4,999/year or ₹11,999 for 3 years prepaid, covering the listed counter, table, customer QR and kitchen workflows</span>
             </li>
           </ul>
         </div>
@@ -398,6 +398,13 @@ export default function QuickAnswer() {
               <div className="qa-need-col">Table orders that need a clear kitchen handoff</div>
               <div className="qa-flow-col">
                 It also covers Kitchen Display System (KDS), table QR ordering, Bluetooth KOT auto-print, sales analytics and day-close reports.
+              </div>
+            </div>
+
+            <div className="qa-table-row">
+              <div className="qa-need-col">Home orders that customers should track on their phone</div>
+              <div className="qa-flow-col">
+                Customer QR ordering lets a customer enter their name, phone number and address, receive order-status updates, and follow the cashier-to-kitchen handoff from accepted to preparing to completed.
               </div>
             </div>
 

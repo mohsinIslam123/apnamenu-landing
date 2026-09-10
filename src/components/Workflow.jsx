@@ -26,11 +26,11 @@ const WORKFLOWS = [
   },
   {
     id: 'qr-ordering',
-    title: 'Table QR Ordering',
+    title: 'Table & Customer QR Ordering',
     plan: 'Complete plan',
-    summary: 'Diners can scan a table QR code, view the menu on their phone and place a table order.',
+    summary: 'Diners can use a table QR, while customers can place home orders with Customer QR and track status on their phone.',
     illustration: '/workflows/qr-ordering-workflow.webp',
-    illustrationAlt: 'Illustrative QR table ordering workflow from scan to menu selection and kitchen handoff',
+    illustrationAlt: 'Illustrative QR ordering workflow from a table or home order to menu selection and kitchen handoff',
     illustrationWidth: 1200,
     illustrationHeight: 900,
     screenshots: [
@@ -39,7 +39,7 @@ const WORKFLOWS = [
         alt: 'Actual Zipla POS customer menu screen used for QR ordering',
         width: 1232,
         height: 860,
-        caption: 'Actual Zipla POS customer-menu screen.',
+        caption: 'Actual Zipla POS QR customer-menu screen.',
       },
       {
         src: '/screenshots/ss-kds.webp',
@@ -50,10 +50,10 @@ const WORKFLOWS = [
       },
     ],
     steps: [
-      ['Scan table QR', 'Diner opens digital menu from table code.'],
-      ['Pick menu items', 'Guests customize and select food items on phone.'],
-      ['Place table order', 'The order moves into the active billing workflow.'],
-      ['View the kitchen queue', 'Use the Kitchen Display System to view active tickets.'],
+      ['Choose the QR path', 'Use table QR in the outlet or Customer QR for a home order.'],
+      ['Enter order details', 'For a home order, the customer adds their name, phone number and address.'],
+      ['Place the order', 'The new order reaches the cashier for acceptance before kitchen handoff.'],
+      ['Track the handoff', 'The customer can follow accepted, preparing and completed status on their phone.'],
     ],
   },
   {
@@ -503,7 +503,7 @@ export default function Workflow() {
           How does Zipla POS fit into a food-service workflow?
         </h2>
         <p className="workflow-desc">
-          See how customer orders move from the counter or table to payment, kitchen handoff and daily review. Actual Zipla POS screens are marked; illustrative concepts are clearly labelled.
+          See how customer orders move from the counter, table or home to payment, kitchen handoff and daily review. Actual Zipla POS screens are marked; illustrative concepts are clearly labelled.
         </p>
       </div>
 

@@ -1,6 +1,7 @@
 const ITEMS = [
   { q: 'How do I access my business data?', a: 'Use your Zipla login to access your business workspace.' },
-  { q: 'Will my staff need training?', a: 'Zipla uses a touch-friendly interface with minimal clicks. Book a demo and we’ll walk your team through the relevant workflow.' },
+  { q: 'Will my staff need training?', a: 'Guided online setup and online training are included. Book a demo if you want us to walk your team through the relevant workflow.' },
+  { q: 'Can customers order from home and track the order?', a: 'Yes. Customer QR Home Ordering lets customers enter their name, phone number and address, place an order from home, and track accepted, preparing and completed status on their phone.' },
   { q: 'Can I continue billing if the internet connection drops?', a: 'After the menu has loaded, Zipla POS can create bills without an internet connection. UPI and online payments require connectivity. Full offline sync is on our roadmap.' },
   { q: 'How do I add my existing menu?', a: 'Use the Zipla menu-management workflow to add and review your items. Book a demo if you want help confirming the current setup process.' },
   { q: 'How do I get support?', a: 'You can contact the Zipla team on WhatsApp for support and a product walkthrough.' },
@@ -12,7 +13,7 @@ export default function FAQ() {
       <div className="section-head">
         <span className="eyebrow">FAQ</span>
         <h2 id="faq-title">What do food businesses ask before starting Zipla POS?</h2>
-        <p>These answers cover data access, team onboarding, menu setup, connectivity, and product support.</p>
+        <p>These answers cover customer QR ordering, data access, team onboarding, menu setup, connectivity, and product support.</p>
       </div>
       <div className="faq-list">
         {ITEMS.map(i => <details className="faq-item" key={i.q}><summary className="faq-q">{i.q}<Plus /></summary><div className="faq-a">{i.a}</div></details>)}
