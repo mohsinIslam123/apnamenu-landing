@@ -51,8 +51,8 @@ function CheckGreen() {
 
 const CAPABILITIES = [
   { icon: PosIcon, label: 'Counter checkout + GST' },
-  { icon: KdsIcon, label: 'Pro kitchen order queue' },
-  { icon: QrIcon, label: 'Pro table QR ordering' },
+  { icon: KdsIcon, label: 'Kitchen order queue' },
+  { icon: QrIcon, label: 'Table QR ordering' },
   { icon: HardwareIcon, label: 'Supported bill printing' }
 ]
 
@@ -264,7 +264,7 @@ export default function QuickAnswer() {
         [data-theme=dark] .qa-flow-col {
           color: #e4e4e7;
         }
-        .qa-badge-starter {
+        .qa-badge-complete {
           display: inline-block;
           font-size: 0.76rem;
           font-weight: 850;
@@ -275,12 +275,12 @@ export default function QuickAnswer() {
           border: 1px solid #d4d4d8;
           margin-right: 0.35rem;
         }
-        [data-theme=dark] .qa-badge-starter {
+        [data-theme=dark] .qa-badge-complete {
           background-color: rgba(255, 255, 255, 0.1);
           color: #f4f4f5;
           border-color: rgba(255, 255, 255, 0.2);
         }
-        .qa-badge-pro {
+        .qa-badge-complete--accent {
           display: inline-block;
           font-size: 0.76rem;
           font-weight: 850;
@@ -291,7 +291,7 @@ export default function QuickAnswer() {
           border: 1px solid #fcd34d;
           margin-right: 0.35rem;
         }
-        [data-theme=dark] .qa-badge-pro {
+        [data-theme=dark] .qa-badge-complete--accent {
           background-color: rgba(245, 158, 11, 0.2);
           color: #fbbf24;
           border-color: rgba(251, 191, 36, 0.35);
@@ -368,7 +368,7 @@ export default function QuickAnswer() {
             </li>
             <li className="qa-key-item">
               <CheckGreen />
-              <span><strong>Annual plans:</strong> Starter ₹2,999/year for counter billing; Pro ₹4,999/year for table and kitchen workflows</span>
+              <span><strong>Complete plan:</strong> ₹4,999/year or ₹11,999 for 3 years prepaid, covering the listed counter, table and kitchen workflows</span>
             </li>
           </ul>
         </div>
@@ -389,7 +389,7 @@ export default function QuickAnswer() {
             <div className="qa-table-row">
               <div className="qa-need-col">Counter rush: bill, payment marking and GST invoice in one checkout</div>
               <div className="qa-flow-col">
-                Start with <span className="qa-badge-starter">Starter</span>: Counter POS billing, GST invoices and payment-mode tracking.{' '}
+                The <span className="qa-badge-complete">Complete plan</span> covers counter POS billing, GST invoices and payment-mode tracking.{' '}
                 <a href="#pricing" className="qa-link">See plan pricing &rarr;</a>
               </div>
             </div>
@@ -397,7 +397,7 @@ export default function QuickAnswer() {
             <div className="qa-table-row">
               <div className="qa-need-col">Table orders that need a clear kitchen handoff</div>
               <div className="qa-flow-col">
-                Choose <span className="qa-badge-pro">Pro</span> for Kitchen Display System (KDS), table QR ordering, Bluetooth KOT auto-print, sales analytics and day-close reports.
+                It also covers Kitchen Display System (KDS), table QR ordering, Bluetooth KOT auto-print, sales analytics and day-close reports.
               </div>
             </div>
 

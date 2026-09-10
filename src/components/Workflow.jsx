@@ -2,7 +2,7 @@ const WORKFLOWS = [
   {
     id: 'counter-billing',
     title: 'Counter POS Billing',
-    plan: 'Starter & Pro',
+    plan: 'Complete plan',
     summary: 'Build the customer order, record the payment mode and create the GST invoice from the counter.',
     illustration: '/workflows/counter-billing-workflow.webp',
     illustrationAlt: 'Illustrative counter POS billing workflow from menu selection to payment and customer bill',
@@ -27,7 +27,7 @@ const WORKFLOWS = [
   {
     id: 'qr-ordering',
     title: 'Table QR Ordering',
-    plan: 'Pro',
+    plan: 'Complete plan',
     summary: 'Diners can scan a table QR code, view the menu on their phone and place a table order.',
     illustration: '/workflows/qr-ordering-workflow.webp',
     illustrationAlt: 'Illustrative QR table ordering workflow from scan to menu selection and kitchen handoff',
@@ -46,7 +46,7 @@ const WORKFLOWS = [
         alt: 'Actual Zipla POS Kitchen Display System screen for active kitchen orders',
         width: 1232,
         height: 860,
-        caption: 'Actual Pro Kitchen Display System screen.',
+        caption: 'Actual Zipla POS Kitchen Display System screen.',
       },
     ],
     steps: [
@@ -85,7 +85,7 @@ const WORKFLOWS = [
   {
     id: 'day-close-analytics',
     title: 'Day-Close and Analytics',
-    plan: 'Pro',
+    plan: 'Complete plan',
     summary: 'Review completed orders, payment split, voids and sales information after service.',
     illustration: '/workflows/day-close-workflow.webp',
     illustrationAlt: 'Illustrative day-close workflow from completed orders to payment review and business reporting',
@@ -267,22 +267,22 @@ export default function Workflow() {
           padding: 4px 10px;
           border-radius: 9999px;
         }
-        .workflow-plan-badge--pro {
+        .workflow-plan-badge--complete {
           color: #92400e;
           background-color: #fef3c7;
           border: 1.5px solid #fcd34d;
         }
-        [data-theme=dark] .workflow-plan-badge--pro {
+        [data-theme=dark] .workflow-plan-badge--complete {
           color: #fbbf24;
           background-color: rgba(245, 158, 11, 0.18);
           border-color: rgba(251, 191, 36, 0.4);
         }
-        .workflow-plan-badge--starter {
+        .workflow-plan-badge--counter {
           color: #18181b;
           background-color: #f4f4f5;
           border: 1.5px solid #d4d4d8;
         }
-        [data-theme=dark] .workflow-plan-badge--starter {
+        [data-theme=dark] .workflow-plan-badge--counter {
           color: #f4f4f5;
           background-color: rgba(255, 255, 255, 0.1);
           border-color: rgba(255, 255, 255, 0.2);
@@ -509,7 +509,7 @@ export default function Workflow() {
 
       <div className="workflow-showcase">
         {WORKFLOWS.map((workflow, index) => {
-          const isProOnly = workflow.plan === 'Pro'
+          const isCompletePlan = workflow.plan === 'Complete plan'
           const isIllustrative = workflow.plan === 'Illustrative'
           return (
             <details className="workflow-panel" key={workflow.id} name="workflow-accordion" open={index === 0}>
@@ -522,7 +522,7 @@ export default function Workflow() {
                   </div>
                 </div>
                 <div className="workflow-summary-right">
-                  <span className={isProOnly ? 'workflow-plan-badge workflow-plan-badge--pro' : isIllustrative ? 'workflow-plan-badge workflow-plan-badge--illustrative' : 'workflow-plan-badge workflow-plan-badge--starter'}>
+                  <span className={isCompletePlan ? 'workflow-plan-badge workflow-plan-badge--complete' : isIllustrative ? 'workflow-plan-badge workflow-plan-badge--illustrative' : 'workflow-plan-badge workflow-plan-badge--counter'}>
                     {workflow.plan}
                   </span>
                   <span className="workflow-toggle-icon" aria-hidden="true">+</span>

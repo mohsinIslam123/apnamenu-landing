@@ -17,17 +17,15 @@ function Check() {
   )
 }
 
-const S = [
+// Existing Landing claims, presented under the single Complete plan.
+const FEATURES = [
   'Counter POS Billing',
   'GST and Non-GST Invoice Print',
   'Menu and Item Management',
   'Inventory with Low-Stock Alerts',
   'Cash, UPI and Card Payment Tracking',
   'Supported Thermal Printing',
-  'Staff Roles'
-]
-
-const P = [
+  'Staff Roles',
   'Table QR Ordering',
   'Kitchen Display System (KDS)',
   'Bluetooth KOT Auto-Print',
@@ -39,90 +37,24 @@ export default function Pricing() {
     <section className="pricing" id="pricing" aria-labelledby="pricing-title">
       <div className="section-head" style={{ marginBottom: '2.5rem' }}>
         <span className="eyebrow">Pricing</span>
-        <h2 id="pricing-title">Choose a plan around your service workflow</h2>
+        <h2 id="pricing-title">One complete plan for your service workflow</h2>
         <p style={{ color: 'inherit', fontWeight: 600, fontSize: '1.02rem', lineHeight: '1.6', margin: '0 auto' }}>
-          <strong>Simple annual plans:</strong> Starter is ₹2,999/year for counter billing. Pro is ₹4,999/year when your service also needs table QR ordering and a kitchen workflow.
+          <strong>Complete restaurant billing and ordering software for growing restaurants, cafes, bakeries, QSRs and dhabas.</strong>
         </p>
         <p style={{ marginTop: '0.6rem', color: 'inherit', fontWeight: 500, fontSize: '0.92rem' }}>
-          Try the relevant workflow for 14 days with no card required.
+          ₹4,999/year or ₹11,999 for a 3-year prepaid term. Try it free for 14 days with no credit card required.
         </p>
       </div>
 
-      <div className="pricing-grid">
-        {/* STARTER PLAN */}
-        <div className="price-card" style={{ display: 'flex', flexDirection: 'column' }}>
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline' }}>
-            <h3 className="price-plan" style={{ margin: 0, fontWeight: 800 }}>Starter</h3>
-            <span style={{ fontSize: '0.72rem', fontWeight: 700, letterSpacing: '0.5px', color: 'inherit', opacity: 0.9 }}>
-              COUNTER-LED SERVICE
-            </span>
-          </div>
-
-          <div className="price-amt" style={{ marginTop: '0.75rem', fontWeight: 800 }}>
-            ₹2,999<span>/year</span>
-          </div>
-
-          <div style={{ fontSize: '0.92rem', fontWeight: 700, color: 'inherit', marginTop: '0.2rem' }}>
-            (₹250/month, billed annually)
-          </div>
-
-          <div style={{ fontSize: '0.8rem', fontWeight: 600, color: 'inherit', marginTop: '0.25rem', marginBottom: '0.75rem' }}>
-            Annual pricing • Zero Setup Fee
-          </div>
-
-          <ul className="price-list" style={{ paddingLeft: 0, listStyle: 'none', margin: 0 }}>
-            {S.map((feature) => (
-              <li
-                key={feature}
-                style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '0.65rem',
-                  fontSize: '0.92rem',
-                  fontWeight: 600,
-                  color: 'inherit',
-                  marginBottom: '0.75rem'
-                }}
-              >
-                <Check />
-                <span>{feature}</span>
-              </li>
-            ))}
-          </ul>
-
-          <div style={{ marginTop: 'auto', paddingTop: '1.5rem' }}>
-            <a
-              className="btn-ghost"
-              href="https://app.zipla.in/register"
-              aria-label="Start a 14-day free trial of Zipla POS Starter"
-              style={{
-                display: 'block',
-                textAlign: 'center',
-                border: '2px solid currentColor',
-                fontWeight: 700,
-                fontSize: '0.95rem',
-                color: 'inherit',
-                borderRadius: '8px',
-                padding: '0.7rem 1rem'
-              }}
-            >
-              Start 14-Day Free Trial
-            </a>
-            <div style={{ fontSize: '0.78rem', fontWeight: 600, color: 'inherit', textAlign: 'center', marginTop: '0.5rem' }}>
-              No credit card required
-            </div>
-          </div>
-        </div>
-
-        {/* PRO PLAN */}
+      <div className="pricing-grid" style={{ gridTemplateColumns: 'minmax(0, 620px)', justifyContent: 'center' }}>
         <div className="price-card popular" style={{ display: 'flex', flexDirection: 'column' }}>
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline' }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', gap: '1rem' }}>
             <div>
-              <span className="popular-tag">MOST POPULAR</span>
-              <h3 className="price-plan" style={{ margin: 0, fontWeight: 800 }}>Pro</h3>
+              <span className="popular-tag">COMPLETE PLAN</span>
+              <h3 className="price-plan" style={{ margin: 0, fontWeight: 800 }}>Complete plan</h3>
             </div>
-            <span style={{ fontSize: '0.72rem', fontWeight: 700, letterSpacing: '0.5px', color: 'inherit', opacity: 0.9 }}>
-              TABLES &amp; KITCHEN WORKFLOW
+            <span style={{ fontSize: '0.72rem', fontWeight: 700, letterSpacing: '0.5px', color: 'inherit', opacity: 0.9, textAlign: 'right' }}>
+              BILLING &amp; ORDERING WORKFLOW
             </span>
           </div>
 
@@ -131,30 +63,15 @@ export default function Pricing() {
           </div>
 
           <div style={{ fontSize: '0.92rem', fontWeight: 700, color: 'inherit', marginTop: '0.2rem' }}>
-            (₹417/month, billed annually)
+            ₹11,999 for 3 years prepaid
           </div>
 
-          <div style={{ fontSize: '0.8rem', fontWeight: 600, color: 'inherit', marginTop: '0.25rem', marginBottom: '0.75rem' }}>
-            Annual pricing • Zero Setup Fee
+          <div style={{ fontSize: '0.8rem', fontWeight: 600, color: 'inherit', marginTop: '0.35rem', marginBottom: '0.75rem' }}>
+            14-day free trial • No credit card required
           </div>
 
           <ul className="price-list" style={{ paddingLeft: 0, listStyle: 'none', margin: 0 }}>
-            {/* ANCHOR ROW FOR PRO */}
-            <li
-              style={{
-                display: 'flex',
-                alignItems: 'center',
-                gap: '0.65rem',
-                fontSize: '0.94rem',
-                fontWeight: 800,
-                color: 'inherit',
-                marginBottom: '0.75rem'
-              }}
-            >
-              <Check />
-              <span>Everything in Starter Plan, plus:</span>
-            </li>
-            {P.map((feature) => (
+            {FEATURES.map((feature) => (
               <li
                 key={feature}
                 style={{
@@ -174,10 +91,16 @@ export default function Pricing() {
           </ul>
 
           <div style={{ marginTop: 'auto', paddingTop: '1.5rem' }}>
+            <div style={{ display: 'grid', gap: '0.45rem', marginBottom: '1.25rem', fontSize: '0.88rem', lineHeight: '1.55' }}>
+              <div><strong>Guided online setup/help included</strong></div>
+              <div>On-site setup: ₹2,000 one-time</div>
+              <div>Field first-year package: ₹6,999</div>
+              <div>Field 3-year package: ₹13,999</div>
+            </div>
             <a
               className="btn-cta"
               href="https://app.zipla.in/register"
-              aria-label="Start a 14-day free trial of Zipla POS Pro"
+              aria-label="Start a 14-day free trial of the Zipla POS Complete plan"
               style={{
                 display: 'block',
                 textAlign: 'center',
@@ -196,7 +119,6 @@ export default function Pricing() {
         </div>
       </div>
 
-      {/* HARDWARE FREEDOM BANNER */}
       <div
         style={{
           marginTop: '2.5rem',

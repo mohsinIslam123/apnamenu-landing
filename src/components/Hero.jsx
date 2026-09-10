@@ -83,7 +83,7 @@ export default function Hero({ takeaway }) {
           </div>
           <div className="hero-callout hero-callout--kitchen">
             <span className="hero-callout-icon"><KitchenIcon /></span>
-            <span><strong>Kitchen handoff</strong><small>Pro KDS for active order queues</small></span>
+            <span><strong>Kitchen handoff</strong><small>KDS for active order queues</small></span>
           </div>
           <figcaption id="hero-product-caption">Actual Zipla POS order billing and counter interface.</figcaption>
         </figure>
