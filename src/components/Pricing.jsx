@@ -46,7 +46,7 @@ export default function Pricing() {
         </p>
       </div>
 
-      <div className="pricing-grid" style={{ gridTemplateColumns: 'minmax(0, 620px)', justifyContent: 'center' }}>
+      <div className="pricing-grid">
         <div className="price-card popular" style={{ display: 'flex', flexDirection: 'column' }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', gap: '1rem' }}>
             <div>
