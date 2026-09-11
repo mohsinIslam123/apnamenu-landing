@@ -19,10 +19,10 @@ const CUSTOMER_VIDEOS = [];
 const PAGE_TITLE = 'Complete Restaurant Billing Software for India | Zipla POS';
 
 const PAGE_DESCRIPTION =
-  'Complete restaurant billing and ordering software for growing restaurants, cafes, bakeries, QSRs and dhabas, with table and customer QR ordering and live order status tracking. ₹4,999/year or ₹11,999 for 3 years prepaid, with a 14-day free trial and no credit card required.';
+  'Complete restaurant billing and ordering software for growing restaurants, cafes, bakeries, QSRs and dhabas, with Mobile POS, barcode inventory, automatic GST calculation, table and customer QR ordering, live order tracking and offline billing after the menu loads. ₹4,999/year or ₹11,999 for 3 years prepaid.';
 
 const TOP_TAKEAWAY =
-  'Zipla POS is complete restaurant billing and ordering software for growing restaurants, cafes, bakeries, QSRs and dhabas. The Complete plan includes table and customer QR ordering with live order status tracking, costs ₹4,999/year or ₹11,999 for 3 years prepaid, and includes guided online setup/help and online training with a 14-day free trial.';
+  'Zipla POS is complete restaurant billing and ordering software for growing restaurants, cafes, bakeries, QSRs and dhabas. The Complete plan includes Mobile POS, barcode scanning to add packaged products to inventory, automatic GST calculation, table and customer QR ordering, live order status tracking and offline billing after the menu loads. It costs ₹4,999/year or ₹11,999 for 3 years prepaid, with guided online setup/help and online training. Online payments require the restaurant\'s own Razorpay account and internet access.';
 
 const jsonLd = {
   '@context': 'https://schema.org',
@@ -69,6 +69,38 @@ const jsonLd = {
           acceptedAnswer: {
             '@type': 'Answer',
             text: 'Guided online setup and online training are included. Book a demo if you want us to walk your team through the relevant workflow.'
+          }
+        },
+        {
+          '@type': 'Question',
+          name: 'Can I use Zipla POS on a mobile device?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Yes. Zipla POS can be used on supported mobile devices, with staff roles for the team workflow.'
+          }
+        },
+        {
+          '@type': 'Question',
+          name: 'Can barcode scanning add products to inventory?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Yes. Barcode scanning can be used to add packaged products to inventory.'
+          }
+        },
+        {
+          '@type': 'Question',
+          name: 'Does Zipla POS calculate GST automatically?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Yes. The configured GST rate is applied when the bill is generated, and GST and non-GST invoices can be printed.'
+          }
+        },
+        {
+          '@type': 'Question',
+          name: 'Does Zipla POS support online payments?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: "Yes, when the restaurant connects its own Razorpay account. Online payments require an internet connection."
           }
         },
         {

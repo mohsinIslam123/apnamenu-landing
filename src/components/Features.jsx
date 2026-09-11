@@ -354,7 +354,7 @@ export default function QuickAnswer() {
             Choose the workflow that matches your outlet: counter checkout, table service, customer home ordering, kitchen handoff, or weight- and piece-based billing.
           </p>
           <p className="qa-def-p2">
-            Each option below explains the operational need it supports and the plan to consider.
+            The Complete plan also supports Mobile POS, barcode scanning for packaged inventory, automatic GST calculation and online payments through the restaurant's own Razorpay account when internet is available.
           </p>
 
           <ul className="qa-key-points">
@@ -365,6 +365,22 @@ export default function QuickAnswer() {
             <li className="qa-key-item">
               <CheckGreen />
               <span><strong>Supported setup:</strong> Use an Android phone, tablet, or Windows PC with compatible thermal printing</span>
+            </li>
+            <li className="qa-key-item">
+              <CheckGreen />
+              <span><strong>Mobile POS:</strong> Use Zipla POS on supported mobile devices with staff roles</span>
+            </li>
+            <li className="qa-key-item">
+              <CheckGreen />
+              <span><strong>Barcode inventory:</strong> Scan packaged products to add them to inventory</span>
+            </li>
+            <li className="qa-key-item">
+              <CheckGreen />
+              <span><strong>Automatic GST:</strong> The configured GST rate is applied when the bill is generated</span>
+            </li>
+            <li className="qa-key-item">
+              <CheckGreen />
+              <span><strong>Online payments:</strong> Connect your own Razorpay account; internet is required</span>
             </li>
             <li className="qa-key-item">
               <CheckGreen />
