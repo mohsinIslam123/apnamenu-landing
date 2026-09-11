@@ -23,8 +23,8 @@ const FEATURE_GROUPS = [
     title: 'Billing & payments',
     features: [
       'Counter POS Billing',
-      'GST and Non-GST Invoice Print',
-      'Cash, UPI and Card Payment Tracking'
+      'GST/non-GST invoice printing with configured GST rates',
+      'Payment tracking: cash, UPI and card'
     ]
   },
   {
@@ -101,13 +101,18 @@ export default function Pricing() {
             ))}
           </div>
 
+          <div className="price-conditions" aria-label="Payment and connectivity conditions">
+            <span>Offline billing works after the menu loads.</span>
+            <span>Online payments require your own Razorpay account and internet.</span>
+          </div>
+
           <div className="price-support">
             <div className="price-online-support">
               <strong>Guided online setup and online training included</strong>
             </div>
             <aside className="price-onsite-note" aria-label="Optional offline onboarding">
               <strong>Optional offline onboarding</strong>
-              <span>+₹1,999 one-time only when our team visits for complete setup and 2-hour staff training.</span>
+              <span>+₹1,999 one-time only when our team visits for complete setup and 2-hour staff training. The visit fee is not recurring; regular plan renewal pricing applies.</span>
             </aside>
           </div>
 
