@@ -49,12 +49,7 @@ function ThemeIcon({ isLight }) {
 }
 
 export default function Header() {
-  const [theme, setTheme] = useState(() => {
-    if (typeof document !== 'undefined') {
-      return document.documentElement.dataset.theme === 'light' ? 'light' : 'dark'
-    }
-    return 'dark'
-  })
+  const [theme, setTheme] = useState('dark')
 
   const [menuOpen, setMenuOpen] = useState(false)
   const menuButtonRef = useRef(null)
