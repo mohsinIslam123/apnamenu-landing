@@ -2,7 +2,7 @@ export default function TrustBar() {
   const items = [
     { label: 'Counter checkout + GST', path: <><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h4"/></> },
     { label: 'Kitchen order queue', path: <><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4M7 9h10M7 13h5"/></> },
-    { label: 'Table & customer QR ordering', path: <><rect x="4" y="4" width="6" height="6"/><rect x="14" y="4" width="6" height="6"/><rect x="4" y="14" width="6" height="6"/><path d="M15 15h2v2h-2zM18 18h2v2h-2zM15 19h2"/></> },
+    { label: 'Table QR + Customer QR', path: <><rect x="4" y="4" width="6" height="6"/><rect x="14" y="4" width="6" height="6"/><rect x="4" y="14" width="6" height="6"/><path d="M15 15h2v2h-2zM18 18h2v2h-2zM15 19h2"/></> },
     { label: 'Supported bill printing', path: <><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M10 18h4M4 9h2M18 9h2"/></> },
   ]
   return (

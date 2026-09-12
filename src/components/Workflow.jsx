@@ -26,9 +26,9 @@ const WORKFLOWS = [
   },
   {
     id: 'qr-ordering',
-    title: 'Table & Customer QR Ordering',
+    title: 'Table QR Ordering + Customer QR Home Ordering',
     plan: 'Complete plan',
-    summary: 'Diners can use a table QR, while customers can place home orders with Customer QR and track status on their phone.',
+    summary: 'Table QR Ordering is for diners in the outlet. Customer QR Home Ordering is for home orders and phone-based status tracking.',
     illustration: '/workflows/qr-ordering-workflow.webp',
     illustrationAlt: 'Illustrative QR ordering workflow from a table or home order to menu selection and kitchen handoff',
     illustrationWidth: 1200,

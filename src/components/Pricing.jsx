@@ -35,7 +35,8 @@ const FEATURE_GROUPS = [
       'Live Order Status Tracking',
       'Cashier-to-Kitchen Order Handoff',
       'Kitchen Display System (KDS)',
-      'Bluetooth KOT Auto-Print'
+      'Bluetooth KOT Auto-Print',
+      'WhatsApp Bill Sharing'
     ]
   },
   {
@@ -102,7 +103,7 @@ export default function Pricing() {
           </div>
 
           <div className="price-conditions" aria-label="Payment and connectivity conditions">
-            <span>Offline billing works after the menu loads.</span>
+            <span>After the menu is loaded, billing can continue offline.</span>
             <span>Online payments require your own Razorpay account and internet.</span>
           </div>
 

@@ -17,7 +17,7 @@ export default function FAQ() {
       <div className="section-head">
         <span className="eyebrow">FAQ</span>
         <h2 id="faq-title">What do food businesses ask before starting Zipla POS?</h2>
-        <p>These answers cover customer QR ordering, data access, team onboarding, menu setup, connectivity, and product support.</p>
+        <p>These answers cover Table QR Ordering, Customer QR Home Ordering, data access, team onboarding, menu setup, connectivity, and product support.</p>
       </div>
       <div className="faq-list">
         {ITEMS.map(i => <details className="faq-item" key={i.q}><summary className="faq-q">{i.q}<Plus /></summary><div className="faq-a">{i.a}</div></details>)}

@@ -52,7 +52,8 @@ function CheckGreen() {
 const CAPABILITIES = [
   { icon: PosIcon, label: 'Counter checkout + GST' },
   { icon: KdsIcon, label: 'Kitchen order queue' },
-  { icon: QrIcon, label: 'Table & customer QR ordering' },
+  { icon: QrIcon, label: 'Table QR Ordering' },
+  { icon: QrIcon, label: 'Customer QR Home Ordering' },
   { icon: HardwareIcon, label: 'Supported bill printing' }
 ]
 
@@ -381,6 +382,10 @@ export default function QuickAnswer() {
             <li className="qa-key-item">
               <CheckGreen />
               <span><strong>Online payments:</strong> Connect your own Razorpay account; internet is required</span>
+            </li>
+            <li className="qa-key-item">
+              <CheckGreen />
+              <span><strong>Bill sharing:</strong> Share bills with customers on WhatsApp when a digital copy is needed</span>
             </li>
             <li className="qa-key-item">
               <CheckGreen />
