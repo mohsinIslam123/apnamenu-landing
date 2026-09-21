@@ -29,12 +29,10 @@ export default function Hero({ takeaway, planSummary }) {
       <div className="hero-inner" style={{ alignItems: 'flex-start' }}>
         <div className="hero-copy">
           <span className="eyebrow" style={{ marginTop: 0, marginBottom: '10px', display: 'inline-block' }}>For Indian food businesses</span>
-          <h1 id="hero-title" style={{ marginTop: 0, marginBottom: '16px' }}>Restaurant Billing Software for Indian Food Businesses</h1>
-          <p className="sub" style={{ marginTop: 0, marginBottom: '24px' }}>For Indian restaurants, cafes, QSRs, bakeries, sweet shops and dhabas, manage counter billing, GST invoices, payments and relevant Table QR, Customer QR or kitchen workflows.</p>
-          <p className="hero-key-takeaway"><strong>What it means:</strong> Restaurant billing software is a system that helps a food business create bills, apply configured GST, record payments and connect relevant ordering or kitchen steps.</p>
-          <p className="hero-key-takeaway"><strong>Who this is for:</strong> This page is for Indian restaurant, cafe, QSR, bakery, sweet-shop and dhaba owners choosing or replacing a billing system. If you are comparing restaurant billing software for India, test your own menu before you switch.</p>
+          <h1 id="hero-title" style={{ marginTop: 0, marginBottom: '16px' }}>Restaurant Billing Software for India</h1>
+          <p className="sub" style={{ marginTop: 0, marginBottom: '24px' }}>Billing, GST invoices, QR ordering and KDS for Indian restaurants, cafes, QSRs, bakeries, sweet shops and dhabas.</p>
           <p className="hero-key-takeaway"><strong>Short answer:</strong> {takeaway}</p>
-          <p className="hero-key-takeaway"><strong>Key takeaway:</strong> Test your own menu, payment flow and kitchen handoff before you switch billing software. <strong>Complete plan:</strong> {planSummary}</p>
+          <p className="hero-key-takeaway hero-plan-summary"><strong>Complete plan:</strong> {planSummary}</p>
           <div className="hero-ctas">
             <a className="btn-cta" href="/#demo">Book a WhatsApp Demo</a>
             <a className="hero-trial-link" href="https://app.zipla.in/register">Start 14-Day Free Trial</a>
