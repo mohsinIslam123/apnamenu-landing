@@ -54,7 +54,7 @@ const CAPABILITIES = [
   { icon: KdsIcon, label: 'Kitchen order queue' },
   { icon: QrIcon, label: 'Table QR Ordering' },
   { icon: QrIcon, label: 'Customer QR Home Ordering' },
-  { icon: HardwareIcon, label: 'Supported bill printing' }
+  { icon: HardwareIcon, label: '58mm/80mm Bluetooth printing' }
 ]
 
 export default function QuickAnswer() {
@@ -365,7 +365,7 @@ export default function QuickAnswer() {
             </li>
             <li className="qa-key-item">
               <CheckGreen />
-              <span><strong>Supported setup:</strong> Use an Android phone, tablet, or Windows PC with compatible thermal printing</span>
+              <span><strong>Supported setup:</strong> Use an Android phone, tablet, or Windows PC with compatible 58mm or 80mm Bluetooth thermal printing</span>
             </li>
             <li className="qa-key-item">
               <CheckGreen />
@@ -378,6 +378,10 @@ export default function QuickAnswer() {
             <li className="qa-key-item">
               <CheckGreen />
               <span><strong>Automatic GST:</strong> The configured GST rate is applied when the bill is generated</span>
+            </li>
+            <li className="qa-key-item">
+              <CheckGreen />
+              <span><strong>AI Menu Scan:</strong> Start menu setup from a menu photo and review item details before use</span>
             </li>
             <li className="qa-key-item">
               <CheckGreen />
