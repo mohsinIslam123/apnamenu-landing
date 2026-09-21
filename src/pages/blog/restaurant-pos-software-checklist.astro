@@ -1,0 +1,263 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.jsx';
+import Footer from '../../components/Footer.jsx';
+import '../../index.css';
+
+const title = 'Restaurant POS Software Checklist: What to Test Before You Switch | Zipla POS';
+const description = 'A practical restaurant POS software checklist for Indian food businesses: test billing, GST invoices, payments, kitchen handoff, QR ordering, printing and offline billing before you switch.';
+const canonical = 'https://zipla.in/blog/restaurant-pos-software-checklist/';
+const published = '2026-09-21';
+const updated = '2026-09-21';
+
+const faqs = [
+  {
+    question: 'What should I test first in restaurant POS software?',
+    answer: 'Start with a small version of your real menu. Create one bill, mark the payment mode your counter actually uses, and check the invoice and customer handoff before exploring extra features.',
+  },
+  {
+    question: 'Does offline billing mean online payments will work without internet?',
+    answer: 'No. Zipla POS supports billing after the menu loads in partial offline mode, but online payments require an internet connection.',
+  },
+  {
+    question: 'Are table QR ordering and customer QR ordering the same?',
+    answer: 'No. Table QR ordering is for customers ordering from their table, while Customer QR Home Ordering is a separate home-ordering workflow with order status tracking.',
+  },
+  {
+    question: 'How should I compare two restaurant POS systems?',
+    answer: 'Use the same short test script with both systems: real menu, one bill, payment marking, invoice, printer or bill sharing, kitchen handoff when relevant, and day-close review.',
+  },
+  {
+    question: 'What does Zipla POS cost?',
+    answer: 'The current Complete plan is ₹4,999 per year or ₹11,999 for 3 years prepaid. The trial is 14 days and does not require a credit card.',
+  },
+];
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'WebPage',
+      '@id': canonical,
+      url: canonical,
+      name: title,
+      description,
+      isPartOf: { '@id': 'https://zipla.in/#website' },
+      about: { '@id': 'https://zipla.in/#software' },
+      inLanguage: 'en-IN',
+      dateModified: updated,
+      breadcrumb: { '@id': canonical + '#breadcrumb' },
+    },
+    {
+      '@type': 'BlogPosting',
+      '@id': canonical + '#article',
+      headline: title,
+      description,
+      url: canonical,
+      datePublished: published,
+      dateModified: updated,
+      author: { '@id': 'https://zipla.in/#organization' },
+      publisher: { '@id': 'https://zipla.in/#organization' },
+      mainEntityOfPage: { '@id': canonical },
+      inLanguage: 'en-IN',
+    },
+    {
+      '@type': 'BreadcrumbList',
+      '@id': canonical + '#breadcrumb',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://zipla.in/' },
+        { '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://zipla.in/blog/' },
+        { '@type': 'ListItem', position: 3, name: 'Restaurant POS Software Checklist', item: canonical },
+      ],
+    },
+    {
+      '@type': 'FAQPage',
+      '@id': canonical + '#faq',
+      mainEntity: faqs.map((faq) => ({
+        '@type': 'Question',
+        name: faq.question,
+        acceptedAnswer: { '@type': 'Answer', text: faq.answer },
+      })),
+    },
+  ],
+};
+---
+
+<Layout title={title} description={description} canonical={canonical} jsonLd={jsonLd}>
+  <Header client:load />
+
+  <main class="post-main">
+    <section class="post-hero">
+      <div class="post-container">
+        <nav class="post-breadcrumb" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span aria-hidden="true">›</span>
+          <a href="/blog/">Blog</a>
+          <span aria-hidden="true">›</span>
+          <span>Restaurant POS checklist</span>
+        </nav>
+        <div class="post-meta-top">
+          <span class="post-tag">Buyer guide</span>
+          <span class="post-date">Updated September 21, 2026</span>
+        </div>
+        <h1 class="post-h1">Restaurant POS Software Checklist: What to Test Before You Switch</h1>
+        <p class="post-lead">A POS can look convincing in a demo and still feel wrong at a busy counter. Before you change your billing system, run a short test with the menu, payment flow and kitchen handoff your team actually uses.</p>
+      </div>
+    </section>
+
+    <section class="post-content-section">
+      <div class="post-container">
+        <div class="post-body">
+          <p>Choosing restaurant POS software is less about counting features and more about checking the small steps that happen hundreds of times in a working food business: finding a menu item, creating the bill, marking the payment, sending the order to the kitchen and closing the day.</p>
+
+          <p>This checklist is for Indian restaurants, cafes, bakeries, QSRs, dhabas and sweet shops comparing billing systems. It is deliberately practical. You do not need to test every setting on day one; you need to see whether the system fits your real counter.</p>
+
+          <p class="post-note"><strong>Quick answer:</strong> Use five or six familiar menu items and test one complete order from billing to customer handoff. Then repeat the same test with any other POS you are considering. That makes the comparison much more useful than a feature list.</p>
+
+          <h2>1. Start with a real menu, not a sample screen</h2>
+          <p>Sample data makes almost every POS look tidy. Your own menu shows the parts that matter: the names your staff recognise, the prices you actually charge and the way customers order them.</p>
+          <p>For the first test, add a small set of familiar items from your counter. Include one item that is ordered often, one item with a different price and one item that represents the way your outlet normally bills. Keep the test small enough that your team can repeat it without a training session.</p>
+
+          <h2>2. Check the invoice and GST workflow</h2>
+          <p>Create a bill and read it like an owner, not just a software buyer. Check the business details, invoice number, date, item lines, taxable amount and the configured tax treatment. If your business needs a GST invoice, confirm that the setup matches your accountant's process and the current rules that apply to your business.</p>
+          <p>A billing application can help standardise the configured workflow, but it does not decide your registration status or tax treatment. Before filing or relying on a tax position, verify the current requirement with the GST Portal, CBIC guidance and your qualified tax professional.</p>
+          <p>For a product-specific starting point, see the <a href="/blog/restaurant-dhaba-gst-invoice-guide-2026/">restaurant and dhaba GST invoice guide</a>.</p>
+
+          <h2>3. Mark the payment method your counter really uses</h2>
+          <p>Test the payment options your staff handle every day: cash, UPI or card. The important question is not whether a screen contains three buttons. It is whether the final bill, payment status and customer handoff remain clear when the counter is busy.</p>
+          <p>If you want online payments inside the workflow, check the internet dependency and account setup. Zipla POS online payments use the restaurant's own Razorpay account when online; online payments require an internet connection.</p>
+
+          <h2>4. Follow one order into the kitchen</h2>
+          <p>If your restaurant has a kitchen handoff, do not stop at the cashier screen. Send one test order and check what the kitchen team sees, how an active order is identified and how the counter knows what happened next.</p>
+          <p>A Kitchen Display System or KOT flow is useful only when it matches the way your kitchen works. If your outlet does not need a kitchen queue, this step can be shorter. If it does, test it with the same menu items you used for the bill.</p>
+
+          <h2>5. Understand the QR workflow before you compare it</h2>
+          <p>“QR ordering” can describe more than one workflow. Ask which QR use case you are actually evaluating:</p>
+          <ul class="post-ul">
+            <li><strong>Table QR ordering:</strong> for a customer ordering from a table in the outlet.</li>
+            <li><strong>Customer QR Home Ordering:</strong> for a home-ordering flow with order status tracking.</li>
+          </ul>
+          <p>These are not interchangeable just because both use a QR code. Test the flow that matches your business today, and treat the other one as a separate capability.</p>
+
+          <h2>6. Test printing and bill sharing with your actual setup</h2>
+          <p>Print one invoice using the thermal-printer setup your outlet plans to use. Also test the way your team shares bills with customers when a printed slip is not needed, such as WhatsApp bill sharing.</p>
+          <p>Ask the vendor which printer models and connection methods are supported before purchasing hardware. A POS screen can be ready while the final printer setup still needs attention.</p>
+
+          <h2>7. Ask what “offline billing” really means</h2>
+          <p>Offline is not one universal promise. Ask which part of the workflow continues without an active connection and which parts wait for the internet.</p>
+          <p>For Zipla POS, billing can continue after the menu has loaded in partial offline mode. Online payments still require the internet. That distinction is important for outlets that occasionally deal with a weak connection.</p>
+
+          <h2>8. Check staff roles and the owner’s day-close view</h2>
+          <p>A counter operator and an owner do not need the same view. Test whether the system gives staff the access they need while keeping the owner’s review workflow clear.</p>
+          <p>For the owner, look at the day-close and sales-review steps. Check whether the information you need to review the day is present and understandable. Do not choose a report only because it has a large number of charts; choose the view your team will actually use.</p>
+
+          <h2>9. Include inventory only if it is part of your real problem</h2>
+          <p>For a bakery, sweet shop or packaged-product counter, inventory may be part of the decision. Test the items and stock questions that matter to that outlet, including barcode scanning for packaged products and low-stock visibility where relevant.</p>
+          <p>If your business does not need inventory today, do not let a long inventory feature list distract from the billing and payment workflow your counter depends on.</p>
+
+          <h2>10. Compare the full trial and pricing picture</h2>
+          <p>Ask what is included in the plan you are actually comparing, what requires setup and what the team can test during the trial. This prevents a common mistake: comparing one vendor's headline feature list with another vendor's working plan.</p>
+          <p>Zipla POS currently offers a Complete plan at ₹4,999 per year or ₹11,999 for 3 years prepaid. The trial is 14 days and does not require a credit card. Use the trial to test your own menu and workflow rather than deciding from the price alone.</p>
+
+          <h2>A simple 20-minute restaurant POS test</h2>
+          <ol class="post-ol">
+            <li><strong>Pick five real menu items.</strong> Use names and prices your team already knows.</li>
+            <li><strong>Create one customer bill.</strong> Read the invoice before moving on.</li>
+            <li><strong>Mark one payment.</strong> Use the payment method your counter handles most often.</li>
+            <li><strong>Print or share the bill.</strong> Use the printer and customer handoff you expect to use.</li>
+            <li><strong>Send one kitchen order.</strong> Do this only if your outlet uses KOT or KDS.</li>
+            <li><strong>Check the end-of-day view.</strong> See whether the owner can understand what happened without rebuilding the day manually.</li>
+            <li><strong>Repeat the script.</strong> Use the same steps for every POS on your shortlist.</li>
+          </ol>
+
+          <h2>Questions worth asking before you switch</h2>
+          <div class="post-question-grid">
+            <div class="post-question"><h3>What does offline mean here?</h3><p>Does it cover bill creation after the menu loads, or does the vendor mean something else? Which functions still require internet?</p></div>
+            <div class="post-question"><h3>Which payment account is used?</h3><p>For online payments, confirm whose account receives the money and what connection is required.</p></div>
+            <div class="post-question"><h3>Which hardware is supported?</h3><p>Check printer compatibility and test the exact setup before buying a thermal printer.</p></div>
+            <div class="post-question"><h3>Which plan includes the workflow?</h3><p>Ask whether the kitchen, QR or inventory workflow you need is included in the plan you are pricing.</p></div>
+          </div>
+
+          <h2>When a full restaurant POS may be more than you need</h2>
+          <p>Not every outlet needs the same system. If a very small operation only needs a basic cash register and does not use a kitchen handoff, QR ordering or stock workflow, a simpler billing tool may be enough.</p>
+          <p>The right choice is the one that fits the work your team repeats. A larger feature list is not automatically a better decision.</p>
+
+          <h2>Where Zipla POS may fit</h2>
+          <p>Zipla POS is built around the billing and ordering workflow used by Indian restaurants and other food businesses. The current product scope includes counter billing, GST billing support, payment tracking, staff roles, table QR ordering, Customer QR Home Ordering, KDS, inventory and low-stock visibility, thermal printing and day-close reporting, with the offline billing limitation described above.</p>
+          <p>If that matches your workflow, start with the <a href="/restaurant-pos-software/">restaurant POS software page</a>, compare the <a href="/cafe-pos-software/">cafe workflow</a> or <a href="/bakery-billing-software/">bakery billing workflow</a>, and use the <a href="/faq/">Zipla POS FAQ</a> for product questions before starting a trial.</p>
+
+          <h2>Frequently asked questions</h2>
+          <div class="post-faq" id="faq">
+            {faqs.map((faq) => (
+              <section class="post-faq-item">
+                <h3>{faq.question}</h3>
+                <p>{faq.answer}</p>
+              </section>
+            ))}
+          </div>
+
+          <div class="post-summary">
+            <h2>Checklist summary</h2>
+            <p>Use your own menu, test one complete order, confirm what works offline, check the kitchen and QR workflow only when relevant, and repeat the same script with every POS you compare. That is enough to turn a polished demo into a decision you can explain to your team.</p>
+          </div>
+
+          <div class="post-cta">
+            <h2>Test the workflow with your own menu.</h2>
+            <p>Zipla POS offers a 14-day trial with no credit card required. Use a small real-menu test before you decide whether the workflow fits.</p>
+            <div class="post-cta-actions">
+              <a class="btn-cta" href="https://app.zipla.in/register">Start 14-Day Free Trial</a>
+              <a class="btn-ghost" href="/#demo">Book Free WhatsApp Demo</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
+
+<style>
+  .post-main{background:var(--bg);min-height:100vh}
+  .post-container{width:min(100% - 48px,960px);margin:0 auto}
+  .post-hero{padding:42px 24px 66px;background:radial-gradient(ellipse 72% 80% at 50% 0,rgba(202,160,76,.14),transparent 72%);border-bottom:1px solid var(--border)}
+  .post-breadcrumb{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:28px;color:var(--text-3);font-size:12px}
+  .post-breadcrumb a{color:var(--text-2);text-decoration:none}
+  .post-breadcrumb a:hover{color:var(--amber-2)}
+  .post-meta-top{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-bottom:16px}
+  .post-tag{display:inline-flex;padding:6px 10px;border:1px solid rgba(232,201,131,.35);border-radius:999px;color:var(--amber-2);font-size:10px;font-weight:800;letter-spacing:1px;text-transform:uppercase}
+  .post-date{color:var(--text-3);font-size:12px}
+  .post-h1{max-width:820px;margin:0 0 18px;font-family:var(--display);font-size:clamp(36px,5vw,58px);line-height:1.06;letter-spacing:-.02em}
+  .post-lead{max-width:760px;margin:0;color:var(--text-2);font-size:18px;line-height:1.75}
+  .post-content-section{padding:72px 24px 96px}
+  .post-body{max-width:760px;margin:0 auto;color:var(--text-2);font-size:16px;line-height:1.8}
+  .post-body p{margin:0 0 22px}
+  .post-body h2{margin:52px 0 16px;color:var(--text);font-family:var(--display);font-size:clamp(27px,3vw,38px);line-height:1.15}
+  .post-body h3{color:var(--text);font-family:var(--display);line-height:1.25}
+  .post-body a{color:var(--amber-2);font-weight:700;text-decoration:underline;text-decoration-color:rgba(232,201,131,.45);text-underline-offset:3px}
+  .post-note{padding:20px 22px;border-left:3px solid var(--amber-2);background:rgba(202,160,76,.09);color:var(--text);border-radius:0 12px 12px 0}
+  .post-ul,.post-ol{margin:0 0 24px;padding-left:26px}
+  .post-ul li,.post-ol li{padding-left:5px;margin:0 0 12px}
+  .post-ul li::marker,.post-ol li::marker{color:var(--amber-2);font-weight:800}
+  .post-question-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:24px 0 12px}
+  .post-question{padding:20px;border:1px solid var(--border);border-radius:14px;background:var(--surface)}
+  .post-question h3{margin:0 0 8px;font-size:18px}
+  .post-question p{margin:0;font-size:14px;line-height:1.65}
+  .post-faq{display:grid;gap:12px;margin:22px 0 12px}
+  .post-faq-item{padding:20px;border:1px solid var(--border);border-radius:14px;background:var(--surface)}
+  .post-faq-item h3{margin:0 0 8px;font-size:18px}
+  .post-faq-item p{margin:0;font-size:14px;line-height:1.7}
+  .post-summary{margin-top:52px;padding:26px;border:1px solid var(--border);border-radius:16px;background:rgba(202,160,76,.06)}
+  .post-summary h2{margin-top:0}
+  .post-cta{margin-top:52px;padding:40px 28px;border:1px solid var(--border-hi);border-radius:20px;background:linear-gradient(145deg,rgba(202,160,76,.15),var(--surface-2) 56%);text-align:center}
+  .post-cta h2{margin-top:0}
+  .post-cta p{max-width:600px;margin:0 auto 24px}
+  .post-cta-actions{display:flex;justify-content:center;flex-wrap:wrap;gap:12px}
+  @media(max-width:700px){
+    .post-container{width:min(100% - 36px,960px)}
+    .post-hero{padding:34px 18px 52px}
+    .post-content-section{padding:56px 18px 76px}
+    .post-question-grid{grid-template-columns:1fr}
+    .post-body{font-size:15px}
+  }
+</style>
