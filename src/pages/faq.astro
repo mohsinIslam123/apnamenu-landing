@@ -33,7 +33,7 @@ const faqs = [
 const jsonLd = {
   '@context': 'https://schema.org',
   '@graph': [
-    { '@type': 'WebPage', '@id': canonical, url: canonical, name: title, description, isPartOf: { '@id': 'https://zipla.in/#website' }, about: { '@id': 'https://zipla.in/#software' }, inLanguage: 'en-IN', dateModified: '2026-09-10', breadcrumb: { '@id': `${canonical}#breadcrumb` } },
+    { '@type': 'WebPage', '@id': canonical, url: canonical, name: title, description, isPartOf: { '@id': 'https://zipla.in/#website' }, about: { '@id': 'https://zipla.in/#software' }, inLanguage: 'en-IN', dateModified: '2026-09-21', breadcrumb: { '@id': `${canonical}#breadcrumb` } },
     { '@type': 'BreadcrumbList', '@id': `${canonical}#breadcrumb`, itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: 'https://zipla.in/' }, { '@type': 'ListItem', position: 2, name: 'FAQ', item: canonical }] },
     { '@type': 'FAQPage', '@id': `${canonical}#faq`, mainEntity: faqs.map((faq) => ({ '@type': 'Question', name: faq.question, acceptedAnswer: { '@type': 'Answer', text: faq.answer } })) },
   ],
