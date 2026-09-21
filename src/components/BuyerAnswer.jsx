@@ -24,8 +24,17 @@ export default function BuyerAnswer() {
         <div className="buyer-answer-intro">
           <span className="eyebrow">Quick answer</span>
           <h2 id="buyer-answer-title">Choose billing software around your service workflow</h2>
-          <p className="buyer-answer-lead">The key decision is how a customer order moves from the counter, table or home to payment, kitchen handoff and daily review.</p>
-          <p>Zipla POS is designed for Indian restaurants, cafés, bakeries, sweet shops, QSRs and dhabas—whether you run a counter, tables, or weight-based billing.</p>
+          <p className="buyer-answer-lead">Restaurant billing software is a system that helps a food business create bills, apply configured GST, record payments and connect relevant ordering or kitchen steps.</p>
+          <div className="buyer-answer-summary" aria-label="Who Zipla POS is for and what to test">
+            <div className="buyer-answer-summary-card">
+              <h3>Who this is for</h3>
+              <p>Indian restaurant, cafe, QSR, bakery, sweet-shop and dhaba owners choosing or replacing a billing system.</p>
+            </div>
+            <div className="buyer-answer-summary-card">
+              <h3>What to test</h3>
+              <p>Use a small real menu and check payment, printing, QR ordering or kitchen handoff before you switch.</p>
+            </div>
+          </div>
         </div>
 
         <div className="buyer-answer-decision">

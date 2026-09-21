@@ -1,12 +1,12 @@
 const ITEMS = [
   { q: 'How do I access my business data?', a: 'Use your Zipla login to access your business workspace.' },
-  { q: 'Will my staff need training?', a: 'Guided online setup and online training are included. Book a demo if you want us to walk your team through the relevant workflow.' },
+  { q: 'Will my staff need training?', a: 'Book a demo to review the relevant workflow. Optional on-site onboarding is separate from the Complete plan and is listed at ₹1,999.' },
   { q: 'Can I use Zipla POS on a mobile device?', a: 'Yes. Zipla POS can be used on supported mobile devices, with staff roles for the team workflow.' },
   { q: 'Can barcode scanning add products to inventory?', a: 'Yes. Barcode scanning can be used to add packaged products to inventory.' },
   { q: 'Does Zipla POS calculate GST automatically?', a: 'Yes. The configured GST rate is applied when the bill is generated, and GST and non-GST invoices can be printed.' },
   { q: 'Does Zipla POS support online payments?', a: 'Yes, when the restaurant connects its own Razorpay account. Online payments require an internet connection.' },
   { q: 'Can customers order from home and track the order?', a: 'Yes. Customer QR Home Ordering lets customers enter their name, phone number and address, place an order from home, and track accepted, preparing and completed status on their phone.' },
-  { q: 'Can I continue billing if the internet connection drops?', a: 'After the menu has loaded, Zipla POS can create bills without an internet connection. UPI and online payments require connectivity. Full offline sync is on our roadmap.' },
+  { q: 'Can I continue billing if the internet connection drops?', a: 'After the menu has loaded, Zipla POS can create bills without an internet connection. UPI and online payments require connectivity. Full offline sync is not included in this workflow.' },
   { q: 'How do I add my existing menu?', a: 'Use the Zipla menu-management workflow to add and review your items. Book a demo if you want help confirming the current setup process.' },
   { q: 'How do I get support?', a: 'You can contact the Zipla team on WhatsApp for support and a product walkthrough.' },
 ]

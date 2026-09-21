@@ -16,13 +16,15 @@ import '../index.css';
 
 const CUSTOMER_VIDEOS = [];
 
-const PAGE_TITLE = 'Complete Restaurant Billing Software for India | Zipla POS';
+const PAGE_TITLE = 'Restaurant Billing Software for India | Zipla POS';
 
 const PAGE_DESCRIPTION =
-  'Complete restaurant billing and ordering software for growing restaurants, cafes, bakeries, QSRs and dhabas, with Mobile POS, barcode inventory, automatic GST calculation, Table QR Ordering and Customer QR Home Ordering, live order tracking and offline billing after the menu loads. ₹4,999/year or ₹11,999 for 3 years prepaid.';
+  'Restaurant billing software for Indian restaurants, cafes, QSRs, bakeries, sweet shops and dhabas with GST billing, QR ordering and KDS.';
 
 const TOP_TAKEAWAY =
-  'One Complete plan brings counter billing, Customer QR home ordering and cashier-to-kitchen handoff into one workflow for growing food businesses. It is ₹4,999/year or ₹11,999 for 3 years prepaid, with guided online setup and training included.';
+  'Restaurant billing software for India with counter billing, GST invoices, payment tracking, QR ordering and relevant kitchen workflows for Indian restaurants, cafes, QSRs, bakeries, sweet shops and dhabas.';
+const TOP_PLAN_SUMMARY =
+  '₹4,999/year or ₹11,999 for 3 years prepaid, with a 14-day free trial and no credit card required.';
 
 const jsonLd = {
   '@context': 'https://schema.org',
@@ -68,7 +70,7 @@ const jsonLd = {
           name: 'Will my staff need training?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: 'Guided online setup and online training are included. Book a demo if you want us to walk your team through the relevant workflow.'
+            text: 'Book a demo to review the relevant workflow. Optional on-site onboarding is separate from the Complete plan and is listed at ₹1,999.'
           }
         },
         {
@@ -116,7 +118,7 @@ const jsonLd = {
           name: 'Can I continue billing if the internet connection drops?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: 'After the menu has loaded, Zipla POS can create bills without an internet connection. UPI and online payments require connectivity. Full offline sync is on our roadmap.'
+            text: 'After the menu has loaded, Zipla POS can create bills without an internet connection. UPI and online payments require connectivity. Full offline sync is not included in this workflow.'
           }
         },
         {
@@ -150,7 +152,7 @@ const jsonLd = {
   <Header client:load />
 
   <main aria-label="Zipla POS restaurant billing software for Indian food businesses">
-    <Hero takeaway={TOP_TAKEAWAY} />
+    <Hero takeaway={TOP_TAKEAWAY} planSummary={TOP_PLAN_SUMMARY} />
     <TrustBar />
     <BuyerAnswer />
     <BusinessTypes />

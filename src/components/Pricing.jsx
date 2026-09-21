@@ -109,11 +109,11 @@ export default function Pricing() {
 
           <div className="price-support">
             <div className="price-online-support">
-              <strong>Guided online setup and online training included</strong>
+              <strong>Review the workflow in a demo before you start</strong>
             </div>
-            <aside className="price-onsite-note" aria-label="Optional offline onboarding">
-              <strong>Optional offline onboarding</strong>
-              <span>+₹1,999 one-time only when our team visits for complete setup and 2-hour staff training. The visit fee is not recurring; regular plan renewal pricing applies.</span>
+            <aside className="price-onsite-note" aria-label="Optional on-site onboarding">
+              <strong>Optional on-site onboarding</strong>
+              <span>₹1,999 separately from the software plan. Confirm the current scope before purchase.</span>
             </aside>
           </div>
 
