@@ -381,10 +381,6 @@ export default function QuickAnswer() {
             </li>
             <li className="qa-key-item">
               <CheckGreen />
-              <span><strong>AI Menu Scan:</strong> Start menu setup from a menu photo and review item details before use</span>
-            </li>
-            <li className="qa-key-item">
-              <CheckGreen />
               <span><strong>Online payments:</strong> Connect your own Razorpay account; internet is required</span>
             </li>
             <li className="qa-key-item">

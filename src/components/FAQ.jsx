@@ -3,7 +3,6 @@ const ITEMS = [
   { q: 'Will my staff need training?', a: 'Book a demo to review the relevant workflow. Optional on-site onboarding is separate from the Complete plan; confirm the current scope before purchase.' },
   { q: 'Can I use Zipla POS on a mobile device?', a: 'Yes. Zipla POS can be used on supported mobile devices, with staff roles for the team workflow.' },
   { q: 'Can barcode scanning add products to inventory?', a: 'Yes. Barcode scanning can be used to add packaged products to inventory.' },
-  { q: 'Does Zipla POS support AI Menu Scan?', a: 'Yes. AI Menu Scan can start menu setup from a menu photo. Review item names, prices, taxes and categories before using the menu in billing.' },
   { q: 'Which Bluetooth thermal printers does Zipla POS support?', a: 'Zipla POS supports compatible 58mm and 80mm Bluetooth thermal printers for bill and KOT printing.' },
   { q: 'Does Zipla POS calculate GST automatically?', a: 'Yes. The configured GST rate is applied when the bill is generated, and GST and non-GST invoices can be printed.' },
   { q: 'Does Zipla POS support online payments?', a: 'Yes, when the restaurant connects its own Razorpay account. Online payments require an internet connection.' },
@@ -19,7 +18,7 @@ export default function FAQ() {
       <div className="section-head">
         <span className="eyebrow">FAQ</span>
         <h2 id="faq-title">What do food businesses ask before starting Zipla POS?</h2>
-        <p>These answers cover Table QR Ordering, Customer QR Home Ordering, AI Menu Scan, Bluetooth printing, data access, menu setup, connectivity, and product support.</p>
+        <p>These answers cover Table QR Ordering, Customer QR Home Ordering, Bluetooth printing, data access, menu setup, connectivity, and product support.</p>
       </div>
       <div className="faq-list">
         {ITEMS.map(i => <details className="faq-item" key={i.q}><summary className="faq-q">{i.q}<Plus /></summary><div className="faq-a">{i.a}</div></details>)}
