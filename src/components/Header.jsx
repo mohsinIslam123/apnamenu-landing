@@ -116,7 +116,7 @@ export default function Header() {
         aria-label="Primary navigation"
       >
         <a href="/#features" onClick={closeMenu}>Features</a>
-        <a href="/#pricing" onClick={closeMenu}>Pricing</a>
+        <a href="/pricing/" onClick={closeMenu}>Pricing</a>
         <a href="/faq/" onClick={closeMenu}>FAQ</a>
         <a className="mobile-nav-demo" href="/#demo" onClick={closeMenu}>Get a Free WhatsApp Demo</a>
       </nav>

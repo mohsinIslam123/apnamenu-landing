@@ -18,7 +18,7 @@ const faqs = [
 const jsonLd = {
   '@context': 'https://schema.org',
   '@graph': [
-    { '@type': 'WebPage', '@id': canonical, url: canonical, name: title, description, isPartOf: { '@id': 'https://zipla.in/#website' }, about: { '@id': 'https://zipla.in/#software' }, inLanguage: 'en-IN', dateModified: '2026-09-21', breadcrumb: { '@id': `${canonical}#breadcrumb` } },
+    { '@type': 'WebPage', '@id': canonical, url: canonical, name: title, description, isPartOf: { '@id': 'https://zipla.in/#website' }, about: { '@id': 'https://zipla.in/#software' }, inLanguage: 'en-IN', dateModified: '2026-09-22', breadcrumb: { '@id': `${canonical}#breadcrumb` } },
     { '@type': 'BreadcrumbList', '@id': `${canonical}#breadcrumb`, itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: 'https://zipla.in/' }, { '@type': 'ListItem', position: 2, name: 'Blog', item: canonical }] },
     { '@type': 'FAQPage', '@id': `${canonical}#faq`, mainEntity: faqs.map((faq) => ({ '@type': 'Question', name: faq.question, acceptedAnswer: { '@type': 'Answer', text: faq.answer } })) },
   ],
@@ -36,7 +36,7 @@ const jsonLd = {
           <p class="blog-summary"><strong>Key takeaway:</strong> Restaurant Billing & POS Guides for India help food-business owners understand billing, GST-invoice, counter, kitchen and plan-selection questions before they test a workflow.</p>
           <p class="blog-lead"><strong>Quick answer:</strong> This Zipla POS blog is for Indian restaurant, dhaba, cafe, QSR, bakery and sweet-shop owners who want practical, product-specific guidance without unsupported claims or generic software comparisons.</p>
           <p class="blog-audience-note"><strong>Who this is for:</strong> owners and counter, kitchen or service teams in Indian food businesses. <strong>Use these guides when:</strong> you are choosing a billing workflow or preparing a small real-menu trial.</p>
-          <p class="blog-review-meta"><strong>Last reviewed:</strong> <time datetime="2026-09-21">21 September 2026</time>. Product and plan details on this page are checked against the current Zipla POS website.</p>
+          <p class="blog-review-meta"><strong>Last reviewed:</strong> <time datetime="2026-09-22">22 September 2026</time>. Product and plan details on this page are checked against the current Zipla POS website.</p>
         </div>
       </section>
 
@@ -52,6 +52,8 @@ const jsonLd = {
             <div class="blog-info-card"><span>Restaurant and dhaba</span><h3>GST invoice questions</h3><p>Read the current guide when you need a plain-language starting point for restaurant or dhaba GST invoice fields and billing workflow questions.</p><a href="/blog/restaurant-dhaba-gst-invoice-guide-2026/">Read the restaurant and dhaba GST invoice guide</a></div>
             <div class="blog-info-card"><span>Counter-led outlet</span><h3>QSR workflow</h3><p>Compare counter billing, payment marking and the optional kitchen handoff for a quick-service outlet.</p><a href="/qsr-billing-software/">Explore QSR billing software</a></div>
             <div class="blog-info-card"><span>Owner-led eatery</span><h3>Dhaba workflow</h3><p>Check the billing and day-review questions that matter to highway and neighbourhood dhaba operations.</p><a href="/dhaba-billing-software/">Explore dhaba billing software</a></div>
+            <div class="blog-info-card"><span>Buying decision</span><h3>Restaurant POS pricing</h3><p>Use a practical checklist to compare plan terms, trial fit, billing, printing and kitchen workflows before buying.</p><a href="/blog/restaurant-pos-software-price-india/">Read the restaurant POS pricing guide</a></div>
+            <div class="blog-info-card"><span>Comparison</span><h3>POS vs billing software</h3><p>Understand when a counter needs billing-first software and when a wider restaurant POS workflow is useful.</p><a href="/blog/restaurant-pos-vs-billing-software/">Read the POS vs billing guide</a></div>
           </div>
         </div>
       </section>

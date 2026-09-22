@@ -1,0 +1,10 @@
+# Known historical no-slash URLs from Google Search Console.
+# Host/protocol canonicalization (www -> apex and HTTP -> HTTPS) is configured in Cloudflare.
+/faq /faq/ 301
+/terms-and-conditions /terms-and-conditions/ 301
+/privacy-policy /privacy-policy/ 301
+/bakery-billing-software /bakery-billing-software/ 301
+/cafe-pos-software /cafe-pos-software/ 301
+/restaurant-pos-software /restaurant-pos-software/ 301
+/sweet-shop-billing /sweet-shop-billing/ 301
+/pricing /pricing/ 301
