@@ -57,32 +57,6 @@ const WORKFLOWS = [
     ],
   },
   {
-    id: 'menu-setup',
-    title: 'AI Menu Scan and Menu Review',
-    plan: 'Complete plan',
-    summary: 'Start menu setup from a menu photo, review the detected item details, and confirm the menu before billing.',
-    illustration: '/workflows/ai-menu-scan-workflow-v2.webp',
-    illustrationAlt: 'Illustrative AI Menu Scan workflow showing menu-photo upload, item review and menu confirmation',
-    illustrationWidth: 1439,
-    illustrationHeight: 810,
-    screenshots: [
-      {
-        src: '/workflows/ai-menu-review-screen.webp',
-        alt: 'Illustrative AI Menu Scan concept showing item details before menu use',
-        width: 867,
-        height: 1000,
-        label: 'ILLUSTRATIVE CONCEPT',
-        caption: 'Illustrative AI Menu Scan concept; review detected details before use.',
-      },
-    ],
-    steps: [
-      ['Upload a menu photo', 'Start AI Menu Scan with a clear photo of the menu.'],
-      ['Review item details', 'Check names, prices, taxes, and categories before using the menu.'],
-      ['Confirm the setup', 'Approve the reviewed items before using them in the billing workflow.'],
-      ['Use the menu in billing', 'Select approved items in the counter billing workflow.'],
-    ],
-  },
-  {
     id: 'day-close-analytics',
     title: 'Day-Close and Analytics',
     plan: 'Complete plan',
