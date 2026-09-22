@@ -1,0 +1,190 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.jsx';
+import Footer from '../components/Footer.jsx';
+import '../index.css';
+import '../vertical-page.css';
+
+const title = 'Restaurant POS Pricing in India | Zipla POS';
+const description = 'See Zipla POS pricing for Indian restaurants, cafes, QSRs, bakeries, sweet shops and dhabas: ₹4,999/year or ₹11,999 for 3 years prepaid, with a 14-day free trial.';
+const canonical = 'https://zipla.in/pricing/';
+
+const faqs = [
+  {
+    question: 'How much does Zipla POS cost?',
+    answer: 'The Zipla POS Complete plan costs ₹4,999 per year or ₹11,999 for a 3-year prepaid term.',
+  },
+  {
+    question: 'Is there a free trial?',
+    answer: 'Yes. Zipla POS offers a 14-day free trial with no credit card required to start.',
+  },
+  {
+    question: 'What is included in the Complete plan?',
+    answer: 'The Complete plan includes counter billing, configured GST invoices, payment tracking, inventory with low-stock alerts, staff roles, KDS, table QR ordering, Bluetooth KOT auto-print, sales analytics and day-close reports.',
+  },
+  {
+    question: 'Can I test Zipla POS with my own menu?',
+    answer: 'Yes. Use the trial to add a small version of your own menu, create a bill, mark a payment mode and test the kitchen or QR workflow when it is relevant to your outlet.',
+  },
+  {
+    question: 'Does offline billing work without internet?',
+    answer: 'After the menu has loaded, bills can be created without an active internet connection. UPI and other online payments require connectivity.',
+  },
+];
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'WebPage',
+      '@id': canonical,
+      url: canonical,
+      name: title,
+      description,
+      isPartOf: { '@id': 'https://zipla.in/#website' },
+      about: { '@id': 'https://zipla.in/#software' },
+      inLanguage: 'en-IN',
+      dateModified: '2026-09-22',
+      breadcrumb: { '@id': `${canonical}#breadcrumb` },
+    },
+    {
+      '@type': 'BreadcrumbList',
+      '@id': `${canonical}#breadcrumb`,
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://zipla.in/' },
+        { '@type': 'ListItem', position: 2, name: 'Pricing', item: canonical },
+      ],
+    },
+    {
+      '@type': 'FAQPage',
+      '@id': `${canonical}#faq`,
+      mainEntity: faqs.map((faq) => ({
+        '@type': 'Question',
+        name: faq.question,
+        acceptedAnswer: { '@type': 'Answer', text: faq.answer },
+      })),
+    },
+  ],
+};
+---
+
+<Layout title={title} description={description} canonical={canonical} jsonLd={jsonLd}>
+  <Header client:load />
+
+  <main class="pricing-page">
+    <nav class="pricing-container pricing-breadcrumbs" aria-label="Breadcrumb">
+      <a href="/">Home</a><span aria-hidden="true">/</span><span>Pricing</span>
+    </nav>
+
+    <section class="pricing-hero" aria-labelledby="pricing-page-title">
+      <div class="pricing-container">
+        <span class="pricing-eyebrow">Zipla POS pricing for India</span>
+        <h1 id="pricing-page-title">Restaurant POS Pricing in India</h1>
+        <p class="pricing-summary"><strong>Quick answer:</strong> Zipla POS is restaurant POS and billing software for Indian restaurants, cafés, QSRs, bakeries, sweet shops and dhabas. The Complete plan costs ₹4,999 per year or ₹11,999 for 3 years prepaid, with a 14-day free trial and no credit card required.</p>
+        <div class="pricing-actions">
+          <a class="btn-cta" href="https://app.zipla.in/register">Start 14-Day Free Trial</a>
+          <a class="btn-ghost" href="/#demo">Book Free WhatsApp Demo</a>
+        </div>
+        <p class="pricing-review"><strong>Last reviewed:</strong> <time datetime="2026-09-22">22 September 2026</time>. Plan details on this page reflect the current Zipla POS landing copy.</p>
+      </div>
+    </section>
+
+    <section id="complete-plan" class="pricing-section" aria-labelledby="complete-plan-title">
+      <div class="pricing-container pricing-plan-layout">
+        <div class="pricing-plan-copy">
+          <span class="pricing-kicker">One plan, clear terms</span>
+          <h2 id="complete-plan-title">The Complete plan for your service workflow</h2>
+          <p>Choose the Complete plan when your outlet needs counter billing first and may also need QR ordering, kitchen handoff, printing or owner review. Use the trial with your own menu before committing.</p>
+          <ul class="pricing-check-list">
+            <li>Counter POS billing and configured GST invoices</li>
+            <li>Cash, UPI and card payment tracking</li>
+            <li>Inventory with low-stock alerts and staff roles</li>
+            <li>Table QR ordering and Customer QR Home Ordering</li>
+            <li>Kitchen Display System and Bluetooth KOT auto-print</li>
+            <li>Sales analytics and day-close reports</li>
+          </ul>
+        </div>
+
+        <div class="pricing-card" aria-label="Zipla POS Complete plan price">
+          <span class="pricing-card-label">Complete plan</span>
+          <div class="pricing-amount">₹4,999 <small>/ year</small></div>
+          <p class="pricing-prepaid"><strong>₹11,999</strong> for 3 years prepaid</p>
+          <p class="pricing-trial">14-day free trial · No credit card required</p>
+          <a class="btn-cta" href="https://app.zipla.in/register">Start the free trial</a>
+          <a class="pricing-card-link" href="/#demo">Talk through your workflow on WhatsApp →</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="pricing-section pricing-section--muted" aria-labelledby="pricing-fit-title">
+      <div class="pricing-container">
+        <header class="pricing-section-head">
+          <span class="pricing-kicker">Check fit before purchase</span>
+          <h2 id="pricing-fit-title">What should you test during the trial?</h2>
+          <p>Pricing is only useful when the workflow fits your outlet. Test the steps your team actually performs during service.</p>
+        </header>
+        <div class="pricing-test-grid">
+          <article><span>01</span><h3>Your menu</h3><p>Add familiar items, prices and categories instead of judging the workflow only from a sample screen.</p></article>
+          <article><span>02</span><h3>One customer bill</h3><p>Create a bill, mark cash, UPI or card and review the invoice output before a live shift.</p></article>
+          <article><span>03</span><h3>Kitchen or QR flow</h3><p>When relevant, test table QR ordering, Customer QR Home Ordering, KDS or Bluetooth KOT auto-print.</p></article>
+          <article><span>04</span><h3>Day-close review</h3><p>Check the sales analytics and day-close information that the owner or manager needs after service.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="pricing-section" aria-labelledby="pricing-audience-title">
+      <div class="pricing-container">
+        <header class="pricing-section-head">
+          <span class="pricing-kicker">Built for Indian food businesses</span>
+          <h2 id="pricing-audience-title">Which outlets can evaluate Zipla POS?</h2>
+          <p>Start with the page that matches your service model, then compare the same Complete plan and trial terms.</p>
+        </header>
+        <div class="pricing-audience-grid">
+          <a href="/restaurant-pos-software/"><strong>Restaurants</strong><span>Counter, table and kitchen workflows →</span></a>
+          <a href="/cafe-pos-software/"><strong>Cafés</strong><span>Counter service with seated diners →</span></a>
+          <a href="/qsr-billing-software/"><strong>QSRs</strong><span>Counter-led ordering and kitchen queue →</span></a>
+          <a href="/bakery-billing-software/"><strong>Bakeries</strong><span>Weight, piece and fixed-price items →</span></a>
+          <a href="/sweet-shop-billing/"><strong>Sweet shops</strong><span>Mixed weight and fixed-price bills →</span></a>
+          <a href="/dhaba-billing-software/"><strong>Dhabas</strong><span>Billing and day-review workflow →</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="pricing-section pricing-section--muted" aria-labelledby="pricing-faq-title">
+      <div class="pricing-container pricing-faq-layout">
+        <header class="pricing-section-head pricing-section-head--left">
+          <span class="pricing-kicker">Pricing questions</span>
+          <h2 id="pricing-faq-title">Before you start</h2>
+          <p>Read the short answers below, or see the full <a href="/faq/">Zipla POS FAQ</a> for product and support details.</p>
+        </header>
+        <div class="pricing-faq-list">
+          {faqs.map((faq) => (
+            <details>
+              <summary>{faq.question}</summary>
+              <p>{faq.answer}</p>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="pricing-section pricing-section--compact">
+      <div class="pricing-container">
+        <div class="pricing-final-cta">
+          <h2>Test the workflow before you decide.</h2>
+          <p>Start with a small version of your own menu, or book a WhatsApp demo around the service flow your team actually uses.</p>
+          <div class="pricing-actions">
+            <a class="btn-cta" href="https://app.zipla.in/register">Start 14-Day Free Trial</a>
+            <a class="btn-ghost" href="/#demo">Book Free WhatsApp Demo</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
+
+<style>
+  .pricing-page{background:var(--bg);color:var(--text);overflow:hidden}.pricing-container{width:min(1120px,calc(100% - 48px));margin:0 auto}.pricing-breadcrumbs{display:flex;align-items:center;gap:8px;padding:20px 0 0;color:var(--text-3);font-size:12px}.pricing-breadcrumbs a:hover,.pricing-section a{color:var(--amber-2)}.pricing-hero{padding:48px 0 78px;background:radial-gradient(ellipse 70% 70% at 50% 0,rgba(202,160,76,.14),transparent 72%);text-align:center}.pricing-eyebrow,.pricing-kicker{display:block;margin-bottom:13px;color:var(--amber-2);font-size:11px;font-weight:800;letter-spacing:1.2px;text-transform:uppercase}.pricing-hero h1{max-width:760px;margin:0 auto 18px;font-family:var(--display);font-size:clamp(38px,4.5vw,58px);line-height:1.06;letter-spacing:-1.4px}.pricing-summary{max-width:780px;margin:0 auto;color:var(--text-2);font-size:16px;line-height:1.75}.pricing-summary strong{color:var(--text)}.pricing-actions{display:flex;justify-content:center;flex-wrap:wrap;gap:12px;margin-top:28px}.pricing-review{margin:19px auto 0;color:var(--text-3);font-size:11.5px;line-height:1.6}.pricing-section{padding:94px 0}.pricing-section--muted{background:linear-gradient(180deg,rgba(202,160,76,.05),transparent 78%)}.pricing-section--compact{padding-top:0}.pricing-plan-layout{display:grid;grid-template-columns:minmax(0,1fr) minmax(320px,.72fr);gap:clamp(34px,7vw,100px);align-items:center}.pricing-plan-copy h2,.pricing-section-head h2,.pricing-final-cta h2{margin:0 0 14px;font-family:var(--display);font-size:clamp(29px,3.1vw,42px);line-height:1.1;letter-spacing:-.9px}.pricing-plan-copy>p,.pricing-section-head>p,.pricing-final-cta>p{color:var(--text-2);font-size:15px;line-height:1.75}.pricing-check-list{display:grid;gap:12px;margin:27px 0 0;padding:0;list-style:none}.pricing-check-list li{position:relative;padding-left:27px;color:var(--text-2);font-size:14px;line-height:1.55}.pricing-check-list li::before{position:absolute;left:0;top:.2em;display:grid;width:17px;height:17px;place-items:center;border-radius:50%;background:var(--green-dim);color:var(--green);content:'✓';font-size:10px;font-weight:900}.pricing-card{padding:31px 28px;border:1px solid rgba(232,201,131,.38);border-radius:20px;background:linear-gradient(145deg,rgba(202,160,76,.15),var(--surface) 58%);box-shadow:0 20px 55px rgba(0,0,0,.22)}.pricing-card-label{display:block;margin-bottom:14px;color:var(--amber-2);font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase}.pricing-amount{font-family:var(--display);font-size:clamp(34px,4vw,48px);font-weight:800;letter-spacing:-1.2px}.pricing-amount small{font-family:var(--sans);font-size:14px;font-weight:600;color:var(--text-3);letter-spacing:0}.pricing-prepaid{margin-top:5px;color:var(--text-2);font-size:15px;line-height:1.5}.pricing-prepaid strong{color:var(--text)}.pricing-trial{margin:8px 0 25px;color:var(--text-2);font-size:12.5px;line-height:1.5}.pricing-card .btn-cta{width:100%;justify-content:center}.pricing-card-link{display:block;margin-top:17px;color:var(--amber-2);font-size:12.5px;font-weight:700;text-align:center;text-decoration:underline;text-underline-offset:3px}.pricing-section-head{max-width:700px;margin:0 auto 38px;text-align:center}.pricing-section-head--left{margin:0;text-align:left}.pricing-test-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}.pricing-test-grid article{min-height:190px;padding:23px;border:1px solid var(--border);border-radius:15px;background:var(--surface)}.pricing-test-grid article>span{display:grid;width:31px;height:31px;place-items:center;margin-bottom:20px;border:1px solid rgba(232,201,131,.22);border-radius:50%;background:var(--amber-dim);color:var(--amber-2);font-size:11px;font-weight:800}.pricing-test-grid h3{margin:0 0 9px;font-family:var(--display);font-size:17px}.pricing-test-grid p{color:var(--text-2);font-size:13px;line-height:1.65}.pricing-audience-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.pricing-audience-grid a{display:flex;min-height:102px;flex-direction:column;justify-content:center;padding:20px;border:1px solid var(--border);border-radius:13px;background:var(--surface);transition:border-color .15s,transform .15s}.pricing-audience-grid a:hover{border-color:rgba(232,201,131,.42);transform:translateY(-2px)}.pricing-audience-grid strong{color:var(--text);font-family:var(--display);font-size:17px}.pricing-audience-grid span{margin-top:6px;color:var(--text-2);font-size:12.5px;line-height:1.5}.pricing-faq-layout{display:grid;grid-template-columns:minmax(250px,.72fr) minmax(0,1.28fr);gap:clamp(34px,8vw,96px);align-items:start}.pricing-faq-list{display:grid;gap:10px}.pricing-faq-list details{border:1px solid var(--border);border-radius:12px;background:var(--surface)}.pricing-faq-list summary{display:flex;align-items:center;justify-content:space-between;gap:17px;padding:18px 19px;cursor:pointer;color:var(--text);font-size:14px;font-weight:700;line-height:1.45;list-style:none}.pricing-faq-list summary::-webkit-details-marker{display:none}.pricing-faq-list summary::after{color:var(--amber-2);content:'+';font-size:18px;font-weight:400}.pricing-faq-list details[open] summary::after{content:'−'}.pricing-faq-list p{padding:0 19px 18px;color:var(--text-2);font-size:13.5px;line-height:1.7}.pricing-final-cta{padding:58px 28px;border:1px solid var(--border-hi);border-radius:22px;background:linear-gradient(145deg,rgba(202,160,76,.15),var(--surface-2) 56%);text-align:center}.pricing-final-cta h2{max-width:630px;margin-left:auto;margin-right:auto}.pricing-final-cta p{max-width:590px;margin:0 auto}.pricing-final-cta .pricing-actions{margin-top:25px}@media(max-width:900px){.pricing-plan-layout{grid-template-columns:1fr;max-width:720px}.pricing-plan-copy{text-align:center}.pricing-check-list{max-width:540px;margin-left:auto;margin-right:auto;text-align:left}.pricing-test-grid{grid-template-columns:repeat(2,1fr)}.pricing-faq-layout{grid-template-columns:1fr}.pricing-section-head--left{max-width:680px;text-align:center}}@media(max-width:620px){.pricing-container{width:min(100% - 36px,1120px)}.pricing-hero{padding:36px 0 60px}.pricing-hero h1{font-size:38px}.pricing-summary{font-size:14.5px}.pricing-actions{display:grid}.pricing-actions a{justify-content:center;width:100%}.pricing-section{padding:68px 0}.pricing-test-grid,.pricing-audience-grid{grid-template-columns:1fr}.pricing-test-grid article{min-height:0}.pricing-card{padding:25px 20px}.pricing-final-cta{padding:43px 18px;border-radius:18px}}
+</style>
