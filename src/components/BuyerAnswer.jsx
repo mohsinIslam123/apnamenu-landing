@@ -1,7 +1,7 @@
 const DECISIONS = [
   {
     need: 'Counter service: billing, GST invoices and payment marking',
-    answer: <>The <strong>Complete plan</strong> covers counter billing, GST invoices and payment-mode tracking. <a href="/#pricing">See pricing</a>.</>,
+    answer: <>The <strong>Complete plan</strong> covers counter billing, GST invoices and payment-mode tracking. <a href="/pricing/">See pricing</a>.</>,
   },
   {
     need: 'Table service: customer orders and kitchen handoff',
