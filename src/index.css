@@ -295,6 +295,14 @@ footer{border-top:1px solid var(--border);padding:36px 24px}
 .demo-form-thanks a{color:var(--amber)}
 @media(max-width:600px){.demo-form-grid{grid-template-columns:1fr}.demo-form-card{padding:28px 20px}}
 
+/* COMPACT AEO SUMMARY */
+.buyer-answer-summary{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:20px;max-width:540px}
+.buyer-answer-summary-card{padding:16px;border:1px solid var(--border);border-radius:14px;background:rgba(202,160,76,.055)}
+.buyer-answer-summary-card h3{margin:0 0 6px;color:var(--text);font-family:var(--display);font-size:16px;line-height:1.2}
+.buyer-answer-summary-card p{margin:0!important;color:var(--text-2);font-size:13px;line-height:1.6}
+@media(max-width:800px){.buyer-answer-summary{max-width:680px}}
+@media(max-width:540px){.buyer-answer-summary{grid-template-columns:1fr}}
+
 /* THEME TOGGLE */
 :root{color-scheme:dark}
 .header-actions{display:flex;align-items:center;gap:10px}
