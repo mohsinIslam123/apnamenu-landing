@@ -32,7 +32,7 @@ export default function Hero({ takeaway, planSummary }) {
           <h1 id="hero-title" style={{ marginTop: 0, marginBottom: '16px' }}>Restaurant Billing Software for India</h1>
           <p className="sub" style={{ marginTop: 0, marginBottom: '24px' }}>Billing, GST invoices, QR ordering and KDS for Indian restaurants, cafes, QSRs, bakeries, sweet shops and dhabas.</p>
           <p className="hero-key-takeaway"><strong>Short answer:</strong> {takeaway}</p>
-          <p className="hero-key-takeaway hero-plan-summary"><strong>Complete plan:</strong> {planSummary}</p>
+          {planSummary && <p className="hero-key-takeaway hero-plan-summary"><strong>Complete plan:</strong> {planSummary}</p>}
           <div className="hero-ctas">
             <a className="btn-cta" href="/#demo">Book a WhatsApp Demo</a>
             <a className="hero-trial-link" href="https://app.zipla.in/register">Start 14-Day Free Trial</a>

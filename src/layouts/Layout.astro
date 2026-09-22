@@ -47,8 +47,9 @@ const globalGraph = [
     "name": "Zipla POS",
     "url": "https://zipla.in/",
     "applicationCategory": "BusinessApplication",
+    "areaServed": { "@type": "Country", "name": "India" },
     "operatingSystem": "Web Browser",
-    "description": "Restaurant billing and ordering software with Mobile POS, barcode inventory, automatic GST calculation, Table QR Ordering, Customer QR Home Ordering, live order tracking and offline billing after the menu loads.",
+    "description": "Restaurant billing and ordering software for Indian food businesses with Mobile POS, barcode inventory, automatic GST calculation, Table QR Ordering, Customer QR Home Ordering, live order tracking, Bluetooth thermal printing and offline billing after the menu loads.",
     "featureList": [
       "Counter POS billing and invoice generation",
       "Mobile POS support",
@@ -61,7 +62,9 @@ const globalGraph = [
       "Customer QR Home Ordering",
       "Kitchen Display System and cashier-to-kitchen handoff",
       "Sales analytics and day-close reports",
-      "WhatsApp bill sharing"
+      "WhatsApp bill sharing",
+      "Bluetooth thermal printing on compatible 58mm and 80mm printers",
+      "AI Menu Scan from menu photos"
     ],
     "author": { "@id": "https://zipla.in/#organization" },
     "offers": [
@@ -119,9 +122,9 @@ const GA_ID = 'G-48WXKXR3F1';
       <meta name="twitter:image" content={ogImage} />
       <meta name="twitter:image:alt" content={ogImageAlt} />
 
+      <link rel="canonical" href={canonical} />
     </>
   )}
-  {canonical && <link rel="canonical" href={canonical} />}
   <link rel="icon" type="image/png" href="/favicon.png" />
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
