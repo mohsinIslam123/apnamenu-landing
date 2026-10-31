@@ -101,7 +101,7 @@ Lab numbers: Chromium 153 headless on localhost, no throttling, 3 runs per cell,
 | Home links (internal / external) | 41 / 0 | 43 / 4 |
 | browser_check, Home rows at 360 / 390 / 768 / 1280 | FAIL 6, 4, 5, 7 targets under 24 px, WARN 8, 10, 10, 8 targets under 48 px | ok, ok, ok, ok (0 FAIL, 0 WARN) |
 
-Honest reading: the spread between runs is up to 76 ms (base 360: 208, 132, 136), so I claim no speed gain. CLS is far below 0.1, so no fallback font faces were added. The rupee sign sits in the latin-ext Bricolage file. I did not add a preload for it. The shift at 360 px (0.002 to 0.004) is the only one I measured. The Home HTML is 72,778 B smaller in total. I did not measure which part: the 12 inline shop drawings and the inline `<style>` blocks of three components are gone.
+Honest reading: the spread between runs is up to 76 ms (base at 360 px: 208, 132, 136 ms), so I claim no speed gain. CLS is far below 0.1, so no fallback font faces were added. The rupee sign sits in the latin-ext Bricolage file. I did not add a preload for it. The shift at 360 px (0.002 to 0.004) is the only one I measured. The Home HTML is 72,778 B smaller in total. I did not measure which part: the 12 inline shop drawings and the inline `<style>` blocks of three components are gone.
 
 ## 7. Allow-list entries added
 
@@ -164,12 +164,12 @@ Not in the list on purpose: the claim lines of `offer/allow_new_claims.txt` (no 
 
 ## 8. Deviations from the pack
 
-1. **Class names.** New Home classes carry the prefix `zh-` (the pack's names are `hero`, `eyebrow`, `btn` and so on). The old stylesheet `src/index.css` has a `.hero`, an `.eyebrow`, a `.btn-ghost` and more, and Home still loads it (the cookie banner's `position: fixed` lives there). A prefix cannot clash. The three Buy now links carry `btn btn-gold` as well, as your prompt wrote them.
+1. **Class names.** New Home classes carry the prefix `zh-` (the pack's names are `hero`, `eyebrow`, `btn` and so on). The old stylesheet `src/index.css` has a `.hero`, an `.eyebrow`, a `.btn-ghost` and more, and Home still loads it (the cookie banner's `position: fixed` lives there). With a prefix no name can clash with the old sheet. The three Buy now links carry `btn btn-gold` as well, as your prompt wrote them.
 2. **Hero text is split in two blocks** (`zh-hero-top`, `zh-hero-more`) so that the offer can be drawn above the second block from 900 px (section 2, item 1). On phones they read as one block.
 3. **Machine paragraph position.** "Zipla Billing Machine is a 58mm Bluetooth printer. ..." follows the repo's first sentence (as in the prototype) and comes before the repo's "Short answer:" paragraph. The first paragraph after the H1 is still the repo's own sentence (BRIEF A8).
 4. **Two eyebrows.** "Zipla Billing Machine" (OFFER.md 3.7) and the repo's "For Indian food businesses". The gate needs the second one.
 5. **Trial line.** The prototype writes "No credit card required." with a full stop. The repo's wording has none, so there is none. The tick mark is the repo's own `✓`. The repo's three assurances are kept: the first sits in the trial line, the other two below it, then the two chips ("Supported thermal printing", "Android, tablet & Windows PC").
-6. **Links.** OFFER.md lists `https://zipla.in/pricing/` and `https://zipla.in/refund-policy/`. The repo writes internal links as `/pricing/` and `/refund-policy/`, so I did too. Same targets. The gate counts both forms as internal.
+6. **Links.** OFFER.md lists `https://zipla.in/pricing/` and `https://zipla.in/refund-policy/`. The repo writes internal links as `/pricing/` and `/refund-policy/`, so I did too. Same targets. I read the gate code: an absolute `zipla.in` link counts as internal, like a relative one.
 7. **Sticky bar** is `position: fixed` (OFFER.md: "fixed to the bottom") and the prototype's is `sticky`. The footer gets 76 px of space at the bottom on phones so the bar never covers the last links. It is hidden from 900 px.
 8. **Workflow pictures.** The prototype shows nine phone screenshots in phone frames. You said images stay the repo's, so the repo's illustrations and laptop screenshots stay and the phone strips are not built. I did not compare the repo's laptop pictures with the pack's phone pictures (D6 needs "same screen, same content"). Nothing swapped.
 9. **Tables.** The Features table was a grid of `div`s in the repo. It is a real `<table>` now (R7), with the two column labels visible, as in the baseline. The text is the same.
