@@ -1,0 +1,194 @@
+/* business.css: the Round 7 look of the six business-type pages (Stage 3 of the redesign):
+   /restaurant-pos-software/, /cafe-pos-software/, /bakery-billing-software/, /sweet-shop-billing/, /qsr-billing-software/, /dhaba-billing-software/.
+   Spec: prototype-r6.css (Round 6 page components) and tokens/DESIGN_SYSTEM.md sections 6 and 13. The machine band is in machine.css.
+   One stylesheet for all six pages, so they cannot drift apart. No page has its own CSS block any more.
+   Every class carries the prefix zb- and every rule sits under .zp (the opt-in root class of Layout.astro), so the old sheets
+   (src/index.css, src/vertical-page.css) cannot bleed in and no other page can pick this file up.
+   Values come from tokens.css only: no raw colour, no font stack, no new radius or shadow.
+   Nothing here reads the old theme attribute or class (BRIEF R15). No text is hidden or created by CSS (BRIEF R12):
+   the only generated boxes are decoration without characters (gold bullets, the torn edge, the focus ring). */
+
+/* ---------- base ---------- */
+html:has(body.zp) { color-scheme: light; }
+.zp .zb-page { display: block; }
+.zp .zb-wrap { max-width: var(--zp-wrap); margin: 0 auto; padding-left: var(--zp-gut); padding-right: var(--zp-gut); }
+.zp .zb-page :is(.zb-sec-p, .zb-lede, .zb-chk li, .zb-steps-p, .zb-tile p, .zb-wf td, .zb-faq p, .zb-demo-p) a { text-decoration: underline; text-decoration-thickness: 1.5px; text-underline-offset: 4px; text-decoration-color: var(--zp-leader); font-weight: 600; color: var(--zp-ink); }
+.zp .zb-page :is(.zb-sec-p, .zb-lede, .zb-chk li, .zb-steps-p, .zb-tile p, .zb-wf td, .zb-faq p) a:hover { text-decoration-color: currentColor; }
+.zp .zb-page .zb-demo-p a { color: var(--zp-on-ink); text-decoration-color: var(--zp-underline-on-ink); }
+
+/* ---------- buttons ---------- */
+.zp .zb-btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; border-radius: var(--zp-r-lg); font-family: var(--zp-font-body); font-weight: 700; line-height: 1.25; text-align: center; text-decoration: none; cursor: pointer; transition: background-color var(--zp-t-fast); }
+.zp .zb-btn-gold { border: 0; background: var(--zp-gold); color: var(--zp-ink); }
+.zp .zb-btn-gold:hover { background: var(--zp-gold-hover); }
+.zp .zb-btn-ghost { border: 1.5px solid var(--zp-ink); background: transparent; color: var(--zp-ink); font-weight: 600; }
+.zp .zb-btn-ghost:hover { background: var(--zp-paper-2); }
+.zp .zb-btn-lg { min-height: var(--zp-btn-lg); padding: 10px 24px; font-size: var(--zp-fs-sub); }
+.zp .zb-btn-wide { width: 100%; }
+.zp .zb-ink .zb-btn-ghost { border-color: var(--zp-on-ink); color: var(--zp-on-ink); }
+.zp .zb-ink .zb-btn-ghost:hover { background: var(--zp-line-on-ink); }
+.zp .zb-btnrow { margin-top: 24px; display: flex; flex-direction: column; gap: 10px; max-width: 520px; }
+
+/* ---------- breadcrumb ---------- */
+.zp .zb-crumbs { display: flex; flex-wrap: wrap; align-items: center; gap: 0 8px; padding-top: 4px; font-size: var(--zp-fs-xs); color: var(--zp-ink-3); }
+.zp .zb-crumbs a { display: inline-flex; align-items: center; justify-content: center; min-width: var(--zp-tap); min-height: var(--zp-tap); text-decoration: underline; text-decoration-thickness: 1.5px; text-underline-offset: 4px; text-decoration-color: var(--zp-leader); }
+.zp .zb-crumbs a:hover { color: var(--zp-ink); text-decoration-color: currentColor; }
+.zp .zb-crumbs > span:last-child { color: var(--zp-ink); }
+
+/* ---------- type ---------- */
+.zp .zb-eyebrow { margin: 0 0 14px; display: flex; align-items: center; gap: 10px; font-family: var(--zp-font-mono); font-size: var(--zp-fs-2xs); font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--zp-ink); }
+.zp .zb-dot { flex: none; width: 10px; height: 10px; border-radius: 2px; background: var(--zp-gold); }
+.zp .zb-h1 { margin: 0; font-family: var(--zp-font-head); font-weight: 700; font-size: var(--zp-fs-h1); line-height: 1.04; letter-spacing: -0.03em; text-wrap: balance; }
+.zp .zb-hl { background-image: linear-gradient(transparent 62%, var(--zp-gold) 62%, var(--zp-gold) 92%, transparent 92%); -webkit-box-decoration-break: clone; box-decoration-break: clone; }
+.zp .zb-h2 { margin: 0; max-width: 20em; font-family: var(--zp-font-head); font-weight: 700; font-size: var(--zp-fs-h2); line-height: 1.1; letter-spacing: -0.02em; text-wrap: balance; }
+.zp .zb-h3 { margin: 0; font-family: var(--zp-font-head); font-size: var(--zp-fs-h3); font-weight: 700; letter-spacing: -0.01em; line-height: 1.2; }
+.zp .zb-kicker { display: block; margin: 0 0 12px; font-family: var(--zp-font-mono); font-size: var(--zp-fs-label); letter-spacing: 0.14em; text-transform: uppercase; color: var(--zp-ink-3); }
+.zp .zb-lede { margin: 16px 0 0; max-width: 34em; font-size: var(--zp-fs-lead); line-height: 1.6; color: var(--zp-ink-2); text-wrap: pretty; }
+.zp .zb-lede + .zb-lede { margin-top: 12px; }
+.zp .zb-lede strong, .zp .zb-sec-p strong { font-weight: 700; color: var(--zp-ink); }
+.zp .zb-sec-p { margin: 14px 0 0; max-width: 40em; font-size: var(--zp-fs-sub); line-height: 1.6; color: var(--zp-ink-2); }
+.zp .zb-sec-p--links { font-size: var(--zp-fs-small); }
+.zp .zb-head { max-width: 46em; }
+
+/* ---------- hero: the band is drawn above the text on phones and beside it from 900 px (BRIEF A5, decision D1) ---------- */
+/* DOM order stays: the page's own text, the repo's own figure, then the machine band. */
+.zp .zb-hero { display: grid; grid-template-columns: minmax(0, 1fr); grid-template-areas: "vis" "top" "proof"; row-gap: 14px; padding-top: clamp(12px, 2.2vw, 24px); padding-bottom: clamp(36px, 5vw, 64px); }
+.zp .zb-hero-top { grid-area: top; min-width: 0; max-width: 46em; }
+.zp .zb-hero > .zm-r { grid-area: vis; }
+.zp .zb-ticks { list-style: none; margin: 22px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px 22px; font-size: var(--zp-fs-small); color: var(--zp-ink-2); }
+.zp .zb-ticks li { display: flex; align-items: center; gap: 8px; }
+.zp .zb-ticks li::before { content: ''; flex: none; width: 8px; height: 8px; border-radius: 2px; background: var(--zp-gold); }
+
+/* ---------- the repo's own product figure, kept as a proof block under the text ---------- */
+.zp .zb-proof { grid-area: proof; position: relative; min-width: 0; max-width: 760px; margin: 12px 0 0; display: grid; grid-template-columns: minmax(0, 1fr); gap: 8px; }
+.zp .zb-proof-frame { grid-column: 1 / -1; border: 1px solid var(--zp-line-5); border-radius: var(--zp-r-xl); background: var(--zp-card); box-shadow: var(--zp-sh-slip); overflow: hidden; }
+.zp .zb-proof-frame img { display: block; width: 100%; height: auto; }
+.zp .zb-proof-cap { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 4px 12px; padding: 10px 14px; border-top: 1px solid var(--zp-line-5); font-size: var(--zp-fs-xs); line-height: 1.4; color: var(--zp-ink-3); }
+.zp .zb-proof-cap strong { display: inline-flex; align-items: center; gap: 8px; font-weight: 700; color: var(--zp-ink); }
+.zp .zb-proof-cap strong::before { content: ''; flex: none; width: 10px; height: 10px; border-radius: 2px; background: var(--zp-gold); }
+.zp .zb-callout { display: flex; align-items: center; gap: 12px; padding: 12px 14px; border: 1px solid var(--zp-line-5); border-radius: var(--zp-r-lg); background: var(--zp-card); }
+.zp .zb-callout-mark { flex: none; display: inline-flex; align-items: center; justify-content: center; min-width: 36px; height: 36px; padding: 0 6px; border-radius: var(--zp-r-sm); background: var(--zp-chip); font-family: var(--zp-font-mono); font-size: var(--zp-fs-2xs); font-weight: 500; color: var(--zp-ink); }
+.zp .zb-callout strong { display: block; font-size: var(--zp-fs-small); line-height: 1.3; }
+.zp .zb-callout small { display: block; font-size: var(--zp-fs-xs); line-height: 1.4; color: var(--zp-ink-2); }
+/* decision D6: where the repo has the same screen with the same content as a phone picture, the phone frame is used */
+.zp .zb-proof-frame--phone { display: grid; justify-items: center; padding: clamp(18px, 3vw, 28px) clamp(18px, 3vw, 28px) 0; border: 0; border-radius: var(--zp-r-panel); background: radial-gradient(120% 80% at 28% 18%, var(--zp-panel-0) 0%, var(--zp-panel-1) 52%, var(--zp-panel-2) 100%); box-shadow: none; }
+.zp .zb-pf { width: min(232px, 60vw); padding: 4px; border-radius: var(--zp-r-phone); background: var(--zp-ink); box-shadow: var(--zp-sh-phone); }
+.zp .zb-pf img { display: block; width: 100%; height: auto; border-radius: calc(var(--zp-r-phone) - 4px); }
+.zp .zb-proof-frame--phone .zb-proof-cap { justify-self: stretch; margin-top: clamp(18px, 3vw, 28px); padding-left: 0; padding-right: 0; border-top-color: var(--zp-line-3); }
+
+/* ---------- facts strip: label plus a few words ---------- */
+.zp .zb-facts { padding-bottom: clamp(32px, 5vw, 56px); }
+.zp .zb-chips { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+.zp .zb-chip { min-width: 0; padding: 10px 12px; border: 1px solid var(--zp-line-5); border-radius: var(--zp-r-lg); background: var(--zp-card); }
+.zp .zb-chip strong { display: block; font-size: var(--zp-fs-xs); font-weight: 700; line-height: 1.3; }
+.zp .zb-chip span { display: block; margin-top: 2px; font-size: var(--zp-fs-2xs); line-height: 1.4; color: var(--zp-ink-3); }
+
+/* ---------- section shell: paper, then paper-2 bands that start with a torn edge ---------- */
+.zp .zb-sec { padding-top: var(--zp-sec); padding-bottom: var(--zp-sec); }
+.zp .zb-band { position: relative; background: var(--zp-paper-2); }
+.zp .zb-band::before { content: ''; position: absolute; left: 0; right: 0; top: -1px; height: 10px; background: linear-gradient(135deg, var(--zp-paper) 5px, transparent 0) 0 0 / 12px 10px repeat-x, linear-gradient(225deg, var(--zp-paper) 5px, transparent 0) 0 0 / 12px 10px repeat-x; }
+
+/* ---------- numbered steps with receipt rules (the numerals are the repo's own typed text, BRIEF 13.4 case 1) ---------- */
+.zp .zb-steps { margin: 32px 0 0; padding: 0; display: grid; grid-template-columns: minmax(0, 1fr); }
+.zp .zb-steps-i { padding: 20px 0; border-top: 1.5px dashed var(--zp-rule); }
+.zp .zb-steps-i:last-child { border-bottom: 1.5px dashed var(--zp-rule); }
+.zp .zb-steps-n { display: block; margin-bottom: 8px; font-family: var(--zp-font-mono); font-size: var(--zp-fs-xs); letter-spacing: 0.1em; color: var(--zp-ink-3); }
+.zp .zb-steps-h { margin: 0; font-family: var(--zp-font-head); font-size: var(--zp-fs-h3); font-weight: 700; letter-spacing: -0.01em; line-height: 1.2; }
+.zp .zb-steps-p { margin: 8px 0 0; max-width: 34em; color: var(--zp-ink-2); }
+
+/* ---------- tiles: a card with a mono label, a title and a sentence ---------- */
+.zp .zb-tiles { margin-top: 28px; display: grid; grid-template-columns: minmax(0, 1fr); gap: 16px; align-items: stretch; }
+.zp .zb-tile { min-width: 0; padding: 22px; border: 1px solid var(--zp-line-5); border-radius: var(--zp-r-xl); background: var(--zp-card); }
+.zp .zb-tile-k { display: block; margin: 0 0 10px; font-family: var(--zp-font-mono); font-size: var(--zp-fs-label); letter-spacing: 0.1em; text-transform: uppercase; color: var(--zp-ink-3); }
+.zp .zb-tile .zb-h3 { margin-bottom: 10px; }
+.zp .zb-tile p { margin: 0; color: var(--zp-ink-2); }
+
+/* ---------- two columns: text with a check list, and a picture ---------- */
+.zp .zb-cols { display: grid; grid-template-columns: minmax(0, 1fr); gap: 32px; align-items: start; }
+.zp .zb-cols > * { min-width: 0; }
+.zp .zb-cols .zb-sec-p + .zb-sec-p, .zp .zb-cols .zb-head + .zb-sec-p { margin-top: 14px; }
+.zp .zb-chk { list-style: none; margin: 20px 0 0; padding: 0; border-bottom: 1px solid var(--zp-line-4); }
+.zp .zb-chk li { position: relative; padding: 13px 0 13px 20px; border-top: 1px solid var(--zp-line-4); font-size: var(--zp-fs-body); line-height: 1.45; color: var(--zp-ink-2); }
+.zp .zb-chk li::before { content: ''; position: absolute; left: 0; top: 21px; width: 8px; height: 8px; border-radius: 2px; background: var(--zp-gold); }
+.zp .zb-chk strong { color: var(--zp-ink); }
+.zp .zb-fig { margin: 0; }
+.zp .zb-fig img { display: block; width: 100%; height: auto; border: 1px solid var(--zp-line-5); border-radius: var(--zp-r-xl); background: var(--zp-card); box-shadow: var(--zp-sh-slip); }
+.zp .zb-fig figcaption { margin-top: 12px; font-size: var(--zp-fs-xs); line-height: 1.45; color: var(--zp-ink-3); }
+
+/* ---------- decision table: a real <table> that scrolls inside its own box if it must ---------- */
+.zp .zb-decision { margin-top: 40px; }
+.zp .zb-decision > .zb-sec-p { margin-top: 8px; }
+.zp .zb-table-wrap { margin-top: 20px; overflow-x: auto; }
+.zp .zb-wf { width: 100%; max-width: 980px; border-collapse: collapse; border-top: 1px solid var(--zp-line-3); }
+.zp .zb-wf th, .zp .zb-wf td { padding: 14px 14px 14px 0; border-bottom: 1px solid var(--zp-line-3); text-align: left; vertical-align: top; font-size: var(--zp-fs-body); line-height: 1.45; overflow-wrap: break-word; }
+.zp .zb-wf thead th { padding-top: 10px; padding-bottom: 10px; font-family: var(--zp-font-mono); font-size: var(--zp-fs-label); font-weight: 400; letter-spacing: 0.1em; text-transform: uppercase; color: var(--zp-ink-3); }
+.zp .zb-wf tbody th { font-weight: 700; }
+.zp .zb-wf td { color: var(--zp-ink-2); }
+.zp .zb-wf td strong { color: var(--zp-ink); }
+.zp .zb-wf--2 th:nth-child(1) { width: 34%; }
+.zp .zb-wf--3 th:nth-child(1) { width: 30%; }
+.zp .zb-wf--3 th:nth-child(3) { width: 26%; }
+
+/* ---------- FAQ: <details>, the answer is always in the HTML ---------- */
+.zp .zb-faq-wrap { display: flex; flex-wrap: wrap; gap: 28px 64px; }
+.zp .zb-faq-l { flex: 1 1 280px; min-width: 0; align-self: flex-start; }
+.zp .zb-faq-r { flex: 2 1 520px; min-width: 0; }
+.zp .zb-faq-list { border-bottom: 1px solid var(--zp-line-3); }
+.zp .zb-faq { border-top: 1px solid var(--zp-line-3); }
+.zp .zb-faq summary { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 60px; padding: 12px 0; font-size: var(--zp-fs-sub); font-weight: 600; line-height: 1.35; list-style: none; cursor: pointer; }
+.zp .zb-faq summary::-webkit-details-marker { display: none; }
+.zp .zb-q { flex: 1; min-width: 0; }
+.zp .zb-plus { flex: none; transition: transform var(--zp-t-ui); }
+.zp .zb-faq[open] .zb-plus { transform: rotate(45deg); }
+.zp .zb-faq > p { margin: 0 0 18px; padding-right: 44px; max-width: 62ch; font-size: var(--zp-fs-body); line-height: 1.6; color: var(--zp-ink-2); }
+
+/* ---------- related links: the repo's own sentence with its links ---------- */
+.zp .zb-related .zb-sec-p { margin-top: 14px; }
+
+/* ---------- dark closing band: the page already ends with a call to action ---------- */
+.zp .zb-ink { background: var(--zp-ink); color: var(--zp-on-ink); }
+.zp .zb-demo { display: flex; flex-wrap: wrap; align-items: center; gap: 32px 56px; }
+.zp .zb-demo-l { flex: 1 1 420px; min-width: 0; }
+.zp .zb-demo-h { margin: 0 0 14px; max-width: 20em; font-family: var(--zp-font-head); font-weight: 700; font-size: var(--zp-fs-band-h); line-height: 1.08; letter-spacing: -0.02em; text-wrap: balance; }
+.zp .zb-demo-p { margin: 0; max-width: 34em; font-size: var(--zp-fs-lead); line-height: 1.6; color: var(--zp-on-ink-muted); }
+.zp .zb-demo-r { flex: 1 1 300px; max-width: 400px; min-width: 0; display: flex; flex-direction: column; gap: 10px; }
+
+/* ---------- wider screens ---------- */
+@media (min-width: 560px) {
+  .zp .zb-btnrow { flex-direction: row; flex-wrap: wrap; max-width: none; }
+  .zp .zb-proof { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+}
+@media (min-width: 640px) {
+  .zp .zb-steps { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 32px; }
+  .zp .zb-steps-i:last-child { border-bottom: 0; }
+  .zp .zb-steps-i:nth-last-child(2):nth-child(odd) { border-bottom: 0; }
+}
+@media (min-width: 800px) {
+  .zp .zb-tiles { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .zp .zb-tiles:has(> :nth-child(2):last-child) { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (min-width: 900px) {
+  .zp .zb-hero { grid-template-columns: minmax(0, 1.04fr) minmax(0, 0.96fr); grid-template-rows: auto 1fr; grid-template-areas: "top vis" "proof vis"; column-gap: 56px; row-gap: 0; align-items: start; }
+  .zp .zb-hero-top { max-width: none; }
+  .zp .zb-hero > .zm-r { position: sticky; top: 24px; align-self: start; margin-top: 6px; }
+  .zp .zb-proof { margin-top: 40px; }
+  .zp .zb-chips { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .zp .zb-steps { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .zp .zb-steps-i { padding: 22px 0 0; }
+  .zp .zb-cols { grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr); gap: 56px; }
+}
+/* a laptop, 800 px high or less: the hero is tighter so that the H1, the price and Buy now stay in the first screen */
+@media (min-width: 900px) and (max-height: 800px) {
+  .zp .zb-hero { padding-top: 8px; }
+  .zp .zb-hero .zb-eyebrow { margin-bottom: 10px; }
+  .zp .zb-hero .zb-lede { margin-top: 12px; }
+  .zp .zb-hero .zb-btnrow { margin-top: 18px; }
+}
+@media (max-width: 639px) {
+  .zp .zb-wf th, .zp .zb-wf td { padding-right: 10px; font-size: var(--zp-fs-small); }
+  .zp .zb-wf thead th { font-size: var(--zp-fs-label); letter-spacing: 0.06em; }
+  .zp .zb-wf--3 th:nth-child(1) { width: 29%; }
+  .zp .zb-wf--3 th:nth-child(3) { width: 27%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .zp .zb-btn, .zp .zb-plus { transition: none; }
+}

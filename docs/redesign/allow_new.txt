@@ -53,3 +53,11 @@ TOTAL
 598.50
 Thank you, visit again
 Payments are processed by Razorpay. Questions before you pay? Message us on WhatsApp at +91 7817851009.
+# Stage 3 (business pages). "See pricing" is the link of the machine band (OFFER.md 3.3). The pack leaves it out of allow_new.txt because the Home page already had that text.
+# The six business pages did not have it, so G7 reports it as new text on each of them. One line per page, so it cannot hide a stray "See pricing" on a page that must have no band.
+/restaurant-pos-software/ || See pricing
+/cafe-pos-software/ || See pricing
+/bakery-billing-software/ || See pricing
+/sweet-shop-billing/ || See pricing
+/qsr-billing-software/ || See pricing
+/dhaba-billing-software/ || See pricing

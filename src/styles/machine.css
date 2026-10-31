@@ -1,0 +1,62 @@
+/* machine.css: the Zipla Billing Machine band, size L (Stage 3 of the redesign).
+   Spec: prototype.css (Round 5: the stage, the receipt, the phone picture, same numbers that Stage 2 used in home.css),
+   prototype-r7.css (the price row and the phone first-screen rules) and tokens/DESIGN_SYSTEM.md section 14.
+   Words, prices and links are in src/components/MachineBand.jsx (OFFER.md section 3).
+   Every class carries the prefix zm- and every rule sits under .zp (the opt-in root class), so no old page can pick it up.
+   Values come from tokens.css only: no raw colour, no font stack. Nothing here reads the old theme attribute or class (BRIEF R15).
+   The pages that use it draw the band: the hero grid of a page decides where the panel sits (src/styles/business.css). */
+
+/* ---------- the panel ---------- */
+.zp .zm-r { min-width: 0; width: 100%; max-width: 560px; padding: 12px 18px 4px; border-radius: var(--zp-r-panel); background: radial-gradient(120% 80% at 28% 18%, var(--zp-panel-0) 0%, var(--zp-panel-1) 52%, var(--zp-panel-2) 100%); overflow: hidden; }
+.zp .zm-dot { flex: none; width: 10px; height: 10px; border-radius: 2px; background: var(--zp-gold); }
+
+/* ---------- the stage: printer photo, sample bill, phone picture ---------- */
+/* phones (under 900 px): stage 1 to 0.86, printer 52 percent, phone 31 percent (prototype-r7.css, DESIGN_SYSTEM 14.4) */
+.zp .zm-stage { position: relative; container-type: inline-size; width: 100%; aspect-ratio: 1 / 0.86; }
+.zp .zm-mach { position: absolute; left: 3%; bottom: 2%; width: 52%; z-index: 2; container-type: inline-size; }
+.zp .zm-mach::before { content: ''; position: absolute; left: 8%; right: 8%; bottom: -1.2%; height: 5%; background: radial-gradient(ellipse at center, color-mix(in srgb, var(--zp-ink) 42%, transparent), transparent 70%); z-index: 0; }
+.zp .zm-mach-img { position: relative; z-index: 2; display: block; width: 100%; height: auto; filter: drop-shadow(0 1.4cqw 1.6cqw var(--zp-sh-machine)); }
+.zp .zm-paper { position: absolute; z-index: 1; left: 20.8%; width: 58.7%; bottom: calc(63.85% - 1.4cqw); }
+.zp .zm-paper::before { content: ''; position: absolute; left: 0; right: 0; top: -9px; height: 10px; background: linear-gradient(135deg, var(--zp-card) 5px, transparent 0) 0 0 / 12px 10px repeat-x, linear-gradient(225deg, var(--zp-card) 5px, transparent 0) 0 0 / 12px 10px repeat-x; transform: scaleY(-1); }
+.zp .zm-paper::after { content: ''; position: absolute; left: 0; right: 0; bottom: 1.4cqw; height: 8cqw; background: linear-gradient(to top, color-mix(in srgb, var(--zp-ink) 34%, transparent), transparent); pointer-events: none; }
+.zp .zm-rcp { background: var(--zp-card); color: var(--zp-ink); padding: 1.1em 0.8em 2.8em; font-family: var(--zp-font-mono); font-size: 11px; font-size: 3.9cqw; line-height: 1.6; text-align: left; }
+.zp .zm-rcp-h { text-align: center; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; }
+.zp .zm-rcp-rule { margin: 0.5em 0; border-top: 1.5px dashed var(--zp-rule); }
+.zp .zm-rcp-row { display: flex; align-items: baseline; gap: 0.5em; }
+.zp .zm-rcp-n { white-space: nowrap; }
+.zp .zm-rcp-l { flex: 1 1 0; min-width: 0; border-bottom: 1.5px dotted var(--zp-leader); transform: translateY(-0.3em); }
+.zp .zm-rcp-a { white-space: nowrap; text-align: right; }
+.zp .zm-rcp-tot { font-weight: 500; }
+.zp .zm-rcp-foot { text-align: center; color: var(--zp-ink-3); }
+@keyframes zm-feed { from { transform: translateY(45%); } to { transform: translateY(0); } }
+.zp .zm-pa { animation: zm-feed 1.3s steps(10, end) both; }
+.zp .zm-phoneh { position: absolute; z-index: 1; right: 3%; bottom: 8%; width: 31%; padding: 1.1cqw; border-radius: 5.6cqw; background: var(--zp-ink); box-shadow: 0 3cqw 4.5cqw -2cqw var(--zp-sh-machine); }
+.zp .zm-phoneh img { display: block; width: 100%; height: auto; border-radius: 4.6cqw; }
+
+/* ---------- the price row: name, price, delivery line, Buy now, See pricing ---------- */
+.zp .zm-buy { display: flex; flex-direction: column; gap: 6px; padding: 14px 4px 16px; }
+.zp .zm-buy-t { display: flex; align-items: baseline; justify-content: space-between; gap: 4px 12px; flex-wrap: wrap; }
+.zp .zm-buy-n { display: inline-flex; align-items: center; gap: 8px; font-family: var(--zp-font-mono); font-size: var(--zp-fs-label); font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; color: var(--zp-ink); }
+.zp .zm-buy-p { font-family: var(--zp-font-head); font-size: 34px; font-weight: 700; letter-spacing: -0.02em; line-height: 1; color: var(--zp-ink); }
+.zp .zm-buy-d { margin: 0; font-size: var(--zp-fs-xs); line-height: 1.4; color: var(--zp-ink-2); }
+.zp .zm-buy-a { display: flex; align-items: center; flex-wrap: wrap; gap: 0 16px; margin-top: 6px; }
+.zp .zm-buy-b { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 48px; padding: 10px 22px; border: 0; border-radius: var(--zp-r-lg); background: var(--zp-gold); color: var(--zp-ink); font-family: var(--zp-font-body); font-size: var(--zp-fs-sub); font-weight: 700; line-height: 1.25; text-align: center; text-decoration: none; cursor: pointer; transition: background-color var(--zp-t-fast); }
+.zp .zm-buy-b:hover { background: var(--zp-gold-hover); }
+.zp .zm-buy-link { display: inline-flex; align-items: center; min-height: var(--zp-tap); padding: 0 2px; font-family: var(--zp-font-body); font-size: var(--zp-fs-xs); font-weight: 600; text-decoration: underline; text-decoration-thickness: 1.5px; text-underline-offset: 4px; text-decoration-color: var(--zp-leader); }
+.zp .zm-buy-link:hover { text-decoration-color: currentColor; }
+
+/* ---------- wide screens ---------- */
+@media (min-width: 900px) {
+  .zp .zm-r { max-width: none; padding-top: 18px; }
+  .zp .zm-stage { aspect-ratio: 1 / 1.08; }
+  .zp .zm-mach { width: 64%; }
+  .zp .zm-phoneh { width: 35%; }
+}
+/* a laptop, 800 px high or less: the stage is a little shorter so that price and Buy now stay in the first screen on 1366 by 768 */
+@media (min-width: 900px) and (max-height: 800px) {
+  .zp .zm-stage { aspect-ratio: 1 / 0.94; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .zp .zm-buy-b { transition: none; }
+  .zp .zm-pa { animation: none; }
+}
