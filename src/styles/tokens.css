@@ -1,0 +1,113 @@
+/* Zipla design tokens, taken 1:1 from the reviewed Round 5 prototype (prototype.css in this folder).
+   Every value below appears in that file, except the three marked "Round 6". The names are new, the values are not. Do not "improve" a value without Kabir.
+   Prefix zp- avoids a clash with variables the live site may already have (check in Stage 0).
+   Rule for the port: outside this file there must be no raw hex colour, no font stack and no repeated radius.
+   The check is in BRIEF.md section 9 (Token check and static checks). */
+
+:root {
+  /* ---- surfaces ---- */
+  --zp-paper: #F8F5EE;          /* page background */
+  --zp-paper-2: #F0EADC;        /* "band" sections, hover fill, phone-number prefix box, WhatsApp message box */
+  --zp-card: #FFFEFB;           /* tiles, receipt slip, inputs, sticky bar */
+  --zp-cream: #FFF8E3;          /* entry plan slip, text on ink chips */
+  --zp-chip: #EAE2CF;          /* background of the small "tag" label on guide cards (Round 6). The old payment-method chip is not built */
+  --zp-panel-0: #F8F3E7;        /* hero visual panel, gradient stop 0% */
+  --zp-panel-1: #F0EADC;        /* gradient stop 52% */
+  --zp-panel-2: #E7DFCB;        /* gradient stop 100%, also the screenshot-card backdrop */
+
+  /* ---- ink (text) ---- */
+  --zp-ink: #1C1915;            /* headings, body, borders of ghost buttons, the dark band */
+  --zp-ink-2: #4A453C;          /* secondary text */
+  --zp-ink-3: #645D50;          /* muted labels, captions */
+
+  /* ---- accent ---- */
+  --zp-gold: #E3B13A;           /* primary button, highlight bar under H1 words, bullets */
+  --zp-gold-hover: #EDBD4A;
+
+  /* ---- lines (decorative separators, intentionally soft, below 3:1) ---- */
+  --zp-line-1: #E3DCCB;         /* header bottom border */
+  --zp-line-2: #DDD5C4;         /* strip, sticky bar top, WhatsApp sheet top */
+  --zp-line-3: #CFC6B1;         /* FAQ, tables, outlet rows */
+  --zp-line-4: #D4CBB5;         /* checklists, "next" list */
+  --zp-line-5: #E7DFCD;         /* tile, summary box, slip border */
+  --zp-rule: #C9BFA9;           /* dashed receipt rule */
+  --zp-leader: #B9AE96;         /* dotted leader, link underline */
+  --zp-field: #8A7F66;          /* input border (UI boundary, 3.63:1 on paper) */
+
+  /* ---- on the dark band and footer ---- */
+  --zp-on-ink: #F8F5EE;
+  --zp-on-ink-muted: #C2B9A6;
+  --zp-line-on-ink: #3B362E;    /* dark tile list lines */
+  --zp-line-on-ink-2: #38332B;  /* footer top border */
+  --zp-underline-on-ink: #7E7566;
+
+  /* ---- prototype-only markers: never ship ---- */
+  --zp-ph-bg: #FBE7AE;
+  --zp-ph-line: #B58A1E;
+
+  /* ---- type ---- */
+  --zp-font-body: 'Figtree', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+  --zp-font-head: 'Bricolage Grotesque', 'Figtree', system-ui, sans-serif;
+  --zp-font-mono: 'DM Mono', 'Figtree', ui-monospace, Menlo, Consolas, monospace;
+
+  --zp-fs-h1: clamp(34px, 4vw, 50px);   /* line-height 1.04, letter-spacing -0.03em, weight 700 */
+  --zp-fs-h2: clamp(28px, 3.4vw, 40px); /* 1.1, -0.02em, 700 */
+  --zp-fs-band-h: clamp(30px, 4vw, 46px); /* dark demo band heading, 1.08, -0.02em */
+  --zp-fs-h3-lg: 28px;                  /* step titles, 1.12, -0.02em */
+  --zp-fs-h3-md: 26px;                  /* plan and checkout titles, 1.15, -0.02em */
+  --zp-fs-h3: 22px;                     /* card and step titles, 1.2, -0.01em */
+  --zp-fs-h3-sm: 21px;                  /* outlet row titles, 1.2, -0.01em */
+  --zp-fs-body: 16px;                   /* line-height 1.55 */
+  --zp-fs-lead: clamp(17px, 1.5vw, 19px); /* line-height 1.6 */
+  --zp-fs-sub: 17px;                    /* section sub line, 1.55 */
+  --zp-fs-small: 15px;
+  --zp-fs-xs: 14px;
+  --zp-fs-2xs: 13px;
+  --zp-fs-label: 12px;                  /* mono / uppercase labels, letter-spacing 0.1em to 0.14em */
+  /* Round 6, new values (not in prototype.css): long documents and the plan price */
+  --zp-fs-h2-doc: clamp(24px, 2.6vw, 30px); /* Round 6. H2 in a reading column (blog article, legal pages, contact text), 1.15, -0.02em, 700 */
+  --zp-fs-h3-doc: 20px;                     /* Round 6. H3 in a reading column, 1.25, -0.01em, 700 */
+  --zp-fs-price: 56px;                      /* Round 6. The big plan price in the price slip, Bricolage 700, 1.0, -0.02em */
+
+  /* ---- layout ---- */
+  --zp-wrap: 1180px;
+  --zp-gut: clamp(20px, 3vw, 32px);
+  --zp-sec: clamp(48px, 7vw, 80px);     /* vertical padding of a section */
+  --zp-tap: 48px;                       /* minimum touch target (links, nav, back button). Round 5 and 6 had 44px. Round 7 and BRIEF R11 use 48px */
+  --zp-btn-lg: 56px;                    /* large button height; plan buttons 52, alt buttons 48 */
+
+  /* ---- radii ---- */
+  --zp-r-xs: 4px;
+  --zp-r-sm: 8px;
+  --zp-r-md: 10px;     /* inputs */
+  --zp-r-lg: 12px;     /* buttons, pills, accordions */
+  --zp-r-xl: 20px;     /* tiles */
+  --zp-r-phone: 24px;  /* phone frame around app screenshots (inner image radius 20px) */
+  --zp-r-panel: 28px;  /* hero visual panel */
+  --zp-r-pill: 999px;
+
+  /* ---- elevation (only these four shadows exist) ---- */
+  --zp-sh-slip: 0 14px 28px -18px rgba(60, 40, 10, 0.35);
+  --zp-sh-phone: 0 16px 24px -16px rgba(40, 28, 10, 0.5);
+  --zp-sh-sheet: 0 -14px 32px rgba(40, 28, 10, 0.18);
+  --zp-sh-machine: rgba(40, 28, 10, 0.26);  /* used inside drop-shadow() on the printer photo */
+
+  /* ---- motion ---- */
+  --zp-t-fast: 0.15s;   /* button fill, arrow nudge */
+  --zp-t-ui: 0.2s;      /* plus icon rotation in accordions */
+
+  /* ---- stacking ---- */
+  --zp-z-sticky: 55;
+}
+
+/* Stage 1 deviation from the pack: the pack's two global focus-ring rules (a, button, summary, .screens, and
+   .ink a / .ink button) are not here. As written they would change the focus look of every old page body
+   (BRIEF 6.3: a page that is not converted keeps its old look). They live in frame.css, scoped to the frame
+   (header, footer, skip link, cookie banner) and to pages that opt in with the root class .zp.
+   Everything above this comment is the pack's tokens.css, byte for byte. */
+
+/* Reduced motion. The prototype also sets animation: none on the receipt-feed animation and
+   scroll-behavior: auto on the screenshot strip; see prototype.css, last @media block. */
+@media (prefers-reduced-motion: reduce) {
+  :root { --zp-t-fast: 0s; --zp-t-ui: 0s; }
+}
