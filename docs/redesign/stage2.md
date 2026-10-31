@@ -6,16 +6,16 @@ Buy now address: the Razorpay link from Kabir's prompt, kept once in `src/consta
 
 ## 1. In five lines
 
-Gate: 0 FAIL, 3 WARN (G7 repeated words, G9 new links, G11 one old alt text). Browser check: ran, exit 1 (64 FAIL rows, 54 WARN rows; the base had 68 and 58). The 4 Home rows went from FAIL to ok. The other 64 FAIL rows are old bodies of pages that are not in this stage.
-Pages changed: 1 (`/`). Files changed: see section 11. Base: `redesign/integration` at 9421b3f. B0: 419cc53.
-Verdict: ready for your preview check. Three things need your look first (section 2).
+Gate: 0 FAIL, 3 WARN (G7 repeated words, G9 new links, G11 one old alt text). Browser check: ran, exit 1 (64 FAIL rows, 54 WARN rows; the base had 68 and 58). The 4 Home rows went from FAIL to ok. The 72 rows of the other 18 pages carry exactly the same text as in the base (compared row by row). 64 of them FAIL, as in the base. Per the Stage 1 report the cause is links in old page bodies, which are not in this stage.
+Pages changed: 1 (`/`). Files changed: 20 (9 edited components, 3 new components, 1 new stylesheet, 2 images, the page, `constants.js`, 3 files in `docs/redesign/`). Base: `redesign/integration` at 9421b3f. B0: 419cc53.
+Verdict: ready for your preview check. Five points need your OK (section 2).
 Offer check: the strings of the machine band in the built HTML equal OFFER.md section 3: yes. I checked 49 strings, 5 attributes (two alt texts, the sample-bill aria-label, "Quick buy", "Zipla Billing Machine details") and the three Buy now links. No difference. The check is a script that tests each string twice: it is in OFFER.md, and it is a text piece of `dist/index.html`.
 "10 minutes" and "no training needed" are not in the built page (grep of `dist/index.html`: 0 hits). `gate/forbidden.txt` is unchanged.
 
 ## 2. Needs Kabir's OK (at most five)
 
-1. **Desktop order in the hero.** From 900 px the offer block (price slip, Buy now, Ask on WhatsApp) is drawn above the repo's "Short answer" and "Complete plan" paragraphs and above the "Book a WhatsApp Demo" button. The HTML order is unchanged (the repo's text first, Buy now after it), only the drawing changes. Reason: with the repo's paragraphs above it, the slip would start below 670 px on a 1366x768 laptop (I saw this in my first screenshot, I did not measure it with a tool), so Buy now would end far below the fold. With the offer drawn first, Buy now ends at 743 px. BRIEF A5 says not to reorder with CSS, except the phone picture (D1), so this is a second exception. Cost: on a laptop the keyboard goes to "Book a WhatsApp Demo" before "Buy now" while the eye sees Buy now first. If you say no: delete the `"buy vis" "more vis"` pair in `.zh-hero` (`src/styles/home.css`, the 900 px block) and Buy now moves below the fold on laptops.
-2. **"Book a WhatsApp Demo" is no longer the first action.** `fold_check.py` finds it as the first link after the H1 and reports WARN at all five viewports (979 to 1086 px). On phones the repo's sentences come before it (your order D3), on laptops the offer comes before it. Buy now is the main action now, as the sticky bar and the price slip show. The repo's button is still on the page, as a ghost button.
+1. **Desktop order in the hero.** From 900 px the offer block (price slip, Buy now, Ask on WhatsApp) is drawn above the repo's "Short answer" and "Complete plan" paragraphs and above the "Book a WhatsApp Demo" button. The HTML order is unchanged (the repo's text first, Buy now after it), only the drawing changes. Reason: with the repo's paragraphs above it, the slip would start below 670 px on a 1366x768 laptop (seen in my first screenshot, not measured with a tool), so Buy now would end far below the fold. With the offer drawn first, Buy now ends at 743 px. BRIEF A5 says not to reorder with CSS, except the phone picture (D1), so this is a second exception. Cost: on a laptop the keyboard goes to "Book a WhatsApp Demo" before "Buy now" while the eye sees Buy now first. If you say no: swap the rows `"buy vis"` and `"more vis"` in `grid-template-areas` of `.zh-hero` (`src/styles/home.css`, the 900 px block). Buy now then moves below the fold on laptops.
+2. **"Book a WhatsApp Demo" is no longer the first action.** `fold_check.py` finds it as the first link after the H1 and reports WARN at all five viewports (its bottom is at 1026 to 1093 px). On phones the repo's sentences come before it (the order in your Stage 2 prompt), on laptops the offer comes before it. Buy now is the main action now, as the sticky bar and the price slip show. The repo's button is still on the page, as a ghost button.
 3. **Dropped, as you asked.** The old customer-menu screenshot figure (`/screenshots/ss-customer-menu.webp`, its label and caption "Actual Zipla POS QR customer-menu screen.") is gone from the Table QR panel. Two lines in `allow_removed.txt` (section 7). I did not replace it. Also dropped: the two small shop drawings on each of the six outlet cards (inline SVG, decoration, no text). The outlet cards are text rows now, as in the prototype. Say if you want the drawings back.
 4. **The repo's laptop figure stays.** The prototype has a different hero picture, so the repo's laptop picture (`ss-new-order.webp`), its two callouts ("Counter billing", "Kitchen handoff"), "zipla POS / Built around your service workflow" and the caption sit as a proof block under the offer. I kept them because the gate fails when repo text disappears and you said repo words and images stay. If you want them gone, that is an `allow_removed.txt` decision for you, not for me.
 5. **The two prices side by side.** The repo's plan line "₹4,999/year or ₹11,999 for 3 years prepaid" and the machine "₹4,999" are in the same hero. A visitor can read them as one offer. You accepted this risk in OFFER.md section 7. I changed no word of either.
@@ -51,7 +51,7 @@ Offer check: the strings of the machine band in the built HTML equal OFFER.md se
 | G15 | No forbidden strings | 19 | 0 | 0 |
 | G16 | Weight: CSS, JS, fonts, HTML | 3 | 0 | 0 |
 
-## WARN (3)
+**WARN (3)**
 - G7 /: same words, but repeated more often than baseline (duplicated block?): policy +1, pricing +1, refund +1, see +1
 - G9 /: new link(s): https://rzp.io/rzp/ygTqBnl, https://wa.me/917817851009
 - G11 /: baseline alt text no longer used: 'Actual Zipla POS customer menu screen used for QR '
@@ -67,7 +67,7 @@ Why each WARN is fine:
 |---|---|---|---|---|---|
 | / | Restaurant Billing Software for India | 1 Home | machine stage, buy slip, sticky bar, trust row, strip, how-it-starts band, two-column text, table, outlet rows, workflow panels, checklist, bento tiles, offer card, FAQ details, dark band with the form | 542, 832, 834 (price and Buy now are in the sticky bar) | 235, 631, 743 |
 
-All five viewports, measured on the build with my own script (`fold_check.py` reports only the H1 and the first link). H1 bottom / price bottom / Buy now bottom. "bar" is the sticky bar, which is fixed at the bottom of the screen. The Buy now button is 48 px high there and 56 px high in the slip.
+All five viewports, measured on the build with my own script (`fold_check.py` reports only the H1 and the first link). H1 bottom / price bottom / Buy now bottom. "bar" is the sticky bar, which is fixed at the bottom of the screen. Buy now is 56 px high in the slip (the pack's large button) and 48 px high in the sticky bar and in the offer card (measured).
 
 | viewport | H1 bottom | price | Buy now | pack prototype (DESIGN_SYSTEM 14.5) |
 |---|---|---|---|---|
@@ -77,7 +77,7 @@ All five viewports, measured on the build with my own script (`fold_check.py` re
 | 414x896 | 563 | bar, 884 | bar, 886 | 519 / bar / bar |
 | 1366x768 | 235 | 631 | 743 | 207 / 599 / 711 |
 
-The H1 is 28 to 44 px lower than in the prototype because the repo's second eyebrow "For Indian food businesses" is above it. No type is smaller than the token sizes. At 320x640 and 360x640 the H1 and the bar are inside the first screen. No sideways scroll at 320, 360, 390, 414 and 1366 (`fold_check.py`: 0 cases, and `scrollWidth` equals the window width in my script).
+The H1 is 28 to 44 px lower than in the prototype. The repo's second eyebrow "For Indian food businesses" adds a line above it. I did not measure how much of the difference comes from that line and how much from the repo's header, which differs from the prototype's. No type is smaller than the token sizes. At 320x640 and 360x640 the H1 and the bar are inside the first screen. No sideways scroll at 320, 360, 390, 414 and 1366 (`fold_check.py`: 0 cases, and `scrollWidth` equals the window width in my script).
 `fold_check.py` output for `/` (its "action" is the first link after the H1, "Book a WhatsApp Demo", see section 2, item 2):
 `320x640 h1 411-482 action 1045-1093 WARN`, `360x640 h1 446-516 action 978-1026 WARN`, `390x844 h1 471-542 action 979-1027 WARN`, `414x896 h1 492-563 action 1000-1048 WARN`, `1366x768 h1 131-235 action 1038-1086 WARN`. In the base (measured again on the base build, same tool): `320x640 action 679-723 WARN`, `360x640 631-675 WARN`, `390x844 631-675 ok`, `414x896 610-654 ok`, `1366x768 589-633 ok`, with the H1 ending at 313 px on phones and 352 px at 1366.
 
@@ -88,8 +88,8 @@ Lab numbers: Chromium 153 headless on localhost, no throttling, 3 runs per cell,
 | metric | base | new |
 |---|---|---|
 | LCP, Home, 360 / 390 / 768 / 1280 px (median of 3) | 136 / 124 / 168 / 152 ms | 116 / 116 / 124 / 120 ms |
-| LCP element, Home | h1 / h1 / ss-new-order img / ss-new-order img | printer photo at all four widths |
-| CLS, Home, same widths | 0 / 0 / 0 / 0 | 0.004 / 0 / 0 / 0 |
+| LCP element, Home | h1 / h1 / ss-new-order img / ss-new-order img | printer photo at 390, 768, 1280. At 360: the printer photo in my 3 runs, a paragraph in both `browser_check.py` runs (the two areas are close) |
+| CLS, Home, same widths | 0 / 0 / 0 / 0 | 0.002 to 0.004 at 360, 0 at the other three |
 | CSS gzip (G16) | 29,389 B | 34,662 B (+5,273) |
 | JS gzip (G16) | 49,803 B | 49,789 B (-14) |
 | fonts in the build | 222,984 B | 222,984 B |
@@ -101,7 +101,7 @@ Lab numbers: Chromium 153 headless on localhost, no throttling, 3 runs per cell,
 | Home links (internal / external) | 41 / 0 | 43 / 4 |
 | browser_check, Home rows at 360 / 390 / 768 / 1280 | FAIL 6, 4, 5, 7 targets under 24 px, WARN 8, 10, 10, 8 targets under 48 px | ok, ok, ok, ok (0 FAIL, 0 WARN) |
 
-Honest reading: the spread between runs is up to 90 ms (base 360: 208, 132, 136), so I claim no speed gain. CLS is far below 0.1, so no fallback font faces were added. The rupee sign sits in the latin-ext Bricolage file. I did not add a preload for it. CLS 0.004 at 360 px is the only shift I measured. The Home HTML is 72,778 B smaller in total. I did not measure which part: the 12 inline shop drawings and the inline `<style>` blocks of three components are gone.
+Honest reading: the spread between runs is up to 76 ms (base 360: 208, 132, 136), so I claim no speed gain. CLS is far below 0.1, so no fallback font faces were added. The rupee sign sits in the latin-ext Bricolage file. I did not add a preload for it. The shift at 360 px (0.002 to 0.004) is the only one I measured. The Home HTML is 72,778 B smaller in total. I did not measure which part: the 12 inline shop drawings and the inline `<style>` blocks of three components are gone.
 
 ## 7. Allow-list entries added
 
@@ -173,15 +173,15 @@ Not in the list on purpose: the claim lines of `offer/allow_new_claims.txt` (no 
 7. **Sticky bar** is `position: fixed` (OFFER.md: "fixed to the bottom") and the prototype's is `sticky`. The footer gets 76 px of space at the bottom on phones so the bar never covers the last links. It is hidden from 900 px.
 8. **Workflow pictures.** The prototype shows nine phone screenshots in phone frames. You said images stay the repo's, so the repo's illustrations and laptop screenshots stay and the phone strips are not built. I did not compare the repo's laptop pictures with the pack's phone pictures (D6 needs "same screen, same content"). Nothing swapped.
 9. **Tables.** The Features table was a grid of `div`s in the repo. It is a real `<table>` now (R7), with the two column labels visible, as in the baseline. The text is the same.
-10. **Check marks.** The green check icons of the plan list (raw colour `#16a34a` in the repo) are gone. The bullets are gold squares drawn by CSS. The Features list uses the same bullets. These icons were pictures, not text.
+10. **Check marks.** The green check icons of the plan list (raw colour `#16a34a` in the repo) are gone. The bullets are gold squares drawn by CSS. The Features list uses the same bullets. These icons were inline SVG, not text.
 11. **Tap areas.** Links inside table cells and in the strip got a 48 px tap area (padding with a negative margin), so the sentence does not change.
-12. **Light colour scheme.** `html:has(body.zp) { color-scheme: light }` so form controls and scrollbars are light. It does not read the old theme attribute. `data-theme="dark"` is still on `<html>` (Stage 1 left it). I tested a saved `zipla-theme` value: the page stays light.
+12. **Light colour scheme.** `html:has(body.zp) { color-scheme: light }` so form controls and scrollbars are light. It does not read the old theme attribute. `data-theme="dark"` is still on `<html>` (Stage 1 left it). I tested a saved `zipla-theme` value of `dark` and of `light`: the page is light in both cases (body background `rgb(248, 245, 238)`).
 13. **Pack images** copied byte for byte (sha256 equal) to `public/images/hero-printer-billing-machine.webp` (760x1025) and `public/images/screen-dashboard.webp` (720x1465). The printer photo has `fetchpriority="high"`, not lazy. The phone picture is not lazy either (it is in the first screen).
 14. **`gate/forbidden.txt` is not edited** (no PROOF line). Nothing from `offer/allow_new_claims.txt` was appended.
 
 ## 9. Noticed, not changed
 
-1. Old rules in `src/index.css` that no Home markup uses any more: `.hero*`, `.trust-*`, `.buyer-answer*`, `.biz-*`, `.workflow-*`, `.qa-*`, `.price-*`, `.faq-*`, `.demo-form*`, `.section-head`. They are not deleted (R13). `src/components/IndustryShopScene.jsx` is not used any more, and `Testimonials.jsx` was not used before. Suggestions for Stage 6, not done.
+1. Old rules in `src/index.css` that no Home markup uses any more: `.hero*`, `.trust-*`, `.buyer-answer*`, `.biz-*`, `.workflow-*`, `.qa-*`, `.price-*`, `.faq-*`, `.demo-form*`, `.section-head`. They are not deleted (R13). Other pages may still use some of them. I did not check. `src/components/IndustryShopScene.jsx` is not used any more, and `Testimonials.jsx` was not used before. Suggestions for Stage 6, not done.
 2. The skip link target is still the empty `div#zp-content` (Stage 1). `<main>` has no id.
 3. Keyboard order on laptops: see section 2, item 1.
 4. In the baseline the hero callouts were hidden below 561 px by the old CSS. They are visible on every width now. That is the repo's text, so I showed it.
@@ -203,7 +203,7 @@ Not in the list on purpose: the claim lines of `offer/allow_new_claims.txt` (no 
 
 ```
 sha256sum /tmp/pack.zip   # e620d65d... equals the expected value
-python3 -m zipfile -e (unzip) /tmp/pack.zip /tmp/pack
+unzip -q /tmp/pack.zip -d /tmp/pack
 python3 -I /tmp/pack/redesign-ref-r7/gate/selftest.py   # last line SELFTEST OK
 python3 -m venv /tmp/pwvenv && /tmp/pwvenv/bin/pip install playwright==1.63.0
 git fetch origin redesign/integration
