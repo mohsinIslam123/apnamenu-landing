@@ -6,15 +6,15 @@ export default function TrustBar() {
     { label: 'Supported bill printing', path: <><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M10 18h4M4 9h2M18 9h2"/></> },
   ]
   return (
-    <div className="trust-bar">
-      <div className="trust-grid">
+    <div className="zh-trust zh-wrap">
+      <ul className="zh-trust-grid">
         {items.map(i => (
-          <div className="trust-item" key={i.label}>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">{i.path}</svg>
+          <li className="zh-trust-item" key={i.label}>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">{i.path}</svg>
             {i.label}
-          </div>
+          </li>
         ))}
-      </div>
+      </ul>
     </div>
   )
 }

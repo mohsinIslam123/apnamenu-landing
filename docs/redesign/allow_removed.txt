@@ -1,0 +1,5 @@
+# Stage 2 (Home). Kabir's instruction in the Stage 2 prompt: drop the old customer-menu screenshot figure (images/ASSETS.md, "Left out on purpose").
+# The figure is the picture /screenshots/ss-customer-menu.webp in the Table QR workflow panel of the Home page, with its label and its caption.
+# The label text is shared with the other "Actual Zipla POS screen" figures. Those stay (checked in the built HTML), so this line does not remove them.
+/ || Actual Zipla POS QR customer-menu screen.
+/ || Actual Zipla POS screen

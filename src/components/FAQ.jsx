@@ -11,19 +11,23 @@ const ITEMS = [
   { q: 'How do I add my existing menu?', a: 'Use the Zipla menu-management workflow to add and review your items. Book a demo if you want help confirming the current setup process.' },
   { q: 'How do I get support?', a: 'You can contact the Zipla team on WhatsApp for support and a product walkthrough.' },
 ]
-function Plus() { return <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg> }
+function Plus() { return <svg className="zh-fplus" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg> }
 export default function FAQ() {
   return (
-    <section className="faq" id="faq" aria-labelledby="faq-title">
-      <div className="section-head">
-        <span className="eyebrow">FAQ</span>
-        <h2 id="faq-title">What do food businesses ask before starting Zipla POS?</h2>
-        <p>These answers cover Table QR Ordering, Customer QR Home Ordering, Bluetooth printing, data access, menu setup, connectivity, and product support.</p>
+    <section className="zh-band" id="faq" aria-labelledby="faq-title">
+      <div className="zh-wrap zh-sec">
+        <div className="zh-faq-wrap">
+          <div className="zh-faq-l">
+            <span className="zh-kicker">FAQ</span>
+            <h2 id="faq-title" className="zh-h2">What do food businesses ask before starting Zipla POS?</h2>
+            <p className="zh-faq-intro">These answers cover Table QR Ordering, Customer QR Home Ordering, Bluetooth printing, data access, menu setup, connectivity, and product support.</p>
+          </div>
+          <div className="zh-faq-r">
+            {ITEMS.map(i => <details className="zh-faq" key={i.q}><summary>{i.q}<Plus /></summary><div className="zh-faq-a">{i.a}</div></details>)}
+            <p className="zh-faq-more"><a className="zh-faq-all" href="/faq/">View all Zipla POS FAQs <span aria-hidden="true">→</span></a></p>
+          </div>
+        </div>
       </div>
-      <div className="faq-list">
-        {ITEMS.map(i => <details className="faq-item" key={i.q}><summary className="faq-q">{i.q}<Plus /></summary><div className="faq-a">{i.a}</div></details>)}
-      </div>
-      <p className="faq-more"><a href="/faq/">View all Zipla POS FAQs <span aria-hidden="true">→</span></a></p>
     </section>
   )
 }
