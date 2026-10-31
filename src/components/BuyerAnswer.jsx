@@ -19,47 +19,38 @@ const DECISIONS = [
 
 export default function BuyerAnswer() {
   return (
-    <section className="buyer-answer" aria-labelledby="buyer-answer-title">
-      <div className="buyer-answer-inner">
-        <div className="buyer-answer-intro">
-          <span className="eyebrow">Quick answer</span>
-          <h2 id="buyer-answer-title">Choose billing software around your service workflow</h2>
-          <p className="buyer-answer-lead">Restaurant billing software is a system that helps a food business create bills, apply configured GST, record payments and connect relevant ordering or kitchen steps.</p>
-          <div className="buyer-answer-summary" aria-label="Who Zipla POS is for and what to test">
-            <div className="buyer-answer-summary-card">
-              <h3>Who this is for</h3>
-              <p>Indian restaurant, cafe, QSR, bakery, sweet-shop and dhaba owners choosing or replacing a billing system.</p>
-            </div>
-            <div className="buyer-answer-summary-card">
-              <h3>What to test</h3>
-              <p>Use a small real menu and check payment, printing, QR ordering or kitchen handoff before you switch.</p>
-            </div>
-          </div>
+    <section className="zh-wrap zh-sec" aria-labelledby="buyer-answer-title">
+      <span className="zh-kicker">Quick answer</span>
+      <h2 id="buyer-answer-title" className="zh-h2">Choose billing software around your service workflow</h2>
+      <p className="zh-lead-p">Restaurant billing software is a system that helps a food business create bills, apply configured GST, record payments and connect relevant ordering or kitchen steps.</p>
+      <div className="zh-cb" aria-label="Who Zipla POS is for and what to test">
+        <div>
+          <h3 className="zh-cb-h">Who this is for</h3>
+          <p className="zh-cb-p">Indian restaurant, cafe, QSR, bakery, sweet-shop and dhaba owners choosing or replacing a billing system.</p>
         </div>
-
-        <div className="buyer-answer-decision">
-          <h3>Which workflow fits your food business?</h3>
-          <p>Choose the plan around your current service model, not a generic feature checklist.</p>
-          <div className="buyer-answer-table-wrap">
-            <table>
-              <thead>
-                <tr>
-                  <th scope="col">Operational need</th>
-                  <th scope="col">Relevant Zipla POS workflow</th>
-                </tr>
-              </thead>
-              <tbody>
-                {DECISIONS.map((decision) => (
-                  <tr key={decision.need}>
-                    <th scope="row" data-label="Operational need">{decision.need}</th>
-                    <td data-label="Relevant Zipla POS workflow">{decision.answer}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
+        <div>
+          <h3 className="zh-cb-h">What to test</h3>
+          <p className="zh-cb-p">Use a small real menu and check payment, printing, QR ordering or kitchen handoff before you switch.</p>
         </div>
       </div>
+      <h3 className="zh-cb-h zh-cb-wide">Which workflow fits your food business?</h3>
+      <p className="zh-cb-p">Choose the plan around your current service model, not a generic feature checklist.</p>
+      <table className="zh-wf">
+        <thead>
+          <tr>
+            <th scope="col">Operational need</th>
+            <th scope="col">Relevant Zipla POS workflow</th>
+          </tr>
+        </thead>
+        <tbody>
+          {DECISIONS.map((decision) => (
+            <tr key={decision.need}>
+              <th scope="row">{decision.need}</th>
+              <td>{decision.answer}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </section>
   )
 }
