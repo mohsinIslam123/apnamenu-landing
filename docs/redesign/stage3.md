@@ -154,7 +154,7 @@ The other band strings (name, price, delivery line, Buy now, the sample bill) ar
 
 - The Buy now link. I have no network access to Razorpay. I did not open `https://rzp.io/rzp/ygTqBnl`. Please tap it once. It is the same address on all six pages (the offer check compares the `href`, `target` and `rel`).
 - Real phones, Safari, Firefox, Samsung Internet. I used headless Chromium 153 at 320, 360, 390, 414, 768, 1024, 1280 and 1366 px. No screen reader. I tested the keyboard: Tab order, Enter and Space on the FAQ, the focus ring on the questions and on Buy now (3 px, solid).
-- The Cloudflare preview. I cannot see it from here. I do not know if previews are on for this branch.
+- The Cloudflare preview page itself. I cannot open it from here. After the PR was opened I read its check runs through the GitHub API: "Cloudflare Pages" finished with success and the GitHub Actions job `build` finished with success (14 seconds). So a preview was built for this branch. I did not look at it.
 - Lighthouse. I did not run it.
 - Whether the real device's panel says "Billing Machine", and whether 4,999 rupees includes GST (OFFER.md section 5, open items).
 - Whether the pack's phone dashboard and the repo's laptop dashboard are the same in every detail. I compared them by eye, at reduced size: same screen and same four tiles with the same words.
