@@ -5,7 +5,7 @@ Scope: tokens, fonts, base styles, the shared Header and Footer, the skip link, 
 
 ## 1. In five lines
 
-Gate: 0 FAIL, 19 WARN. Every WARN is G12 (one inline script less on each page: the retired theme script). Browser check: ran, exit 1, 68 FAIL rows and 20 WARN rows (B0: 76 and 76). 0 of 76 rows are worse than their own B0 row. The FAILs that stay are old page-body links (section 9).
+Gate: 0 FAIL, 19 WARN. Every WARN is G12 (one inline script less on each page: the retired theme script). Browser check: ran, exit 1, 68 FAIL rows and 20 WARN rows (B0: 76 and 76). 0 of 76 rows are worse than their own B0 row. The FAILs that stay are old page-body links (section 9). Stage 1's own rule (R11) is "no page worse than its own B0 row, every element this stage touched at 48 px", and that holds. Exit 0 is not reachable in this stage, because B0 itself exits 1 on all 76 rows (Stage 0, risk 1).
 Pages changed: 19 (header and footer only, no page body). Files changed: 17 (4 edited, 13 new). Base: `redesign/integration` at e622582. B0: 419cc53.
 Verdict: ready for your preview check.
 Offer check: no machine band in this stage.
