@@ -1,0 +1,2 @@
+# Stage 1 only. Append to docs/redesign/allow_new.txt in Stage 1 (decision D2: the skip link).
+Skip to content

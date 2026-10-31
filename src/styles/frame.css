@@ -1,0 +1,436 @@
+/* frame.css: the Round 7 frame (Stage 1 of the redesign).
+   What is here: the opt-in base look (.zp), the skip link, the shared Header, the shared Footer, the focus ring,
+   and the look of the existing cookie banner. Values come from tokens.css only: no raw colour, no font stack.
+   Frame classes carry the prefix zp- and work on every page. Old page bodies are not touched.
+   Page components (Stage 2 on) use the prototype's class names, scoped under .zp.
+
+   Cascade note. The legacy stylesheet (src/index.css, loaded by every page) is global and is not edited in Stage 1.
+   Where a frame element still carries a legacy class (header.site-header, the consent dialogs) the selectors below
+   are written with higher specificity (html:root ..., #id ...), so source order does not matter.
+
+   New CSS never reads the old theme attribute or class (BRIEF R15). */
+
+/* ---------- opt-in base look ----------
+   Layout.astro switches it on with the `zp` prop (body class "zp"). No page uses it in Stage 1. */
+.zp {
+  background: var(--zp-paper);
+  color: var(--zp-ink);
+  font-family: var(--zp-font-body);
+  font-size: var(--zp-fs-body);
+  line-height: 1.55;
+}
+.zp :where(h1, h2, h3, h4) {
+  font-family: var(--zp-font-head);
+}
+
+/* ---------- focus ring (the pack's rule from tokens.css, scoped) ----------
+   3 px ink, 3 px offset. Gold on dark surfaces (the footer and the page's dark band). */
+.zp :is(a, button, summary):focus-visible,
+.zp .screens:focus-visible,
+.zp-hdr :is(a, button):focus-visible,
+:is(#zipla-consent-banner, #zipla-consent-preferences) :is(a, button):focus-visible {
+  outline: 3px solid var(--zp-ink);
+  outline-offset: 3px;
+  border-radius: var(--zp-r-xs);
+}
+/* The dialog itself takes focus from the script. Same ring, but its own corners stay. */
+:is(#zipla-consent-banner, #zipla-consent-preferences):focus-visible {
+  outline: 3px solid var(--zp-ink);
+  outline-offset: 3px;
+}
+.zp .ink :is(a, button):focus-visible,
+.zp-foot :is(a, button):focus-visible {
+  outline: 3px solid var(--zp-gold);
+  outline-offset: 3px;
+  border-radius: var(--zp-r-xs);
+}
+
+/* ---------- shared pieces ---------- */
+:is(.zp-skip, .zp-hdr, .zp-foot),
+:is(.zp-hdr, .zp-foot) * {
+  box-sizing: border-box;
+}
+.zp-wrap {
+  max-width: var(--zp-wrap);
+  margin: 0 auto;
+  padding-left: var(--zp-gut);
+  padding-right: var(--zp-gut);
+}
+.zp-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border-radius: var(--zp-r-lg);
+  font-family: var(--zp-font-body);
+  font-weight: 700;
+  line-height: 1.25;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color var(--zp-t-fast);
+}
+.zp-btn-gold {
+  border: 0;
+  background: var(--zp-gold);
+  color: var(--zp-ink);
+}
+.zp-btn-gold:hover {
+  background: var(--zp-gold-hover);
+}
+
+/* ---------- skip link (decision D2) ----------
+   New content, so it is drawn off the top of the page until it has keyboard focus. */
+.zp-skip {
+  position: absolute;
+  left: var(--zp-gut);
+  top: 8px;
+  z-index: 1100;
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--zp-tap);
+  padding: 0 18px;
+  border-radius: var(--zp-r-lg);
+  background: var(--zp-ink);
+  color: var(--zp-on-ink);
+  font-family: var(--zp-font-body);
+  font-size: var(--zp-fs-small);
+  font-weight: 700;
+  line-height: 1.25;
+  text-decoration: none;
+  transform: translateY(-250%);
+}
+.zp-skip:focus {
+  transform: none;
+}
+.zp-skip:focus-visible {
+  outline: 3px solid var(--zp-gold);
+  outline-offset: 3px;
+}
+
+/* ---------- header ----------
+   header.site-header keeps the legacy class because the analytics script reads closest('.site-header').
+   The legacy declarations of that class are reset here, once, with higher specificity. */
+html:root .zp-hdr.site-header {
+  position: relative;
+  top: auto;
+  z-index: 50;
+  display: block;
+  padding: 0;
+  width: auto;
+  max-width: none;
+  overflow: visible;
+  background: var(--zp-paper);
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+  border-bottom: 1px solid var(--zp-line-1);
+  box-shadow: none;
+  color: var(--zp-ink);
+  font-family: var(--zp-font-body);
+  font-size: var(--zp-fs-body);
+  font-weight: 400;
+  line-height: 1.55;
+}
+.zp-hdr-in {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+.zp-logo {
+  display: inline-flex;
+  align-items: center;
+  flex: none;
+  min-height: var(--zp-tap);
+  margin-right: auto;
+}
+/* The repo's logo file is an opaque picture with its own dark background (no transparency), so it shows as a tile.
+   The rounded corners make that tile look deliberate. Needs Kabir's OK: the prototype uses transparent logos. */
+.zp-logo img {
+  display: block;
+  width: auto;
+  max-width: none;
+  height: 36px;
+  aspect-ratio: 640 / 211;
+  border-radius: var(--zp-r-sm);
+}
+.zp-nav {
+  display: flex;
+  align-items: center;
+}
+.zp-nav-a {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--zp-tap);
+  padding: 0 8px;
+  font-size: var(--zp-fs-xs);
+  font-weight: 500;
+  color: var(--zp-ink-2);
+  text-decoration: none;
+}
+.zp-nav-a:hover {
+  color: var(--zp-ink);
+}
+.zp-nav-demo {
+  display: none;
+}
+.zp-hdr-act {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.zp-hdr-cta {
+  display: none;
+  min-height: var(--zp-tap);
+  padding: 0 18px;
+  font-size: var(--zp-fs-small);
+}
+.zp-menu-btn {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: var(--zp-tap);
+  height: var(--zp-tap);
+  padding: 0;
+  border: 1.5px solid var(--zp-ink);
+  border-radius: var(--zp-r-lg);
+  background: transparent;
+  color: var(--zp-ink);
+  cursor: pointer;
+}
+.zp-menu-btn:hover {
+  background: var(--zp-paper-2);
+}
+.zp-menu-btn svg {
+  display: block;
+  width: 20px;
+  height: 20px;
+}
+@media (max-width: 419px) {
+  .zp-logo img {
+    height: 30px;
+  }
+}
+@media (min-width: 761px) {
+  .zp-hdr-cta {
+    display: inline-flex;
+  }
+}
+@media (min-width: 900px) {
+  .zp-nav-a {
+    padding: 0 12px;
+    font-size: var(--zp-fs-small);
+  }
+}
+/* Phones: the repo's menu button stays (same 760 px breakpoint as before). The two copies of the demo link keep
+   their old visibility: the header button above 760 px, the link inside the opened menu at 760 px and below. */
+@media (max-width: 760px) {
+  .zp-menu-btn {
+    display: inline-flex;
+  }
+  .zp-nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: var(--zp-gut);
+    right: var(--zp-gut);
+    flex-direction: column;
+    align-items: stretch;
+    padding: 8px;
+    border: 1px solid var(--zp-line-5);
+    border-radius: var(--zp-r-lg);
+    background: var(--zp-card);
+    box-shadow: var(--zp-sh-slip);
+  }
+  .zp-nav--open {
+    display: flex;
+  }
+  .zp-nav .zp-nav-a {
+    padding: 0 12px;
+    font-size: var(--zp-fs-body);
+    color: var(--zp-ink);
+  }
+  .zp-nav .zp-nav-demo {
+    display: inline-flex;
+    justify-content: center;
+    margin-top: 4px;
+    border-radius: var(--zp-r-md);
+    background: var(--zp-gold);
+    font-weight: 700;
+  }
+  .zp-nav .zp-nav-demo:hover {
+    background: var(--zp-gold-hover);
+  }
+}
+
+/* ---------- footer ----------
+   The legacy global rule footer{border-top, padding} loses to the single class below. */
+.zp-foot {
+  padding: 0;
+  background: var(--zp-ink);
+  border-top: 1px solid var(--zp-line-on-ink-2);
+  color: var(--zp-on-ink-muted);
+  font-family: var(--zp-font-body);
+  font-size: var(--zp-fs-xs);
+  line-height: 1.55;
+}
+.zp-foot-in {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 28px 48px;
+  padding-top: 40px;
+  padding-bottom: 48px;
+}
+.zp-foot-brand {
+  flex: 1 1 220px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+}
+.zp-foot-logo {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--zp-tap);
+}
+.zp-foot-logo img {
+  display: block;
+  width: auto;
+  max-width: none;
+  height: 36px;
+  aspect-ratio: 640 / 211;
+  border-radius: var(--zp-r-sm);
+}
+.zp-foot-note {
+  margin: 0;
+  font-size: var(--zp-fs-xs);
+  color: var(--zp-on-ink-muted);
+}
+.zp-foot-nav {
+  flex: 2 1 460px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.zp-foot-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 6px;
+  margin-left: -8px;
+}
+.zp-flink {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: var(--zp-tap);
+  min-height: var(--zp-tap);
+  padding: 0 8px;
+  border: 0;
+  background: none;
+  font-family: var(--zp-font-body);
+  font-size: var(--zp-fs-xs);
+  font-weight: 400;
+  line-height: 1.25;
+  color: var(--zp-on-ink-muted);
+  text-decoration: none;
+  cursor: pointer;
+}
+.zp-flink:hover {
+  color: var(--zp-on-ink);
+}
+
+/* ---------- cookie banner (the repo's control, restyled, behaviour untouched) ----------
+   Markup, ids, data attributes and text stay in Layout.astro. Selectors use the two ids so that the legacy
+   .zipla-consent-* rules lose on specificity. No display rule is set on the dialogs, so [hidden] keeps working.
+   position and z-index stay as the legacy sheet has them (fixed, 1000). */
+:is(#zipla-consent-banner, #zipla-consent-preferences) {
+  left: var(--zp-gut);
+  right: auto;
+  bottom: var(--zp-gut);
+  width: min(420px, calc(100% - 2 * var(--zp-gut)));
+  max-width: none;
+  padding: 20px;
+  border: 1px solid var(--zp-line-5);
+  border-radius: var(--zp-r-xl);
+  background: var(--zp-card);
+  box-shadow: var(--zp-sh-sheet);
+  color: var(--zp-ink);
+  font-family: var(--zp-font-body);
+  font-size: var(--zp-fs-body);
+  line-height: 1.55;
+}
+:is(#zipla-consent-banner, #zipla-consent-preferences) h2 {
+  margin: 0 0 8px;
+  font-family: var(--zp-font-head);
+  font-size: var(--zp-fs-h3);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+  color: var(--zp-ink);
+}
+:is(#zipla-consent-banner, #zipla-consent-preferences) p {
+  margin: 0 0 14px;
+  font-size: var(--zp-fs-xs);
+  line-height: 1.5;
+  color: var(--zp-ink-2);
+}
+:is(#zipla-consent-banner, #zipla-consent-preferences) p a {
+  color: var(--zp-ink);
+  text-decoration: underline;
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 4px;
+  text-decoration-color: var(--zp-leader);
+}
+:is(#zipla-consent-banner, #zipla-consent-preferences) p a:hover {
+  text-decoration-color: currentColor;
+}
+:is(#zipla-consent-banner, #zipla-consent-preferences) .zipla-consent-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 0;
+}
+:is(#zipla-consent-banner, #zipla-consent-preferences) .zipla-consent-button {
+  min-height: var(--zp-tap);
+  padding: 0 14px;
+  border: 1.5px solid var(--zp-ink);
+  border-radius: var(--zp-r-lg);
+  background: transparent;
+  color: var(--zp-ink);
+  font-family: var(--zp-font-body);
+  font-size: var(--zp-fs-small);
+  font-weight: 600;
+  line-height: 1.25;
+  cursor: pointer;
+  transition: background-color var(--zp-t-fast);
+}
+:is(#zipla-consent-banner, #zipla-consent-preferences) .zipla-consent-button:hover,
+:is(#zipla-consent-banner, #zipla-consent-preferences) .zipla-consent-button:focus-visible {
+  border-color: var(--zp-ink);
+  background: var(--zp-paper-2);
+  color: var(--zp-ink);
+}
+:is(#zipla-consent-banner, #zipla-consent-preferences) .zipla-consent-button--accept {
+  border-color: transparent;
+  background: var(--zp-gold);
+  font-weight: 700;
+  filter: none;
+}
+:is(#zipla-consent-banner, #zipla-consent-preferences) .zipla-consent-button--accept:hover,
+:is(#zipla-consent-banner, #zipla-consent-preferences) .zipla-consent-button--accept:focus-visible {
+  border-color: transparent;
+  background: var(--zp-gold-hover);
+  filter: none;
+}
+@media (max-width: 639px) {
+  :is(#zipla-consent-banner, #zipla-consent-preferences) {
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: auto;
+    border-bottom: 0;
+    border-radius: var(--zp-r-xl) var(--zp-r-xl) 0 0;
+  }
+}
