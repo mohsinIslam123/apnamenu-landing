@@ -66,3 +66,14 @@ Payments are processed by Razorpay. Questions before you pay? Message us on What
 # The Pricing page has no "See pricing" link (OFFER.md 3.3), so it has no line.
 /faq/ || See pricing
 /contact-us/ || See pricing
+# Stage 5 (blog index, four guides, Privacy, Terms, Refund). "See pricing" is the link of the machine band, size M card (blog index and guides, OFFER.md 3.4) or size S band (legal pages, OFFER.md 3.5).
+# The pack leaves it out of allow_new.txt because the Home page already had that text. These pages did not (three guides have "See Pricing" with a capital P in their own closing buttons, a different text),
+# so G7 reports "See pricing" as new text on each of them. One line per page, so it cannot hide a stray "See pricing" on a page that must have no band (the 404 page).
+/blog/ || See pricing
+/blog/restaurant-pos-software-checklist/ || See pricing
+/blog/restaurant-dhaba-gst-invoice-guide-2026/ || See pricing
+/blog/restaurant-pos-software-price-india/ || See pricing
+/blog/restaurant-pos-vs-billing-software/ || See pricing
+/privacy-policy/ || See pricing
+/terms-and-conditions/ || See pricing
+/refund-policy/ || See pricing

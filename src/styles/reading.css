@@ -1,0 +1,90 @@
+/* reading.css: the Round 7 look of long text (Stage 5 of the redesign):
+   /blog/, the four guides under /blog/, /privacy-policy/, /terms-and-conditions/, /refund-policy/ and the 404 page.
+   Spec: prototype-r6.css (.read, .rd-top, .rd-meta, .qa, .mail, .tag, .backlink, .nf) and tokens/DESIGN_SYSTEM.md 13.3.
+   These pages also load business.css (page shell, type, table, steps, FAQ, closing band), inner.css (date line, notes, answer callout,
+   example e-mail, route table, link rows, figure) and machine.css (the printer picture and the Buy now button), plus machine-m.css (the card,
+   guides and blog index) or machine-s.css (the slim band, legal pages). The 404 page loads business.css only.
+   The reading column is styled per element under .zr-read, so the repo's own paragraphs, lists and headings keep their tags and text
+   and no class has to be added to each one. The element rules use :where(), so a class from business.css or inner.css wins over them.
+   Every class carries the prefix zr- and every rule sits under .zp (the opt-in root class of Layout.astro), so the old sheets
+   (src/index.css) cannot bleed in and no other page can pick this file up.
+   Values come from tokens.css only: no raw colour, no font stack, no new radius or shadow.
+   Nothing here reads the old theme attribute or class (BRIEF R15). No text is hidden or created by CSS (BRIEF R12):
+   the only generated boxes are decoration without characters (the gold squares and the stretched link area). */
+
+/* ---------- the reading column: 44 rem wide, text 62 ch and 17 px ---------- */
+.zp .zr-body { padding-top: 0; padding-bottom: var(--zp-sec); }
+.zp .zr-body--top { padding-top: clamp(28px, 4vw, 48px); }
+.zp .zr-read { max-width: 44rem; overflow-wrap: break-word; }
+.zp :where(.zr-read) p { margin: 0 0 16px; max-width: 62ch; font-size: var(--zp-fs-sub); line-height: 1.65; color: var(--zp-ink-2); }
+.zp :where(.zr-read) strong { color: var(--zp-ink); }
+.zp :where(.zr-read) h2 { margin: 48px 0 16px; max-width: none; font-family: var(--zp-font-head); font-weight: 700; font-size: var(--zp-fs-h2-doc); line-height: 1.15; letter-spacing: -0.02em; text-wrap: balance; color: var(--zp-ink); }
+.zp :where(.zr-read) h3 { margin: 32px 0 12px; font-family: var(--zp-font-head); font-weight: 700; font-size: var(--zp-fs-h3-doc); line-height: 1.25; letter-spacing: -0.01em; color: var(--zp-ink); }
+.zp :where(.zr-read) > :first-child { margin-top: 0; }
+.zp :where(.zr-read) ul, .zp :where(.zr-read) ol { margin: 0 0 16px; padding: 0 0 0 22px; max-width: 62ch; font-size: var(--zp-fs-sub); line-height: 1.6; color: var(--zp-ink-2); }
+.zp :where(.zr-read) li { margin: 6px 0; padding-left: 4px; }
+/* bullets: a gold square drawn by ::before, so the <li> keeps its own inline text (no wrapper element) */
+.zp :where(.zr-read) ul { list-style: none; padding-left: 0; }
+.zp :where(.zr-read) ul > li { position: relative; padding-left: 20px; }
+.zp :where(.zr-read) ul > li::before { content: ''; position: absolute; left: 0; top: 0.62em; width: 8px; height: 8px; border-radius: 2px; background: var(--zp-gold); }
+.zp :where(.zr-read) ol > li::marker { font-family: var(--zp-font-mono); font-size: var(--zp-fs-xs); color: var(--zp-ink-3); }
+.zp :where(.zr-read) a { font-weight: 600; color: var(--zp-ink); text-decoration: underline; text-decoration-thickness: 1.5px; text-underline-offset: 4px; text-decoration-color: var(--zp-leader); }
+.zp :where(.zr-read) a:hover { text-decoration-color: currentColor; }
+/* the H1 of a legal page sits in the column, then its date line (the pack draws the date line at the reading size) */
+.zp .zr-read .zr-h1 { margin: 0 0 20px; }
+.zp .zr-read .zi-dateline { margin: 0 0 20px; max-width: none; font-size: var(--zp-fs-sub); }
+/* the FAQ inside the column keeps its own look from business.css */
+.zp .zr-read .zb-faq > p { margin: 0 0 18px; font-size: var(--zp-fs-body); line-height: 1.6; }
+/* answer callout and the example e-mail inside the column keep their look from inner.css */
+.zp .zr-read .zi-qa { margin: 24px 0; font-size: var(--zp-fs-lead); line-height: 1.6; color: var(--zp-ink); }
+.zp .zr-read .zr-fact { margin: 16px 0 20px; }
+
+/* ---------- the date and the label above a guide's H1 ---------- */
+/* phones: the date sits under the label. In a row, the date wrapped under the label as soon as the mono face loaded (the fallback face is narrower), which moved the H1 (CLS 0.075 at 360 px, measured) */
+.zp .zr-meta { margin: 0 0 14px; display: flex; flex-direction: column; align-items: flex-start; gap: 8px; }
+.zp .zr-tag { display: inline-flex; align-items: center; min-height: 28px; padding: 0 10px; border-radius: var(--zp-r-sm); background: var(--zp-chip); font-family: var(--zp-font-mono); font-size: var(--zp-fs-label); letter-spacing: 0.1em; text-transform: uppercase; color: var(--zp-ink); }
+.zp .zr-date { font-family: var(--zp-font-mono); font-size: var(--zp-fs-2xs); letter-spacing: 0.04em; color: var(--zp-ink-3); }
+@media (min-width: 640px) {
+  .zp .zr-meta { flex-direction: row; flex-wrap: wrap; align-items: center; gap: 8px 14px; }
+}
+
+/* ---------- the guide's hero: tag, H1, lead, review line ---------- */
+.zp .zr-hero .zb-lede { margin-top: 16px; }
+.zp .zr-hero .zi-dateline { margin-top: 12px; }
+
+/* ---------- a price fact box (price guide): the plan price, two short lines ---------- */
+.zp .zr-fact { display: flex; flex-direction: column; gap: 4px; max-width: 62ch; padding: 16px 18px; border: 1px solid var(--zp-line-5); border-radius: var(--zp-r-lg); background: var(--zp-cream); }
+.zp .zr-fact strong { font-family: var(--zp-font-head); font-size: var(--zp-fs-h3); font-weight: 700; letter-spacing: -0.01em; line-height: 1.2; color: var(--zp-ink); }
+.zp .zr-fact span { font-size: var(--zp-fs-small); line-height: 1.5; color: var(--zp-ink-2); }
+
+/* ---------- the example e-mail and the contact block of the legal pages ---------- */
+.zp .zr-template > p { margin: 16px 0 24px; max-width: 62ch; padding: 16px 18px; border: 1px solid var(--zp-line-5); border-radius: var(--zp-r-lg); background: var(--zp-card); font-family: var(--zp-font-mono); font-size: var(--zp-fs-xs); line-height: 1.7; color: var(--zp-ink-2); }
+.zp .zr-template > p strong { font-weight: 400; color: var(--zp-ink); }
+.zp .zr-contact { margin: 16px 0 24px; max-width: 62ch; padding: 16px 18px; border: 1px solid var(--zp-line-5); border-radius: var(--zp-r-lg); background: var(--zp-card); }
+.zp .zr-contact p { margin: 0; max-width: none; font-size: var(--zp-fs-body); line-height: 1.7; }
+.zp .zr-contact a { display: inline-block; padding: 15px 0; margin: -15px 0; }
+
+/* ---------- tables inside the column: they scroll inside their own box if they must ---------- */
+.zp .zr-read .zb-table-wrap { margin: 16px 0 24px; max-width: 100%; }
+.zp .zr-read .zb-wf th, .zp .zr-read .zb-wf td { font-size: var(--zp-fs-body); }
+/* a link that stands alone in a table cell gets a 48 px tap area without changing the sentence */
+.zp .zr-read .zb-wf td a { display: inline-block; padding: 15px 4px; margin: -15px -4px; }
+.zp .zr-read .zb-wf--2 th:nth-child(1) { width: 34%; }
+@media (max-width: 639px) {
+  .zp .zr-read .zb-wf th, .zp .zr-read .zb-wf td { font-size: var(--zp-fs-small); }
+}
+
+/* ---------- the blog index: six guide rows (tag, title, sentence, link). The whole row is one tap target ---------- */
+.zp .zr-row .zr-tag { margin: 0 0 10px; }
+.zp .zr-row .zi-row-h { margin: 0; }
+.zp .zr-row-a { display: inline-flex; align-items: center; min-height: var(--zp-tap); margin-top: 4px; font-family: var(--zp-font-body); font-size: var(--zp-fs-small); font-weight: 600; color: var(--zp-ink); text-decoration: underline; text-decoration-thickness: 1.5px; text-underline-offset: 4px; text-decoration-color: var(--zp-leader); }
+.zp .zr-row-a::after { content: ''; position: absolute; left: 0; right: 0; top: 0; bottom: 0; }
+.zp .zr-row:hover .zr-row-a { text-decoration-color: currentColor; }
+
+/* ---------- the plan facts beside the steps (blog index): a list with gold squares, rules between rows ---------- */
+.zp .zr-facts > .zb-h3 { margin-bottom: 4px; }
+.zp .zr-facts .zb-chk li { font-size: var(--zp-fs-small); }
+
+/* ---------- the 404 page: one block ---------- */
+.zp .zr-nf { min-height: min(60vh, 520px); padding-top: clamp(40px, 8vw, 96px); padding-bottom: clamp(48px, 8vw, 96px); }
+.zp .zr-nf .zb-lede { max-width: 30em; }
