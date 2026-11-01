@@ -61,3 +61,8 @@ Payments are processed by Razorpay. Questions before you pay? Message us on What
 /sweet-shop-billing/ || See pricing
 /qsr-billing-software/ || See pricing
 /dhaba-billing-software/ || See pricing
+# Stage 4 (FAQ and Contact). "See pricing" is the link of the machine band, size M card (OFFER.md 3.4). The pack leaves it out of allow_new.txt because the Home page already had that text.
+# /faq/ and /contact-us/ did not have it, so G7 reports it as new text on each of them. One line per page, so it cannot hide a stray "See pricing" on a page that must have no band (the 404 page).
+# The Pricing page has no "See pricing" link (OFFER.md 3.3), so it has no line.
+/faq/ || See pricing
+/contact-us/ || See pricing
