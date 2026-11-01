@@ -83,3 +83,8 @@ With 12 months of Zipla POS. Delivery in 3 to 4 working days after dispatch.
 3 to 4 working days after dispatch
 Buy the Zipla Billing Machine online. It is delivered in 3 to 4 working days after dispatch.
 One 58mm Bluetooth printer and 12 months of Zipla POS. To continue after 1 year, Zipla POS is ₹4,999 a year. Delivery in 3 to 4 working days after dispatch.
+# Stage 5b, Part 2 (Footer link). One new Footer link "Shipping Policy" next to "Refund Policy" (Kabir's Stage 5b prompt). The Footer is the same component on all pages, so the text is new on every page of the base (19) and a plain line is the exact rule.
+Shipping Policy
+# Stage 5b, Part 2 (warranty paragraphs). Kabir's two paragraphs, word for word, in /refund-policy/ after the last section of the main text and before the FAQ, plain paragraphs without a heading. One line per paragraph, scoped to the Refund page.
+/refund-policy/ || The Zipla Billing Machine has a 1-year manufacturing warranty on the printer motherboard, with repair support. The warranty starts on the delivery date. Physical damage, water damage and burn damage are not covered. If the hardware has a manufacturing defect, it is replaced within 7 days of delivery.
+/refund-policy/ || For the Zipla Billing Machine, there is no return and no refund after the hardware is dispatched or after the Zipla POS licence is activated. Software-only plans follow the refund terms above.
