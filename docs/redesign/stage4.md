@@ -20,7 +20,7 @@ Nothing else changed: the HTML of the other 16 pages is identical to the base ap
 4. **On a phone "Start 14-Day Free Trial" is below the first screen on Pricing.** At 390x844 its bottom was at 511 px in the base and is at 1,056 px now, because the band comes first. Buy now is the first action (bottom 564 px). On a laptop both are inside the first screen (trial 570 px, Buy now 727 px). It is the same trade as on the six business pages (Stage 3, section 2, item 3). If you want the trial button higher on phones, that needs a new decision, because the markup keeps the H1 and its buttons first (BRIEF A5).
 5. **No breadcrumb on FAQ and Contact.** The pack draws "Home / FAQ" and "Home / Contact Us". The repo's two pages have no breadcrumb (it is only in their JSON-LD). Building one adds text and a link that G7 and G9 would flag, and the brief says a breadcrumb only where the repo's page has one. Pricing has one and keeps it. If you want it on the other two, that is a content change for a later PR.
 
-## 3. Check these on your phone (the Cloudflare preview link is in the comments)
+## 3. Check these on your phone (the Cloudflare preview: the check "Cloudflare Pages" under the pull request's checks)
 
 - Pricing, top: the breadcrumb, then the machine card (printer with the sample bill, the phone, "ZIPLA BILLING MACHINE", ₹4,999, Buy now), then the small label and the H1. There is no "See pricing" link on this page (OFFER.md 3.3). Tap Buy now: it must open your Razorpay link in a new tab. I did not open it (section 10).
 - Pricing, scroll: the two repo buttons, the date line, the strip (What you get, Warranty, Delivery), the yellow offer card, the plan with its price slip, the terms table (readable without sideways scroll?), the four trial checks, the six outlet rows, the phone picture, five questions, the dark band.
@@ -152,7 +152,7 @@ The other band strings (name, price, delivery line, Buy now, the sample bill, th
 
 - The Buy now link. I have no network access to Razorpay. I did not open `https://rzp.io/rzp/ygTqBnl`. Please tap it once. The same address is used four times on these pages (two on Pricing, one each on FAQ and Contact). The offer check compares each `href`, `target` and `rel`.
 - Real phones, Safari, Firefox, Samsung Internet. I used headless Chromium 153 at widths from 320 to 1366 px. No screen reader. I tested the keyboard (Tab order, Enter and Space on the questions, the focus ring on the questions and on Buy now).
-- The Cloudflare preview page itself. I cannot open it from here. After the PR is opened I read its check runs through the GitHub API (see the PR comments).
+- The Cloudflare preview page itself. I cannot open it from here. After the PR was opened I read its check runs through the GitHub API: "Cloudflare Pages" finished with success, and the GitHub Actions job "build" finished with success (13 seconds). So a preview was built for this branch. I did not look at it. There is no bot comment with a link on the PR, so use the check.
 - Lighthouse. I did not run it.
 - Whether the real device's panel says "Billing Machine", and whether 4,999 rupees includes GST (OFFER.md section 5, open items).
 - What closed answers do to search results or AI answers. A redesign tries to lose nothing. It does not raise ranking by itself.
@@ -179,6 +179,9 @@ python3 -I .../gate/seo_gate.py compare /tmp/base.json /tmp/new.json --allow-rem
 /tmp/pwvenv/bin/python -I .../gate/browser_check.py dist --out /tmp/shots_new --target-min 48              # 32 FAIL, 20 WARN
 /tmp/pwvenv/bin/python -I .../gate/fold_check.py /tmp/base_dist --only /pricing/,/faq/,/contact-us/        # 8 WARN
 /tmp/pwvenv/bin/python -I .../gate/fold_check.py dist --only /pricing/,/faq/,/contact-us/                  # 4 WARN, 0 sideways
+git add <the 11 files by name> && git commit      # two commits, no `git add -A`
+git push -u origin redesign/stage-4-pricing-faq-contact
+PR #36 opened as a draft, base redesign/integration. Read back from the API: state open, draft true, base redesign/integration at b127501, 12 changed files, 2 commits.
 ```
 My own scripts (Playwright and Python, not committed, in the session's scratch folder), and what each proved:
 - **Offer check** (`offercheck.py`): parses the built HTML of the three pages, takes every text piece, alt, aria-label and role of each band, and compares both ways with OFFER.md section 3. 41 pieces, 12 attributes, 7 links, 0 differences. Self-test on seven broken copies of `dist`: a changed price (₹5,999 on the FAQ card), the `.invalid` address on the Contact card, a heading inside the FAQ card, a changed delivery line on Pricing, a See pricing link added to the Pricing band, a lost `rel` on the Pricing Buy now, the Razorpay line of Home added to Contact. All seven exit 1 with the right message.
