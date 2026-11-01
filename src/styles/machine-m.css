@@ -1,0 +1,63 @@
+/* machine-m.css: the Zipla Billing Machine band, size M (the card), the strip and the offer card (Stage 4 of the redesign).
+   machine.css has size L (Stage 3) and stays as it was. The business pages do not load this file, so they do not pay for it.
+   Pages that load it: /pricing/ (strip and offer card), /faq/ and /contact-us/ (the card). Stage 5 loads it for the blog index and the four guides (the card).
+   Spec: prototype-r7.css (.mhero--m, .mcard, .strip, .cell, .offers, .ocard) and tokens/DESIGN_SYSTEM.md 14.1 to 14.3.
+   Words, prices and links: src/components/MachineCard.jsx, OfferStrip.jsx, OfferCard.jsx (OFFER.md 3.4, 3.7, 3.8).
+   The card re-uses the printer picture, the stage and the Buy now button rules of machine.css, so a page that loads this file loads machine.css first.
+   Every class carries the prefix zm- and every rule sits under .zp (the opt-in root class). Values come from tokens.css only. */
+
+/* ---------- size M: the hero grid. The card is drawn above the text on phones and beside it from 900 px ---------- */
+/* The markup keeps the page's own text first and the card after it (BRIEF A5, decision D1). The grid areas draw the card above. */
+.zp .zm-hero-m { display: grid; grid-template-columns: minmax(0, 1fr); grid-template-areas: "vis" "top"; row-gap: 14px; padding-top: clamp(12px, 2.2vw, 24px); padding-bottom: clamp(28px, 4vw, 48px); }
+/* a page without a breadcrumb gets more room above (DESIGN_SYSTEM 13.3: inner hero --nc) */
+.zp .zm-hero-m--nc { padding-top: clamp(36px, 5vw, 64px); }
+.zp .zm-hero-m > .zm-hero-top { grid-area: top; min-width: 0; max-width: 46em; }
+.zp .zm-hero-m > .zm-card-r { grid-area: vis; min-width: 0; width: 100%; padding-top: 12px; }
+
+/* ---------- size M: the card ---------- */
+.zp .zm-card { display: grid; grid-template-columns: 128px minmax(0, 1fr); align-items: center; column-gap: 14px; padding: 14px 18px 14px 12px; border-radius: var(--zp-r-panel); background: radial-gradient(120% 80% at 28% 18%, var(--zp-panel-0) 0%, var(--zp-panel-1) 52%, var(--zp-panel-2) 100%); }
+.zp .zm-card-vis { min-width: 0; width: 128px; }
+.zp .zm-card-t { min-width: 0; }
+.zp .zm-card-d { margin: 0; font-size: var(--zp-fs-xs); line-height: 1.45; color: var(--zp-ink-2); }
+.zp .zm-card-d strong { color: var(--zp-ink); font-weight: 700; }
+.zp .zm-card-p { font-family: var(--zp-font-head); font-weight: 700; color: var(--zp-ink); white-space: nowrap; }
+.zp .zm-card-a { display: inline-flex; align-items: center; min-height: var(--zp-tap); font-family: var(--zp-font-body); font-size: var(--zp-fs-small); font-weight: 600; text-decoration: underline; text-decoration-thickness: 1.5px; text-underline-offset: 4px; text-decoration-color: var(--zp-leader); }
+.zp .zm-card-a:hover { text-decoration-color: currentColor; }
+/* the card shows the printer only, no sample bill and no phone (OFFER.md 3.4) */
+.zp .zm-stage--solo .zm-mach { left: 18%; bottom: 2%; }
+
+/* ---------- the strip: what you get, warranty, delivery (OFFER.md 3.7) ---------- */
+.zp .zm-wrap { max-width: var(--zp-wrap); margin: 0 auto; padding-left: var(--zp-gut); padding-right: var(--zp-gut); }
+.zp .zm-strip-wrap { padding-bottom: clamp(36px, 5vw, 56px); }
+.zp .zm-strip { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr)); gap: 0 24px; border-top: 1px solid var(--zp-line-2); }
+.zp .zm-cell { display: flex; flex-direction: column; gap: 6px; padding: 16px 0 18px; }
+.zp .zm-cell-l { font-family: var(--zp-font-mono); font-size: var(--zp-fs-label); letter-spacing: 0.1em; text-transform: uppercase; color: var(--zp-ink-3); }
+.zp .zm-cell-v { margin: 0; font-size: var(--zp-fs-small); line-height: 1.45; }
+.zp .zm-cell-v .zm-lnk { display: inline-block; padding: 15px 0; margin: -15px 0; text-decoration: underline; text-decoration-thickness: 1.5px; text-underline-offset: 3px; text-decoration-color: var(--zp-leader); }
+.zp .zm-cell-v .zm-lnk:hover { text-decoration-color: currentColor; }
+
+/* ---------- the offer card (OFFER.md 3.8) ---------- */
+.zp .zm-offer-sec { padding-top: var(--zp-sec); padding-bottom: var(--zp-sec); }
+.zp .zm-ocard { margin-top: 20px; display: flex; flex-direction: column; gap: 10px; max-width: 520px; padding: 20px; border: 1.5px solid var(--zp-gold); border-radius: var(--zp-r-xl); background: var(--zp-cream); }
+.zp .zm-ocard-k { margin: 0; font-family: var(--zp-font-mono); font-size: var(--zp-fs-label); letter-spacing: 0.1em; text-transform: uppercase; color: var(--zp-ink-3); }
+.zp .zm-ocard-t { margin: 0; font-family: var(--zp-font-head); font-size: var(--zp-fs-h3); font-weight: 700; line-height: 1.2; }
+.zp .zm-ocard-p { margin: 0; font-family: var(--zp-font-head); font-size: 44px; font-weight: 700; letter-spacing: -0.02em; line-height: 1; }
+.zp .zm-ocard-d { margin: 0; font-size: var(--zp-fs-small); line-height: 1.5; color: var(--zp-ink-2); }
+.zp .zm-ocard-b { margin-top: auto; align-self: flex-start; display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 48px; padding: 10px 22px; border: 0; border-radius: var(--zp-r-lg); background: var(--zp-gold); color: var(--zp-ink); font-family: var(--zp-font-body); font-size: var(--zp-fs-sub); font-weight: 700; line-height: 1.25; text-align: center; text-decoration: none; cursor: pointer; transition: background-color var(--zp-t-fast); }
+.zp .zm-ocard-b:hover { background: var(--zp-gold-hover); }
+
+/* ---------- wide screens ---------- */
+@media (min-width: 900px) {
+  .zp .zm-hero-m { grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.75fr); grid-template-areas: "top vis"; column-gap: 56px; align-items: start; }
+  .zp .zm-hero-m > .zm-hero-top { max-width: none; }
+  .zp .zm-hero-m > .zm-card-r { position: sticky; top: 24px; align-self: start; justify-self: end; max-width: 420px; margin-top: 6px; padding-top: 0; }
+  .zp .zm-card { grid-template-columns: 132px minmax(0, 1fr); column-gap: 16px; }
+  .zp .zm-card-vis { width: 132px; }
+}
+/* the smallest phones (320 px): the card's text column is 108 px wide, so the Buy now label would wrap to two lines; less side padding keeps one line and 48 px */
+@media (max-width: 359px) {
+  .zp .zm-card .zm-buy-b { padding-left: 12px; padding-right: 12px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .zp .zm-ocard-b { transition: none; }
+}

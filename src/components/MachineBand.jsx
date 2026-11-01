@@ -5,7 +5,8 @@ import { BUY_NOW_URL } from '../constants.js'
 // It has no heading: the titles are <p> elements (BRIEF R5). Every string, price and link is from OFFER.md section 3.
 // The sample bill is real text inside an element with role="img" and an aria-label (decoration with a text equivalent).
 // The printer photo is the first large picture of the page: eager, fetchpriority high, width and height set (BRIEF R9).
-export default function MachineBand() {
+// `seePricing` is true by default. OFFER.md 3.3: "The Pricing page has no See pricing link", so /pricing/ passes false.
+export default function MachineBand({ seePricing = true }) {
   return (
     <div className="zm-r">
       <div className="zm-stage">
@@ -59,7 +60,7 @@ export default function MachineBand() {
         <p className="zm-buy-d">With 12 months of Zipla POS. Delivery in 3 to 4 days.</p>
         <div className="zm-buy-a">
           <a className="btn btn-gold zm-buy-b" href={BUY_NOW_URL} target="_blank" rel="noopener noreferrer">Buy now</a>
-          <a className="zm-buy-link" href="/pricing/">See pricing</a>
+          {seePricing && <a className="zm-buy-link" href="/pricing/">See pricing</a>}
         </div>
       </div>
     </div>
