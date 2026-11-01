@@ -77,3 +77,19 @@ Payments are processed by Razorpay. Questions before you pay? Message us on What
 /privacy-policy/ || See pricing
 /terms-and-conditions/ || See pricing
 /refund-policy/ || See pricing
+# Stage 5b, Part 1 (delivery wording). Kabir decided on 2026-11-01 that the delivery wording is "3 to 4 working days after dispatch". This overrides OFFER.md 3.1, 3.7 and 3.8 for these four strings only.
+# Where: MachineBand.jsx (price row, 7 pages), MachineStrip.jsx and OfferStrip.jsx (strip value, Home and Pricing), HowItStarts.jsx (step 01, Home), Pricing.jsx and OfferCard.jsx (offer card text, Home and Pricing).
+With 12 months of Zipla POS. Delivery in 3 to 4 working days after dispatch.
+3 to 4 working days after dispatch
+Buy the Zipla Billing Machine online. It is delivered in 3 to 4 working days after dispatch.
+One 58mm Bluetooth printer and 12 months of Zipla POS. To continue after 1 year, Zipla POS is ₹4,999 a year. Delivery in 3 to 4 working days after dispatch.
+# Stage 5b, Part 2 (Footer link). One new Footer link "Shipping Policy" next to "Refund Policy" (Kabir's Stage 5b prompt). The Footer is the same component on all pages, so the text is new on every page of the base (19) and a plain line is the exact rule.
+Shipping Policy
+# Stage 5b, Part 2 (warranty paragraphs). Kabir's two paragraphs, word for word, in /refund-policy/ after the last section of the main text and before the FAQ, plain paragraphs without a heading. One line per paragraph, scoped to the Refund page.
+/refund-policy/ || The Zipla Billing Machine has a 1-year manufacturing warranty on the printer motherboard, with repair support. The warranty starts on the delivery date. Physical damage, water damage and burn damage are not covered. If the hardware has a manufacturing defect, it is replaced within 7 days of delivery.
+/refund-policy/ || For the Zipla Billing Machine, there is no return and no refund after the hardware is dispatched or after the Zipla POS licence is activated. Software-only plans follow the refund terms above.
+# Stage 5b, fix round (PR 38, Kabir's comment). The Warranty value of the strip no longer says "Repair, not replacement" (the Refund Policy says a manufacturing defect is replaced within 7 days of delivery). Kabir's new value: "1 year on the motherboard. Repair support. No cover for physical damage. Terms are in the Refund Policy."
+# The gate cuts the paragraph at the link, so the new piece is the text before "Refund Policy" ("Refund Policy" and "." are the repo's own pieces and unchanged). Home and Pricing.
+1 year on the motherboard. Repair support. No cover for physical damage. Terms are in the
+# Stage 5b, fix round (PR 38, Kabir's comment). One heading above the two warranty paragraphs on the Refund page, so they no longer read as part of the contact section. Kabir's text, level h2 like the other section headings of that page. Scoped to the Refund page. This overrides the Stage 5b rule "no heading inside these texts" for this one heading only.
+/refund-policy/ || Zipla Billing Machine: warranty and returns

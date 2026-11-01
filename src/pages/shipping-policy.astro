@@ -1,0 +1,42 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.jsx';
+import Footer from '../components/Footer.jsx';
+import MachineBandS from '../components/MachineBandS.jsx';
+import '../index.css';
+import '../styles/machine.css';
+import '../styles/machine-s.css';
+import '../styles/business.css';
+import '../styles/inner.css';
+import '../styles/reading.css';
+
+// Stage 5b. The text of this page is Kabir's, word for word (Stage 5b prompt). No page-specific JSON-LD: the shared Layout graph only.
+// Same shell as Privacy, Terms and Refund: the slim machine band (OFFER.md 3.5), then the reading column.
+const title = 'Zipla Billing Machine Shipping Policy';
+const description = 'Dispatch and delivery of the Zipla Billing Machine: free delivery across India by DTDC, dispatch within 24 to 48 hours of payment.';
+const canonical = 'https://zipla.in/shipping-policy/';
+---
+
+<Layout zp title={title} description={description} canonical={canonical}>
+  <Header client:load />
+
+  <main class="zb-page">
+    <MachineBandS />
+
+    <article class="zb-wrap zr-body zr-body--top">
+      <div class="zr-read">
+        <h1 class="zb-h1 zr-h1">Zipla Billing Machine <span class="zb-hl">Shipping Policy</span></h1>
+        <p>We ship the Zipla Billing Machine by DTDC to all of India. Shipping is free.</p>
+        <p>Your order is dispatched within 24 to 48 hours of payment. Delivery takes 3 to 4 working days after dispatch.</p>
+        <p>The price of ₹4,999 includes everything. You pay no tax or extra charge at delivery.</p>
+        <p>You enter your delivery address on the Razorpay payment page.</p>
+        <p>If the machine arrives damaged, report it within 48 hours of delivery with an unboxing video and photos. We send a free replacement.</p>
+        <div class="zr-contact">
+          <p>Contact: <a href="mailto:support@zipla.in">support@zipla.in</a></p>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <Footer />
+</Layout>

@@ -3,3 +3,20 @@
 # The label text is shared with the other "Actual Zipla POS screen" figures. Those stay (checked in the built HTML), so this line does not remove them.
 / || Actual Zipla POS QR customer-menu screen.
 / || Actual Zipla POS screen
+# Stage 5b, Part 1 (delivery wording). The four old text pieces that Kabir's decision of 2026-11-01 replaces ("3 to 4 days" becomes "3 to 4 working days after dispatch").
+# One line per page, so a line cannot hide a loss on another page. 8 pages, 12 lines.
+/ || 3 to 4 days
+/ || Buy the Zipla Billing Machine online. It is delivered in 3 to 4 days.
+/ || One 58mm Bluetooth printer and 12 months of Zipla POS. To continue after 1 year, Zipla POS is ₹4,999 a year. Delivery in 3 to 4 days.
+/pricing/ || With 12 months of Zipla POS. Delivery in 3 to 4 days.
+/pricing/ || 3 to 4 days
+/pricing/ || One 58mm Bluetooth printer and 12 months of Zipla POS. To continue after 1 year, Zipla POS is ₹4,999 a year. Delivery in 3 to 4 days.
+/restaurant-pos-software/ || With 12 months of Zipla POS. Delivery in 3 to 4 days.
+/cafe-pos-software/ || With 12 months of Zipla POS. Delivery in 3 to 4 days.
+/bakery-billing-software/ || With 12 months of Zipla POS. Delivery in 3 to 4 days.
+/sweet-shop-billing/ || With 12 months of Zipla POS. Delivery in 3 to 4 days.
+/qsr-billing-software/ || With 12 months of Zipla POS. Delivery in 3 to 4 days.
+/dhaba-billing-software/ || With 12 months of Zipla POS. Delivery in 3 to 4 days.
+# Stage 5b, fix round (PR 38, Kabir's comment). The old Warranty value of the strip, text before the "Refund Policy" link. One line per page, so a line cannot hide a loss on another page. 2 pages.
+/ || 1 year on the motherboard. Repair, not replacement. No cover for physical damage. Terms are in the
+/pricing/ || 1 year on the motherboard. Repair, not replacement. No cover for physical damage. Terms are in the
