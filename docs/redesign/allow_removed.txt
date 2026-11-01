@@ -17,3 +17,6 @@
 /sweet-shop-billing/ || With 12 months of Zipla POS. Delivery in 3 to 4 days.
 /qsr-billing-software/ || With 12 months of Zipla POS. Delivery in 3 to 4 days.
 /dhaba-billing-software/ || With 12 months of Zipla POS. Delivery in 3 to 4 days.
+# Stage 5b, fix round (PR 38, Kabir's comment). The old Warranty value of the strip, text before the "Refund Policy" link. One line per page, so a line cannot hide a loss on another page. 2 pages.
+/ || 1 year on the motherboard. Repair, not replacement. No cover for physical damage. Terms are in the
+/pricing/ || 1 year on the motherboard. Repair, not replacement. No cover for physical damage. Terms are in the
