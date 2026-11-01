@@ -5,7 +5,7 @@ export default function MachineStrip() {
       <div className="zh-strip">
         <div className="zh-cell"><span className="zh-cell-l">What you get</span><p className="zh-cell-v">Zipla Billing Machine and 12 months of Zipla POS</p></div>
         <div className="zh-cell"><span className="zh-cell-l">Warranty</span><p className="zh-cell-v">1 year on the motherboard. Repair, not replacement. No cover for physical damage. Terms are in the <a className="zh-lnk" href="/refund-policy/">Refund Policy</a>.</p></div>
-        <div className="zh-cell"><span className="zh-cell-l">Delivery</span><p className="zh-cell-v">3 to 4 days</p></div>
+        <div className="zh-cell"><span className="zh-cell-l">Delivery</span><p className="zh-cell-v">3 to 4 working days after dispatch</p></div>
       </div>
     </section>
   )

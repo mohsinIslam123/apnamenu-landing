@@ -9,7 +9,7 @@ export default function OfferCard() {
         <p className="zm-ocard-k">Machine and software</p>
         <p className="zm-ocard-t">Zipla Billing Machine with 12 months of Zipla POS</p>
         <p className="zm-ocard-p">₹4,999</p>
-        <p className="zm-ocard-d">One 58mm Bluetooth printer and 12 months of Zipla POS. To continue after 1 year, Zipla POS is ₹4,999 a year. Delivery in 3 to 4 days.</p>
+        <p className="zm-ocard-d">One 58mm Bluetooth printer and 12 months of Zipla POS. To continue after 1 year, Zipla POS is ₹4,999 a year. Delivery in 3 to 4 working days after dispatch.</p>
         <a className="btn btn-gold zm-ocard-b" href={BUY_NOW_URL} target="_blank" rel="noopener noreferrer">Buy now</a>
       </article>
     </section>

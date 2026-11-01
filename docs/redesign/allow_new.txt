@@ -77,3 +77,9 @@ Payments are processed by Razorpay. Questions before you pay? Message us on What
 /privacy-policy/ || See pricing
 /terms-and-conditions/ || See pricing
 /refund-policy/ || See pricing
+# Stage 5b, Part 1 (delivery wording). Kabir decided on 2026-11-01 that the delivery wording is "3 to 4 working days after dispatch". This overrides OFFER.md 3.1, 3.7 and 3.8 for these four strings only.
+# Where: MachineBand.jsx (price row, 7 pages), MachineStrip.jsx and OfferStrip.jsx (strip value, Home and Pricing), HowItStarts.jsx (step 01, Home), Pricing.jsx and OfferCard.jsx (offer card text, Home and Pricing).
+With 12 months of Zipla POS. Delivery in 3 to 4 working days after dispatch.
+3 to 4 working days after dispatch
+Buy the Zipla Billing Machine online. It is delivered in 3 to 4 working days after dispatch.
+One 58mm Bluetooth printer and 12 months of Zipla POS. To continue after 1 year, Zipla POS is ₹4,999 a year. Delivery in 3 to 4 working days after dispatch.

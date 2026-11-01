@@ -57,7 +57,7 @@ export default function MachineBand({ seePricing = true }) {
           <span className="zm-buy-n"><span className="zm-dot" aria-hidden="true" />Zipla Billing Machine</span>
           <span className="zm-buy-p">₹4,999</span>
         </div>
-        <p className="zm-buy-d">With 12 months of Zipla POS. Delivery in 3 to 4 days.</p>
+        <p className="zm-buy-d">With 12 months of Zipla POS. Delivery in 3 to 4 working days after dispatch.</p>
         <div className="zm-buy-a">
           <a className="btn btn-gold zm-buy-b" href={BUY_NOW_URL} target="_blank" rel="noopener noreferrer">Buy now</a>
           {seePricing && <a className="zm-buy-link" href="/pricing/">See pricing</a>}

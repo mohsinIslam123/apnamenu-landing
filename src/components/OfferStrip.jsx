@@ -7,7 +7,7 @@ export default function OfferStrip() {
       <div className="zm-strip">
         <div className="zm-cell"><span className="zm-cell-l">What you get</span><p className="zm-cell-v">Zipla Billing Machine and 12 months of Zipla POS</p></div>
         <div className="zm-cell"><span className="zm-cell-l">Warranty</span><p className="zm-cell-v">1 year on the motherboard. Repair, not replacement. No cover for physical damage. Terms are in the <a className="zm-lnk" href="/refund-policy/">Refund Policy</a>.</p></div>
-        <div className="zm-cell"><span className="zm-cell-l">Delivery</span><p className="zm-cell-v">3 to 4 days</p></div>
+        <div className="zm-cell"><span className="zm-cell-l">Delivery</span><p className="zm-cell-v">3 to 4 working days after dispatch</p></div>
       </div>
     </section>
   )
