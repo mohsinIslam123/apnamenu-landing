@@ -2,8 +2,11 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.jsx';
 import Footer from '../components/Footer.jsx';
+import MachineBand from '../components/MachineBand.jsx';
+import FaqList from '../components/FaqList.jsx';
 import '../index.css';
-import '../vertical-page.css';
+import '../styles/machine.css';
+import '../styles/business.css';
 
 const title = 'Cafe POS Billing Software for India | QR & KDS | Zipla POS';
 const description = 'Complete cafe billing and ordering software for Indian counter and table-service cafés. The Complete plan is ₹4,999/year or ₹11,999 for 3 years prepaid.';
@@ -68,76 +71,74 @@ const jsonLd = {
 };
 ---
 
-<Layout title={title} description={description} canonical={canonical} jsonLd={jsonLd}>
+<Layout zp title={title} description={description} canonical={canonical} jsonLd={jsonLd}>
   <Header client:load />
 
-  <main class="vertical-page">
-    <nav class="vertical-container vertical-breadcrumbs" aria-label="Breadcrumb">
+  <main class="zb-page">
+    <nav class="zb-wrap zb-crumbs" aria-label="Breadcrumb">
       <a href="/">Home</a><span aria-hidden="true">/</span><span> Cafe POS Software</span>
     </nav>
 
     <article class="cafe-page-article">
-    <section class="vertical-hero" aria-labelledby="cafe-hero-title">
-      <div class="vertical-container vertical-hero-grid">
-        <div>
-          <span class="vertical-eyebrow">Cafe POS billing software for India</span>
-          <h1 id="cafe-hero-title">Cafe POS Billing Software for India</h1>
-          <p class="cafe-top-summary"><strong>Key takeaway:</strong> Cafe POS Billing Software for India gives café teams one workflow for counter billing, table orders, kitchen handoff, GST invoices, payment tracking and daily review.</p>
-          <p class="vertical-lead"><strong>Quick answer:</strong> Zipla POS is cafe POS billing software for India, built for counter-first and table-service cafés that need billing, QR ordering, kitchen visibility and day-close reporting in one system.</p>
-          <div class="vertical-actions">
-            <a class="btn-cta" href="https://app.zipla.in/register">Start 14-Day Free Trial</a>
-            <a class="btn-ghost" href="/#demo">Book Free WhatsApp Demo</a>
-          </div>
-          <ul class="vertical-trial-note" aria-label="Trial details">
-            <li>no credit card required</li>
-            <li>Android phone or tablet</li>
-            <li>Bluetooth printing supported</li>
-          </ul>
+    <section class="zb-wrap zb-hero" aria-labelledby="cafe-hero-title">
+      <div class="zb-hero-top">
+        <span class="zb-eyebrow"><span class="zb-dot" aria-hidden="true"></span>Cafe POS billing software for India</span>
+        <h1 id="cafe-hero-title" class="zb-h1">Cafe POS <span class="zb-hl">Billing Software</span> for India</h1>
+        <p class="zb-lede"><strong>Key takeaway:</strong> Cafe POS Billing Software for India gives café teams one workflow for counter billing, table orders, kitchen handoff, GST invoices, payment tracking and daily review.</p>
+        <p class="zb-lede"><strong>Quick answer:</strong> Zipla POS is cafe POS billing software for India, built for counter-first and table-service cafés that need billing, QR ordering, kitchen visibility and day-close reporting in one system.</p>
+        <div class="zb-btnrow">
+          <a class="zb-btn zb-btn-gold zb-btn-lg" href="https://app.zipla.in/register">Start 14-Day Free Trial</a>
+          <a class="zb-btn zb-btn-ghost zb-btn-lg" href="/#demo">Book Free WhatsApp Demo</a>
         </div>
+        <ul class="zb-ticks" aria-label="Trial details">
+          <li>no credit card required</li>
+          <li>Android phone or tablet</li>
+          <li>Bluetooth printing supported</li>
+        </ul>
+      </div>
+      <figure class="zb-proof">
+        <div class="zb-proof-frame">
+          <img src="/screenshots/ss-multi-device.webp" alt="Zipla POS shown on desktop, tablet, and Android phone for café operations" width="1232" height="860" loading="lazy" decoding="async" />
+          <figcaption class="zb-proof-cap"><strong>zipla POS</strong><span>Actual Zipla POS product screenshot for café service</span></figcaption>
+        </div>
+        <div class="zb-callout">
+          <span class="zb-callout-mark">₹</span><span><strong>Counter billing</strong><small>GST invoices and payment modes</small></span>
+        </div>
+        <div class="zb-callout">
+          <span class="zb-callout-mark">QR</span><span><strong>Table orders</strong><small>Included in the Complete plan</small></span>
+        </div>
+      </figure>
+      <MachineBand />
+    </section>
 
-        <figure class="vertical-hero-visual">
-          <div class="vertical-hero-frame">
-            <img src="/screenshots/ss-multi-device.webp" alt="Zipla POS shown on desktop, tablet, and Android phone for café operations" width="1232" height="860" />
-            <figcaption class="vertical-hero-caption"><strong>zipla POS</strong><span>Actual Zipla POS product screenshot for café service</span></figcaption>
-          </div>
-          <div class="vertical-callout vertical-callout--left">
-            <span class="vertical-callout-mark">₹</span><span><strong>Counter billing</strong><small>GST invoices and payment modes</small></span>
-          </div>
-          <div class="vertical-callout vertical-callout--right">
-            <span class="vertical-callout-mark">QR</span><span><strong>Table orders</strong><small>Included in the Complete plan</small></span>
-          </div>
-        </figure>
+    <section class="zb-facts" aria-label="Cafe POS capabilities">
+      <div class="zb-wrap zb-chips">
+        <div class="zb-chip"><strong>Counter bills</strong><span>Create GST invoices at service time.</span></div>
+        <div class="zb-chip"><strong>Table QR orders</strong><span>Let diners place orders from their phone.</span></div>
+        <div class="zb-chip"><strong>Kitchen Display</strong><span>Keep kitchen orders in one KDS queue.</span></div>
+        <div class="zb-chip"><strong>Day close</strong><span>Review sales and payment-mode split.</span></div>
       </div>
     </section>
 
-    <section class="vertical-proof-strip" aria-label="Cafe POS capabilities">
-      <div class="vertical-container vertical-proof-grid">
-        <div class="vertical-proof"><strong>Counter bills</strong><span>Create GST invoices at service time.</span></div>
-        <div class="vertical-proof"><strong>Table QR orders</strong><span>Let diners place orders from their phone.</span></div>
-        <div class="vertical-proof"><strong>Kitchen Display</strong><span>Keep kitchen orders in one KDS queue.</span></div>
-        <div class="vertical-proof"><strong>Day close</strong><span>Review sales and payment-mode split.</span></div>
-      </div>
-    </section>
-
-    <section class="vertical-section" aria-labelledby="cafe-workflow-title">
-      <div class="vertical-container">
-        <header class="vertical-section-head">
-          <span class="vertical-kicker">Definition and decision</span>
-          <h2 id="cafe-workflow-title">What is cafe POS billing software?</h2>
-          <p>Cafe POS billing software brings counter orders, table service, GST invoices, kitchen handoff, payment tracking and daily review into one workflow. Use it when a café team needs to serve walk-ins and seated diners without juggling separate tools.</p>
-          <p class="cafe-related-inline">If your food-business workflow is restaurant-first or includes a bakery counter, compare the dedicated <a href="https://zipla.in/restaurant-pos-software/">restaurant POS software</a> and <a href="https://zipla.in/bakery-billing-software/">bakery billing software</a> pages before choosing a plan.</p>
+    <section class="zb-sec zb-band" aria-labelledby="cafe-workflow-title">
+      <div class="zb-wrap">
+        <header class="zb-head">
+          <span class="zb-kicker">Definition and decision</span>
+          <h2 id="cafe-workflow-title" class="zb-h2">What is cafe POS billing software?</h2>
+          <p class="zb-sec-p">Cafe POS billing software brings counter orders, table service, GST invoices, kitchen handoff, payment tracking and daily review into one workflow. Use it when a café team needs to serve walk-ins and seated diners without juggling separate tools.</p>
+          <p class="zb-sec-p zb-sec-p--links">If your food-business workflow is restaurant-first or includes a bakery counter, compare the dedicated <a href="https://zipla.in/restaurant-pos-software/">restaurant POS software</a> and <a href="https://zipla.in/bakery-billing-software/">bakery billing software</a> pages before choosing a plan.</p>
         </header>
-        <div class="vertical-workflow">
-          <article class="vertical-step"><span class="vertical-step-number">01</span><h3>Take the order</h3><p>Create a counter bill or let a diner use the table QR ordering flow.</p></article>
-          <article class="vertical-step"><span class="vertical-step-number">02</span><h3>Send it to the kitchen</h3><p>Use the Kitchen Display System to keep orders visible to the kitchen team.</p></article>
-          <article class="vertical-step"><span class="vertical-step-number">03</span><h3>Close the bill</h3><p>Generate a GST invoice, mark cash or UPI payment, then print or share the bill.</p></article>
-          <article class="vertical-step"><span class="vertical-step-number">04</span><h3>Review the day</h3><p>Use day-close reporting to review sales, item movement and payment-mode split.</p></article>
+        <div class="zb-steps">
+          <article class="zb-steps-i"><span class="zb-steps-n">01</span><h3 class="zb-steps-h">Take the order</h3><p class="zb-steps-p">Create a counter bill or let a diner use the table QR ordering flow.</p></article>
+          <article class="zb-steps-i"><span class="zb-steps-n">02</span><h3 class="zb-steps-h">Send it to the kitchen</h3><p class="zb-steps-p">Use the Kitchen Display System to keep orders visible to the kitchen team.</p></article>
+          <article class="zb-steps-i"><span class="zb-steps-n">03</span><h3 class="zb-steps-h">Close the bill</h3><p class="zb-steps-p">Generate a GST invoice, mark cash or UPI payment, then print or share the bill.</p></article>
+          <article class="zb-steps-i"><span class="zb-steps-n">04</span><h3 class="zb-steps-h">Review the day</h3><p class="zb-steps-p">Use day-close reporting to review sales, item movement and payment-mode split.</p></article>
         </div>
-        <div class="cafe-decision">
-          <h3>Which café workflow should you choose?</h3>
-          <p>Choose around the way your café serves customers today—not around a generic list of features.</p>
-          <div class="cafe-decision-table-wrap">
-            <table class="cafe-decision-table">
+        <div class="zb-decision">
+          <h3 class="zb-h3">Which café workflow should you choose?</h3>
+          <p class="zb-sec-p">Choose around the way your café serves customers today—not around a generic list of features.</p>
+          <div class="zb-table-wrap">
+            <table class="zb-wf zb-wf--2">
               <thead>
                 <tr><th scope="col">If your café needs</th><th scope="col">Relevant Zipla POS workflow</th></tr>
               </thead>
@@ -152,123 +153,88 @@ const jsonLd = {
       </div>
     </section>
 
-    <section class="vertical-section vertical-section--muted" aria-labelledby="cafe-service-title">
-      <div class="vertical-container vertical-feature-layout">
-        <div class="vertical-feature-copy">
-          <header class="vertical-section-head vertical-section-head--left">
-            <span class="vertical-kicker">For a busy counter</span>
-            <h2 id="cafe-service-title">When should a café use counter billing, QR ordering and KDS?</h2>
-            <p class="cafe-heading-answer">Use counter billing for walk-ins; use table QR ordering and KDS in the Complete plan workflow when orders must move clearly from diners or waiters to the kitchen.</p>
+    <section class="zb-sec" aria-labelledby="cafe-service-title">
+      <div class="zb-wrap zb-cols">
+        <div class="zb-cols-copy">
+          <header class="zb-head">
+            <span class="zb-kicker">For a busy counter</span>
+            <h2 id="cafe-service-title" class="zb-h2">When should a café use counter billing, QR ordering and KDS?</h2>
+            <p class="zb-sec-p">Use counter billing for walk-ins; use table QR ordering and KDS in the Complete plan workflow when orders must move clearly from diners or waiters to the kitchen.</p>
           </header>
-          <p>A counter-only café and a table-service café have different handoffs. Zipla POS keeps the billing and service workflow in one system.</p>
-          <ul class="vertical-check-list">
+          <p class="zb-sec-p">A counter-only café and a table-service café have different handoffs. Zipla POS keeps the billing and service workflow in one system.</p>
+          <ul class="zb-chk">
             <li><strong>Counter service:</strong> find menu items, apply discounts when needed, create a bill and choose its payment mode.</li>
             <li><strong>Table service:</strong> use QR ordering when the café needs guests to browse and place their own orders.</li>
             <li><strong>Kitchen visibility:</strong> use KDS for the kitchen-side order queue instead of paper KOTs.</li>
             <li><strong>Menu decisions:</strong> use item-wise reporting when you need to review what sold during the day.</li>
           </ul>
         </div>
-        <figure class="vertical-image-stack">
-          <img src="/screenshots/ss-customer-menu.webp" alt="Zipla POS customer menu for café QR ordering" loading="lazy" width="1232" height="860" />
+        <figure class="zb-fig">
+          <img src="/screenshots/ss-customer-menu.webp" alt="Zipla POS customer menu for café QR ordering" width="1232" height="860" loading="lazy" decoding="async" />
           <figcaption>Actual Zipla POS customer-menu screenshot for café QR ordering.</figcaption>
         </figure>
       </div>
     </section>
 
-    <section class="vertical-section" aria-labelledby="cafe-fit-title">
-      <div class="vertical-container">
-        <header class="vertical-section-head">
-          <span class="vertical-kicker">Choose the right plan for service</span>
-          <h2 id="cafe-fit-title">Which Zipla POS plan fits a café?</h2>
-          <p class="cafe-heading-answer">The Complete plan covers counter billing, GST invoices, payment tracking, staff roles, QR ordering, a KDS queue, Bluetooth KOT auto-print, sales analytics and day-close reports.</p>
+    <section class="zb-sec zb-band" aria-labelledby="cafe-fit-title">
+      <div class="zb-wrap">
+        <header class="zb-head">
+          <span class="zb-kicker">Choose the right plan for service</span>
+          <h2 id="cafe-fit-title" class="zb-h2">Which Zipla POS plan fits a café?</h2>
+          <p class="zb-sec-p">The Complete plan covers counter billing, GST invoices, payment tracking, staff roles, QR ordering, a KDS queue, Bluetooth KOT auto-print, sales analytics and day-close reports.</p>
         </header>
-        <div class="vertical-card-grid">
-          <article class="vertical-card"><span class="vertical-card-label">Complete plan — cafe workflow</span><h3>Billing, QR orders and kitchen flow</h3><p>Use the Complete plan for counter billing, GST invoices, inventory with low-stock alerts, cash/UPI/card payment tracking, table QR ordering, KDS, Bluetooth KOT auto-print, sales analytics and day-close reports.</p></article>
-          <article class="vertical-card"><span class="vertical-card-label">Café + bakery counter</span><h3>Mixed menu, one counter</h3><p>Use menu categories, discounts, inventory visibility and reporting across beverages, snacks, bakery items and combos.</p></article>
+        <div class="zb-tiles">
+          <article class="zb-tile"><span class="zb-tile-k">Complete plan — cafe workflow</span><h3 class="zb-h3">Billing, QR orders and kitchen flow</h3><p>Use the Complete plan for counter billing, GST invoices, inventory with low-stock alerts, cash/UPI/card payment tracking, table QR ordering, KDS, Bluetooth KOT auto-print, sales analytics and day-close reports.</p></article>
+          <article class="zb-tile"><span class="zb-tile-k">Café + bakery counter</span><h3 class="zb-h3">Mixed menu, one counter</h3><p>Use menu categories, discounts, inventory visibility and reporting across beverages, snacks, bakery items and combos.</p></article>
         </div>
       </div>
     </section>
 
-    <section class="vertical-section" aria-labelledby="cafe-trial-title">
-      <div class="vertical-container">
-        <header class="vertical-section-head">
-          <span class="vertical-kicker">Use the trial with your real service</span>
-          <h2 id="cafe-trial-title">What should a café test before choosing a POS plan?</h2>
-          <p>Test one real service flow with your own menu. A good POS decision comes from seeing whether staff can complete the counter, kitchen and billing handoffs your café actually uses.</p>
+    <section class="zb-sec" aria-labelledby="cafe-trial-title">
+      <div class="zb-wrap">
+        <header class="zb-head">
+          <span class="zb-kicker">Use the trial with your real service</span>
+          <h2 id="cafe-trial-title" class="zb-h2">What should a café test before choosing a POS plan?</h2>
+          <p class="zb-sec-p">Test one real service flow with your own menu. A good POS decision comes from seeing whether staff can complete the counter, kitchen and billing handoffs your café actually uses.</p>
         </header>
-        <div class="vertical-workflow">
-          <article class="vertical-step"><span class="vertical-step-number">01</span><h3>Set up a real menu</h3><p>Add a few beverages, snacks, bakery items and combos so staff can find familiar items at the counter.</p></article>
-          <article class="vertical-step"><span class="vertical-step-number">02</span><h3>Run a counter checkout</h3><p>Create a GST invoice, mark cash, UPI or card payment, then test a Bluetooth print or share the bill with the customer on WhatsApp.</p></article>
-          <article class="vertical-step"><span class="vertical-step-number">03</span><h3>Test table service when relevant</h3><p>Test table QR ordering and the Kitchen Display System with one real kitchen order.</p></article>
-          <article class="vertical-step"><span class="vertical-step-number">04</span><h3>Review what the owner needs</h3><p>Check sales analytics and day-close reports after the test service instead of relying only on a live demo.</p></article>
+        <div class="zb-steps">
+          <article class="zb-steps-i"><span class="zb-steps-n">01</span><h3 class="zb-steps-h">Set up a real menu</h3><p class="zb-steps-p">Add a few beverages, snacks, bakery items and combos so staff can find familiar items at the counter.</p></article>
+          <article class="zb-steps-i"><span class="zb-steps-n">02</span><h3 class="zb-steps-h">Run a counter checkout</h3><p class="zb-steps-p">Create a GST invoice, mark cash, UPI or card payment, then test a Bluetooth print or share the bill with the customer on WhatsApp.</p></article>
+          <article class="zb-steps-i"><span class="zb-steps-n">03</span><h3 class="zb-steps-h">Test table service when relevant</h3><p class="zb-steps-p">Test table QR ordering and the Kitchen Display System with one real kitchen order.</p></article>
+          <article class="zb-steps-i"><span class="zb-steps-n">04</span><h3 class="zb-steps-h">Review what the owner needs</h3><p class="zb-steps-p">Check sales analytics and day-close reports after the test service instead of relying only on a live demo.</p></article>
         </div>
       </div>
     </section>
 
-    <section class="vertical-section vertical-section--muted" aria-labelledby="cafe-faq-title">
-      <div class="vertical-container vertical-faq-layout">
-        <header class="vertical-section-head">
-          <span class="vertical-kicker">Buyer questions</span>
-          <h2 id="cafe-faq-title">What do café owners ask before choosing POS software?</h2>
-          <p>These answers cover café use cases, plan fit, Android devices, table service, printing and connectivity before you start a trial.</p>
+    <section class="zb-sec zb-band" aria-labelledby="cafe-faq-title">
+      <div class="zb-wrap zb-faq-wrap">
+        <header class="zb-head zb-faq-l">
+          <span class="zb-kicker">Buyer questions</span>
+          <h2 id="cafe-faq-title" class="zb-h2">What do café owners ask before choosing POS software?</h2>
+          <p class="zb-sec-p">These answers cover café use cases, plan fit, Android devices, table service, printing and connectivity before you start a trial.</p>
         </header>
-        <div class="vertical-faq-list">
-          {faqs.map((faq) => (
-            <details>
-              <summary>{faq.question}</summary>
-              <p>{faq.answer}</p>
-            </details>
-          ))}
+        <FaqList faqs={faqs} />
+      </div>
+    </section>
+
+    <section class="zb-sec" aria-labelledby="cafe-related-title">
+      <div class="zb-wrap">
+        <div class="zb-related">
+          <h2 id="cafe-related-title" class="zb-h2">Explore related Zipla POS workflows</h2>
+          <p class="zb-sec-p">Need a different food-business workflow? See <a href="https://zipla.in/restaurant-pos-software/">restaurant POS software</a>, <a href="https://zipla.in/bakery-billing-software/">bakery billing software</a>, <a href="https://zipla.in/qsr-billing-software/">QSR billing software</a>, or the complete <a href="https://zipla.in/faq/">Zipla POS FAQ</a>. <a href="/pricing/">See current pricing</a> before starting a trial.</p>
         </div>
       </div>
     </section>
 
-    <section class="vertical-section vertical-section--compact" aria-labelledby="cafe-related-title">
-      <div class="vertical-container">
-        <div class="vertical-related">
-          <h2 id="cafe-related-title">Explore related Zipla POS workflows</h2>
-          <p>Need a different food-business workflow? See <a class="vertical-inline-link" href="https://zipla.in/restaurant-pos-software/">restaurant POS software</a>, <a class="vertical-inline-link" href="https://zipla.in/bakery-billing-software/">bakery billing software</a>, <a class="vertical-inline-link" href="https://zipla.in/qsr-billing-software/">QSR billing software</a>, or the complete <a class="vertical-inline-link" href="https://zipla.in/faq/">Zipla POS FAQ</a>. <a class="vertical-inline-link" href="/pricing/">See current pricing</a> before starting a trial.</p>
+    <section class="ink zb-ink">
+        <div class="zb-wrap zb-sec zb-demo">
+          <div class="zb-demo-l"><h2 class="zb-demo-h">See the Zipla café workflow with your own menu.</h2><p class="zb-demo-p">Start a 14-day free trial online, or book a WhatsApp demo to see counter billing, QR ordering and KDS in context.</p></div>
+          <div class="zb-demo-r"><a class="zb-btn zb-btn-gold zb-btn-lg zb-btn-wide" href="https://app.zipla.in/register">Start 14-Day Free Trial</a><a class="zb-btn zb-btn-ghost zb-btn-lg zb-btn-wide" href="/#demo">Book Free WhatsApp Demo</a></div>
         </div>
-      </div>
-    </section>
-
-    <section class="vertical-section vertical-section--compact">
-      <div class="vertical-container">
-        <div class="vertical-final-cta">
-          <h2>See the Zipla café workflow with your own menu.</h2>
-          <p>Start a 14-day free trial online, or book a WhatsApp demo to see counter billing, QR ordering and KDS in context.</p>
-          <div class="vertical-final-actions">
-            <a class="btn-cta" href="https://app.zipla.in/register">Start 14-Day Free Trial</a>
-            <a class="btn-ghost" href="/#demo">Book Free WhatsApp Demo</a>
-          </div>
-        </div>
-      </div>
-    </section>
+      </section>
     </article>
   </main>
 
   <Footer />
 </Layout>
-
-<style>
-  .vertical-lead strong, .cafe-top-summary strong { color: var(--text); }
-  .cafe-top-summary { max-width: 570px; margin: 0 0 12px; color: var(--text-2); font-size: 15px; font-weight: 650; line-height: 1.68; }
-  .cafe-heading-answer { margin: 0; }
-  .cafe-related-inline { margin: 16px 0 0 !important; font-size: 14px !important; }
-  .cafe-related-inline a { color: var(--amber-2); font-weight: 700; text-decoration: underline; text-decoration-color: rgba(232,201,131,.35); text-underline-offset: 3px; }
-  .cafe-decision { max-width: 960px; margin: 36px auto 0; padding: 28px; border: 1px solid var(--border-hi); border-radius: 18px; background: linear-gradient(145deg, rgba(26,29,43,.8), var(--surface)); }
-  .cafe-decision h3 { margin: 0 0 8px; font-family: var(--display); font-size: 21px; letter-spacing: -.35px; }
-  .cafe-decision > p { margin: 0 0 20px; color: var(--text-2); font-size: 14px; line-height: 1.65; }
-  .cafe-decision-table-wrap { overflow-x: auto; border: 1px solid var(--border); border-radius: 11px; }
-  .cafe-decision-table { width: 100%; min-width: 620px; border-collapse: collapse; text-align: left; }
-  .cafe-decision-table th, .cafe-decision-table td { padding: 14px; border-bottom: 1px solid var(--border); font-size: 13px; line-height: 1.6; vertical-align: top; }
-  .cafe-decision-table thead th { background: rgba(202,160,76,.09); color: var(--amber-2); font-size: 10.5px; font-weight: 800; letter-spacing: .7px; text-transform: uppercase; }
-  .cafe-decision-table tbody th { width: 34%; color: var(--text); font-weight: 700; }
-  .cafe-decision-table td { color: var(--text-2); }
-  .cafe-decision-table td strong { color: var(--text); }
-  .cafe-decision-table tbody tr:last-child th, .cafe-decision-table tbody tr:last-child td { border-bottom: 0; }
-  @media (max-width: 620px) {
-    .cafe-decision { padding: 20px 16px 6px; }
-    .cafe-decision-table { min-width: 540px; }
-  }
-</style>
+

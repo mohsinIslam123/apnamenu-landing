@@ -3,6 +3,9 @@ import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.jsx';
 import Hero from '../components/Hero.jsx';
 import TrustBar from '../components/TrustBar.jsx';
+import MachineStrip from '../components/MachineStrip.jsx';
+import HowItStarts from '../components/HowItStarts.jsx';
+import StickyBar from '../components/StickyBar.jsx';
 import BuyerAnswer from '../components/BuyerAnswer.jsx';
 import BusinessTypes from '../components/BusinessTypes.jsx';
 import Workflow from '../components/Workflow.jsx';
@@ -13,6 +16,7 @@ import FAQ from '../components/FAQ.jsx';
 import DemoForm from '../components/DemoForm.jsx';
 import Footer from '../components/Footer.jsx';
 import '../index.css';
+import '../styles/home.css';
 
 const CUSTOMER_VIDEOS = [];
 
@@ -152,6 +156,7 @@ const jsonLd = {
 ---
 
 <Layout
+  zp
   title={PAGE_TITLE}
   description={PAGE_DESCRIPTION}
   canonical="https://zipla.in/"
@@ -162,6 +167,8 @@ const jsonLd = {
   <main aria-label="Zipla POS restaurant billing software for Indian food businesses">
     <Hero takeaway={TOP_TAKEAWAY} planSummary={TOP_PLAN_SUMMARY} />
     <TrustBar />
+    <MachineStrip />
+    <HowItStarts />
     <BuyerAnswer />
     <BusinessTypes />
     <Workflow />
@@ -173,4 +180,5 @@ const jsonLd = {
   </main>
 
   <Footer />
+  <StickyBar />
 </Layout>

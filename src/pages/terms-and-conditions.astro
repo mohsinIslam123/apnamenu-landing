@@ -2,7 +2,14 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.jsx';
 import Footer from '../components/Footer.jsx';
+import MachineBandS from '../components/MachineBandS.jsx';
+import FaqList from '../components/FaqList.jsx';
 import '../index.css';
+import '../styles/machine.css';
+import '../styles/machine-s.css';
+import '../styles/business.css';
+import '../styles/inner.css';
+import '../styles/reading.css';
 
 const title = "Zipla POS Terms and Conditions for Users in India";
 const description = "Read the Zipla POS Terms and Conditions for users in India, including eligibility, trials, pricing, refunds, acceptable use, privacy and account termination.";
@@ -48,28 +55,26 @@ const jsonLd = {
 };
 ---
 
-<Layout title={title} description={description} canonical={canonical} jsonLd={jsonLd}>
+<Layout zp title={title} description={description} canonical={canonical} jsonLd={jsonLd}>
   <Header client:load />
 
-  <main class="legal-main">
-    <article class="legal-container">
+  <main class="zb-page">
+    <MachineBandS />
 
-      <div class="legal-header">
-        <p class="legal-eyebrow">Zipla POS</p>
-        <h1>Zipla POS Terms and Conditions</h1>
-        <p class="legal-meta">Last updated: August 13, 2026 &nbsp;|&nbsp; Effective: August 13, 2026</p>
-        <p class="legal-summary"><strong>Key takeaway:</strong> These Terms and Conditions explain the service, trial, subscription, refund, acceptable-use, account and contact terms stated for Zipla POS.</p>
-        <p class="legal-audience"><strong>Who this is for:</strong> people who visit, register for or use Zipla POS on behalf of a business. <strong>Use these Terms when:</strong> you want to understand the conditions that apply before starting a trial, subscribing, managing an account or contacting Zipla.</p>
-      </div>
-
-      <div class="legal-body">
+    <article class="zb-wrap zr-body zr-body--top">
+      <div class="zr-read">
+        <p class="zb-eyebrow"><span class="zb-dot" aria-hidden="true"></span>Zipla POS</p>
+        <h1 class="zb-h1 zr-h1">Zipla POS <span class="zb-hl">Terms and Conditions</span></h1>
+        <p class="zi-dateline">Last updated: August 13, 2026 &nbsp;|&nbsp; Effective: August 13, 2026</p>
+        <p><strong>Key takeaway:</strong> These Terms and Conditions explain the service, trial, subscription, refund, acceptable-use, account and contact terms stated for Zipla POS.</p>
+        <p><strong>Who this is for:</strong> people who visit, register for or use Zipla POS on behalf of a business. <strong>Use these Terms when:</strong> you want to understand the conditions that apply before starting a trial, subscribing, managing an account or contacting Zipla.</p>
 
         <p>These Terms and Conditions ("Terms") govern your access to and use of <strong>Zipla POS</strong>, operated by Zipla ("we", "us", "our"), accessible at <a href="https://app.zipla.in">app.zipla.in</a> and via our Android application.</p>
 
         <p>By creating an account or using Zipla POS in any capacity, you confirm that you have read, understood, and agreed to these Terms. If you do not agree, do not use our services.</p>
 
         <h2>1. Who is eligible to use Zipla POS?</h2>
-        <p class="legal-direct-answer"><strong>Short answer:</strong> These Terms say that users must be at least 18, act for a business, provide accurate registration information and comply with applicable laws.</p>
+        <p><strong>Short answer:</strong> These Terms say that users must be at least 18, act for a business, provide accurate registration information and comply with applicable laws.</p>
         <p>To use Zipla POS, you must:</p>
         <ul>
           <li>Be at least 18 years of age</li>
@@ -79,7 +84,7 @@ const jsonLd = {
         </ul>
 
         <h2>2. What are your account registration responsibilities?</h2>
-        <p class="legal-direct-answer"><strong>Short answer:</strong> You are responsible for keeping account access secure, activity under the account and reporting suspected unauthorized access.</p>
+        <p><strong>Short answer:</strong> You are responsible for keeping account access secure, activity under the account and reporting suspected unauthorized access.</p>
         <p>You must create an account to use Zipla POS. You are responsible for:</p>
         <ul>
           <li>Keeping your password secure and confidential</li>
@@ -184,74 +189,31 @@ const jsonLd = {
         <h2>14. How can you contact Zipla about these Terms?</h2>
         <p><strong>Short answer:</strong> For questions about these Terms, email support@zipla.in.</p>
         <p>For any questions about these Terms:</p>
-        <div class="legal-contact">
+        <div class="zr-contact">
           <p><strong>Zipla POS</strong><br />
           Uttar Pradesh, India<br />
           Email: <a href="mailto:support@zipla.in">support@zipla.in</a></p>
         </div>
 
-      </div>
-
-      <section class="legal-faq" aria-labelledby="terms-faq-title">
+        <section aria-labelledby="terms-faq-title">
         <h2 id="terms-faq-title">Terms and Conditions FAQs</h2>
         <p>Short answers drawn from the visible Terms above for people considering, starting or managing a Zipla POS account.</p>
-        <div class="legal-faq-list">
-          {termsFaqs.map((faq) => (
-            <section class="legal-faq-item">
-              <h3>{faq.question}</h3>
-              <p>{faq.answer}</p>
-            </section>
-          ))}
-        </div>
-      </section>
+          <FaqList faqs={termsFaqs} heading="h3" />
+        </section>
 
-      <nav class="legal-related" aria-labelledby="terms-related-title">
+      <nav aria-labelledby="terms-related-title">
         <h2 id="terms-related-title">Where can you find related Zipla information?</h2>
         <p><strong>Short answer:</strong> Read the <a href="/privacy-policy/">Zipla POS Privacy Policy</a> for data practices, use the <a href="/faq/">Zipla POS FAQ</a> for product and account answers, or return to the <a href="/">Zipla POS homepage</a>.</p>
       </nav>
 
-      <div class="legal-back">
-        <a href="/" class="legal-back-link">← Back to Zipla POS</a>
+      <div class="zi-back">
+        <a href="/" class="zi-backlink">← Back to Zipla POS</a>
         &nbsp;&nbsp;
-        <a href="/privacy-policy/" class="legal-back-link">Privacy Policy →</a>
+        <a href="/privacy-policy/" class="zi-backlink">Privacy Policy →</a>
       </div>
-
+      </div>
     </article>
   </main>
 
   <Footer />
 </Layout>
-
-<style>
-  .legal-main { background: #0D0D0D; min-height: 100vh; padding: 5rem 1.5rem 6rem; }
-  .legal-container { max-width: 760px; margin: 0 auto; }
-  .legal-header { margin-bottom: 3rem; padding-bottom: 2rem; border-bottom: 1px solid #1e1e1e; }
-  .legal-eyebrow { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #C9A94B; margin-bottom: 0.75rem; }
-  .legal-header h1 { font-size: clamp(1.8rem, 4vw, 2.4rem); font-weight: 700; color: #ffffff; margin: 0 0 0.75rem; }
-  .legal-meta { font-size: 0.85rem; color: var(--text-3); }
-  .legal-body { color: #cccccc; font-size: 0.97rem; line-height: 1.85; }
-  .legal-body > p { margin-bottom: 1.25rem; }
-  .legal-body h2 { font-size: 1.2rem; font-weight: 700; color: #C9A94B; margin: 2.75rem 0 0.875rem; }
-  .legal-body h3 { font-size: 1rem; font-weight: 600; color: #ffffff; margin: 1.5rem 0 0.5rem; }
-  .legal-body ul, .legal-body ol { padding-left: 1.4rem; margin-bottom: 1.25rem; }
-  .legal-body li { margin-bottom: 0.5rem; }
-  .legal-body a { color: #C9A94B; text-decoration: underline; text-underline-offset: 3px; }
-  .legal-body a:hover { opacity: 0.8; }
-  .legal-body strong { color: #ffffff; font-weight: 600; }
-  .legal-contact { background: #111111; border: 1px solid #1e1e1e; border-radius: 8px; padding: 1.25rem 1.5rem; margin-top: 0.5rem; }
-  .legal-contact p { margin: 0; line-height: 1.8; }
-  .legal-back { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid #1e1e1e; display: flex; gap: 2rem; flex-wrap: wrap; }
-  .legal-back-link { color: #C9A94B; text-decoration: none; font-size: 0.9rem; font-weight: 600; }
-  .legal-back-link:hover { opacity: 0.8; }
-  .legal-summary, .legal-audience { max-width: 690px; margin: 14px 0 0; color: #aaaaaa; font-size: .94rem; line-height: 1.72; }
-  .legal-summary { color: #cccccc; }
-  .legal-direct-answer { padding: 12px 14px; border-left: 3px solid #C9A94B; border-radius: 0 8px 8px 0; background: rgba(201,169,75,.08); color: #cccccc; }
-  .legal-template, .legal-faq, .legal-related { margin-top: 2.75rem; padding: 1.5rem; border: 1px solid #1e1e1e; border-radius: 12px; background: #111111; }
-  .legal-faq h2, .legal-related h2 { margin-top: 0; }
-  .legal-faq > p, .legal-related p { margin: 0; color: #cccccc; line-height: 1.8; }
-  .legal-faq-list { display: grid; gap: 12px; margin-top: 18px; }
-  .legal-faq-item { padding: 16px; border: 1px solid #242424; border-radius: 8px; background: #0D0D0D; }
-  .legal-faq-item h3 { margin: 0 0 7px; }
-  .legal-faq-item p { margin: 0; color: #aaaaaa; font-size: .94rem; line-height: 1.75; }
-  .legal-related a { color: #C9A94B; text-decoration: underline; text-underline-offset: 3px; }
-</style>
