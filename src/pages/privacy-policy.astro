@@ -2,7 +2,14 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.jsx';
 import Footer from '../components/Footer.jsx';
+import MachineBandS from '../components/MachineBandS.jsx';
+import FaqList from '../components/FaqList.jsx';
 import '../index.css';
+import '../styles/machine.css';
+import '../styles/machine-s.css';
+import '../styles/business.css';
+import '../styles/inner.css';
+import '../styles/reading.css';
 
 const title = "Privacy Policy for Zipla POS Users in India";
 const description = "Read the Zipla POS Privacy Policy for users of our website and restaurant billing software in India, including data collection, use, rights and contact details.";
@@ -47,28 +54,26 @@ const jsonLd = {
 };
 ---
 
-<Layout title={title} description={description} canonical={canonical} jsonLd={jsonLd}>
+<Layout zp title={title} description={description} canonical={canonical} jsonLd={jsonLd}>
   <Header client:load />
 
-  <main class="legal-main">
-    <article class="legal-container">
+  <main class="zb-page">
+    <MachineBandS />
 
-      <div class="legal-header">
-        <p class="legal-eyebrow">Zipla POS</p>
-        <h1>Zipla POS Privacy Policy</h1>
-        <p class="legal-meta">Last updated: August 13, 2026 &nbsp;|&nbsp; Effective: August 13, 2026</p>
-        <p class="legal-summary"><strong>Key takeaway:</strong> This Privacy Policy explains the data collection, use, storage, rights and contact practices described for Zipla POS.</p>
-        <p class="legal-audience"><strong>Who this is for:</strong> people who visit zipla.in, register for or use Zipla POS, or contact Zipla about an account. <strong>Use this policy when:</strong> you want to understand the data practices and privacy-request process described for the service.</p>
-      </div>
-
-      <div class="legal-body">
+    <article class="zb-wrap zr-body zr-body--top">
+      <div class="zr-read">
+        <p class="zb-eyebrow"><span class="zb-dot" aria-hidden="true"></span>Zipla POS</p>
+        <h1 class="zb-h1 zr-h1">Zipla POS <span class="zb-hl">Privacy Policy</span></h1>
+        <p class="zi-dateline">Last updated: August 13, 2026 &nbsp;|&nbsp; Effective: August 13, 2026</p>
+        <p><strong>Key takeaway:</strong> This Privacy Policy explains the data collection, use, storage, rights and contact practices described for Zipla POS.</p>
+        <p><strong>Who this is for:</strong> people who visit zipla.in, register for or use Zipla POS, or contact Zipla about an account. <strong>Use this policy when:</strong> you want to understand the data practices and privacy-request process described for the service.</p>
 
         <p>Zipla ("we", "us", "our") operates <strong>Zipla POS</strong> — billing and point-of-sale software accessible at <a href="https://app.zipla.in">app.zipla.in</a> and via our Android application. This Privacy Policy explains what data we collect, how we use it, and your rights as a user.</p>
 
         <p>By using Zipla POS, you agree to the practices described in this policy. If you do not agree, please discontinue use of our services.</p>
 
         <h2>What information does Zipla POS collect?</h2>
-        <p class="legal-direct-answer"><strong>Short answer:</strong> This policy describes account, business, payment, usage and website-analytics information used to operate and support the service.</p>
+        <p><strong>Short answer:</strong> This policy describes account, business, payment, usage and website-analytics information used to operate and support the service.</p>
 
         <h3>a) Account Information</h3>
         <p>When you register for Zipla POS, we collect:</p>
@@ -113,7 +118,7 @@ const jsonLd = {
         <p>When you submit the demo form, the form places your name, phone number and business type into a WhatsApp message to Zipla's demo number. WhatsApp opens the message, and you choose whether to send it.</p>
 
         <h2>How does Zipla POS use your information?</h2>
-        <p class="legal-direct-answer"><strong>Short answer:</strong> This policy says information is used for service delivery, account communications, payment processing, product improvement and support.</p>
+        <p><strong>Short answer:</strong> This policy says information is used for service delivery, account communications, payment processing, product improvement and support.</p>
         <ul>
           <li><strong>To provide the service:</strong> All business data you enter is used solely to operate your POS account — billing, reports, KDS, and related features.</li>
           <li><strong>To send important communications:</strong> Account setup confirmation, subscription renewal reminders, and critical service updates via email.</li>
@@ -158,7 +163,7 @@ const jsonLd = {
           <li><strong>Withdraw consent:</strong> Stop using the service at any time</li>
         </ul>
         <p>To exercise any of these rights, email us at <a href="mailto:support@zipla.in">support@zipla.in</a>. We will review the request and reply.</p>
-        <div class="legal-template">
+        <div class="zr-template">
           <h3>Privacy-request email template</h3>
           <p><strong>Example:</strong> email <a href="mailto:support@zipla.in">support@zipla.in</a> with the subject “Privacy request for my Zipla POS account”, your registered account details and whether you need access, correction, deletion or portability. This is a practical template based on the request process stated in this policy.</p>
         </div>
@@ -173,62 +178,29 @@ const jsonLd = {
 
         <h2>How can you contact Zipla about privacy?</h2>
         <p><strong>Short answer:</strong> For privacy questions, data requests or concerns, email support@zipla.in.</p>
-        <div class="legal-contact">
+        <div class="zr-contact">
           <p><strong>Zipla POS</strong><br />
           Uttar Pradesh, India<br />
           Email: <a href="mailto:support@zipla.in">support@zipla.in</a></p>
         </div>
 
-      </div>
-
-      <section class="legal-faq" aria-labelledby="privacy-faq-title">
+        <section aria-labelledby="privacy-faq-title">
         <h2 id="privacy-faq-title">Privacy Policy FAQs</h2>
         <p>Short answers drawn from the visible policy above for website visitors and Zipla POS account holders.</p>
-        <div class="legal-faq-list">
-          {privacyFaqs.map((faq) => (
-            <section class="legal-faq-item">
-              <h3>{faq.question}</h3>
-              <p>{faq.answer}</p>
-            </section>
-          ))}
-        </div>
-      </section>
+          <FaqList faqs={privacyFaqs} heading="h3" />
+        </section>
 
-      <nav class="legal-related" aria-labelledby="legal-related-title">
+      <nav aria-labelledby="legal-related-title">
         <h2 id="legal-related-title">Where can you find related Zipla information?</h2>
         <p><strong>Short answer:</strong> Read the <a href="/terms-and-conditions/">Zipla Terms and Conditions</a> for service terms, use the <a href="/faq/">Zipla POS FAQ</a> for product and account answers, or return to the <a href="/">Zipla POS homepage</a>.</p>
       </nav>
 
-      <div class="legal-back">
-        <a href="/" class="legal-back-link">← Back to Zipla POS</a>
+      <div class="zi-back">
+        <a href="/" class="zi-backlink">← Back to Zipla POS</a>
       </div>
-
+      </div>
     </article>
   </main>
 
   <Footer />
 </Layout>
-
-<style>
-  .legal-main { background: #0D0D0D; min-height: 100vh; padding: 5rem 1.5rem 6rem; }
-  .legal-container { max-width: 760px; margin: 0 auto; }
-  .legal-header { margin-bottom: 3rem; padding-bottom: 2rem; border-bottom: 1px solid #1e1e1e; }
-  .legal-eyebrow { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #C9A94B; margin-bottom: 0.75rem; }
-  .legal-header h1 { font-size: clamp(1.8rem, 4vw, 2.4rem); font-weight: 700; color: #ffffff; margin: 0 0 0.75rem; }
-  .legal-meta { font-size: 0.85rem; color: var(--text-3); }
-  .legal-body { color: #cccccc; font-size: 0.97rem; line-height: 1.85; }
-  .legal-body > p { margin-bottom: 1.25rem; }
-  .legal-body h2 { font-size: 1.2rem; font-weight: 700; color: #C9A94B; margin: 2.75rem 0 0.875rem; }
-  .legal-body h3 { font-size: 1rem; font-weight: 600; color: #ffffff; margin: 1.5rem 0 0.5rem; }
-  .legal-body ul, .legal-body ol { padding-left: 1.4rem; margin-bottom: 1.25rem; }
-  .legal-body li { margin-bottom: 0.5rem; }
-  .legal-body a { color: #C9A94B; text-decoration: underline; text-underline-offset: 3px; }
-  .legal-body a:hover { opacity: 0.8; }
-  .legal-body strong { color: #ffffff; font-weight: 600; }
-  .legal-contact { background: #111111; border: 1px solid #1e1e1e; border-radius: 8px; padding: 1.25rem 1.5rem; margin-top: 0.5rem; }
-  .legal-contact p { margin: 0; line-height: 1.8; }
-  .legal-back { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid #1e1e1e; }
-  .legal-back-link { color: #C9A94B; text-decoration: none; font-size: 0.9rem; font-weight: 600; }
-  .legal-back-link:hover { opacity: 0.8; }
-  .legal-summary,.legal-audience{max-width:690px;margin:14px 0 0;color:#aaaaaa;font-size:.94rem;line-height:1.72}.legal-summary{color:#cccccc}.legal-direct-answer{padding:12px 14px;border-left:3px solid #C9A94B;border-radius:0 8px 8px 0;background:rgba(201,169,75,.08);color:#cccccc}.legal-template,.legal-faq,.legal-related{margin-top:2.75rem;padding:1.5rem;border:1px solid #1e1e1e;border-radius:12px;background:#111111}.legal-template h3,.legal-faq h2,.legal-related h2{margin-top:0}.legal-template p,.legal-faq>p,.legal-related p{margin:0;color:#cccccc;line-height:1.8}.legal-faq-list{display:grid;gap:12px;margin-top:18px}.legal-faq-item{padding:16px;border:1px solid #242424;border-radius:8px;background:#0D0D0D}.legal-faq-item h3{margin:0 0 7px}.legal-faq-item p{margin:0;color:#aaaaaa;font-size:.94rem;line-height:1.75}.legal-related a{color:#C9A94B;text-decoration:underline;text-underline-offset:3px}
-</style>

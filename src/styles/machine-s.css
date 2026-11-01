@@ -1,0 +1,32 @@
+/* machine-s.css: the Zipla Billing Machine band, size S: a slim band above the H1 (Stage 5 of the redesign).
+   machine.css has size L (Stage 3), machine-m.css has size M, the strip and the offer card (Stage 4). Both stay as they were.
+   Pages that load this file: /privacy-policy/, /terms-and-conditions/ and /refund-policy/. They load machine.css first, for the printer picture
+   and the Buy now button rules, and business.css for .zb-wrap. The 404 page has no band (OFFER.md section 5).
+   Spec: prototype-r7.css (.mband, .mband-in, .mband-vis, .mband-t, .mband-d, .mband-p, .mband-act, .mband-a) and tokens/DESIGN_SYSTEM.md 14.1.
+   Words, prices and links: src/components/MachineBandS.jsx (OFFER.md 3.5 and 3.3).
+   Every class carries the prefix zm- and every rule sits under .zp (the opt-in root class). Values come from tokens.css only. */
+
+/* ---------- the band: full width, paper-2, a dashed receipt rule under it ---------- */
+.zp .zm-band { background: var(--zp-paper-2); border-bottom: 1.5px dashed var(--zp-rule); }
+/* phones: the picture on the left, the sentence beside it, Buy now and See pricing on a second row under the sentence */
+.zp .zm-band-in { display: grid; grid-template-columns: 68px minmax(0, 1fr); align-items: center; column-gap: 14px; padding-top: 8px; padding-bottom: 8px; }
+.zp .zm-band-vis { width: 68px; }
+.zp .zm-band-t { min-width: 0; }
+.zp .zm-band-d { margin: 0; font-size: var(--zp-fs-xs); line-height: 1.4; color: var(--zp-ink-2); }
+.zp .zm-band-d strong { color: var(--zp-ink); font-weight: 700; }
+.zp .zm-band-p { font-family: var(--zp-font-head); font-weight: 700; color: var(--zp-ink); white-space: nowrap; }
+.zp .zm-band-act { grid-column: 2; display: flex; align-items: center; flex-wrap: wrap; gap: 0 16px; }
+.zp .zm-band-a { display: inline-flex; align-items: center; min-height: var(--zp-tap); font-family: var(--zp-font-body); font-size: var(--zp-fs-small); font-weight: 600; text-decoration: underline; text-decoration-thickness: 1.5px; text-underline-offset: 4px; text-decoration-color: var(--zp-leader); }
+.zp .zm-band-a:hover { text-decoration-color: currentColor; }
+/* the band shows the printer only, no sample bill and no phone (OFFER.md 3.5). Same rule as the card in machine-m.css */
+.zp .zm-stage--solo .zm-mach { left: 18%; bottom: 2%; }
+
+/* ---------- from 520 px: one row, picture, sentence, buttons ---------- */
+@media (min-width: 520px) {
+  .zp .zm-band-in { grid-template-columns: 68px minmax(0, 1fr) auto; }
+  .zp .zm-band-act { grid-column: auto; justify-self: end; }
+}
+/* the smallest phones (under 360 px): less side padding keeps the Buy now label on one line at 48 px, as in the card */
+@media (max-width: 359px) {
+  .zp .zm-band .zm-buy-b { padding-left: 12px; padding-right: 12px; }
+}
