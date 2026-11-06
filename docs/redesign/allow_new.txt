@@ -111,3 +111,9 @@ Shipping Policy
 / || Complete plan, 3 years prepaid
 # row 2 body
 / || ₹11,999 for 3 years prepaid.
+# Demo form City field (Kabir, 2026-11-07). The new label of the optional City input on the Home demo form.
+/ || City
+# Home: the new sentence under the demo form button. It lists city (optional). The Privacy Policy link stays.
+/ || Submitting places your name, phone number, business type and city (optional) into a WhatsApp message to Zipla's demo number. WhatsApp opens the message, and you choose whether to send it. See our
+# Privacy policy, section f) Demo request details. Same list, kept in step with the form.
+/privacy-policy/ || When you submit the demo form, the form places your name, phone number, business type and city (optional) into a WhatsApp message to Zipla's demo number. WhatsApp opens the message, and you choose whether to send it.

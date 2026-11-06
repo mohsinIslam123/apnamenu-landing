@@ -12,7 +12,7 @@ const TYPES = [
 ]
 
 export default function DemoForm() {
-  const [form, setForm] = useState({ name: '', phone: '', type: '' })
+  const [form, setForm] = useState({ name: '', phone: '', type: '', city: '' })
   const [errors, setErrors] = useState({})
   const [submitted, setSubmitted] = useState(false)
 
@@ -36,13 +36,14 @@ export default function DemoForm() {
     event.preventDefault()
     var e = validate()
     if (Object.keys(e).length) { setErrors(e); return }
+    var city = form.city.trim()
     var msg = [
       'Hi, I want a free demo of Zipla POS.',
       '',
       'Name: ' + form.name,
       'Phone: ' + form.phone,
       'Type: ' + form.type,
-    ].join('\n')
+    ].concat(city ? ['City: ' + city] : []).join('\n')
     window.open('https://wa.me/' + WHATSAPP_NUMBER + '?text=' + encodeURIComponent(msg), '_blank', 'noopener,noreferrer')
     if (typeof window.ziplaTrack === 'function') window.ziplaTrack('demo_submit')
     setSubmitted(true)
@@ -91,10 +92,14 @@ export default function DemoForm() {
             </select>
             {errors.type && <span id="df-type-error" className="zh-dform-err" role="alert">{errors.type}</span>}
           </div>
+          <div className="zh-dform-f">
+            <label className="zh-dform-l" htmlFor="df-city">City</label>
+            <input id="df-city" type="text" placeholder="Noida" value={form.city} onChange={set('city')} autoComplete="address-level2" maxLength={60} />
+          </div>
           <button type="submit" className="zh-btn zh-btn-gold zh-btn-lg zh-btn-wide">
             Get Free Demo on WhatsApp
           </button>
-          <p className="zh-dform-small">Submitting places your name, phone number and business type into a WhatsApp message to Zipla's demo number. WhatsApp opens the message, and you choose whether to send it. See our <a href="/privacy-policy/">Privacy Policy</a>.</p>
+          <p className="zh-dform-small">Submitting places your name, phone number, business type and city (optional) into a WhatsApp message to Zipla's demo number. WhatsApp opens the message, and you choose whether to send it. See our <a href="/privacy-policy/">Privacy Policy</a>.</p>
           <p className="zh-dform-ok">✓ No credit card required</p>
         </form>
       </div>
