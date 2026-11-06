@@ -4,19 +4,34 @@ const WORKFLOWS = [
     title: 'Counter POS Billing',
     plan: 'Complete plan',
     summary: 'Build the customer order, record the payment mode and create the GST invoice from the counter.',
-    illustration: '/workflows/counter-billing-workflow.webp',
-    illustrationAlt: 'Illustrative counter POS billing workflow from menu selection to payment and customer bill',
-    illustrationWidth: 1200,
-    illustrationHeight: 900,
-    screenshots: [
+    // The live laptop picture of this step (ss-new-order.webp) is replaced by the three phone screens below.
+    // Its label and caption stay as the caption of the screens (Kabir's decision 2: no other visible text changes).
+    screensCaption: { label: 'Actual Zipla POS screen', text: 'Actual Zipla POS counter billing screen.' },
+    screensLabel: 'Counter POS Billing screens',
+    screens: [
       {
-        src: '/screenshots/ss-new-order.webp',
-        alt: 'Actual Zipla POS new-order screen for counter billing',
-        width: 1232,
-        height: 860,
-        caption: 'Actual Zipla POS counter billing screen.',
+        src: '/images/screen-new-order.webp',
+        alt: 'Zipla POS New Order screen with menu categories, search, Veg and Non-Veg filters and Add buttons',
+        width: 585,
+        height: 1188,
+        caption: 'New order',
+      },
+      {
+        src: '/images/screen-payment.webp',
+        alt: 'Zipla POS Payment screen with order type, table or token, discount, coupon, loyalty points and Cash, UPI or Card payment',
+        width: 585,
+        height: 1186,
+        caption: 'Payment',
+      },
+      {
+        src: '/images/screen-order-created.webp',
+        alt: 'Zipla POS Order Created screen with Print Receipt, 58mm or 80mm paper size and Bluetooth printer connected',
+        width: 720,
+        height: 1464,
+        caption: 'Print bill',
       },
     ],
+    screenshots: [],
     steps: [
       ['Build the order', 'Select customer items from the counter screen.'],
       ['Choose payment', 'Record cash, UPI, or card payment for the bill.'],
@@ -29,10 +44,31 @@ const WORKFLOWS = [
     title: 'Table QR Ordering + Customer QR Home Ordering',
     plan: 'Complete plan',
     summary: 'Table QR Ordering is for diners in the outlet. Customer QR Home Ordering is for home orders and phone-based status tracking.',
-    illustration: '/workflows/qr-ordering-workflow.webp',
-    illustrationAlt: 'Illustrative QR ordering workflow from a table or home order to menu selection and kitchen handoff',
-    illustrationWidth: 1200,
-    illustrationHeight: 900,
+    screensLabel: 'Table QR and home ordering screens',
+    screens: [
+      {
+        src: '/images/qr-table-standee.webp',
+        alt: 'Table QR standee reading Scan to Order from Our Menu, with a Restaurant QR Code',
+        width: 706,
+        height: 978,
+        caption: 'Table QR',
+        card: true,
+      },
+      {
+        src: '/images/screen-customer-cart.webp',
+        alt: 'Customer cart with items, CGST and SGST lines and a Place Order button',
+        width: 720,
+        height: 1463,
+        caption: 'Cart',
+      },
+      {
+        src: '/images/screen-order-status.webp',
+        alt: 'Order status screen showing Order Placed, Accepted, Being Prepared and Ready',
+        width: 706,
+        height: 1432,
+        caption: 'Order status',
+      },
+    ],
     screenshots: [
       {
         src: '/screenshots/ss-kds.webp',
@@ -54,10 +90,6 @@ const WORKFLOWS = [
     title: 'Day-Close and Analytics',
     plan: 'Complete plan',
     summary: 'Review completed orders, payment split, voids and sales information after service.',
-    illustration: '/workflows/day-close-workflow.webp',
-    illustrationAlt: 'Illustrative day-close workflow from completed orders to payment review and business reporting',
-    illustrationWidth: 1200,
-    illustrationHeight: 675,
     screenshots: [
       {
         src: '/workflows/day-close-report-screen.webp',
@@ -82,6 +114,37 @@ const WORKFLOWS = [
     ],
   },
 ]
+
+// Round 7 "Screens" row (Round7_final.html, class "screens"): app screens in a phone frame.
+// Phones: a swipe strip that scrolls sideways. From 640 px: a grid. The strip is a named, focusable region so that a
+// keyboard user can scroll it (role, aria-label and tabindex as in Round 7). The QR standee is a card, not a phone.
+function Screens({ workflow }) {
+  return (
+    <div
+      className="zh-screens"
+      role="region"
+      aria-label={workflow.screensLabel}
+      tabIndex={0}
+      style={{ '--n': workflow.screens.length }}
+    >
+      {workflow.screens.map((screen) => (
+        <figure className={screen.card ? 'zh-scr zh-scr--card' : 'zh-scr'} key={screen.src}>
+          <div className="zh-pf">
+            <img
+              src={screen.src}
+              alt={screen.alt}
+              width={screen.width}
+              height={screen.height}
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+          <figcaption>{screen.caption}</figcaption>
+        </figure>
+      ))}
+    </div>
+  )
+}
 
 export default function Workflow() {
   return (
@@ -117,19 +180,14 @@ export default function Workflow() {
 
               <div className="zh-wfl-body">
                 <div className="zh-wfl-vis">
-                  <figure className="zh-fig">
-                    <figcaption><span>ILLUSTRATIVE WORKFLOW</span><strong>{workflow.title}</strong></figcaption>
-                    <img
-                      src={workflow.illustration}
-                      alt={workflow.illustrationAlt}
-                      width={workflow.illustrationWidth}
-                      height={workflow.illustrationHeight}
-                      loading="lazy"
-                      decoding="async"
-                    />
-                  </figure>
-
                   <div className="zh-wfl-proof">
+                    {workflow.screens && workflow.screensCaption && (
+                      <figure className="zh-fig zh-fig--screens">
+                        <figcaption><span>{workflow.screensCaption.label}</span><strong>{workflow.screensCaption.text}</strong></figcaption>
+                        <Screens workflow={workflow} />
+                      </figure>
+                    )}
+                    {workflow.screens && !workflow.screensCaption && <Screens workflow={workflow} />}
                     {workflow.screenshots.map((screenshot) => (
                       <figure className="zh-fig" key={screenshot.src}>
                         <figcaption><span>{screenshot.label || (isIllustrative ? 'ILLUSTRATIVE CONCEPT' : 'Actual Zipla POS screen')}</span><strong>{screenshot.caption}</strong></figcaption>

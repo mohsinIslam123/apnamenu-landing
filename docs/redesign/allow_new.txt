@@ -93,3 +93,11 @@ Shipping Policy
 1 year on the motherboard. Repair support. No cover for physical damage. Terms are in the
 # Stage 5b, fix round (PR 38, Kabir's comment). One heading above the two warranty paragraphs on the Refund page, so they no longer read as part of the contact section. Kabir's text, level h2 like the other section headings of that page. Scoped to the Refund page. This overrides the Stage 5b rule "no heading inside these texts" for this one heading only.
 /refund-policy/ || Zipla Billing Machine: warranty and returns
+# Phone screens on Home, QSR and Pricing (Kabir's decision of 2026-11-06, decision 2). The six new figure captions under the phone screens of the Home workflow.
+# Steps 01 and 02 of the workflow. Scoped to Home. The row of step 02 has three screens (the customer menu screen is not shipped).
+/ || New order
+/ || Payment
+/ || Print bill
+/ || Table QR
+/ || Cart
+/ || Order status
