@@ -26,3 +26,10 @@
 / || Counter POS Billing
 / || Table QR Ordering + Customer QR Home Ordering
 / || Day-Close and Analytics
+# Home hero trim (Kabir, 2026-11-06, branch fix/home-hero-trim). Three text pieces leave the Home hero. Each line is scoped to / and has its own reason.
+# H1. The ghost button under the hero text. Header ("Get a Free WhatsApp Demo"), the Workflow link ("Book a WhatsApp demo for your own workflow") and the demo form keep the same /#demo target.
+/ || Book a WhatsApp Demo
+# H2. The "Complete plan" paragraph of the hero (the sentence after its label). The prices now sit in the "Other plans" rows, the trial and the no-card line in the trial line, the Features list and the Pricing card keep their own plan sentence.
+/ || ₹4,999/year or ₹11,999 for 3 years prepaid, with a 14-day free trial and no credit card required.
+# H3. The "14-day free trial" tick in the facts list. The trial line ("Start 14-Day Free Trial", "No credit card required") stays.
+/ || 14-day free trial

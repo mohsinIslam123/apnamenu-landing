@@ -101,3 +101,13 @@ Shipping Policy
 / || Table QR
 / || Cart
 / || Order status
+# Home hero trim (Kabir, 2026-11-06, branch fix/home-hero-trim). H2: the "Other plans" block in the hero buy block, two closed <details> rows. Labels were delegated to the assistant. The prices are the live software-plan prices (JSON-LD offers 4999 and 11999).
+/ || Other plans
+# row 1 summary
+/ || Complete plan, 1 year
+# row 1 body
+/ || ₹4,999/year.
+# row 2 summary
+/ || Complete plan, 3 years prepaid
+# row 2 body
+/ || ₹11,999 for 3 years prepaid.

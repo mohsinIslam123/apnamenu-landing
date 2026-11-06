@@ -17,6 +17,13 @@ function KitchenIcon() {
   )
 }
 
+// Same plus as src/components/FAQ.jsx (class zh-fplus: 20 px, turns 45 degrees when its <details> is open).
+function Plus() {
+  return (
+    <svg className="zh-fplus" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19" /><line x1="5" y1="12" x2="19" y2="12" /></svg>
+  )
+}
+
 function ChatIcon() {
   return (
     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" focusable="false">
@@ -27,9 +34,10 @@ function ChatIcon() {
 
 // Round 7 Home hero (decisions D1 and D3). DOM order: the repo's text first (H1 first, BRIEF A5), then the machine stage,
 // then the offer block, then the repo's own product figure. On phones CSS grid areas draw the machine stage first.
-// From 900 px the offer block is drawn above the repo's "Short answer" paragraphs so that price and Buy now stay in the first screen (DOM order unchanged).
+// The offer block is drawn above the repo's "Short answer" paragraph on every width (phones from 2026-11-06, from 900 px since Stage 2). DOM order unchanged.
+// Home hero trim (2026-11-06): no "Complete plan" paragraph, no second WhatsApp button, no "14-day free trial" tick. The plans sit in two closed rows ("Other plans").
 // The repo owns every sentence and button. OFFER.md owns the machine eyebrow, the machine paragraph and the offer block.
-export default function Hero({ takeaway, planSummary }) {
+export default function Hero({ takeaway }) {
   return (
     <section className="zh-hero zh-wrap" aria-labelledby="hero-title">
       <div className="zh-hero-top">
@@ -42,10 +50,6 @@ export default function Hero({ takeaway, planSummary }) {
 
       <div className="zh-hero-more">
         <p className="zh-takeaway"><strong>Short answer:</strong> {takeaway}</p>
-        {planSummary && <p className="zh-takeaway"><strong>Complete plan:</strong> {planSummary}</p>}
-        <div className="zh-hero-ctas">
-          <a className="zh-btn zh-btn-ghost" href="/#demo">Book a WhatsApp Demo</a>
-        </div>
       </div>
 
       <div className="zh-hero-r">
@@ -121,8 +125,18 @@ export default function Hero({ takeaway, planSummary }) {
             <span className="zh-tick"><span aria-hidden="true">✓</span> No credit card required</span>
           </p>
         </div>
+        <div className="zh-other">
+          <p className="zh-other-l">Other plans</p>
+          <details className="zh-faq">
+            <summary>Complete plan, 1 year<Plus /></summary>
+            <div className="zh-faq-a">₹4,999/year.</div>
+          </details>
+          <details className="zh-faq">
+            <summary>Complete plan, 3 years prepaid<Plus /></summary>
+            <div className="zh-faq-a">₹11,999 for 3 years prepaid.</div>
+          </details>
+        </div>
         <ul className="zh-facts">
-          <li><span aria-hidden="true">✓</span> 14-day free trial</li>
           <li><span aria-hidden="true">✓</span> Offline billing after menu loads; online payments need internet</li>
         </ul>
         <ul className="zh-chips">
