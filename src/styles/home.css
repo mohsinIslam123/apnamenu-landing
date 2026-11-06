@@ -326,6 +326,9 @@ html:has(body.zp) { color-scheme: light; scroll-padding-top: 8px; }
   .zp .zh-hero-more { margin-top: 12px; }
   .zp .zh-hero-r { position: sticky; top: 24px; align-self: start; max-width: none; margin-top: 6px; margin-bottom: 0; padding-top: 18px; }
   .zp .zh-stage { aspect-ratio: 1 / 1.08; }
+  /* Bug fix after Round 7: a sticky grid item is held by the grid container, not by its grid area, so the panel slid down over the product figure (proof row). The panel box now only fills its own grid area, and the stage in it, drawn as the same beige box, is the sticky part. */
+  .zp .zh-hero-r { position: static; align-self: stretch; padding: 0; background: none; overflow: visible; border-radius: 0; }
+  .zp .zh-stage { position: sticky; top: 24px; box-sizing: content-box; width: calc(100% - 36px); border: 18px solid transparent; border-radius: var(--zp-r-panel); background: radial-gradient(120% 80% at 28% 18%, var(--zp-panel-0) 0%, var(--zp-panel-1) 52%, var(--zp-panel-2) 100%) border-box; clip-path: inset(0 round var(--zp-r-panel)); }
   .zp .zh-mach { width: 64%; }
   .zp .zh-phoneh { width: 35%; }
   .zp .zh-buy { margin-top: 18px; }
