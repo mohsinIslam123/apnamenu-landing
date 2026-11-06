@@ -20,3 +20,9 @@
 # Stage 5b, fix round (PR 38, Kabir's comment). The old Warranty value of the strip, text before the "Refund Policy" link. One line per page, so a line cannot hide a loss on another page. 2 pages.
 / || 1 year on the motherboard. Repair, not replacement. No cover for physical damage. Terms are in the
 /pricing/ || 1 year on the motherboard. Repair, not replacement. No cover for physical damage. Terms are in the
+# Phone screens on Home, QSR and Pricing (Kabir's decision of 2026-11-06, decision 1). The three drawings of the Home workflow are removed with their label.
+# The label "ILLUSTRATIVE WORKFLOW" was shown above each drawing (three times on Home, once per drawing). The bold line next to it repeated the workflow title. The panel heading with the same words stays, so these three lines remove one copy of each title, not the title itself.
+/ || ILLUSTRATIVE WORKFLOW
+/ || Counter POS Billing
+/ || Table QR Ordering + Customer QR Home Ordering
+/ || Day-Close and Analytics

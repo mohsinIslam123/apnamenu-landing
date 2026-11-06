@@ -133,19 +133,21 @@ export default function Hero({ takeaway, planSummary }) {
 
       <div className="zh-proof">
         <figure className="zh-proof-fig" aria-labelledby="hero-product-caption">
-          <div className="zh-device">
+          <div className="zh-device zh-device--phone">
             <div className="zh-device-bar">
               <span className="zh-device-brand"><span aria-hidden="true" />zipla POS</span>
               <span>Built around your service workflow</span>
             </div>
-            <img
-              src="/screenshots/ss-new-order.webp"
-              alt="Zipla POS new-order billing interface"
-              width="1232"
-              height="860"
-              loading="lazy"
-              decoding="async"
-            />
+            <div className="zh-pf">
+              <img
+                src="/images/screen-new-order.webp"
+                alt="Zipla POS New Order screen with menu categories, search, Veg and Non-Veg filters and Add buttons"
+                width="585"
+                height="1188"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
           </div>
           <div className="zh-callouts">
             <div className="zh-callout">

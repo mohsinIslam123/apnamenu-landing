@@ -102,6 +102,10 @@ html:has(body.zp) { color-scheme: light; scroll-padding-top: 8px; }
 .zp .zh-device-brand { display: inline-flex; align-items: center; gap: 8px; font-weight: 700; color: var(--zp-ink); }
 .zp .zh-device-brand > span { width: 10px; height: 10px; border-radius: 2px; background: var(--zp-gold); }
 .zp .zh-device img { display: block; width: 100%; height: auto; }
+/* The hero card shows the New Order screen in a phone frame (zh-pf, shared with the workflow rows below), not in a laptop picture. The title bar stays as the card heading: its two strings are live text. The backdrop is the one the QSR, Sweet shop and Dhaba phone panels use. */
+.zp .zh-device--phone { display: grid; justify-items: center; background: radial-gradient(120% 80% at 28% 18%, var(--zp-panel-0) 0%, var(--zp-panel-1) 52%, var(--zp-panel-2) 100%); }
+.zp .zh-device--phone .zh-device-bar { justify-self: stretch; background: var(--zp-card); }
+.zp .zh-device--phone .zh-pf { width: min(232px, 60vw); margin: clamp(18px, 3vw, 28px) 0; }
 .zp .zh-callouts { margin-top: 12px; display: grid; grid-template-columns: minmax(0, 1fr); gap: 8px; }
 .zp .zh-callout { display: flex; align-items: center; gap: 12px; padding: 12px 14px; border: 1px solid var(--zp-line-5); border-radius: var(--zp-r-lg); background: var(--zp-card); }
 .zp .zh-callout-icon { flex: none; display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px; border-radius: var(--zp-r-sm); background: var(--zp-chip); color: var(--zp-ink); }
@@ -188,6 +192,17 @@ html:has(body.zp) { color-scheme: light; scroll-padding-top: 8px; }
 .zp .zh-fig figcaption span { font-family: var(--zp-font-mono); font-size: var(--zp-fs-label); letter-spacing: 0.1em; text-transform: uppercase; color: var(--zp-ink-3); }
 .zp .zh-fig figcaption strong { font-size: var(--zp-fs-small); font-weight: 600; line-height: 1.35; }
 .zp .zh-fig img { display: block; width: 100%; height: auto; border: 1px solid var(--zp-line-5); border-radius: var(--zp-r-xl); background: var(--zp-card); box-shadow: var(--zp-sh-slip); }
+/* Screens row (Round7_final.html, class "screens"): app screens in a phone frame. Phones: a swipe strip. From 640 px: a grid (see the media block below).
+   --n is the number of screens in the row (3 here). The strip is a named, focusable region (role, aria-label, tabindex in the markup).
+   Its focus ring is the frame.css rule for the screenshot strip, repeated here under this page's class name. */
+.zp .zh-screens { display: flex; gap: 12px; align-items: flex-end; overflow-x: auto; scroll-snap-type: x mandatory; scroll-padding-left: var(--zp-gut); margin: 0 calc(-1 * var(--zp-gut)); padding: 4px var(--zp-gut) 14px; -webkit-overflow-scrolling: touch; }
+.zp .zh-screens:focus-visible { outline: 3px solid var(--zp-ink); outline-offset: 3px; border-radius: var(--zp-r-xs); }
+.zp .zh-screens .zh-scr { flex: 0 0 168px; margin: 0; min-width: 0; scroll-snap-align: start; }
+.zp .zh-screens .zh-pf, .zp .zh-device--phone .zh-pf { padding: 4px; border-radius: var(--zp-r-phone); background: var(--zp-ink); box-shadow: var(--zp-sh-phone); }
+.zp .zh-screens .zh-pf img, .zp .zh-device--phone .zh-pf img { display: block; width: 100%; height: auto; border: 0; border-radius: calc(var(--zp-r-phone) - 4px); background: none; box-shadow: none; }
+.zp .zh-screens .zh-scr--card .zh-pf { padding: 0; border-radius: 14px; overflow: hidden; background: var(--zp-panel-2); }
+.zp .zh-screens .zh-scr--card .zh-pf img { border-radius: 0; }
+.zp .zh-screens .zh-scr figcaption { display: block; margin: 10px 0 0; font-family: var(--zp-font-mono); font-size: var(--zp-fs-label); letter-spacing: 0.1em; text-transform: uppercase; color: var(--zp-ink-3); }
 .zp .zh-steps { margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: minmax(0, 1fr); gap: 0; border-top: 1px solid var(--zp-line-4); }
 .zp .zh-steps li { display: grid; grid-template-columns: 36px minmax(0, 1fr); column-gap: 10px; padding: 12px 0; border-bottom: 1px solid var(--zp-line-4); }
 .zp .zh-steps-n { padding-top: 3px; font-family: var(--zp-font-mono); font-size: var(--zp-fs-xs); color: var(--zp-ink-3); }
@@ -301,9 +316,15 @@ html:has(body.zp) { color-scheme: light; scroll-padding-top: 8px; }
   .zp .zh-callouts { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .zp .zh-dform-row { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
+@media (min-width: 640px) {
+  .zp .zh-screens { display: grid; grid-template-columns: repeat(var(--n, 3), minmax(0, 168px)); gap: 16px; overflow: visible; margin: 0; padding: 4px 0 8px; }
+  .zp .zh-screens .zh-scr { flex: none; }
+}
 @media (min-width: 700px) {
   .zp .zh-cb { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 40px; }
-  .zp .zh-wfl-vis { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  /* The three drawings are gone, so the picture column has one child. The two laptop screenshots of step 03 sit side by side, as wide as before (half of the row). The phone row and its caption use the full row. */
+  .zp .zh-wfl-proof { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .zp .zh-wfl-proof > .zh-fig--screens, .zp .zh-wfl-proof > .zh-screens { grid-column: 1 / -1; }
 }
 @media (min-width: 800px) {
   .zp .zh-hw { grid-template-columns: repeat(3, minmax(0, 1fr)); column-gap: 32px; }
@@ -319,6 +340,12 @@ html:has(body.zp) { color-scheme: light; scroll-padding-top: 8px; }
   .zp .zh-wfl-copy { grid-area: copy; }
   .zp .zh-plus { grid-area: plus; }
   .zp .zh-badge { grid-area: badge; justify-self: start; }
+}
+@media (min-width: 1180px) {
+  /* Step 02: the phone row (3 x 168 px + gaps = 536 px) and the wide KDS picture sit side by side, each at most half of the row (550 px). */
+  .zp .zh-wfl-proof > .zh-screens { grid-column: auto; }
+  /* Step 01: the picture column has only the phone row, so the four steps sit beside it instead of leaving half of the row empty. DOM order is unchanged (pictures, then steps). */
+  .zp .zh-wfl-body:has(.zh-wfl-proof > :only-child) { grid-template-columns: auto minmax(0, 1fr); column-gap: 56px; align-items: start; }
 }
 @media (min-width: 900px) {
   .zp .zh-hero { grid-template-columns: minmax(0, 1.04fr) minmax(0, 0.96fr); grid-template-areas: "top vis" "buy vis" "more vis" "proof proof"; column-gap: 56px; row-gap: 0; align-items: start; }
