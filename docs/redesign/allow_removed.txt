@@ -33,3 +33,8 @@
 / || ₹4,999/year or ₹11,999 for 3 years prepaid, with a 14-day free trial and no credit card required.
 # H3. The "14-day free trial" tick in the facts list. The trial line ("Start 14-Day Free Trial", "No credit card required") stays.
 / || 14-day free trial
+# Demo form City field (Kabir, 2026-11-07). The two old sentences that list the demo form data. They now also name the optional city.
+# Home: the sentence under the demo form button (text before the Privacy Policy link). The link itself stays.
+/ || Submitting places your name, phone number and business type into a WhatsApp message to Zipla's demo number. WhatsApp opens the message, and you choose whether to send it. See our
+# Privacy policy, section f) Demo request details. Same list, same reason.
+/privacy-policy/ || When you submit the demo form, the form places your name, phone number and business type into a WhatsApp message to Zipla's demo number. WhatsApp opens the message, and you choose whether to send it.
