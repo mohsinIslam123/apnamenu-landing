@@ -117,3 +117,5 @@ Shipping Policy
 / || Submitting places your name, phone number, business type and city (optional) into a WhatsApp message to Zipla's demo number. WhatsApp opens the message, and you choose whether to send it. See our
 # Privacy policy, section f) Demo request details. Same list, kept in step with the form.
 /privacy-policy/ || When you submit the demo form, the form places your name, phone number, business type and city (optional) into a WhatsApp message to Zipla's demo number. WhatsApp opens the message, and you choose whether to send it.
+# SEO T-2 (2026-11-11). One new paragraph in the definition section of /sweet-shop-billing/, approved by Kabir. It holds no link, so the gate keeps it as one piece.
+/sweet-shop-billing/ || A sweet shop billing machine prints the bill at the counter. The Zipla Billing Machine is a 58mm Bluetooth thermal printer that comes with 12 months of Zipla POS.
