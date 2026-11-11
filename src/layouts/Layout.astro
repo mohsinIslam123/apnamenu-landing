@@ -374,6 +374,17 @@ const GA_ID = 'G-48WXKXR3F1';
         if (href.indexOf('https://wa.me/') === 0) {
           window.ziplaTrack('whatsapp_click');
         }
+
+        // Buy now opens the Razorpay Payment Page. This counts intent to buy, not a sale.
+        if (href.indexOf('https://rzp.io/') === 0) {
+          const ctaLocation = link.closest('.site-header') ? 'header'
+            : link.closest('.pricing') ? 'pricing'
+            : link.closest('.final-cta') ? 'final_cta'
+            : 'page';
+          if (event.ziplaBuyNowSent) return;
+          event.ziplaBuyNowSent = true;
+          window.ziplaTrack('buy_now_click', { cta_location: ctaLocation });
+        }
       });
 
       document.addEventListener('keydown', function (event) {
