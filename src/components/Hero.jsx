@@ -149,7 +149,7 @@ export default function Hero({ takeaway }) {
         <figure className="zh-proof-fig" aria-labelledby="hero-product-caption">
           <div className="zh-device zh-device--phone">
             <div className="zh-device-bar">
-              <span className="zh-device-brand"><span aria-hidden="true" />zipla POS</span>
+              <span className="zh-device-brand"><span aria-hidden="true" />Zipla POS</span>
               <span>Built around your service workflow</span>
             </div>
             <div className="zh-pf">

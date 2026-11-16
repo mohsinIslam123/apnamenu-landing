@@ -38,3 +38,5 @@
 / || Submitting places your name, phone number and business type into a WhatsApp message to Zipla's demo number. WhatsApp opens the message, and you choose whether to send it. See our
 # Privacy policy, section f) Demo request details. Same list, same reason.
 /privacy-policy/ || When you submit the demo form, the form places your name, phone number and business type into a WhatsApp message to Zipla's demo number. WhatsApp opens the message, and you choose whether to send it.
+# Brand name capital Z (Home hero device bar, src/components/Hero.jsx:152). "zipla POS" becomes "Zipla POS". One line, one page.
+/ || zipla POS
