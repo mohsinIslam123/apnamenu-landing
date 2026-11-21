@@ -11,10 +11,19 @@ const TYPES = [
   'Other',
 ]
 
+// Accepts +91 / 91 / 0 prefixes; returns bare digits for the 10-digit mobile check.
+function normalizeIndianPhone(raw) {
+  var digits = raw.replace(/\D/g, '')
+  if (digits.length === 12 && digits.indexOf('91') === 0) return digits.slice(2)
+  if (digits.length === 11 && digits.indexOf('0') === 0) return digits.slice(1)
+  return digits
+}
+
 export default function DemoForm() {
   const [form, setForm] = useState({ name: '', phone: '', type: '', city: '' })
   const [errors, setErrors] = useState({})
   const [submitted, setSubmitted] = useState(false)
+  const [waUrl, setWaUrl] = useState('')
 
   function set(k) {
     return function(e) {
@@ -27,7 +36,7 @@ export default function DemoForm() {
   function validate() {
     var e = {}
     if (!form.name.trim()) e.name = 'Name required'
-    if (form.phone.replace(/\D/g, '').length < 10) e.phone = '10-digit number required'
+    if (!/^[6-9]\d{9}$/.test(normalizeIndianPhone(form.phone))) e.phone = 'Enter a valid 10-digit Indian mobile number'
     if (!form.type) e.type = 'Select business type'
     return e
   }
@@ -36,15 +45,19 @@ export default function DemoForm() {
     event.preventDefault()
     var e = validate()
     if (Object.keys(e).length) { setErrors(e); return }
+    var name = form.name.trim()
+    var phone = normalizeIndianPhone(form.phone)
     var city = form.city.trim()
     var msg = [
       'Hi, I want a free demo of Zipla POS.',
       '',
-      'Name: ' + form.name,
-      'Phone: ' + form.phone,
+      'Name: ' + name,
+      'Phone: ' + phone,
       'Type: ' + form.type,
     ].concat(city ? ['City: ' + city] : []).join('\n')
-    window.open('https://wa.me/' + WHATSAPP_NUMBER + '?text=' + encodeURIComponent(msg), '_blank', 'noopener,noreferrer')
+    var url = 'https://wa.me/' + WHATSAPP_NUMBER + '?text=' + encodeURIComponent(msg)
+    setWaUrl(url)
+    window.open(url, '_blank', 'noopener,noreferrer')
     if (typeof window.ziplaTrack === 'function') window.ziplaTrack('demo_submit')
     setSubmitted(true)
   }
@@ -56,7 +69,7 @@ export default function DemoForm() {
           <div className="zh-demo-thanks">
             <div className="zh-demo-thanks-t" aria-hidden="true">✓</div>
             <h3 className="zh-demo-thanks-t">WhatsApp Opening...</h3>
-            <p>We opened WhatsApp with your details. If it did not open, <a href={'https://wa.me/' + WHATSAPP_NUMBER} target="_blank" rel="noopener noreferrer">tap here</a>.</p>
+            <p>We opened WhatsApp with your details. If it did not open, <a href={waUrl || ('https://wa.me/' + WHATSAPP_NUMBER)} target="_blank" rel="noopener noreferrer">tap here</a>.</p>
           </div>
         </div>
       </section>

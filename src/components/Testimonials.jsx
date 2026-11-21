@@ -10,8 +10,8 @@ function VideoCard({ youtubeId, thumbnail, name, business }) {
       {playing ? (
         <iframe src={`https://www.youtube-nocookie.com/embed/${youtubeId}?autoplay=1`} title={`${name} story`} allow="autoplay; encrypted-media" allowFullScreen loading="lazy" />
       ) : (
-        <button className="video-thumb" onClick={() => setPlaying(true)} aria-label={`Play: ${name}`}>
-          <img src={thumbnail} alt="" loading="lazy" />
+        <button type="button" className="video-thumb" onClick={() => setPlaying(true)} aria-label={`Play: ${name}`}>
+          <img src={thumbnail} alt="" width="640" height="360" loading="lazy" decoding="async" />
           <span className="video-play-icon"><PlayIcon /></span>
         </button>
       )}
