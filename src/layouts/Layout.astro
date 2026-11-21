@@ -143,7 +143,7 @@ const GA_ID = 'G-48WXKXR3F1';
 </head>
 <body class={zp ? 'zp' : undefined}>
   <slot />
-  <aside id="zipla-consent-banner" class="zipla-consent-banner" role="dialog" aria-modal="true" aria-labelledby="zipla-consent-title" aria-describedby="zipla-consent-copy" tabindex="-1" hidden>
+  <aside id="zipla-consent-banner" class="zipla-consent-banner" role="region" aria-labelledby="zipla-consent-title" aria-describedby="zipla-consent-copy" tabindex="-1" hidden>
     <h2 id="zipla-consent-title">Help us improve Zipla.in</h2>
     <p id="zipla-consent-copy">We use optional analytics to understand visits and improve this site. You can allow or reject analytics. Read our <a href="/privacy-policy/">Privacy Policy</a>.</p>
     <div class="zipla-consent-actions">
@@ -220,7 +220,10 @@ const GA_ID = 'G-48WXKXR3F1';
 
       function rememberFocusedElement() {
         const current = document.activeElement;
-        if (current && current !== document.body) lastFocusedElement = current;
+        // An element inside the consent UI is about to be hidden; remembering it would
+        // overwrite the page element (e.g. #zipla-consent-settings) that should get focus back.
+        const insideConsent = [consentBanner, consentPreferences].some((box) => box && box.contains(current));
+        if (current && current !== document.body && !insideConsent) lastFocusedElement = current;
       }
 
       function getFocusableElements(dialog) {
@@ -312,11 +315,12 @@ const GA_ID = 'G-48WXKXR3F1';
         restoreFocus();
       }
 
-      function showBanner() {
-        rememberFocusedElement();
+      function showBanner(shouldFocus) {
+        if (shouldFocus) rememberFocusedElement();
         setVisible(consentPreferences, false);
         setVisible(consentBanner, true);
-        focusDialog(consentBanner);
+        if (shouldFocus) focusDialog(consentBanner);
+        else activeDialog = null;
       }
 
       function showPreferences() {
@@ -334,6 +338,16 @@ const GA_ID = 'G-48WXKXR3F1';
           clearAnalyticsCookies();
         }
         hideConsent();
+      }
+
+      function getCtaLocation(element) {
+        if (element.closest('.site-header')) return 'header';
+        if (element.closest('#buy, .zh-hero, .zb-hero, .zm-hero-m')) return 'hero';
+        if (element.closest('#pricing, .pricing, #complete-plan')) return 'pricing';
+        if (element.closest('.zm-offer-sec, .zm-band')) return 'offer';
+        if (element.closest('.zh-sbar')) return 'sticky_bar';
+        if (element.closest('.zb-ink')) return 'final_cta';
+        return 'page';
       }
 
       document.addEventListener('click', function (event) {
@@ -358,11 +372,7 @@ const GA_ID = 'G-48WXKXR3F1';
         const href = link.getAttribute('href') || '';
 
         if (href.indexOf('https://app.zipla.in/register') === 0) {
-          const ctaLocation = link.closest('.site-header') ? 'header'
-            : link.closest('.pricing') ? 'pricing'
-            : link.closest('.final-cta') ? 'final_cta'
-            : 'page';
-          window.ziplaTrack('trial_click', { cta_location: ctaLocation });
+          window.ziplaTrack('trial_click', { cta_location: getCtaLocation(link) });
           return;
         }
 
@@ -377,13 +387,9 @@ const GA_ID = 'G-48WXKXR3F1';
 
         // Buy now opens the Razorpay Payment Page. This counts intent to buy, not a sale.
         if (href.indexOf('https://rzp.io/') === 0) {
-          const ctaLocation = link.closest('.site-header') ? 'header'
-            : link.closest('.pricing') ? 'pricing'
-            : link.closest('.final-cta') ? 'final_cta'
-            : 'page';
           if (event.ziplaBuyNowSent) return;
           event.ziplaBuyNowSent = true;
-          window.ziplaTrack('buy_now_click', { cta_location: ctaLocation });
+          window.ziplaTrack('buy_now_click', { cta_location: getCtaLocation(link) });
         }
       });
 
@@ -391,7 +397,7 @@ const GA_ID = 'G-48WXKXR3F1';
         if (event.key === 'Escape') {
           if (activeDialog === consentPreferences) {
             if (consentState) hideConsent();
-            else showBanner();
+            else showBanner(true);
             event.preventDefault();
           } else if (activeDialog === consentBanner) {
             if (!consentState) {
@@ -427,7 +433,7 @@ const GA_ID = 'G-48WXKXR3F1';
       if (consentState === 'granted') {
         loadAnalytics();
       } else if (!consentState) {
-        showBanner();
+        showBanner(false);
       }
     }());
   </script>

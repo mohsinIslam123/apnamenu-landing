@@ -27,8 +27,6 @@ const PAGE_DESCRIPTION =
 
 const TOP_TAKEAWAY =
   'Restaurant billing software for India with counter billing, GST invoices, payment tracking, QR ordering and relevant kitchen workflows for Indian restaurants, cafes, QSRs, bakeries, sweet shops and dhabas.';
-const TOP_PLAN_SUMMARY =
-  '₹4,999/year or ₹11,999 for 3 years prepaid, with a 14-day free trial and no credit card required.';
 
 const jsonLd = {
   '@context': 'https://schema.org',
@@ -165,7 +163,7 @@ const jsonLd = {
   <Header client:load />
 
   <main aria-label="Zipla POS restaurant billing software for Indian food businesses">
-    <Hero takeaway={TOP_TAKEAWAY} planSummary={TOP_PLAN_SUMMARY} />
+    <Hero takeaway={TOP_TAKEAWAY} />
     <TrustBar />
     <MachineStrip />
     <HowItStarts />

@@ -19,8 +19,7 @@ export default function Header() {
   }, [menuOpen])
 
   function closeMenu() {
-    setMenuOpen(false)
-    menuButtonRef.current?.focus()
+    if (menuOpen) setMenuOpen(false)
   }
 
   return (
